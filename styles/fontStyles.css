@@ -1,0 +1,55 @@
+@font-face {
+  font-family: "PoppinsRegular";
+  src: url("../assets/fonts/Poppins-Regular.eot");
+  src: url("../assets/fonts/Poppins-Regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("../assets/fonts/Poppins-Regular.woff2") format("woff2"),
+    url("../assets/fonts/Poppins-Regular.woff") format("woff"),
+    url("../assets/fonts/Poppins-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "PoppinsMedium";
+  src: url("../assets/fonts/Poppins-Medium.eot");
+  src: url("../assets/fonts/Poppins-Medium.eot?#iefix")
+      format("embedded-opentype"),
+    url("../assets/fonts/Poppins-Medium.woff2") format("woff2"),
+    url("../assets/fonts/Poppins-Medium.woff") format("woff"),
+    url("../assets/fonts/Poppins-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "PoppinsSemibold";
+  src: url("../assets/fonts/Poppins-SemiBold.eot");
+  src: url("../assets/fonts/Poppins-SemiBold.eot?#iefix")
+      format("embedded-opentype"),
+    url("../assets/fonts/Poppins-SemiBold.woff2") format("woff2"),
+    url("../assets/fonts/Poppins-SemiBold.woff") format("woff"),
+    url("../assets/fonts/Poppins-SemiBold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "PoppinsBold";
+  src: url("../assets/fonts/Poppins-Bold.eot");
+  src: url("../assets/fonts/Poppins-Bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("../assets/fonts/Poppins-Bold.woff2") format("woff2"),
+    url("../assets/fonts/Poppins-Bold.woff") format("woff"),
+    url("../assets/fonts/Poppins-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "PoppinsLight";
+  src: url("../assets/fonts/Poppins-Light.eot");
+  src: url("../assets/fonts/Poppins-Light.eot?#iefix")
+      format("embedded-opentype"),
+    url("../assets/fonts/Poppins-Light.woff2") format("woff2"),
+    url("../assets/fonts/Poppins-Light.woff") format("woff"),
+    url("../assets/fonts/Poppins-Light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}

@@ -1,11 +1,11 @@
 import useTranslation from "next-translate/useTranslation";
-const HomePage = () => {
+const About = () => {
   let { t } = useTranslation();
   return (
     <div style={{ paddingTop: "20vh", height: "500rem" }}>
-      {t("common:navigation.home")}
+      {t("common:navigation.about")}
     </div>
   );
 };
 
-export default HomePage;
+export default About;
