@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   StyledToggleButton,
   Input,
@@ -12,6 +13,7 @@ const ToggleButton = (props) => {
         type="checkbox"
         id={`checkbox-input-${props.id}`}
         onChange={props.onChangeInput}
+        checked={props.checkedInput}
       />
       <Label htmlFor={`checkbox-input-${props.id}`}>
         <Wrapper>{props.left}</Wrapper>

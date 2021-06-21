@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Phone from "../../../shared/components/svgs/Phone";
 import Mail from "../../../shared/components/svgs/Mail";
 import Follow from "../../../shared/components/svgs/Follow";
@@ -7,10 +7,11 @@ export const StyledHeaderIcons = styled.div`
   width: 18%;
   min-width: 22rem;
   height: 100%;
-  display: flex;
+  display: ${(props) => (props.sidebar ? "none" : "flex")};
   align-items: center;
 
-  /* @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1200px) {
+    display: ${(props) => (props.sidebar ? "flex" : "none")};
     position: relative;
     width: 40rem;
     height: 10rem;
@@ -26,7 +27,7 @@ export const StyledHeaderIcons = styled.div`
       width: 40rem;
       height: 8rem;
     }
-  } */
+  }
 `;
 
 export const HeaderIcon = styled.div`

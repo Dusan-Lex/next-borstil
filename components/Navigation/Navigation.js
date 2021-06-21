@@ -23,10 +23,13 @@ import HeaderLogo from "./HeaderLogo/HeaderLogo";
 const Navigation = () => {
   const { theme, switchTheme } = useContext(ThemeContext);
   const router = useRouter();
-  let { t } = useTranslation();
+  const { t } = useTranslation();
   const hideHeaderUp = useHideHeaderUp();
   const windowSize = useWindowSize();
-  const newTheme = theme === "light" ? "dark" : "light";
+
+  // useEffect(() => {
+  //   windowSize.width < 1200 && switchTheme();
+  // }, []);
 
   const localeChangeHandler = () => {
     router.push(router.asPath, router.asPath, {
@@ -34,7 +37,7 @@ const Navigation = () => {
     });
   };
   const themeChangeHandler = () => {
-    switchTheme(newTheme);
+    switchTheme();
   };
 
   return (
@@ -46,13 +49,15 @@ const Navigation = () => {
           left="DE"
           right="SR"
           onChangeInput={localeChangeHandler}
+          checkedInput={router.locale === "de"}
         />
         <h2>D.O.O. Bor Stil</h2>
         <ThemeToggleButton
           id="theme"
-          onChangeInput={themeChangeHandler}
           left={<Sun size="18" color={color.secondary} />}
           right={<Moon size="20" color={color.primary} />}
+          onChangeInput={themeChangeHandler}
+          checkedInput={theme === "light"}
         />
       </HeaderUp>
       <HeaderDown>

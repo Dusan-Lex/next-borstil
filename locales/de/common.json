@@ -7,5 +7,10 @@
     "gallery": "Galerie",
     "contact": "Kontakt",
     "request": "Angebotsanfrage"
+  },
+  "popup": {
+    "phone": "Rufen Sie uns an",
+    "mail": "Schreiben Sie uns",
+    "follow": "Folgen Sie uns"
   }
 }

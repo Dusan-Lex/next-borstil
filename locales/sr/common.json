@@ -7,5 +7,10 @@
     "gallery": "Galerija",
     "contact": "Kontakt",
     "request": "Zahtev za ponudu"
+  },
+  "popup": {
+    "phone": "Pozovite nas",
+    "mail": "Pišite nam",
+    "follow": "Pratite nas"
   }
 }

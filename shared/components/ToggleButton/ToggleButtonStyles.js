@@ -17,12 +17,11 @@ export const Label = styled.label`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  color: ${color.primaryLightest};
 `;
 
 export const Wrapper = styled.div`
   ${mixin.center};
-  color: ${(props) => props.theme.text.hover};
+  color: ${(props) => props.theme.backgroundRev};
 `;
 
 export const RoundSlider = styled.div`

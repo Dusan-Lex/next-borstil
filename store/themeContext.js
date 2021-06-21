@@ -1,5 +1,5 @@
-import { useState, createContext } from "react";
-
+import { useState, useEffect, createContext } from "react";
+import useWindowSize from "../shared/hooks/useWindowSize";
 const ThemeContext = createContext({
   theme: null,
   switchTheme: () => {},
@@ -7,9 +7,17 @@ const ThemeContext = createContext({
 
 export const ThemeContextProvider = (props) => {
   const [theme, setTheme] = useState("dark");
+  const windowSize = useWindowSize();
 
-  const switchThemeHandler = (theme) => {
-    setTheme(theme);
+  useEffect(() => {
+    console.log("effect");
+    windowSize.width && windowSize.width <= 1200 && setTheme("light");
+    windowSize.width > 1200 && setTheme("dark");
+  }, [windowSize.width]);
+
+  const switchThemeHandler = () => {
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
   };
 
   const context = {

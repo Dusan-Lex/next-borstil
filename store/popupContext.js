@@ -2,19 +2,24 @@ import { useState, createContext } from "react";
 
 const PopupContext = createContext({
   popup: null,
-  switchPopup: () => {},
+  showPopup: () => {},
+  hidePopup: () => {},
 });
 
 export const PopupContextProvider = (props) => {
-  const [popup, setPopup] = useState(false);
+  const [popup, setPopup] = useState(null);
 
-  const switchPopupHandler = () => {
-    setPopup(!popup);
+  const showPopupHandler = (popupData) => {
+    setPopup(popupData);
   };
-  console.log(popup);
+  const hidePopupHandler = () => {
+    setPopup(null);
+  };
+
   const context = {
     popup: popup,
-    switchPopup: switchPopupHandler,
+    showPopup: showPopupHandler,
+    hidePopup: hidePopupHandler,
   };
   return (
     <PopupContext.Provider value={context}>
