@@ -10,7 +10,6 @@ export const ThemeContextProvider = (props) => {
   const windowSize = useWindowSize();
 
   useEffect(() => {
-    console.log("effect");
     windowSize.width && windowSize.width <= 1200 && setTheme("light");
     windowSize.width > 1200 && setTheme("dark");
   }, [windowSize.width]);

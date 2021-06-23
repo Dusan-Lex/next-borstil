@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { color } from "../../../../shared/utils/styles";
 
 export const Item = styled.li`
   text-transform: uppercase;
@@ -12,13 +11,6 @@ export const Item = styled.li`
     transition: all 0.65s;
     transition-property: transform, text-decoration, top;
     color: ${(props) => props.theme.text.regular};
-
-    /* @media screen and (min-width: 1200px) {
-      &.opposite {
-        color: var(--color-primary-dark-2);
-        font-size: 1.65rem;
-      }
-    } */
   }
 
   .invisible {
@@ -32,23 +24,10 @@ export const Item = styled.li`
     transition: all 0.65s;
     transition-property: transform, text-decoration, top;
     color: ${(props) => props.theme.text.hover};
-
-    /* @media screen and (min-width: 1200px) {
-      &.opposite {
-        color: var(--color-primary-light-2);
-        font-size: 1.65rem;
-      }
-    } */
   }
 
   a:hover .visible {
     color: ${(props) => props.theme.text.hover};
-    /* @media screen and (min-width: 1200px) {
-      &.opposite {
-        color: var(--color-primary-light-2);
-        font-size: 1.65rem;
-      }
-    } */
   }
 
   a.active .visible {
