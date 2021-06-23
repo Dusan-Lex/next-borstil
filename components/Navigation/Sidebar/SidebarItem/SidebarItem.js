@@ -8,8 +8,8 @@ const SidebarItem = (props) => {
   const path = `/${props.item === "home" ? "" : props.item}`;
   const { t } = useTranslation();
   return (
-    <div>
-      <Item sidebar={sidebarCtx.sidebar}>
+    <div style={{ overflow: "hidden" }}>
+      <Item sidebar={sidebarCtx.sidebar} index={props.index}>
         <Link className={props.className} href={path}>
           <a onClick={sidebarCtx.toggleSidebar}>
             {t(`common:navigation.${props.item}`)}

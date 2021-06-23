@@ -47,10 +47,9 @@ export const StyledPopup = styled.div`
 
   @media only screen and (max-width: 1200px) {
     position: absolute;
-    /* top: 200%; */
     width: 100%;
     height: 20rem;
-    /* transform: translate(0,-50%); */
+    transform: translate(0);
     opacity: 0;
     transition: opacity 0.8s;
     border-radius: 0.6rem;

@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import { color } from "../../../shared/utils/styles";
 import { mixin } from "../../../shared/utils/styles";
 
@@ -62,4 +62,13 @@ export const SidebarBox = styled.div`
 
 export const SidebarItems = styled.ul`
   text-align: center;
+`;
+
+export const Lang = styled.div`
+  ${mixin.center}
+  margin-bottom: 2rem;
+  ${(props) =>
+    props.sidebar
+      ? `transition: all 0.6s 0.75s ease-out;opacity:1;transform:translateX(0)`
+      : "transition: opacity 0.6s ease-out,transform 0.6s 0.6s ease-out;opacity:0;transform:translateX(-90%)"};
 `;

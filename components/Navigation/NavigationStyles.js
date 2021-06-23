@@ -59,8 +59,13 @@ export const ThemeToggleButton = styled(ToggleButton)`
   right: 10rem;
 `;
 export const LangToggleButton = styled(ToggleButton)`
+  display: inline-block;
   position: absolute;
   left: 25rem;
+  @media only screen and (max-width: 1200px) {
+    position: relative;
+    left: initial;
+  }
 `;
 export const Span = styled.span`
   position: absolute;
@@ -69,4 +74,20 @@ export const Span = styled.span`
   font-size: 1.8rem;
   width: 19rem;
   text-align: right;
+  @media only screen and (max-width: 1200px) {
+    position: relative;
+    color: ${color.primaryLightest};
+    font-size: 3rem;
+    text-transform: uppercase;
+    left: initial;
+    width: initial;
+    margin-right: 1.5rem;
+
+    @media only screen and (max-height: 600px) {
+      font-size: 2.5rem;
+    }
+    @media only screen and (max-height: 500px) {
+      font-size: 2rem;
+    }
+  }
 `;

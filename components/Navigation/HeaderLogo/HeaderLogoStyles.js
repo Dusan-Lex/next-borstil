@@ -38,6 +38,11 @@ export const StyledHeaderLogo = styled.div`
     justify-content: center;
     align-items: center;
 
+    svg {
+      width: 90%;
+      height: 90%;
+    }
+
     @media only screen and (max-width: 1200px) {
       width: 100%;
       min-width: 0;

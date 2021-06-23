@@ -7,10 +7,10 @@ export const Item = styled.li`
   font-size: 3rem;
   ${(props) =>
     props.sidebar
-      ? "transition: all 1s 0.7s ease-out;opacity:1"
-      : "transition: all 1s ease-out;opacity:0"};
-
-  /* opacity: ${(props) => (props.sidebar ? 1 : 0)}; */
+      ? `transition: all 0.6s ${
+          0.5 + 0.07 * props.index
+        }s ease-out;opacity:1;transform:translateY(0)`
+      : "transition: opacity 0.6s ease-out,transform 0.6s 0.6s ease-out;opacity:0;transform:translateY(100%)"};
   -webkit-tap-highlight-color: transparent;
 
   @media screen and (min-height: 900px) {
