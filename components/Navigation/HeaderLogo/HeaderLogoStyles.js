@@ -51,13 +51,14 @@ export const StyledHeaderLogo = styled.div`
   .pine {
     fill: ${(props) => props.theme.text.regular};
   }
-
-  &:hover {
-    .pine {
-      fill: ${(props) => props.theme.text.hover};
-    }
-    div h3 {
-      transform: translateX(0);
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      .pine {
+        fill: ${(props) => props.theme.text.hover};
+      }
+      div h3 {
+        transform: translateX(0);
+      }
     }
   }
 `;

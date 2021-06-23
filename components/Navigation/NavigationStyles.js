@@ -13,7 +13,6 @@ export const Header = styled.header`
   top: 0;
   width: 100%;
   opacity: 0;
-  z-index: 1000;
   ${mixin.boxShadowHeader};
   transform: ${(props) =>
     props.hideHeaderUp ? "translateY(-4.5vh)" : "translateY(0)"};

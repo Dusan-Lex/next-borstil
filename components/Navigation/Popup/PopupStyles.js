@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components";
-import { mixin, font, color } from "../../../shared/utils/styles";
+import { mixin, color } from "../../../shared/utils/styles";
 
 const titleAnimation = keyframes`
 from{
@@ -24,7 +24,7 @@ from{
 export const StyledPopup = styled.div`
   position: absolute;
   right: 0;
-  width: 18%;
+  width: 20%;
   min-width: 22rem;
   height: 20vh;
   min-height: 17rem;
@@ -32,8 +32,8 @@ export const StyledPopup = styled.div`
   border-bottom-left-radius: 0.6rem;
   background-color: ${(props) => props.theme.backgroundRev};
   ${mixin.boxShadowPopup}
-  transform: translateX(+100%);
-  transition: transform 0.8s ease-in-out;
+  transform: translateX(+102%);
+  transition: transform 0.9s;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -47,14 +47,15 @@ export const StyledPopup = styled.div`
 
   @media only screen and (max-width: 1200px) {
     position: absolute;
-    top: 200%;
+    /* top: 200%; */
     width: 100%;
     height: 20rem;
-    transform: translate(0);
+    /* transform: translate(0,-50%); */
     opacity: 0;
     transition: opacity 0.8s;
     border-radius: 0.6rem;
     min-height: 0;
+    background-color: ${color.primary};
     &.animate {
       opacity: 1;
     }
@@ -69,17 +70,6 @@ export const StyledPopup = styled.div`
       height: 13rem;
     }
   }
-
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    height: 4%;
-    left: 0;
-    right: 0;
-    z-index: 99999;
-    box-shadow: inset 0 0.5rem 1.1rem -1.1rem ${(props) => props.theme.background};
-  }
 `;
 
 export const Title = styled.h3`
@@ -88,6 +78,7 @@ export const Title = styled.h3`
   animation: ${titleAnimation} 1s backwards;
 
   @media screen and (max-width: 1200px) {
+    color: ${color.secondary};
     font-size: 3rem;
     @media screen and (max-height: 600px) {
       font-size: 2.5rem;

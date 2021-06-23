@@ -15,15 +15,18 @@ import Instagram from "../../../shared/components/svgs/Instagram";
 
 import Popup from "../Popup/Popup";
 import PopupContext from "../../../store/popupContext";
+import SidebarContext from "../../../store/sidebarContext";
 
-const HeaderIcons = () => {
+const HeaderIcons = (props) => {
   const [icons, setIcons] = useState([0, 0, 0]);
   const popupCtx = useContext(PopupContext);
+  const sidebarCtx = useContext(SidebarContext);
   const { t } = useTranslation();
 
   return (
     <StyledHeaderIcons
-      // sidebar
+      small={props.small}
+      sidebar={sidebarCtx.sidebar}
       onMouseLeave={() => {
         setIcons([0, 0, 0]);
         popupCtx.hidePopup();

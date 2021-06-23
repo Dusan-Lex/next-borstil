@@ -35,7 +35,7 @@ export default createGlobalStyle`
     min-height: 100%;
     color: ${color.secondaryDarkest};
     -webkit-tap-highlight-color: transparent;
-    line-height: 1.2;
+    line-height: 1.7;
     font-size: 1.6rem;
     ${font.regular}
     user-select: none;

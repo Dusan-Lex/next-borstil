@@ -4,6 +4,7 @@ import "../styles/fontStyles.css";
 import Navigation from "../components/Navigation/Navigation";
 import { ThemeContextProvider } from "../store/themeContext";
 import { PopupContextProvider } from "../store/popupContext";
+import { SidebarContextProvider } from "../store/sidebarContext";
 import Theme from "../components/Theme/Theme";
 
 function MyApp({ Component, pageProps }) {
@@ -11,10 +12,12 @@ function MyApp({ Component, pageProps }) {
     <ThemeContextProvider>
       <Theme>
         <PopupContextProvider>
-          <NormalizeStyles />
-          <BaseStyles />
-          <Navigation />
-          <Component {...pageProps} />
+          <SidebarContextProvider>
+            <NormalizeStyles />
+            <BaseStyles />
+            <Navigation />
+            <Component {...pageProps} />
+          </SidebarContextProvider>
         </PopupContextProvider>
       </Theme>
     </ThemeContextProvider>

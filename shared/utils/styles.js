@@ -10,6 +10,7 @@ export const color = {
   secondaryDark: "#372c2e",
   secondary: "#563727",
   secondaryLight: "#7a431d",
+  backdrop: "rgba(55, 44, 46, 0.6)",
 };
 
 export const font = {
@@ -21,9 +22,10 @@ export const font = {
 };
 
 export const zIndexValues = {
-  modal: 1000,
-  dropdown: 101,
-  navLeft: 100,
+  modal: 101,
+  dropdown: 100,
+  sidebar: 1000,
+  burgerBtn: 1001,
 };
 
 export const mixin = {
@@ -50,11 +52,10 @@ export const mixin = {
     user-select: none;
   `,
   cover: css`
-    position: absolute;
     top: 0;
-    right: 0;
-    bottom: 0;
     left: 0;
+    width: 100vw;
+    height: 100vh;
   `,
   placeholderColor: (colorValue) => css`
     ::-webkit-input-placeholder {

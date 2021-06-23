@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useRouter } from "next/router";
 import Navbar from "./Navbar/Navbar";
 import HeaderIcons from "./HeaderIcons/HeaderIcons";
@@ -19,6 +19,8 @@ import Sun from "../../shared/components/svgs/Sun";
 import useWindowSize from "../../shared/hooks/useWindowSize";
 import { color } from "../../shared/utils/styles";
 import HeaderLogo from "./HeaderLogo/HeaderLogo";
+import BurgerButton from "./BurgerButton/BurgerButton";
+import Sidebar from "./Sidebar/Sidebar";
 
 const Navigation = () => {
   const { theme, switchTheme } = useContext(ThemeContext);
@@ -26,10 +28,6 @@ const Navigation = () => {
   const { t } = useTranslation();
   const hideHeaderUp = useHideHeaderUp();
   const windowSize = useWindowSize();
-
-  // useEffect(() => {
-  //   windowSize.width < 1200 && switchTheme();
-  // }, []);
 
   const localeChangeHandler = () => {
     router.push(router.asPath, router.asPath, {
@@ -64,6 +62,8 @@ const Navigation = () => {
         <HeaderLogo />
         <Navbar />
         <HeaderIcons />
+        <BurgerButton />
+        <Sidebar />
       </HeaderDown>
     </Header>
   );

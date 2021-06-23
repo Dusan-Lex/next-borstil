@@ -1,22 +1,29 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import Phone from "../../../shared/components/svgs/Phone";
 import Mail from "../../../shared/components/svgs/Mail";
 import Follow from "../../../shared/components/svgs/Follow";
+import { color } from "../../../shared/utils/styles";
 
 export const StyledHeaderIcons = styled.div`
   width: 18%;
   min-width: 22rem;
   height: 100%;
-  display: ${(props) => (props.sidebar ? "none" : "flex")};
+  display: ${(props) => (props.small ? "none" : "flex")};
   align-items: center;
 
   @media screen and (max-width: 1200px) {
-    display: ${(props) => (props.sidebar ? "flex" : "none")};
+    display: ${(props) => (props.small ? "flex" : "none")};
     position: relative;
     width: 40rem;
     height: 10rem;
     margin: auto;
     margin-top: 2rem;
+
+    ${(props) =>
+      props.small && props.sidebar
+        ? "transition: all 1s 0.7s ease-out;opacity:1"
+        : "transition: all 1s ease-out;opacity:0"};
+
     @media screen and (max-height: 600px) {
       margin-top: 1.5rem;
       width: 40rem;
@@ -45,6 +52,9 @@ export const HeaderIcon = styled.div`
     width: 100%;
     opacity: 0.9;
     stroke: ${(props) => props.theme.text.regular};
+    @media screen and (max-width: 1200px) {
+      stroke: ${color.primaryLightest};
+    }
   }
 `;
 
@@ -54,6 +64,9 @@ export const PhoneAnimate = styled(Phone)`
     stroke-dasharray: 69 71;
     stroke-dashoffset: 70;
     animation: aeugHgjR_draw 600ms linear 0ms forwards;
+    @media screen and (max-width: 1200px) {
+      stroke: ${color.primary};
+    }
   }
   @keyframes aeugHgjR_draw {
     100% {
@@ -79,12 +92,18 @@ export const MailAnimate = styled(Mail)`
     stroke-dasharray: 69 71;
     stroke-dashoffset: 70;
     animation: BbwHnTZM_draw 666ms linear 0ms forwards;
+    @media screen and (max-width: 1200px) {
+      stroke: ${color.primary};
+    }
   }
   .animate_1 {
     stroke: ${(props) => props.theme.text.hover};
     stroke-dasharray: 25 27;
     stroke-dashoffset: 26;
     animation: BbwHnTZM_draw 666ms linear 333ms forwards;
+    @media screen and (max-width: 1200px) {
+      stroke: ${color.primary};
+    }
   }
   @keyframes BbwHnTZM_draw {
     100% {
@@ -110,12 +129,18 @@ export const FollowAnimate = styled(Follow)`
     stroke-dasharray: 31 33;
     stroke-dashoffset: 32;
     animation: VHMRIhZM_draw 600ms linear 0ms forwards;
+    @media screen and (max-width: 1200px) {
+      stroke: ${color.primary};
+    }
   }
   .animate_1 {
     stroke: ${(props) => props.theme.text.hover};
     stroke-dasharray: 31 33;
     stroke-dashoffset: 32;
     animation: VHMRIhZM_draw 600ms linear 300ms forwards;
+    @media screen and (max-width: 1200px) {
+      stroke: ${color.primary};
+    }
   }
   @keyframes VHMRIhZM_draw {
     100% {

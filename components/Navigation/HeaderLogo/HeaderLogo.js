@@ -7,7 +7,7 @@ const HeaderLogo = () => {
     <StyledHeaderLogo>
       <Link href="/">
         <a>
-          <Logo size="64" />
+          <Logo size="58" />
         </a>
       </Link>
       <div>
