@@ -60,9 +60,8 @@ const Sidebar = () => {
               <SidebarItem key={index} item={item} index={index} />
             ))}
           </SidebarItems>
-          <div style={{ overflow: "hidden" }}>
-            <HeaderIcons small />
-          </div>
+
+          <HeaderIcons small />
         </SidebarBox>
       </SidebarFront>
     </StyledSidebar>
