@@ -4,7 +4,7 @@ export const StyledToggleButton = styled.div``;
 export const Input = styled.input`
   display: none;
   &:checked + label div:last-child {
-    transform: translateX(3.2rem);
+    transform: translateX(3.25rem);
   }
 `;
 export const Label = styled.label`
@@ -38,11 +38,12 @@ export const RoundSlider = styled.div`
   height: 2.2rem;
   background: ${color.primaryLightest};
   border-radius: 50%;
-  top: 0.2rem;
-  left: 0.2rem;
+  left: 0.25rem;
   transition: transform 0.2s linear;
   @media screen and (max-width: 1200px) {
-    width: 3.1rem;
-    height: 2.7rem;
+    left: 0.3rem;
+    width: 2.9rem;
+    height: 2.5rem;
+    border-radius: 2rem;
   }
 `;

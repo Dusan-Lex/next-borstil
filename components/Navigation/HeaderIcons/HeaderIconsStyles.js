@@ -21,8 +21,8 @@ export const StyledHeaderIcons = styled.div`
 
     ${(props) =>
       props.small && props.sidebar
-        ? "transition: all 1s 0.7s ease-out;opacity:1"
-        : "transition: all 1s ease-out;opacity:0"};
+        ? "transition: all 0.65s 0.7s ease-out;opacity:1;transform:translateX(0)"
+        : "transition: opacity 0.6s ease-out,transform 0.6s 0.6s ease-out;opacity:0;transform:translateX(100%)"};
 
     @media screen and (max-height: 600px) {
       margin-top: 1.5rem;
