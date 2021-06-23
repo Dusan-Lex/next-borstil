@@ -1,6 +1,8 @@
 const Logo = (props) => (
   <svg
     id="Layer_1"
+    height="64"
+    width="64"
     viewBox="0 0 512 512"
     xmlns="http://www.w3.org/2000/svg"
     data-name="Layer 1"
