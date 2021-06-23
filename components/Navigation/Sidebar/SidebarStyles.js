@@ -69,6 +69,6 @@ export const Lang = styled.div`
   margin-bottom: 2rem;
   ${(props) =>
     props.sidebar
-      ? `transition: all 0.6s 0.75s ease-out;opacity:1;transform:translateX(0)`
-      : "transition: opacity 0.6s ease-out,transform 0.6s 0.6s ease-out;opacity:0;transform:translateX(-90%)"};
+      ? `transition: all 0.55s 0.75s ease-out;opacity:1;transform:translateX(0)`
+      : "transition: opacity 0.6s ease-out,transform 0.6s 0.6s ease-out;opacity:0;transform:translateX(-70%)"};
 `;
