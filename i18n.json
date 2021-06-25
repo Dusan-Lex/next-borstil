@@ -3,6 +3,7 @@
   "defaultLocale": "sr",
   "pages": {
     "*": ["common"],
+    "/": ["home"],
     "/about": ["about"]
   }
 }

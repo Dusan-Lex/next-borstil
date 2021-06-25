@@ -25,14 +25,13 @@ export const StyledHeaderIcons = styled.div`
         : "transition: opacity 0.6s ease-out,transform 0.6s 0.6s ease-out;opacity:0;transform:translateX(100%)"};
 
     @media screen and (max-height: 600px) {
-      margin-top: 1.5rem;
-      width: 40rem;
-      height: 9rem;
-    }
-    @media screen and (max-height: 500px) {
-      margin-top: 1.1rem;
+      margin-top: 0rem;
       width: 40rem;
       height: 8rem;
+    }
+    @media screen and (max-height: 400px) {
+      width: 40rem;
+      height: 6rem;
     }
   }
 `;

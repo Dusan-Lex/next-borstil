@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { color, mixin } from "../../utils/styles";
+
 export const StyledToggleButton = styled.div``;
+
 export const Input = styled.input`
   display: none;
   &:checked + label div:last-child {

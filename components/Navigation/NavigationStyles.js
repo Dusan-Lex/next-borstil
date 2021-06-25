@@ -18,6 +18,7 @@ export const Header = styled.header`
     props.hideHeaderUp ? "translateY(-4.5vh)" : "translateY(0)"};
   animation: ${headerAnimation} 1.5s forwards;
   transition: transform 0.4s linear;
+  z-index: 100;
 `;
 
 export const HeaderUp = styled.div`
@@ -83,6 +84,9 @@ export const Span = styled.span`
     width: initial;
     margin-right: 1.5rem;
 
+    @media screen and (min-height: 900px) {
+      font-size: 3.5rem;
+    }
     @media only screen and (max-height: 600px) {
       font-size: 2.5rem;
     }

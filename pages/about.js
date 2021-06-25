@@ -1,3 +1,4 @@
+import Image from "next/image";
 import useTranslation from "next-translate/useTranslation";
 const About = () => {
   let { t } = useTranslation();

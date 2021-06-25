@@ -24,8 +24,9 @@ export const font = {
 export const zIndexValues = {
   modal: 101,
   dropdown: 100,
-  sidebar: 1000,
-  burgerBtn: 1001,
+  sidebar: 10000,
+  burgerBtn: 10001,
+  header: 1000,
 };
 
 export const mixin = {

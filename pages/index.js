@@ -1,11 +1,8 @@
 import useTranslation from "next-translate/useTranslation";
+import HomeSlider from "../components/HomeSlider/HomeSlider";
 const HomePage = () => {
   let { t } = useTranslation();
-  return (
-    <div style={{ paddingTop: "20vh", height: "500rem" }}>
-      {t("common:navigation.home")}
-    </div>
-  );
+  return <HomeSlider />;
 };
 
 export default HomePage;

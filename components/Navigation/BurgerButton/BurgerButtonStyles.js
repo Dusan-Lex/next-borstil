@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { mixin, zIndexValues } from "../../../shared/utils/styles";
+import { mixin } from "../../../shared/utils/styles";
 
 export const BurgerBtn = styled.div`
   width: 10rem;
@@ -9,7 +9,7 @@ export const BurgerBtn = styled.div`
   cursor: pointer;
   ${mixin.center}
   -webkit-tap-highlight-color: transparent;
-  z-index: ${zIndexValues.burgerBtn};
+  z-index: 10;
 
   @media only screen and (min-width: 1201px) {
     display: none;
