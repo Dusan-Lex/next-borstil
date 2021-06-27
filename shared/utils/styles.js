@@ -52,11 +52,18 @@ export const mixin = {
     cursor: pointer;
     user-select: none;
   `,
-  cover: css`
+  coverViewport: css`
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
+  `,
+  coverParent: css`
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   `,
   placeholderColor: (colorValue) => css`
     ::-webkit-input-placeholder {
