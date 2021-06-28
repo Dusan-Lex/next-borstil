@@ -54,9 +54,6 @@ export const Slider = styled.div`
       ${(props) => mixin.rgba(props.theme.backgroundRev, 1)} 100%
     );
   }
-  img {
-    object-fit: cover;
-  }
 `;
 
 export const SliderArrow = styled.div`
@@ -65,9 +62,9 @@ export const SliderArrow = styled.div`
   height: 5rem;
   cursor: pointer;
   ${mixin.center}
-  border: 2px solid ${(props) => props.theme.background};
+  border: 2px solid ${color.primary};
   background-color: ${color.primaryLightest};
-  transition: border-color 0.3s 0.15s;
+  transition: transform 0.3s ease-out;
   top: 50%;
   z-index: 10;
   ${(props) => (props.left ? "left: -3.5rem;" : "right: -3.5rem;")}
@@ -90,17 +87,17 @@ export const SliderArrow = styled.div`
   }
 
   &::before {
-    background-color: ${(props) => props.theme.background};
+    background-color: ${color.secondary};
     transition: transform 0.3s ease;
   }
 
   &::after {
-    background-color: ${(props) => props.theme.backgroundRev};
+    background-color: ${color.primary};
     transition: transform 0.3s 0.16s ease;
   }
 
   &:hover {
-    border-color: ${(props) => props.theme.backgroundRev};
+    /* border-color: ${color.primary}; */
     span {
       color: ${color.primaryLightest};
     }
@@ -110,17 +107,30 @@ export const SliderArrow = styled.div`
     }
   }
 
+  &:active {
+    transform: scale(1.1);
+    border-color: ${color.secondary};
+
+    span {
+      color: ${color.primary};
+    }
+
+    &::after {
+      background-color: ${color.secondary};
+    }
+  }
+
   span {
     width: 80%;
     height: 80%;
     font-size: 3rem;
     ${mixin.center}
-    color: ${(props) => props.theme.backgroundRev};
+    color: ${color.secondary};
     transition: color 0.15s 0.15s ease;
     transform: ${(props) => (props.left ? "rotateZ(180deg)" : "")};
   }
 
-  @media screen and (max-width: 1200px) {
+  /* @media screen and (max-width: 1200px) {
     display: none;
-  }
+  } */
 `;

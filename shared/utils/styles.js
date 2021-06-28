@@ -14,11 +14,12 @@ export const color = {
 };
 
 export const font = {
-  light: 'font-family: "PoppinsLight"; font-weight: normal;',
-  regular: 'font-family: "PoppinsRegular"; font-weight: normal;',
-  medium: 'font-family: "PoppinsMedium"; font-weight: normal;',
-  semibold: 'font-family: "PoppinsSemiBold"; font-weight: normal;',
-  bold: 'font-family: "PoppinsBold"; font-weight: normal;',
+  light: 'font-family: "Poppins",sans-serif; font-weight: 300;',
+  regular: 'font-family: "Poppins",sans-serif; font-weight: 400;',
+  medium: 'font-family: "Poppins",sans-serif; font-weight: 500;',
+  semibold: 'font-family: "Poppins",sans-serif; font-weight: 600;',
+  bold: 'font-family: "Poppins",sans-serif; font-weight: 700;',
+  black: 'font-family: "Poppins",sans-serif; font-weight: 900;',
 };
 
 export const zIndexValues = {

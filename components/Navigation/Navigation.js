@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useContext, useState } from "react";
 import { useRouter } from "next/router";
 import Navbar from "./Navbar/Navbar";

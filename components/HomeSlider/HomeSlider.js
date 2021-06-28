@@ -19,7 +19,7 @@ const HomeSlider = () => {
     const next = () => {
       setSlide((slide) => (slide === length - 1 ? 0 : slide + 1));
     };
-    timeout.current = setTimeout(next, 300000);
+    timeout.current = setTimeout(next, 600000);
     return () => {
       timeout.current && clearTimeout(timeout.current);
     };
@@ -37,6 +37,24 @@ const HomeSlider = () => {
 
   return (
     <StyledHomeSlider>
+      <Image
+        src={`/images/Slider-Image-1.jpg`}
+        layout="fill"
+        objectFit="cover"
+        priority={true}
+      />
+      <Image
+        src={`/images/Slider-Image-2.jpg`}
+        layout="fill"
+        objectFit="cover"
+        priority={true}
+      />
+      <Image
+        src={`/images/Slider-Image-3.jpg`}
+        layout="fill"
+        objectFit="cover"
+        priority={true}
+      />
       <Wrapper>
         {[0, 1, 2].map((slideEl, index) => {
           return (
@@ -46,8 +64,8 @@ const HomeSlider = () => {
                   <Image
                     src={`/images/Slider-Image-${index + 1}.jpg`}
                     layout="fill"
+                    objectFit="cover"
                     priority={true}
-                    loading="eager"
                   />
                   <div className="section-slider__content">
                     <div style={{ overflow: "hidden" }}>
