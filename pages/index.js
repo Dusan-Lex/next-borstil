@@ -7,7 +7,7 @@ const HomePage = () => {
     <main>
       <HomeSlider />
       <HomeOffer />
-      <HomeDW />
+      {/* <HomeDW /> */}
     </main>
   );
 };
