@@ -1,25 +1,29 @@
-import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
+
+import useTranslation from "next-translate/useTranslation";
+import useOffsetY from "../../shared/hooks/useOffsetY";
+
 import {
   StyledHomeSlider,
   Wrapper,
   Slide,
   Slider,
+  SlideContent,
   SliderArrow,
 } from "./HomeSliderStyles";
-import useOffsetY from "../../shared/hooks/useOffsetY";
 
 const HomeSlider = () => {
   const [slide, setSlide] = useState(0);
   const timeout = useRef(null);
+  const { t } = useTranslation();
   const offSetY = useOffsetY();
-  const length = 3;
-  console.log(slide);
+  const length = 3; // number of slides
+
   useEffect(() => {
     const next = () => {
       setSlide((slide) => (slide === length - 1 ? 0 : slide + 1));
     };
-    timeout.current = setTimeout(next, 600000);
+    timeout.current = setTimeout(next, 460000);
     return () => {
       timeout.current && clearTimeout(timeout.current);
     };
@@ -37,45 +41,33 @@ const HomeSlider = () => {
 
   return (
     <StyledHomeSlider>
-      <Image
-        src={`/images/Slider-Image-1.jpg`}
-        layout="fill"
-        objectFit="cover"
-        priority={true}
-      />
-      <Image
-        src={`/images/Slider-Image-2.jpg`}
-        layout="fill"
-        objectFit="cover"
-        priority={true}
-      />
-      <Image
-        src={`/images/Slider-Image-3.jpg`}
-        layout="fill"
-        objectFit="cover"
-        priority={true}
-      />
+      <img src={`/images/Slider-Image-1.webp`} style={{ display: "none" }} />
+      <img src={`/images/Slider-Image-2.webp`} style={{ display: "none" }} />
+      <img src={`/images/Slider-Image-3.webp`} style={{ display: "none" }} />
       <Wrapper>
-        {[0, 1, 2].map((slideEl, index) => {
+        {[0, 1, 2].map((el) => {
           return (
-            <Slide key={index}>
-              {index === slide && (
-                <Slider>
-                  <Image
-                    src={`/images/Slider-Image-${index + 1}.jpg`}
-                    layout="fill"
-                    objectFit="cover"
-                    priority={true}
+            <Slider key={el}>
+              {el === slide && (
+                <Slide>
+                  <img
+                    src={`/images/Slider-Image-${el + 1}.webp`}
+                    alt={t(`home:slider.${el}.alt`)}
+                    style={{
+                      transform: `translateY(${0.2222 * offSetY}px) scale(${
+                        1 + 0.00012 * offSetY
+                      })`,
+                    }}
                   />
-                  <div className="section-slider__content">
+                  <SlideContent>
                     <div style={{ overflow: "hidden" }}>
-                      <h3>{slideEl.subtitle}</h3>
+                      <h3>{t(`home:slider.${el}.subtitle`)}</h3>
                     </div>
-                    <h1>{slideEl.title}</h1>
-                  </div>
-                </Slider>
+                    <h1>{t(`home:slider.${el}.title`)}</h1>
+                  </SlideContent>
+                </Slide>
               )}
-            </Slide>
+            </Slider>
           );
         })}
       </Wrapper>

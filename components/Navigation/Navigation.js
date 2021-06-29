@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { useRouter } from "next/router";
 import Navbar from "./Navbar/Navbar";
 import HeaderIcons from "./HeaderIcons/HeaderIcons";
@@ -40,7 +40,9 @@ const Navigation = () => {
   };
 
   return (
-    <Header hideHeaderUp={hideHeaderUp && windowSize.width > 1200}>
+    <Header
+    // hideHeaderUp={hideHeaderUp && windowSize.width > 1200}
+    >
       <HeaderUp>
         <Span>{t("common:language")}:</Span>
         <LangToggleButton

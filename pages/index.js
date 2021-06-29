@@ -1,14 +1,14 @@
-import useTranslation from "next-translate/useTranslation";
-import { Fragment } from "react";
 import HomeSlider from "../components/HomeSlider/HomeSlider";
 import HomeOffer from "../components/HomeOffer/HomeOffer";
+import HomeDW from "../components/Home/HomeDW/HomeDW";
+
 const HomePage = () => {
-  let { t } = useTranslation();
   return (
-    <Fragment>
+    <main>
       <HomeSlider />
       <HomeOffer />
-    </Fragment>
+      <HomeDW />
+    </main>
   );
 };
 

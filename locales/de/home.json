@@ -7,7 +7,7 @@
       "alt": "Haus mit Holztüren und Fenstern"
     },
     {
-      "title": "Wir bieten eine große Auswahl an verschiedenen Arten von Türen und Fenstern",
+      "title": "Wir bieten verschiedene Arten von Türen und Fenstern an",
       "subtitle": "Bestes Preis-Leistungs-Verhältnis",
       "label": "Mehr über uns",
       "alt": "Holztischlerei"
@@ -18,5 +18,11 @@
       "label": "Mehr über uns",
       "alt": "Holzverarbeitung"
     }
-  ]
+  ],
+  "offer": {
+    "natural": "Naturmaterial",
+    "longterm": "Langlebigkeit",
+    "heat": "Wärmeisolierung",
+    "sound": "Schallisolierung"
+  }
 }

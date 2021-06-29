@@ -8,7 +8,8 @@ export default createGlobalStyle`
     height: 100%;
     min-height: 100%;
     font-size: 62.5%; // 1rem=10px
-  
+    scroll-behavior: smooth;  
+
     // >1800px
     @media only screen and (min-width: 112.5em) {
       font-size: 75%;
@@ -43,6 +44,8 @@ export default createGlobalStyle`
 
   *, *:after, *:before, input[type="search"] {
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
   }
 
   a {
@@ -54,13 +57,8 @@ export default createGlobalStyle`
     list-style: none;
   }
 
-  ul, li, ol, dd, h1, h2, h3, h4, h5, h6, p {
-    padding: 0;
-    margin: 0;
-  }
-
   h1, h2, h3, h4, h5, h6, strong {
-    ${font.medium}
+    ${font.semibold}
   }
 
   button {

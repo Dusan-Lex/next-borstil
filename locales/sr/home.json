@@ -13,10 +13,16 @@
       "alt": "Drvena stolarija"
     },
     {
-      "title": "Proizvodnja stolarije i galanterije od drveta",
+      "title": "Odlikuje nas  visoki kvalitet, preciznost i pouzdanost",
       "subtitle": "Veoma efikasni u svom poslu",
       "label": "Više o nama",
       "alt": "Obrada drveta"
     }
-  ]
+  ],
+  "offer": {
+    "natural": "Prirodni materijal",
+    "longterm": "Dugotrajnost",
+    "heat": "Toplotna Izolacija",
+    "sound": "Zvučna izolacija"
+  }
 }
