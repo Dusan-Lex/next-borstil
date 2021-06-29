@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { color, mixin } from "../../shared/utils/styles";
+import { color, mixin } from "../../../shared/utils/styles";
 
 export const Offer = styled.section`
   background-color: ${(props) => props.theme.background};

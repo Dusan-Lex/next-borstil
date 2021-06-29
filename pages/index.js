@@ -1,5 +1,5 @@
-import HomeSlider from "../components/HomeSlider/HomeSlider";
-import HomeOffer from "../components/HomeOffer/HomeOffer";
+import HomeSlider from "../components/Home/HomeSlider/HomeSlider";
+import HomeOffer from "../components/Home/HomeOffer/HomeOffer";
 import HomeDW from "../components/Home/HomeDW/HomeDW";
 
 const HomePage = () => {

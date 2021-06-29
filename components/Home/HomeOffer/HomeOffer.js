@@ -7,10 +7,10 @@ import {
   OfferSvgBox,
   OfferText,
 } from "./HomeOfferStyles";
-import Natural from "../../shared/components/svgs/Natural";
-import Heat from "../../shared/components/svgs/Heat";
-import LongTerm from "../../shared/components/svgs/LongTerm";
-import Sound from "../../shared/components/svgs/Sound";
+import Natural from "../../../shared/components/svgs/Natural";
+import Heat from "../../../shared/components/svgs/Heat";
+import LongTerm from "../../../shared/components/svgs/LongTerm";
+import Sound from "../../../shared/components/svgs/Sound";
 
 const HomeOffer = () => {
   const { t } = useTranslation();

@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 
 import useTranslation from "next-translate/useTranslation";
-import useOffsetY from "../../shared/hooks/useOffsetY";
+import useOffsetY from "../../../shared/hooks/useOffsetY";
 
 import {
   StyledHomeSlider,
