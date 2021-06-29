@@ -28,12 +28,14 @@ export const DwButton = styled.button`
   letter-spacing: 0.1rem;
   cursor: pointer;
   transition: all 0.1s;
-  opacity: 0;
-  transform: translateY(260%);
-  animation: 0.7s ${(props) => props.index * 0.15}s ease-out forwards
+  animation: 0.7s ${(props) => props.index * 0.15}s ease-out backwards
     ${(props) => (props.inView ? "running" : "paused")} dwButtonsA1;
 
   @keyframes dwButtonsA1 {
+    from {
+      opacity: 0;
+      transform: translateY(260%);
+    }
     to {
       transform: translateY(0);
       opacity: 1;
@@ -44,11 +46,12 @@ export const DwButton = styled.button`
     border: 1.6px solid ${color.secondary};
     color: ${color.secondary};
   }
-
+  @media only screen and (max-width: 800px) {
+    animation: none;
+  }
   @media only screen and (max-width: 600px) {
     width: 30%;
     padding: 1rem 0;
-    animation-play-state: running;
   }
 
   @media only screen and (min-width: 1800px) {
