@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { color, mixin } from "../../../shared/utils/styles";
 
-export const StyledHomeDw = styled.section`
+export const StyledHomeDW = styled.section`
   max-width: 1200px;
   height: auto;
   background-color: ${(props) => props.theme.backgroundRev};
@@ -18,7 +18,7 @@ export const StyledHomeDw = styled.section`
   }
 `;
 
-export const HomeDwContainer = styled.div`
+export const HomeDWContainer = styled.div`
   height: 75%;
   min-height: 45rem;
   width: 90%;

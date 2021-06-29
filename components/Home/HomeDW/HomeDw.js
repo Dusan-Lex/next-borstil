@@ -6,9 +6,9 @@ import DWButtons from "./DWButtons/DWButtons";
 import Door from "../../../shared/components/svgs/Door";
 import Window from "../../../shared/components/svgs/Window";
 import Kitchen from "../../../shared/components/svgs/Kitchen";
-import { StyledHomeDw, HomeDwContainer } from "./HomeDWStyles";
+import { StyledHomeDW, HomeDWContainer } from "./HomeDWStyles";
 
-const HomeDw = () => {
+const HomeDW = () => {
   const [button, setButton] = useState("doors");
   const { t } = useTranslation();
   const { ref, inView } = useInView({
@@ -17,9 +17,9 @@ const HomeDw = () => {
   });
 
   return (
-    <StyledHomeDw ref={ref}>
+    <StyledHomeDW ref={ref}>
       <DWButtons button={button} setButton={setButton} />
-      <HomeDwContainer inView={inView}>
+      <HomeDWContainer inView={inView}>
         <div className="svg-box">
           {button === "doors" ? (
             <Door width="17.5rem" />
@@ -33,8 +33,8 @@ const HomeDw = () => {
           {t(`home:dw.${button}.text`)}
           {/* <DwButton text="Detaljnije" path="/proizvodi" /> */}
         </div>
-      </HomeDwContainer>
-    </StyledHomeDw>
+      </HomeDWContainer>
+    </StyledHomeDW>
   );
 };
 
