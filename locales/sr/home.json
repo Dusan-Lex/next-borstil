@@ -24,5 +24,19 @@
     "longterm": "Dugotrajnost",
     "heat": "Toplotna Izolacija",
     "sound": "Zvučna izolacija"
+  },
+  "dw": {
+    "doors": {
+      "title": "Vrata",
+      "text": "Izrada građevinske stolarije se vrši od čamove daske, kao i od lameliranog drveta. Vrata se proizvode i od medijapana u širokoj kutiji koja pokriva širinu zida sa štelujućim pervajz lajsnama. Površinska obrada po želji kupaca može se vršiti lazurnim i pokrivnim poliuretanskim i vodenim bojama."
+    },
+    "windows": {
+      "title": "Prozori",
+      "text": "Profil od kog se izrađuju drveni prozori je od troslojno lameliranog drveta isključivo od prvoklasne gradje (bez čvora) namenjene za drvenu stolariju. Drvo kao najplemenitiji materijal pružiće vam mnogostruko više u odnosu u ono šta u njega uložite, uz blagovremeno održavanje prirodnošću i lepotom krasiće vaš dom i davati mu nezamenljivu toplinu. "
+    },
+    "kitchens": {
+      "title": "Kuhinje",
+      "text": "Dolazimo i pomažemo u odabiru i sklapanju kuhinja. Cene zavise od vrste kuhinja, delova koji izaberete, kao i od dimenzija vaših kuhinja. Tri glavne osobenost koje karakterišu naše kuhinje po meri jesu kvalitet izrade, preciznost montaže i poštovanje rokova. Pogledajte kuhinje koje je naš tim sklopio i montirao!"
+    }
   }
 }

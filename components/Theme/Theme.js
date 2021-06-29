@@ -8,6 +8,7 @@ const themes = {
     backgroundRev: "#563727",
     text: {
       regular: "#563727",
+      regularRev: "#faf1e4",
       hover: "#faf1e4",
       slider: "#b16e17",
       sliderRev: "#563727",
@@ -26,6 +27,7 @@ const themes = {
     backgroundRev: "#de9e48",
     text: {
       regular: "#faf1e4",
+      regularRev: "#563727",
       hover: "#de9e48",
       slider: "#563727",
       sliderRev: "#b16e17",

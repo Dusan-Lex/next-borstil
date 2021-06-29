@@ -23,7 +23,7 @@ const HomeSlider = () => {
     const next = () => {
       setSlide((slide) => (slide === length - 1 ? 0 : slide + 1));
     };
-    timeout.current = setTimeout(next, 460000);
+    timeout.current = setTimeout(next, 4600);
     return () => {
       timeout.current && clearTimeout(timeout.current);
     };

@@ -36,11 +36,13 @@ export const mixin = {
     align-items: center;
     justify-content: center;
   `,
+
   darken: (colorValue, amount) => Color(colorValue).darken(amount).string(),
   lighten: (colorValue, amount) => Color(colorValue).lighten(amount).string(),
   rgba: (colorValue, opacity) => Color(colorValue).alpha(opacity).string(),
+
   boxShadowHeader: css`
-    box-shadow: 0 0.3rem 1.4rem -0.8rem ${color.secondaryDark};
+    box-shadow: 0 0.3rem 1.4rem -0.8rem ${(props) => props.theme.backgroundRev};
   `,
   boxShadowPopup: css`
     box-shadow: 0 0 0.5rem -1px ${(props) => props.theme.background};
@@ -49,10 +51,7 @@ export const mixin = {
     box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
       rgba(9, 30, 66, 0.31) 0px 0px 1px;
   `,
-  clickable: css`
-    cursor: pointer;
-    user-select: none;
-  `,
+
   coverViewport: css`
     top: 0;
     left: 0;
