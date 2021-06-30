@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { color } from "../../../../shared/utils/styles";
+import { color, mixin } from "../../../../shared/utils/styles";
 
 export const StyledDwButtons = styled.div`
   height: 15%;
@@ -24,7 +24,7 @@ export const DwButton = styled.button`
   text-transform: uppercase;
   background-color: transparent;
   color: ${(props) => props.theme.text.regularRev};
-  border: 1.8px solid ${(props) => props.theme.text.regularRev};
+  border: 1.8px solid ${(props) => props.theme.background};
   letter-spacing: 0.1rem;
   cursor: pointer;
   transition: all 0.1s;
@@ -61,7 +61,7 @@ export const DwButton = styled.button`
   &.active {
     background-color: ${(props) => props.theme.background};
     color: ${color.primaryLightest};
-    box-shadow: 0 1px 9px -2px rgba(256, 256, 256, 0.5);
+    box-shadow: 0 1px 9px -2px ${(props) => mixin.rgba(props.theme.background, 0.5)};
     @media only screen and (max-width: 600px) {
       border: 1.6px solid ${color.secondary};
       background-color: ${color.primary};
@@ -72,7 +72,7 @@ export const DwButton = styled.button`
     @media only screen and (min-width: 1200px) {
       color: ${color.primaryLightest};
       border: 1.8px solid ${color.primaryLightest};
-      box-shadow: 0 1px 9px -2px rgba(256, 256, 256, 0.5);
+      box-shadow: 0 1px 9px -2px ${(props) => mixin.rgba(props.theme.background, 0.5)};
       @media only screen and (max-width: 600px) {
         border: 1.6px solid ${color.primaryLightest};
       }

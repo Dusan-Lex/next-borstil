@@ -3,6 +3,7 @@ import { useInView } from "react-intersection-observer";
 import useTranslation from "next-translate/useTranslation";
 
 import DWButtons from "./DWButtons/DWButtons";
+import ArrowButton from "../../../shared/components/Buttons/ArrowButton/ArrowButton";
 import Door from "../../../shared/components/svgs/Door";
 import Window from "../../../shared/components/svgs/Window";
 import Kitchen from "../../../shared/components/svgs/Kitchen";
@@ -31,7 +32,9 @@ const HomeDW = () => {
         </div>
         <div className="details">
           {t(`home:dw.${button}.text`)}
-          {/* <DwButton text="Detaljnije" path="/proizvodi" /> */}
+          <ArrowButton path="/products" dark>
+            {t(`home:dw.${button}.button`)}
+          </ArrowButton>
         </div>
       </HomeDWContainer>
     </StyledHomeDW>

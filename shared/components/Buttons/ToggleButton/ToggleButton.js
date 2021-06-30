@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
   StyledToggleButton,
   Input,
@@ -6,6 +5,7 @@ import {
   RoundSlider,
   Wrapper,
 } from "./ToggleButtonStyles";
+
 const ToggleButton = (props) => {
   return (
     <StyledToggleButton className={props.className}>

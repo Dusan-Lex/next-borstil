@@ -28,15 +28,18 @@
   "dw": {
     "doors": {
       "title": "Türen",
-      "text": "Die Bautischlerei besteht aus Kiefernbrettern sowie aus Schichtholz. Die Türen sind ebenfalls aus MDF in einem breiten Kasten, der die Breite der Wand mit verstellbaren Sockelleisten abdeckt. Die Oberflächenbehandlung kann nach Kundenwunsch mit azurblauen und Polyurethan- und Wasserlacken erfolgen."
+      "text": "Die Bautischlerei besteht aus Kiefernbrettern sowie aus Schichtholz. Die Türen sind ebenfalls aus MDF in einem breiten Kasten, der die Breite der Wand mit verstellbaren Sockelleisten abdeckt. Die Oberflächenbehandlung kann nach Kundenwunsch mit azurblauen und Polyurethan- und Wasserlacken erfolgen.",
+      "button": "Ausführlicher"
     },
     "windows": {
       "title": "Fenster",
-      "text": "Das Profil, aus dem Holzfenster hergestellt werden, besteht aus dreischichtigem Brettschichtholz ausschließlich aus erstklassigen Materialien (ohne Äste), die für die Holztischlerei bestimmt sind. Holz als edelstes Material gibt Ihnen ein Vielfaches mehr, als Sie in es investieren, bei rechtzeitiger Pflege wird es Ihr Zuhause mit Natürlichkeit und Schönheit schmücken und ihm unersetzliche Wärme verleihen."
+      "text": "Das Profil, aus dem Holzfenster hergestellt werden, besteht aus dreischichtigem Brettschichtholz ausschließlich aus erstklassigen Materialien (ohne Äste), die für die Holztischlerei bestimmt sind. Holz als edelstes Material gibt Ihnen ein Vielfaches mehr, als Sie in es investieren, bei rechtzeitiger Pflege wird es Ihr Zuhause mit Natürlichkeit und Schönheit schmücken und ihm unersetzliche Wärme verleihen.",
+      "button": "Ausführlicher"
     },
     "kitchens": {
       "title": "Küche",
-      "text": "Wir kommen und helfen bei der Auswahl und Montage von Küchen. Die Preise hängen von der Art der Küche, den von Ihnen gewählten Teilen sowie den Abmessungen Ihrer Küche ab. Die drei Hauptmerkmale, die unsere Sonderküchen auszeichnen, sind die Verarbeitungsqualität, die Präzision der Montage und die Einhaltung von Terminen. Schauen Sie sich die Küchen an, die unser Team montiert und installiert hat!"
+      "text": "Wir kommen und helfen bei der Auswahl und Montage von Küchen. Die Preise hängen von der Art der Küche, den von Ihnen gewählten Teilen sowie den Abmessungen Ihrer Küche ab. Die drei Hauptmerkmale, die unsere Sonderküchen auszeichnen, sind die Verarbeitungsqualität, die Präzision der Montage und die Einhaltung von Terminen. Schauen Sie sich die Küchen an, die unser Team montiert und installiert hat!",
+      "button": "Ausführlicher"
     }
   }
 }

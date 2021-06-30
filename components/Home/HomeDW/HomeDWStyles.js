@@ -24,6 +24,7 @@ export const HomeDWContainer = styled.div`
   width: 90%;
   margin: 0 auto;
   padding: 1rem 1rem;
+  border: 2px solid ${color.primary};
   background-color: ${color.secondary};
   ${mixin.center}
   flex-direction: row;
