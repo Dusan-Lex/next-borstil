@@ -46,7 +46,7 @@ const Navigation = () => {
       <HeaderUp>
         <Span>{t("common:language")}:</Span>
         <LangToggleButton
-          id="lang"
+          id="langMain"
           left="DE"
           right="SR"
           onChangeInput={localeChangeHandler}

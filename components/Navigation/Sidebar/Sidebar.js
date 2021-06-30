@@ -29,6 +29,7 @@ const Sidebar = () => {
   const { t } = useTranslation();
 
   const localeChangeHandler = () => {
+    sidebarCtx.toggleSidebar();
     router.push(router.asPath, router.asPath, {
       locale: router.locale === "sr" ? "de" : "sr",
     });
@@ -46,7 +47,7 @@ const Sidebar = () => {
             <Lang sidebar={sidebarCtx.sidebar}>
               <Span sidebar={sidebarCtx.sidebar}>{t("common:language")}:</Span>
               <LangToggleButton
-                id="lang"
+                id="langSide"
                 left="DE"
                 right="SR"
                 onChangeInput={localeChangeHandler}
