@@ -3,8 +3,6 @@ import { color } from "../../../shared/utils/styles";
 import { mixin } from "../../../shared/utils/styles";
 
 export const StyledSidebar = styled.div`
-  position: fixed;
-  ${mixin.coverViewport}
   @media screen and (min-width: 1201px) {
     display: none;
   }
