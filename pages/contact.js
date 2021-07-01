@@ -1,5 +1,5 @@
 const Contact = () => {
-  return <div style={{ paddingTop: "20vh", height: "500rem" }}>Kontakt</div>;
+  return <div style={{ paddingTop: "20vh", height: "70rem" }}>Kontakt</div>;
 };
 
 export default Contact;

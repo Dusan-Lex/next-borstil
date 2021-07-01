@@ -9,7 +9,6 @@ export const StyledAnchor = styled.a`
   padding: 0.3rem 4rem;
   font-size: 2rem;
   display: inline-block;
-  text-decoration: none;
   transform: translateZ(0);
   transition: all 0.2s;
   box-shadow: 0 0 13px -7px ${color.primaryLightest};

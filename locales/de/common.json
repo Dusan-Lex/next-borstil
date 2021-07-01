@@ -12,5 +12,10 @@
     "phone": "Rufen Sie uns an",
     "mail": "Schreiben Sie uns",
     "follow": "Folgen Sie uns"
+  },
+  "footer": {
+    "nav": ["Über uns", "Türen", "Fenster"],
+    "contact": ["Adresse", "Telefone"],
+    "logo": "Türen und Fenster"
   }
 }

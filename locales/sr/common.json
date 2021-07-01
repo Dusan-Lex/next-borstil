@@ -12,5 +12,10 @@
     "phone": "Pozovite nas",
     "mail": "Pišite nam",
     "follow": "Pratite nas"
+  },
+  "footer": {
+    "nav": ["O nama", "Vrata", "Prozori"],
+    "contact": ["Adresa", "Telefoni"],
+    "logo": "Vrata i prozori"
   }
 }

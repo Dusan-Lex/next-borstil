@@ -25,7 +25,6 @@ export const Item = styled.li`
 
   a {
     color: ${color.primaryLightest};
-    text-decoration: none;
     &:hover {
       color: ${color.primary};
     }

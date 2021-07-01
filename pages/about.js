@@ -3,7 +3,7 @@ import useTranslation from "next-translate/useTranslation";
 const About = () => {
   let { t } = useTranslation();
   return (
-    <div style={{ paddingTop: "20vh", height: "500rem" }}>
+    <div style={{ paddingTop: "20vh", height: "70rem" }}>
       {t("common:navigation.about")}
     </div>
   );
