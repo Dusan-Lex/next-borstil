@@ -27,7 +27,7 @@ export const Loading = styled.div`
       letter-spacing: 0.5rem;
       text-transform: uppercase;
       color: ${color.primaryLightest};
-      animation: in 1s forwards;
+      animation: in 1s 0.3s backwards;
       @keyframes in {
         0% {
           transform: translateY(100%);

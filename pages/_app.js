@@ -49,7 +49,7 @@ function MyApp({ Component, pageProps }) {
         }, 600);
       }
       setTimer(true);
-    }, 1800);
+    }, 2000);
   }, []);
 
   return (
