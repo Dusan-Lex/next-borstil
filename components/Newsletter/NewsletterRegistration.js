@@ -63,7 +63,7 @@ const NewsletterRegistration = () => {
           ),
           status: "error",
         });
-        emailInputRef.current.focus();
+        // emailInputRef.current.focus();
       });
   };
   return (
