@@ -63,6 +63,8 @@ export const NewsletterButton = styled.button`
   font-size: 1.8rem;
   cursor: pointer;
   transition: 0.1s ease-out;
+  display: flex;
+  align-items: center;
 
   &:hover {
     background-color: ${(props) => mixin.darken(props.theme.background, 0.4)};
