@@ -4,7 +4,7 @@ import useTranslation from "next-translate/useTranslation";
 import SidebarContext from "../../../store/sidebarContext";
 import HeaderIcons from "../HeaderIcons/HeaderIcons";
 import SidebarItem from "./SidebarItem/SidebarItem";
-import { Span, LangToggleButton } from "../NavigationStyles";
+import { LangSpan, LangToggleButton } from "../NavigationStyles";
 import {
   SidebarBack,
   SidebarFront,
@@ -45,7 +45,9 @@ const Sidebar = () => {
         <SidebarBox>
           <div style={{ overflow: "hidden" }}>
             <Lang sidebar={sidebarCtx.sidebar}>
-              <Span sidebar={sidebarCtx.sidebar}>{t("common:language")}:</Span>
+              <LangSpan sidebar={sidebarCtx.sidebar}>
+                {t("common:language")}:
+              </LangSpan>
               <LangToggleButton
                 id="langSide"
                 left="DE"

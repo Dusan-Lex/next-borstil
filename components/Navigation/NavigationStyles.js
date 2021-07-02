@@ -2,21 +2,13 @@ import styled, { keyframes } from "styled-components";
 import { color, mixin, font } from "../../shared/utils/styles";
 import ToggleButton from "../../shared/components/Buttons/ToggleButton/ToggleButton";
 
-const headerAnimation = keyframes`
-  to {
-    opacity: 1;
-  }
-`;
-
 export const Header = styled.header`
   position: fixed;
   top: 0;
   width: 100%;
-  opacity: 0;
   ${mixin.boxShadowHeader};
   transform: ${(props) =>
     props.hideHeaderUp ? "translateY(-4.5vh)" : "translateY(0)"};
-  animation: ${headerAnimation} 1.5s forwards;
   transition: transform 0.4s linear;
   z-index: 100;
 `;
@@ -57,7 +49,7 @@ export const HeaderDown = styled.div`
 
 export const ThemeToggleButton = styled(ToggleButton)`
   position: absolute;
-  right: 10rem;
+  right: 25rem;
 `;
 export const LangToggleButton = styled(ToggleButton)`
   display: inline-block;
@@ -68,7 +60,7 @@ export const LangToggleButton = styled(ToggleButton)`
     left: initial;
   }
 `;
-export const Span = styled.span`
+export const LangSpan = styled.span`
   position: absolute;
   left: 5rem;
   color: ${color.secondary};
@@ -94,4 +86,12 @@ export const Span = styled.span`
       font-size: 2rem;
     }
   }
+`;
+export const ThemeSpan = styled.span`
+  position: absolute;
+  right: 10rem;
+  color: ${color.secondary};
+  font-size: 1.8rem;
+  width: 14rem;
+  text-align: left;
 `;

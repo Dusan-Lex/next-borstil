@@ -1,5 +1,6 @@
 {
   "language": "Sprache auswählen",
+  "theme": ["Tag-Modus", "Nacht-Modus"],
   "navigation": {
     "home": "Home",
     "about": "Über uns",

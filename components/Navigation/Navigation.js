@@ -9,7 +9,8 @@ import {
   HeaderDown,
   ThemeToggleButton,
   LangToggleButton,
-  Span,
+  LangSpan,
+  ThemeSpan,
 } from "./NavigationStyles";
 import useHideHeaderUp from "../../shared/hooks/useHideHeaderUp";
 import ThemeContext from "../../store/themeContext";
@@ -44,7 +45,7 @@ const Navigation = () => {
     // hideHeaderUp={hideHeaderUp && windowSize.width > 1200}
     >
       <HeaderUp>
-        <Span>{t("common:language")}:</Span>
+        <LangSpan>{t("common:language")}:</LangSpan>
         <LangToggleButton
           id="langMain"
           left="DE"
@@ -60,6 +61,9 @@ const Navigation = () => {
           onChangeInput={themeChangeHandler}
           checkedInput={theme === "light"}
         />
+        <ThemeSpan>
+          {theme === "light" ? t("common:theme.0") : t("common:theme.1")}
+        </ThemeSpan>
       </HeaderUp>
       <HeaderDown>
         <HeaderLogo />

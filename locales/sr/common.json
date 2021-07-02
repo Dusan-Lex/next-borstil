@@ -1,5 +1,6 @@
 {
   "language": "Izaberite jezik",
+  "theme": ["Dnevni režim", "Noćni režim"],
   "navigation": {
     "home": "Naslovna",
     "about": "O nama",

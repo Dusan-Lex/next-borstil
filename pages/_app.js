@@ -1,7 +1,8 @@
+import { useState, useEffect, useRef } from "react";
 import Head from "next/head";
 import NormalizeStyles from "../styles/NormalizeStyles";
 import BaseStyles from "../styles/BaseStyles";
-import { useEffect } from "react";
+import LoadingFirst from "../components/LoadingFirst/LoadingFirst";
 import Navigation from "../components/Navigation/Navigation";
 import NewsletterRegistration from "../components/Newsletter/NewsletterRegistration";
 import Footer from "../components/Footer/Footer";
@@ -11,23 +12,46 @@ import { SidebarContextProvider } from "../store/sidebarContext";
 import Theme from "../components/Theme/Theme";
 
 function MyApp({ Component, pageProps }) {
-  // useEffect(() => {
-  //   if ("serviceWorker" in navigator) {
-  //     window.addEventListener("load", function () {
-  //       navigator.serviceWorker.register("/sw.js").then(
-  //         function (registration) {
-  //           console.log(
-  //             "Service Worker registration successful with scope: ",
-  //             registration.scope
-  //           );
-  //         },
-  //         function (err) {
-  //           console.log("Service Worker registration failed: ", err);
-  //         }
-  //       );
-  //     });
-  //   }
-  // }, []);
+  const [loadingClass, setLoadingClass] = useState("");
+  const [loadingContent, setLoadingContent] = useState(false);
+  const [timer, setTimer] = useState(false);
+
+  const loadingContentRef = useRef();
+  loadingContentRef.current = loadingContent;
+
+  const timerRef = useRef();
+  timerRef.current = timer;
+
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    window.addEventListener("load", showPage);
+    function showPage() {
+      if (timerRef.current) {
+        setLoadingClass("out");
+        setTimeout(() => {
+          document.body.style.overflow = "";
+        }, 600);
+      } else {
+        setLoadingContent(true);
+      }
+    }
+    return () => {
+      window.removeEventListener("load", showPage);
+    };
+  }, []);
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (loadingContentRef.current) {
+        setLoadingClass("out");
+        setTimeout(() => {
+          document.body.style.overflow = "";
+        }, 600);
+      }
+      setTimer(true);
+    }, 1800);
+  }, []);
+
   return (
     <ThemeContextProvider>
       <Theme>
@@ -70,6 +94,7 @@ function MyApp({ Component, pageProps }) {
             </Head>
             <NormalizeStyles />
             <BaseStyles />
+            <LoadingFirst loadingClass={loadingClass} />
             <Navigation />
             <Component {...pageProps} />
             <NewsletterRegistration />

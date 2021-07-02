@@ -11,7 +11,7 @@ const HeaderLogo = () => {
         </a>
       </Link>
       <div>
-        <h3 className="header-logo__text">Bor Stil</h3>
+        <h3>Bor Stil</h3>
       </div>
     </StyledHeaderLogo>
   );

@@ -7,19 +7,7 @@ export const StyledHomeSlider = styled.section`
   position: relative;
   max-width: 1450px;
   margin: auto;
-  animation: sliderA1 0.9s ease forwards;
   background-color: ${color.primaryLightest};
-
-  @keyframes sliderA1 {
-    0% {
-      opacity: 0.9;
-      /* transform: translateY(-30%); */
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
 `;
 
 export const Wrapper = styled.div`

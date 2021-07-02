@@ -22,7 +22,9 @@ export const StyledHeaderLogo = styled.div`
 
     h3 {
       height: 100%;
+      font-family: "Playfair Display", serif;
       font-size: 2.3rem;
+      letter-spacing: 1px;
       text-transform: uppercase;
       transform: translateX(-12rem);
       transition: transform 0.7s ease-in-out;

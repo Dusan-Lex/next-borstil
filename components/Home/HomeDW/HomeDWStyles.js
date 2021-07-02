@@ -13,7 +13,7 @@ export const StyledHomeDW = styled.section`
   margin-top: -6.1rem;
 
   @media only screen and (max-width: 1200px) {
-    background-color: white;
+    background-color: ${color.primaryLightest};
     padding-top: 3rem;
   }
 `;

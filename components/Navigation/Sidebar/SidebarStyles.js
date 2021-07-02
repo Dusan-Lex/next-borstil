@@ -9,7 +9,6 @@ export const StyledSidebar = styled.div`
 `;
 
 export const SidebarBack = styled.div`
-  position: fixed;
   ${mixin.coverViewport};
   background-color: ${color.backdrop};
   opacity: ${(props) => (props.show ? 1 : 0)};

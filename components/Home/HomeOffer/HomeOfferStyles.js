@@ -3,16 +3,10 @@ import { color, mixin } from "../../../shared/utils/styles";
 
 export const Offer = styled.section`
   background-color: ${(props) => props.theme.background};
-  opacity: 0.5;
-  animation: offerA1 1.5s forwards;
   position: relative;
   padding-top: 4.5rem;
   padding-bottom: 6rem;
-  @keyframes offerA1 {
-    100% {
-      opacity: 1;
-    }
-  }
+
   @media only screen and (max-width: 1200px) {
     margin-top: -2px;
     padding-top: 0;

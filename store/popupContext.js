@@ -13,7 +13,7 @@ export const PopupContextProvider = (props) => {
     if (popup && (popup.status === "success" || popup.status === "error")) {
       const timer = setTimeout(() => {
         setPopup(null);
-      }, 3000);
+      }, 4000);
       return () => {
         clearTimeout(timer);
       };
