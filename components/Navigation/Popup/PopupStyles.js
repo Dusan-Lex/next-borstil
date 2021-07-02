@@ -71,11 +71,11 @@ export const StyledPopup = styled.div`
   }
 `;
 
-export const Title = styled.h3`
+export const Title = styled.h5`
   color: ${(props) => props.theme.background};
   font-size: 2.4rem;
   animation: ${titleAnimation} 1s backwards;
-
+  text-align: center;
   @media screen and (max-width: 1200px) {
     color: ${color.secondary};
     font-size: 3rem;
@@ -88,8 +88,9 @@ export const Title = styled.h3`
   }
 `;
 
-export const Text = styled.div`
+export const Text = styled.p`
   color: ${color.primaryLightest};
+  text-align: center;
   animation: ${textAnimation} 1s ${(props) => (props.text2 ? "0.25s" : "0.1s")}
     backwards;
 

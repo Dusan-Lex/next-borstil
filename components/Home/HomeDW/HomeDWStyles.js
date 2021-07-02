@@ -119,7 +119,6 @@ export const HomeDWContainer = styled.div`
     &::after {
       content: "";
       ${mixin.coverParent}
-      position: absolute;
       z-index: -1;
       transform: scale(0.2, 0.27);
     }

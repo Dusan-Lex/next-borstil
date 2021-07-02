@@ -3,6 +3,7 @@ import NormalizeStyles from "../styles/NormalizeStyles";
 import BaseStyles from "../styles/BaseStyles";
 import { useEffect } from "react";
 import Navigation from "../components/Navigation/Navigation";
+import NewsletterRegistration from "../components/Newsletter/NewsletterRegistration";
 import Footer from "../components/Footer/Footer";
 import { ThemeContextProvider } from "../store/themeContext";
 import { PopupContextProvider } from "../store/popupContext";
@@ -71,6 +72,7 @@ function MyApp({ Component, pageProps }) {
             <BaseStyles />
             <Navigation />
             <Component {...pageProps} />
+            <NewsletterRegistration />
             <Footer />
           </SidebarContextProvider>
         </PopupContextProvider>

@@ -13,6 +13,26 @@
     "mail": "Pišite nam",
     "follow": "Pratite nas"
   },
+  "newsletter": {
+    "title": "Prijava za newsletter",
+    "subtitle": "Ne propustite sledeću akciju ili promociju",
+    "placeholder": "Unesite svoju email adresu",
+    "send": "Pošalji",
+    "pending": {
+      "title": "Prijava",
+      "subtitle": "Prijavljivanje u toku..."
+    },
+    "success": {
+      "title": "Uspešna prijava",
+      "subtitle": "Uspešno ste se prijavili za Newsletter"
+    },
+    "error": {
+      "title": "Neuspešna prijava",
+      "subtitle1": "Uneli ste neispravnu email adresu",
+      "subtitle2": "Desio se problem prilikom registracije",
+      "subtitle3": "Već ste prijavljeni za Newsletter"
+    }
+  },
   "footer": {
     "nav": ["O nama", "Vrata", "Prozori"],
     "contact": ["Adresa", "Telefoni"],

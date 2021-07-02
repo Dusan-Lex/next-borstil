@@ -65,6 +65,7 @@ export const mixin = {
     width: 100%;
     height: 100%;
   `,
+
   placeholderColor: (colorValue) => css`
     ::-webkit-input-placeholder {
       color: ${colorValue} !important;
@@ -93,7 +94,7 @@ export const mixin = {
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: ${color.backgroundLight};
+    /* background-color: ${color.backgroundLight}; */
   `,
   link: (colorValue = color.textLink) => css`
     cursor: pointer;

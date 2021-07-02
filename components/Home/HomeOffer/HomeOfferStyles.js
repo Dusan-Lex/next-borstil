@@ -84,7 +84,6 @@ export const OfferSvgBox = styled.figure`
 
   &::after {
     content: "";
-    position: absolute;
     ${mixin.coverParent}
     border: 2px solid ${color.primary};
     border-radius: 50%;

@@ -13,6 +13,26 @@
     "mail": "Schreiben Sie uns",
     "follow": "Folgen Sie uns"
   },
+  "newsletter": {
+    "title": "Newsletter-Anmeldung",
+    "subtitle": "Verpassen Sie nicht die nächste Aktion oder Aktion",
+    "placeholder": "Geben sie ihre E-Mailadresse ein",
+    "send": "Senden",
+    "pending": {
+      "title": "Einchecken",
+      "subtitle": "Anmeldung läuft..."
+    },
+    "success": {
+      "title": "Erfolgreiche Bewerbung",
+      "subtitle": "Sie haben den Newsletter erfolgreich abonniert"
+    },
+    "error": {
+      "title": "Fehlgeschlagene Anmeldung",
+      "subtitle1": "Sie haben eine ungültige Email-Adresse eingegeben",
+      "subtitle2": "Bei der Registrierung ist ein Problem aufgetreten",
+      "subtitle3": "Sie haben den Newsletter bereits abonniert"
+    }
+  },
   "footer": {
     "nav": ["Über uns", "Türen", "Fenster"],
     "contact": ["Adresse", "Telefone"],

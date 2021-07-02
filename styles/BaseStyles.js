@@ -8,7 +8,6 @@ export default createGlobalStyle`
     height: 100%;
     min-height: 100%;
     font-size: 62.5%; // 1rem=10px
-    scroll-behavior: smooth;  
 
     // >1800px
     @media only screen and (min-width: 112.5em) {

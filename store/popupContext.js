@@ -1,4 +1,4 @@
-import { useState, createContext } from "react";
+import { useState, useEffect, createContext } from "react";
 
 const PopupContext = createContext({
   popup: null,
@@ -8,6 +8,17 @@ const PopupContext = createContext({
 
 export const PopupContextProvider = (props) => {
   const [popup, setPopup] = useState(null);
+
+  useEffect(() => {
+    if (popup && (popup.status === "success" || popup.status === "error")) {
+      const timer = setTimeout(() => {
+        setPopup(null);
+      }, 3000);
+      return () => {
+        clearTimeout(timer);
+      };
+    }
+  }, [popup]);
 
   const showPopupHandler = (popupData) => {
     setPopup(popupData);

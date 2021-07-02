@@ -45,7 +45,6 @@ export const Slide = styled.div`
   animation: sliderA4 0.5s forwards;
 
   img {
-    position: absolute;
     ${mixin.coverParent}
     object-fit: cover;
   }

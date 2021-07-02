@@ -8,7 +8,7 @@ const Popup = () => {
     <StyledPopup className={`${popupCtx.popup ? "animate" : ""}`}>
       {popupCtx.popup && (
         <Fragment>
-          <Title key={popupCtx.popup.title}>{popupCtx.popup.title}:</Title>
+          <Title key={popupCtx.popup.title}>{popupCtx.popup.title}</Title>
           <div style={{ overflow: "hidden" }}>
             <Text key={popupCtx.popup.title}>{popupCtx.popup.text1}</Text>
           </div>

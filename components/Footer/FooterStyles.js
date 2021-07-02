@@ -47,7 +47,6 @@ export const FooterNav = styled.div`
         }
         &::after {
           content: "";
-          position: absolute;
           ${mixin.coverParent}
           border-bottom: 2px solid ${color.primary};
           transform: scaleX(0);
