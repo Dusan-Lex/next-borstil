@@ -44,7 +44,7 @@ export const NewsletterInput = styled.input`
   ${mixin.placeholderColor(color.secondaryLight)};
   color: ${color.secondary};
   width: 37rem;
-  height: 3.5rem;
+  height: 4rem;
   line-height: 3.5rem;
   font-size: 1.8rem;
   padding: 0.25rem 1rem;
@@ -54,7 +54,7 @@ export const NewsletterInput = styled.input`
   border: 0.1rem solid ${color.primaryLightest};
 `;
 export const NewsletterButton = styled.button`
-  height: 3.5rem;
+  height: 4rem;
   padding: 0.25rem 2rem;
   background-color: ${(props) => props.theme.backgroundRev};
   border-radius: 6px;
