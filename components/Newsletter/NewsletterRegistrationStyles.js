@@ -45,6 +45,7 @@ export const NewsletterInput = styled.input`
   color: ${color.secondary};
   width: 37rem;
   height: 3.5rem;
+  line-height: 3.5rem;
   font-size: 1.8rem;
   padding: 0.25rem 1rem;
   border-radius: 4px;
