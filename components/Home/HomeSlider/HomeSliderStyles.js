@@ -8,13 +8,15 @@ export const StyledHomeSlider = styled.section`
   max-width: 1450px;
   margin: auto;
   background-color: ${color.primaryLightest};
-  animation: sliderA1 0.9s 2.7s ease backwards;
+  animation: sliderA1 0.9s ${(props) => `${props.time + 0.8}s`} ease backwards;
   @keyframes sliderA1 {
     0% {
       opacity: 0.9;
+      /* transform: translateY(-30%); */
     }
     100% {
       opacity: 1;
+      /* transform: translateY(0); */
     }
   }
 `;
@@ -39,7 +41,9 @@ export const Slide = styled.div`
   padding-left: 15rem;
   align-items: center;
   opacity: 0.5;
-  animation: sliderA4 0.5s ${(props) => (props.first ? "2.7s" : "")} forwards;
+  animation: sliderA4 0.5s
+    ${(props) => (props.first && props.time ? `${props.time + 0.8}s` : "")}
+    forwards;
 
   img {
     ${mixin.coverParent}
@@ -111,7 +115,9 @@ export const SlideContent = styled.div`
     border-left: 3px solid ${color.primaryDark};
     z-index: -1;
     transform: scaleY(0);
-    animation: sliderA2 0.8s ${(props) => (props.first ? "3.2s" : "0.5s")}
+    animation: sliderA2 0.8s
+      ${(props) =>
+        props.first && props.time ? `${props.time + 1.3}s` : "0.5s"}
       ease-out forwards;
   }
   @keyframes sliderA2 {
@@ -125,7 +131,8 @@ export const SlideContent = styled.div`
     color: ${(props) => props.theme.text.slider};
     transform: translateX(10rem);
     opacity: 0;
-    animation: sliderA3 0.8s ${(props) => (props.first ? "2.9s" : "0.2s")}
+    animation: sliderA3 0.8s
+      ${(props) => (props.first && props.time ? `${props.time + 1}s` : "0.2s")}
       ease-out forwards;
     @keyframes sliderA3 {
       100% {
@@ -152,7 +159,8 @@ export const SlideContent = styled.div`
     color: ${(props) => props.theme.text.sliderRev};
     transform: translateY(3rem);
     opacity: 0.5;
-    animation: sliderA5 0.8s ${(props) => (props.first ? "2.9s" : "0.2s")}
+    animation: sliderA5 0.8s
+      ${(props) => (props.first && props.time ? `${props.time + 1}s` : "0.2s")}
       ease-out forwards;
     @keyframes sliderA5 {
       100% {

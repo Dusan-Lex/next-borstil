@@ -12,10 +12,10 @@ import Heat from "../../../shared/components/svgs/Heat";
 import LongTerm from "../../../shared/components/svgs/LongTerm";
 import Sound from "../../../shared/components/svgs/Sound";
 
-const HomeOffer = () => {
+const HomeOffer = (props) => {
   const { t } = useTranslation();
   return (
-    <Offer>
+    <Offer time={props.loadingTime / 1000}>
       <OfferContainer>
         <OfferList>
           <OfferListItem>

@@ -12,7 +12,7 @@ import {
   SliderArrow,
 } from "./HomeSliderStyles";
 
-const HomeSlider = () => {
+const HomeSlider = (props) => {
   const [slide, setSlide] = useState(0);
   const timeout = useRef(null);
   const [first, setFirst] = useState(true);
@@ -24,16 +24,14 @@ const HomeSlider = () => {
     const next = () => {
       setSlide((slide) => (slide === length - 1 ? 0 : slide + 1));
     };
-    if (first) {
-      timeout.current = setTimeout(next, 7000);
-      setTimeout(() => setFirst(false), 5000);
-    } else {
-      timeout.current = setTimeout(next, 4600);
+    timeout.current = setTimeout(next, 4600);
+    if (first && props.loadingTime) {
+      setTimeout(() => setFirst(false), 3600);
     }
     return () => {
       timeout.current && clearTimeout(timeout.current);
     };
-  }, [slide]);
+  }, [slide, props.loadingTime]);
 
   const nextSlide = () => {
     timeout.current && clearTimeout(timeout.current);
@@ -46,7 +44,7 @@ const HomeSlider = () => {
   };
 
   return (
-    <StyledHomeSlider>
+    <StyledHomeSlider time={props.loadingTime / 1000}>
       <img src={`/images/Slider-Image-1.webp`} style={{ display: "none" }} />
       <img src={`/images/Slider-Image-2.webp`} style={{ display: "none" }} />
       <img src={`/images/Slider-Image-3.webp`} style={{ display: "none" }} />
@@ -55,7 +53,7 @@ const HomeSlider = () => {
           return (
             <Slider key={el}>
               {el === slide && (
-                <Slide first={first}>
+                <Slide first={first} time={props.loadingTime / 1000}>
                   <img
                     src={`/images/Slider-Image-${el + 1}.webp`}
                     alt={t(`home:slider.${el}.alt`)}
@@ -65,7 +63,7 @@ const HomeSlider = () => {
                       })`,
                     }}
                   />
-                  <SlideContent first={first}>
+                  <SlideContent first={first} time={props.loadingTime / 1000}>
                     <div style={{ overflow: "hidden" }}>
                       <h3>{t(`home:slider.${el}.subtitle`)}</h3>
                     </div>

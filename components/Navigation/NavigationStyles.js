@@ -11,7 +11,7 @@ export const Header = styled.header`
     props.hideHeaderUp ? "translateY(-4.5vh)" : "translateY(0)"};
   transition: transform 0.4s linear;
   z-index: 100;
-  animation: headerA1 1.5s 2.5s forwards;
+  animation: headerA1 1.5s ${(props) => `${props.time + 0.8}s`} forwards;
   opacity: 0;
   @keyframes headerA1 {
     to {

@@ -13,43 +13,33 @@ import Theme from "../components/Theme/Theme";
 
 function MyApp({ Component, pageProps }) {
   const [loadingClass, setLoadingClass] = useState("");
-  const [loadingContent, setLoadingContent] = useState(false);
-  const [timer, setTimer] = useState(false);
-
-  const loadingContentRef = useRef();
-  loadingContentRef.current = loadingContent;
-
-  const timerRef = useRef();
-  timerRef.current = timer;
+  const [loadingTime, setLoadingTime] = useState(0);
 
   useEffect(() => {
     document.body.style.overflow = "hidden";
+    const startTime = Date.now();
     window.addEventListener("load", showPage);
     function showPage() {
-      if (timerRef.current) {
+      const time = Date.now() - startTime;
+      if (time < 2000) {
+        setTimeout(() => {
+          setLoadingClass("out");
+          setLoadingTime(2000);
+          setTimeout(() => {
+            document.body.style.overflow = "";
+          }, 600);
+        }, 2000 - time);
+      } else {
         setLoadingClass("out");
+        setLoadingTime(time);
         setTimeout(() => {
           document.body.style.overflow = "";
         }, 600);
-      } else {
-        setLoadingContent(true);
       }
     }
     return () => {
       window.removeEventListener("load", showPage);
     };
-  }, []);
-
-  useEffect(() => {
-    setTimeout(() => {
-      if (loadingContentRef.current) {
-        setLoadingClass("out");
-        setTimeout(() => {
-          document.body.style.overflow = "";
-        }, 600);
-      }
-      setTimer(true);
-    }, 2000);
   }, []);
 
   return (
@@ -95,8 +85,8 @@ function MyApp({ Component, pageProps }) {
             <NormalizeStyles />
             <BaseStyles />
             <LoadingFirst loadingClass={loadingClass} />
-            <Navigation />
-            <Component {...pageProps} />
+            <Navigation loadingTime={loadingTime} />
+            <Component {...pageProps} loadingTime={loadingTime} />
             <NewsletterRegistration />
             <Footer />
           </SidebarContextProvider>

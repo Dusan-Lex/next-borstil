@@ -6,7 +6,7 @@ export const Offer = styled.section`
   position: relative;
   padding-top: 4.5rem;
   padding-bottom: 6rem;
-  animation: offerA1 1.5s 2.5s forwards;
+  animation: offerA1 1.5s ${(props) => `${props.time + 0.8}s`} forwards;
   opacity: 0.5;
   @keyframes offerA1 {
     100% {
