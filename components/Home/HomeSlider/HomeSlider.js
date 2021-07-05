@@ -15,6 +15,7 @@ import {
 const HomeSlider = () => {
   const [slide, setSlide] = useState(0);
   const timeout = useRef(null);
+  const [first, setFirst] = useState(true);
   const { t } = useTranslation();
   const offSetY = useOffsetY();
   const length = 3; // number of slides
@@ -23,7 +24,12 @@ const HomeSlider = () => {
     const next = () => {
       setSlide((slide) => (slide === length - 1 ? 0 : slide + 1));
     };
-    timeout.current = setTimeout(next, 4600);
+    if (first) {
+      timeout.current = setTimeout(next, 7000);
+      setTimeout(() => setFirst(false), 5000);
+    } else {
+      timeout.current = setTimeout(next, 4600);
+    }
     return () => {
       timeout.current && clearTimeout(timeout.current);
     };
@@ -49,7 +55,7 @@ const HomeSlider = () => {
           return (
             <Slider key={el}>
               {el === slide && (
-                <Slide>
+                <Slide first={first}>
                   <img
                     src={`/images/Slider-Image-${el + 1}.webp`}
                     alt={t(`home:slider.${el}.alt`)}
@@ -59,7 +65,7 @@ const HomeSlider = () => {
                       })`,
                     }}
                   />
-                  <SlideContent>
+                  <SlideContent first={first}>
                     <div style={{ overflow: "hidden" }}>
                       <h3>{t(`home:slider.${el}.subtitle`)}</h3>
                     </div>

@@ -12,7 +12,7 @@ export const Loading = styled.div`
   &.out-1 {
     opacity: 0;
     visibility: hidden;
-    transition: all 0.3s 0.7s;
+    transition: all 0.3s 0.7s ease;
   }
 
   div {
@@ -21,7 +21,7 @@ export const Loading = styled.div`
       transform: translateY(-3.5vh);
     }
     h1 {
-      font-family: "Playfair Display", serif;
+      font-family: serif;
       font-size: 2.5rem;
       font-weight: 500;
       letter-spacing: 0.5rem;
@@ -39,7 +39,7 @@ export const Loading = styled.div`
     }
 
     .out-2 {
-      animation: out 0.7s forwards;
+      animation: out 0.7s ease forwards;
       @keyframes out {
         0% {
           transform: translateY(0);
