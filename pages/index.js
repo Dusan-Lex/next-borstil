@@ -5,8 +5,8 @@ import HomeDw from "../components/Home/HomeDW/HomeDW";
 const HomePage = (props) => {
   return (
     <main>
-      <HomeSlider loadingTime={props.loadingTime} />
-      <HomeOffer loadingTime={props.loadingTime} />
+      <HomeSlider first={props.first} />
+      <HomeOffer />
       <HomeDw />
     </main>
   );

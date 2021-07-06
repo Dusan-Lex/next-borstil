@@ -12,10 +12,9 @@ import {
   SliderArrow,
 } from "./HomeSliderStyles";
 
-const HomeSlider = (props) => {
+const HomeSlider = ({ first }) => {
   const [slide, setSlide] = useState(0);
   const timeout = useRef(null);
-  const [first, setFirst] = useState(true);
   const { t } = useTranslation();
   const offSetY = useOffsetY();
   const length = 3; // number of slides
@@ -24,14 +23,16 @@ const HomeSlider = (props) => {
     const next = () => {
       setSlide((slide) => (slide === length - 1 ? 0 : slide + 1));
     };
-    timeout.current = setTimeout(next, 4600);
-    if (first && props.loadingTime) {
-      setTimeout(() => setFirst(false), 3600);
+
+    if (first) {
+      timeout.current = setTimeout(next, 7200);
+    } else {
+      timeout.current = setTimeout(next, 4600);
     }
     return () => {
       timeout.current && clearTimeout(timeout.current);
     };
-  }, [slide, props.loadingTime]);
+  }, [slide]);
 
   const nextSlide = () => {
     timeout.current && clearTimeout(timeout.current);
@@ -44,7 +45,7 @@ const HomeSlider = (props) => {
   };
 
   return (
-    <StyledHomeSlider time={props.loadingTime / 1000}>
+    <StyledHomeSlider>
       <img src={`/images/Slider-Image-1.webp`} style={{ display: "none" }} />
       <img src={`/images/Slider-Image-2.webp`} style={{ display: "none" }} />
       <img src={`/images/Slider-Image-3.webp`} style={{ display: "none" }} />
@@ -53,7 +54,7 @@ const HomeSlider = (props) => {
           return (
             <Slider key={el}>
               {el === slide && (
-                <Slide first={first} time={props.loadingTime / 1000}>
+                <Slide first={first}>
                   <img
                     src={`/images/Slider-Image-${el + 1}.webp`}
                     alt={t(`home:slider.${el}.alt`)}
@@ -63,7 +64,7 @@ const HomeSlider = (props) => {
                       })`,
                     }}
                   />
-                  <SlideContent first={first} time={props.loadingTime / 1000}>
+                  <SlideContent first={first}>
                     <div style={{ overflow: "hidden" }}>
                       <h3>{t(`home:slider.${el}.subtitle`)}</h3>
                     </div>

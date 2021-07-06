@@ -24,7 +24,7 @@ import HeaderLogo from "./HeaderLogo/HeaderLogo";
 import BurgerButton from "./BurgerButton/BurgerButton";
 import Sidebar from "./Sidebar/Sidebar";
 
-const Navigation = (props) => {
+const Navigation = () => {
   const { theme, switchTheme } = useContext(ThemeContext);
   const router = useRouter();
   const { t } = useTranslation();
@@ -42,8 +42,7 @@ const Navigation = (props) => {
 
   return (
     <Header
-      // hideHeaderUp={hideHeaderUp && windowSize.width > 1200}
-      time={props.loadingTime / 1000}
+    // hideHeaderUp={hideHeaderUp && windowSize.width > 1200}
     >
       <HeaderUp>
         <LangSpan>{t("common:language")}:</LangSpan>

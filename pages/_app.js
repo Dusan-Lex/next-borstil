@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Head from "next/head";
 import NormalizeStyles from "../styles/NormalizeStyles";
 import BaseStyles from "../styles/BaseStyles";
@@ -13,33 +13,18 @@ import Theme from "../components/Theme/Theme";
 
 function MyApp({ Component, pageProps }) {
   const [loadingClass, setLoadingClass] = useState("");
-  const [loadingTime, setLoadingTime] = useState(0);
-
+  const [first, setFirst] = useState(true);
   useEffect(() => {
     document.body.style.overflow = "hidden";
-    const startTime = Date.now();
-    window.addEventListener("load", showPage);
-    function showPage() {
-      const time = Date.now() - startTime;
-      if (time < 2000) {
-        setTimeout(() => {
-          setLoadingClass("out");
-          setLoadingTime(2000);
-          setTimeout(() => {
-            document.body.style.overflow = "";
-          }, 600);
-        }, 2000 - time);
-      } else {
-        setLoadingClass("out");
-        setLoadingTime(time);
-        setTimeout(() => {
-          document.body.style.overflow = "";
-        }, 600);
-      }
-    }
-    return () => {
-      window.removeEventListener("load", showPage);
-    };
+    setTimeout(() => {
+      setLoadingClass("out");
+      setTimeout(() => {
+        document.body.style.overflow = "";
+      }, 600);
+    }, 2000);
+    setTimeout(() => {
+      setFirst(false);
+    }, 5000);
   }, []);
 
   return (
@@ -85,8 +70,8 @@ function MyApp({ Component, pageProps }) {
             <NormalizeStyles />
             <BaseStyles />
             <LoadingFirst loadingClass={loadingClass} />
-            <Navigation loadingTime={loadingTime} />
-            <Component {...pageProps} loadingTime={loadingTime} />
+            <Navigation />
+            <Component {...pageProps} first={first} />
             <NewsletterRegistration />
             <Footer />
           </SidebarContextProvider>

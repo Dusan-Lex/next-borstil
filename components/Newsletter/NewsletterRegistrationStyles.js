@@ -106,7 +106,6 @@ export const NewsletterNotification = styled.div`
   p {
     color: ${color.primaryLightest};
     font-size: 1.7rem;
-    font-weight: 600;
     animation: newsletterA1 0.3s ease both;
   }
   @media only screen and (min-width: 1201px) {
