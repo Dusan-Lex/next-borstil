@@ -46,9 +46,18 @@ const HomeSlider = ({ first }) => {
 
   return (
     <StyledHomeSlider>
-      <img src={`/images/Slider-Image-1.webp`} style={{ display: "none" }} />
-      <img src={`/images/Slider-Image-2.webp`} style={{ display: "none" }} />
-      <img src={`/images/Slider-Image-3.webp`} style={{ display: "none" }} />
+      <img
+        src={`/images/Home/Slider-Image-1.webp`}
+        style={{ display: "none" }}
+      />
+      <img
+        src={`/images/Home/Slider-Image-2.webp`}
+        style={{ display: "none" }}
+      />
+      <img
+        src={`/images/Home/Slider-Image-3.webp`}
+        style={{ display: "none" }}
+      />
       <Wrapper>
         {[0, 1, 2].map((el) => {
           return (
@@ -56,7 +65,7 @@ const HomeSlider = ({ first }) => {
               {el === slide && (
                 <Slide first={first}>
                   <img
-                    src={`/images/Slider-Image-${el + 1}.webp`}
+                    src={`/images/Home/Slider-Image-${el + 1}.webp`}
                     alt={t(`home:slider.${el}.alt`)}
                     style={{
                       transform: `translateY(${0.2222 * offSetY}px) scale(${

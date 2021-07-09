@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import { color, mixin, font } from "../../shared/utils/styles";
 import ToggleButton from "../../shared/components/Buttons/ToggleButton/ToggleButton";
 

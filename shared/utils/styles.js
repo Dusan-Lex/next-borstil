@@ -70,19 +70,19 @@ export const mixin = {
   placeholderColor: (colorValue) => css`
     ::-webkit-input-placeholder {
       color: ${colorValue} !important;
-      opacity: 1 !important;
+      opacity: 0.8 !important;
     }
     :-moz-placeholder {
       color: ${colorValue} !important;
-      opacity: 1 !important;
+      opacity: 0.8 !important;
     }
     ::-moz-placeholder {
       color: ${colorValue} !important;
-      opacity: 1 !important;
+      opacity: 0.8 !important;
     }
     :-ms-input-placeholder {
       color: ${colorValue} !important;
-      opacity: 1 !important;
+      opacity: 0.8 !important;
     }
   `,
   scrollableY: css`
