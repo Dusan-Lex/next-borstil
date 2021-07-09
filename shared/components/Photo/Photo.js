@@ -1,30 +1,46 @@
 import Image from "next/image";
 import { useState } from "react";
-import Spinner from "../Spinner/Spinner";
-import { StyledPhoto, LoadingDiv, ImageWrapper } from "./PhotoStyles";
+import useTranslation from "next-translate/useTranslation";
+// import Spinner from "../Spinner/Spinner";
+import {
+  StyledPhoto,
+  LoadingDiv,
+  HoverDiv,
+  ImageWrapper,
+  TitleDiv,
+} from "./PhotoStyles";
 
-const Photo = (props) => {
-  const [loading, setLoading] = useState(true);
+const Photo = ({ item, loading, quality }) => {
+  const [load, setLoad] = useState(true);
+  const { t } = useTranslation();
   return (
     <StyledPhoto>
-      {loading && (
-        <LoadingDiv ratio={(props.height / props.width) * 100}>
-          <Spinner />
+      {load && (
+        <LoadingDiv ratio={(item.height / item.width) * 100}>
+          {/* <Spinner /> */}
         </LoadingDiv>
       )}
-      <ImageWrapper load={loading}>
+      <ImageWrapper load={load}>
         <Image
-          src={props.imgSrc}
-          width={props.width}
-          height={props.height}
+          src={item.imgSrc}
+          width={item.width}
+          height={item.height}
           layout="responsive"
-          quality={60}
+          quality={quality}
+          loading={loading}
           onLoad={(event) => {
             if (event.target.src.indexOf("data:image/gif;base64") < 0) {
-              setLoading(false);
+              setLoad(false);
             }
           }}
+          onClick={() => {
+            console.log("click");
+          }}
         />
+        <HoverDiv className="hover-div" />
+        <TitleDiv>
+          <span>{t(`home:gallery.${item.title}`)}</span>
+        </TitleDiv>
       </ImageWrapper>
     </StyledPhoto>
   );

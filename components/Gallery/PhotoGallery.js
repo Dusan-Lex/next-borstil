@@ -5,14 +5,7 @@ const PhotoGallery = ({ photos }) => {
   return (
     <StyledGallery>
       {photos.map((item, index) => {
-        return (
-          <Photo
-            key={index}
-            width={item.width}
-            height={item.height}
-            imgSrc={item.imgSrc}
-          />
-        );
+        return <Photo key={index} item={item} quality={60} />;
       })}
     </StyledGallery>
   );

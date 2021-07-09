@@ -154,7 +154,7 @@ export const galleryData = [
       "klupe",
       "klupica",
       "klupice",
-      "tabelle",
+      "tisch",
       "stuhl",
       "stühle",
       "bank",

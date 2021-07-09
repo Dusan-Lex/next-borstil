@@ -7,8 +7,7 @@ export const Newsletter = styled.section`
   text-align: center;
   padding: 4rem 2rem;
   z-index: 1;
-  margin-bottom: ${(props) =>
-    props.theme.background === "#563727" ? "4rem" : "0"};
+  margin: ${(props) => (props.theme.background === "#563727" ? "4rem" : "0")} 0;
   @media only screen and (max-width: 1200px) {
     margin-bottom: 0;
   }
@@ -17,9 +16,13 @@ export const Newsletter = styled.section`
     content: "";
     ${mixin.coverParent};
     max-width: 1200px;
+    height: calc(100% + 8rem);
     z-index: -1;
-    transform: translate(calc((100vw - 1200px) / 2), 4rem);
+    transform: translate(calc((100vw - 1200px) / 2), -4rem);
     border-bottom: ${(props) =>
+        props.theme.background === "#563727" ? "4rem" : "0"}
+      solid ${(props) => props.theme.backgroundRev};
+    border-top: ${(props) =>
         props.theme.background === "#563727" ? "4rem" : "0"}
       solid ${(props) => props.theme.backgroundRev};
     @media only screen and (max-width: 1200px) {

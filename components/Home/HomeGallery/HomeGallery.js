@@ -6,14 +6,7 @@ const HomeGallery = () => {
   return (
     <StyledHomeGallery>
       {homeGalleryData.map((item, index) => {
-        return (
-          <Photo
-            key={index}
-            width={item.width}
-            height={item.height}
-            imgSrc={item.imgSrc}
-          />
-        );
+        return <Photo key={index} item={item} loading="eager" />;
       })}
     </StyledHomeGallery>
   );
