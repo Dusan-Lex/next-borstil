@@ -266,7 +266,7 @@ export const homeGalleryData = [
   {
     title: "door",
     width: "640",
-    height: "790",
+    height: "792",
     imgSrc: "/images/Gallery/Borstil-vrata-1.jpg",
     tags: [
       "vrata",
