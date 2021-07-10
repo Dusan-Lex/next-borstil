@@ -11,7 +11,7 @@ import {
   ZoomDiv,
 } from "./PhotoStyles";
 
-const Photo = ({ item, loading, quality }) => {
+const Photo = ({ item, priority, quality }) => {
   const [load, setLoad] = useState(true);
   const modalCtx = useContext(ModalContext);
   return (
@@ -34,7 +34,7 @@ const Photo = ({ item, loading, quality }) => {
           height={item.height}
           layout="responsive"
           quality={quality}
-          loading={loading}
+          priority={priority}
           onLoad={(event) => {
             if (event.target.src.indexOf("data:image/gif;base64") < 0) {
               setLoad(false);

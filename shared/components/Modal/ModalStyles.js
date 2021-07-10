@@ -34,10 +34,8 @@ export const ModalOverlay = styled.div`
   }
 
   @media only screen and (max-width: 600px) {
-    top: 25%;
     left: 7%;
     width: 86%;
-    height: 50%;
   }
 `;
 
