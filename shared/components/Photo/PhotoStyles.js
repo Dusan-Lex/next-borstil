@@ -16,8 +16,8 @@ export const StyledPhoto = styled.div`
     left: 2.5rem;
     right: 2.5rem;
     bottom: 1rem;
-    border-right: 3px solid ${(props) => props.theme.backgroundRev};
-    border-left: 3px solid ${(props) => props.theme.backgroundRev};
+    border-right: 0.3rem solid ${(props) => props.theme.backgroundRev};
+    border-left: 0.3rem solid ${(props) => props.theme.backgroundRev};
     transform: scaleY(0);
     transition: transform 0.6s;
     z-index: 1;
@@ -30,8 +30,8 @@ export const StyledPhoto = styled.div`
     left: 1rem;
     right: 1rem;
     bottom: 2.5rem;
-    border-top: 3px solid ${(props) => props.theme.backgroundRev};
-    border-bottom: 3px solid ${(props) => props.theme.backgroundRev};
+    border-top: 0.3rem solid ${(props) => props.theme.backgroundRev};
+    border-bottom: 0.3rem solid ${(props) => props.theme.backgroundRev};
     transform: scaleX(0);
     transition: transform 0.6s;
   }
@@ -46,7 +46,7 @@ export const StyledPhoto = styled.div`
     opacity: 0.6;
   }
 
-  &:hover span {
+  &:hover svg {
     transform: translateY(0);
   }
 `;
@@ -85,20 +85,30 @@ export const HoverDiv = styled.div`
   transition: opacity 0.6s;
 `;
 
-export const TitleDiv = styled.div`
+export const ZoomDiv = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* ${mixin.center}; */
-  font-size: 2.5rem;
-  font-weight: 500;
-  color: ${(props) => props.theme.backgroundRev};
+  ${mixin.center};
   overflow: hidden;
-  span {
-    ${mixin.center};
-    text-align: center;
+  svg {
+    stroke: ${(props) => props.theme.backgroundRev};
     transform: translateY(100%);
     transition: transform 0.6s;
+
+    @media only screen and (min-width: 1500px) {
+      stroke-width: 1.25;
+      width: 4.5rem;
+      height: 4.5rem;
+    }
+
+    @media only screen and (max-width: 1200px) {
+      stroke-width: 1.25;
+    }
+
+    @media only screen and (max-width: 600px) {
+      stroke-width: 1;
+    }
   }
 `;

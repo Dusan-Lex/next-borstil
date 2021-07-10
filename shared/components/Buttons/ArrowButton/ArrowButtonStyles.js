@@ -14,6 +14,7 @@ export const StyledAnchor = styled.a`
   box-shadow: 0 0 13px -7px ${color.primaryLightest};
   position: relative;
   overflow: hidden;
+  cursor: pointer;
 
   .first {
     display: inline-block;

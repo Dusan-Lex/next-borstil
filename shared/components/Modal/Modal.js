@@ -1,17 +1,23 @@
-import { useState, useEffect } from "react";
-import ReactDOM from "react-dom";
+import { useContext } from "react";
+import Image from "next/image";
+import ModalContext from "../../../store/modalContext";
+
+import {
+  StyledModal,
+  Backdrop,
+  ModalOverlay,
+  StyledCloseButton,
+} from "./ModalStyles";
 
 const Modal = () => {
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => {
-    setMounted(true);
-    return () => {
-      setMounted(false);
-    };
-  }, []);
-  return mounted
-    ? ReactDOM.createPortal(<div></div>, document.querySelector("#overlays"))
-    : null;
+  const modalCtx = useContext(ModalContext);
+  return modalCtx.modal ? (
+    <StyledModal>
+      <Backdrop />
+      <ModalOverlay>{modalCtx.modal}</ModalOverlay>
+      <StyledCloseButton onClose={modalCtx.hideModal} />
+    </StyledModal>
+  ) : null;
 };
 
 export default Modal;

@@ -1,20 +1,27 @@
 import Image from "next/image";
-import { useState } from "react";
-import useTranslation from "next-translate/useTranslation";
+import { useContext, useState } from "react";
+import ModalContext from "../../../store/modalContext";
+import Zoom from "../svgs/Zoom";
 // import Spinner from "../Spinner/Spinner";
 import {
   StyledPhoto,
   LoadingDiv,
   HoverDiv,
   ImageWrapper,
-  TitleDiv,
+  ZoomDiv,
 } from "./PhotoStyles";
 
 const Photo = ({ item, loading, quality }) => {
   const [load, setLoad] = useState(true);
-  const { t } = useTranslation();
+  const modalCtx = useContext(ModalContext);
   return (
-    <StyledPhoto>
+    <StyledPhoto
+      onClick={() => {
+        modalCtx.showModal(
+          <Image src={item.imgSrc} layout="fill" objectFit="contain" />
+        );
+      }}
+    >
       {load && (
         <LoadingDiv ratio={(item.height / item.width) * 100}>
           {/* <Spinner /> */}
@@ -38,9 +45,9 @@ const Photo = ({ item, loading, quality }) => {
           }}
         />
         <HoverDiv className="hover-div" />
-        <TitleDiv>
-          <span>{t(`home:gallery.${item.title}`)}</span>
-        </TitleDiv>
+        <ZoomDiv>
+          <Zoom width={35} height={35} strokeWidth={1.5} />
+        </ZoomDiv>
       </ImageWrapper>
     </StyledPhoto>
   );

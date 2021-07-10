@@ -18,7 +18,7 @@ export const Newsletter = styled.section`
     max-width: 1200px;
     height: calc(100% + 8rem);
     z-index: -1;
-    transform: translate(calc((100vw - 1200px) / 2), -4rem);
+    transform: translate(calc((100vw - 1217px) / 2), -4rem);
     border-bottom: ${(props) =>
         props.theme.background === "#563727" ? "4rem" : "0"}
       solid ${(props) => props.theme.backgroundRev};
