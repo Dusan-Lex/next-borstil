@@ -11,8 +11,9 @@ import {
   ZoomDiv,
 } from "./PhotoStyles";
 
-const Photo = ({ item, priority, quality }) => {
-  const [load, setLoad] = useState(true);
+const Photo = ({ item, loading, quality }) => {
+  // const [load, setLoad] = useState(true);
+
   const modalCtx = useContext(ModalContext);
   return (
     <StyledPhoto
@@ -22,27 +23,26 @@ const Photo = ({ item, priority, quality }) => {
         );
       }}
     >
-      {load && (
+      {/* {load && (
         <LoadingDiv ratio={(item.height / item.width) * 100}>
-          {/* <Spinner /> */}
+          <Spinner />
         </LoadingDiv>
-      )}
-      <ImageWrapper load={load}>
+      )} */}
+
+      <ImageWrapper
+      // load={load}
+      >
         <Image
           src={item.imgSrc}
           width={item.width}
           height={item.height}
           layout="responsive"
           quality={quality}
-          priority={priority}
-          onLoad={(event) => {
-            if (event.target.src.indexOf("data:image/gif;base64") < 0) {
-              setLoad(false);
-            }
-          }}
-          onClick={() => {
-            console.log("click");
-          }}
+          loading={loading}
+          // onLoad={(event) => {
+          //   event.target.src.indexOf("data:image/gif;base64") < 0 &&
+          //     setLoad(false);
+          // }}
         />
         <HoverDiv className="hover-div" />
         <ZoomDiv>

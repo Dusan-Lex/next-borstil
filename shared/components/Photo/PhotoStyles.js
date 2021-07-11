@@ -53,8 +53,8 @@ export const StyledPhoto = styled.div`
 
 export const ImageWrapper = styled.div`
   position: relative;
-  visibility: ${(props) => (props.load ? "hidden" : "visible")};
-  max-height: ${(props) => (props.load ? "0" : "100%")};
+  /* visibility: ${(props) => (props.load ? "hidden" : "visible")};
+  max-height: ${(props) => (props.load ? "0" : "100%")}; */
 `;
 
 export const LoadingDiv = styled.div`

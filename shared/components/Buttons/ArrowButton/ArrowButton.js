@@ -4,7 +4,7 @@ import { StyledAnchor } from "./ArrowButtonStyles";
 const ArrowButton = (props) => {
   return (
     <Link href={props.path}>
-      <StyledAnchor dark={props.dark}>
+      <StyledAnchor dark={props.dark} className={props.className}>
         {props.children}
         <span className="first">&#9866;</span>
         <span className="second">&#10095;</span>

@@ -5,7 +5,7 @@ const PhotoGallery = ({ photos }) => {
   return (
     <StyledGallery>
       {photos.map((item, index) => {
-        return <Photo key={index} item={item} quality={60} priority={true} />;
+        return <Photo key={index} item={item} quality={60} loading="eager" />;
       })}
     </StyledGallery>
   );

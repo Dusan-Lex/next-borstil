@@ -6,7 +6,7 @@ export const XButton = styled.div`
   height: 6rem;
   border: 2px solid ${color.primaryLight};
   border-radius: 50%;
-  background-color: ${color.secondaryDarkest};
+  background-color: ${color.secondaryDark};
   ${mixin.center};
   cursor: pointer;
 
