@@ -49,12 +49,12 @@ export const HeaderDown = styled.div`
 
 export const ThemeToggleButton = styled(ToggleButton)`
   position: absolute;
-  right: 25rem;
+  right: 30rem;
 `;
 export const LangToggleButton = styled(ToggleButton)`
   display: inline-block;
   position: absolute;
-  left: 25rem;
+  left: 30rem;
   @media only screen and (max-width: 1200px) {
     position: relative;
     left: initial;
@@ -62,7 +62,7 @@ export const LangToggleButton = styled(ToggleButton)`
 `;
 export const LangSpan = styled.span`
   position: absolute;
-  left: 5rem;
+  left: 10rem;
   color: ${color.secondary};
   font-size: 1.8rem;
   width: 19rem;
@@ -89,7 +89,7 @@ export const LangSpan = styled.span`
 `;
 export const ThemeSpan = styled.span`
   position: absolute;
-  right: 10rem;
+  right: 15rem;
   color: ${color.secondary};
   font-size: 1.8rem;
   width: 14rem;

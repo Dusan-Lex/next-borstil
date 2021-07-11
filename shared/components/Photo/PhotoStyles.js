@@ -35,19 +35,22 @@ export const StyledPhoto = styled.div`
     transform: scaleX(0);
     transition: transform 0.6s;
   }
-  &:hover::before {
-    transform: scaleY(1);
-  }
-  &:hover::after {
-    transform: scaleX(1);
-  }
 
-  &:hover .hover-div {
-    opacity: 0.6;
-  }
+  @media (hover: hover) and (pointer: fine) {
+    &:hover::before {
+      transform: scaleY(1);
+    }
+    &:hover::after {
+      transform: scaleX(1);
+    }
 
-  &:hover svg {
-    transform: translateY(0);
+    &:hover .hover-div {
+      opacity: 0.6;
+    }
+
+    &:hover svg {
+      transform: translateY(0);
+    }
   }
 `;
 

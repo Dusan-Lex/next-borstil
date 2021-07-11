@@ -15,7 +15,7 @@ export const HomeTitle = styled.h4`
   font-weight: 600;
   letter-spacing: 0.3rem;
   text-align: center;
-  padding: 5rem 1rem 0 1rem;
+  padding: 0 1rem;
   text-transform: uppercase;
   background-image: linear-gradient(
     to left,
@@ -26,10 +26,6 @@ export const HomeTitle = styled.h4`
   background-clip: text;
   color: transparent;
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
-
-  @media only screen and (max-width: 1200px) {
-    padding-top: 0;
-  }
 
   @media only screen and (max-width: 900px) {
     font-size: 4rem;
