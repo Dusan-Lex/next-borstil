@@ -1,17 +1,19 @@
 import { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
+import PlusButton from "../../../shared/components/Buttons/PlusButton/PlusButton";
 import {
   StyledHomeAbout,
   ImagesWrapper,
   ImageBox,
   AboutImage,
   AboutContentBox,
+  Features,
 } from "./HomeAboutStyles";
 
 const HomeAbout = () => {
   const [play, setPlay] = useState("paused");
   const { ref, inView } = useInView({
-    threshold: 0.3,
+    threshold: 0.15,
     triggerOnce: true,
   });
   useEffect(() => {
@@ -20,19 +22,40 @@ const HomeAbout = () => {
 
   return (
     <StyledHomeAbout ref={ref}>
-      <ImagesWrapper>
-        {[1, 2, 3, 4, 5].map((item, index) => {
-          return (
-            <ImageBox key={index}>
-              <AboutImage
-                src="/images/Home/Borstil-about.jpg"
-                item={item}
-                play={play}
+      <Features>
+        <ImagesWrapper>
+          {[1, 2, 3, 4, 5].map((item, index) => {
+            return (
+              <ImageBox key={index}>
+                <AboutImage
+                  src="/images/Home/Borstil-about.jpg"
+                  item={item}
+                  play={play}
+                />
+              </ImageBox>
+            );
+          })}
+        </ImagesWrapper>
+        <ul>
+          {[
+            ["isplativa", "rešenja"],
+            ["dugogodišnje", "iskustvo"],
+            ["čist", "proizvod"],
+          ].map((item, index) => (
+            <li key={index}>
+              <div>
+                {item[0]} <span>{item[1]}</span>
+              </div>
+              <PlusButton
+                onClick={() => {
+                  console.log("click");
+                }}
               />
-            </ImageBox>
-          );
-        })}
-      </ImagesWrapper>
+            </li>
+          ))}
+        </ul>
+      </Features>
+
       <AboutContentBox>
         <p>
           <span>Bor Stil</span> je poznata stolarska firma koja se od 2000.

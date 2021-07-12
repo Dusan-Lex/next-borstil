@@ -23,7 +23,7 @@ function MyApp({ Component, pageProps }) {
       setTimeout(() => {
         document.body.style.overflow = "";
       }, 600);
-    }, 3000);
+    }, 2300);
     setTimeout(() => {
       setFirst(false);
     }, 5000);

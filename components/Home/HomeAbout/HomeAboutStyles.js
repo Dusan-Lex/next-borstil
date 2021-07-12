@@ -6,6 +6,44 @@ export const StyledHomeAbout = styled.section`
   width: 100vw;
   margin: 5rem 0;
 `;
+
+export const Features = styled.div`
+  position: relative;
+  ul {
+    position: absolute;
+    top: 10rem;
+    left: 10rem;
+    width: 43rem;
+    display: flex;
+    flex-direction: column;
+
+    @media only screen and (max-width: 800px) {
+      left: calc((100vw - 43rem) / 2);
+      bottom: 5rem;
+      justify-content: flex-end;
+    }
+
+    li {
+      font-size: 2.3rem;
+      font-weight: 500;
+      margin: 1rem 0;
+      text-transform: uppercase;
+      padding: 1rem 3rem;
+      color: ${(props) => props.theme.text.regular};
+      background-color: ${(props) =>
+        mixin.rgba(props.theme.text.regularRev, 0.82)};
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      & > div:first-child {
+        margin-right: 2rem;
+        span {
+          color: ${color.primary};
+        }
+      }
+    }
+  }
+`;
 export const ImagesWrapper = styled.div`
   position: relative;
   width: 100%;
@@ -16,7 +54,7 @@ export const ImagesWrapper = styled.div`
   background-image: linear-gradient(
       to top,
       ${mixin.rgba(color.primary, 0.1)} 0%,
-      ${mixin.rgba(color.primary, 0.35)} 80%,
+      ${mixin.rgba(color.primary, 0.3)} 80%,
       ${mixin.rgba(color.primary, 0.65)} 100%
     ),
     url("/images/Home/Borstil-about.jpg");
@@ -34,7 +72,7 @@ export const ImageBox = styled.div`
     background: linear-gradient(
       to top,
       ${mixin.rgba(color.primary, 0.1)} 0%,
-      ${mixin.rgba(color.primary, 0.35)} 80%,
+      ${mixin.rgba(color.primary, 0.3)} 80%,
       ${mixin.rgba(color.primary, 0.65)} 100%
     );
   }
@@ -44,12 +82,12 @@ export const AboutImage = styled.img`
   object-position: center right;
   width: 100vw;
   height: 100%;
-  transform: translateX(-80vw);
-  animation: ${(props) => `moveLeft-${props.item}`} 2.2s ease-out forwards;
+  transform: translateX(-80%);
+  animation: ${(props) => `moveLeft-${props.item}`} 3s ease-out forwards;
   animation-play-state: ${(props) => props.play};
 
   @media only screen and (max-width: 900px) {
-    animation-duration: 1.5s;
+    animation-duration: 2s;
   }
 
   @keyframes moveLeft-1 {

@@ -25,7 +25,7 @@ const HomeSlider = ({ first }) => {
     };
 
     if (first) {
-      timeout.current = setTimeout(next, 8200);
+      timeout.current = setTimeout(next, 7600);
     } else {
       timeout.current = setTimeout(next, 4600);
     }

@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { color, mixin } from "../../../utils/styles";
 
 export const XButton = styled.div`
+  position: relative;
   width: 6rem;
   height: 6rem;
   border: 2px solid ${color.primaryLight};
