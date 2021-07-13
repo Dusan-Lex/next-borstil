@@ -41,5 +41,30 @@
       "text": "Wir kommen und helfen bei der Auswahl und Montage von Küchen. Die Preise hängen von der Art der Küche, den von Ihnen gewählten Teilen sowie den Abmessungen Ihrer Küche ab. Die drei Hauptmerkmale, die unsere Sonderküchen auszeichnen, sind die Verarbeitungsqualität, die Präzision der Montage und die Einhaltung von Terminen. Schauen Sie sich die Küchen an, die unser Team montiert und installiert hat!",
       "button": "Ausführlicher"
     }
+  },
+  "about": {
+    "content1": {
+      "span": "Bor Stil",
+      "text": " ist ein renommierter Tischlereibetrieb, der seit 2000 Bautischlerei- und Möbelteile herstellt. Die Produktion erfolgt am Standort Durmitorska bb in Leskovac. Unsere Fenster und Türen machen aus einem Haus ein Zuhause oder einen komfortablen Geschäftsraum. Wir versuchen von Anfang an, Ihnen HÖCHSTE QUALITÄT ZU NIEDRIGSTEN PREIS anzubieten."
+    },
+    "content2": "Produktionsstätte Die Tischlerei Bor Stil erstreckt sich auf 1500 m2, die mehrere Abschnitte des Produktionsprozesses umfasst. Unser Produktionsprozess beginnt bei Ihnen in Ihrer Einrichtung, Wohnung, Geschäftsraum, Hütte ... Das professionelle Team steht Ihnen jederzeit mit Rat und Tat zur Seite und Erfahrung, und für jede Aufgabe, die Sie uns stellen, die beste und optimalste Lösung zu finden.",
+    "features": [
+      {
+        "feature": ["kostengünstige  ", "Lösungen"],
+        "details": "Das beste Verhältnis von Preis und Qualität mit verschiedenen Zahlungsmöglichkeiten mit 5 Jahren Garantie."
+      },
+      {
+        "feature": ["langjährige  ", "Erfahrung"],
+        "details": "Den Erfolg und die Leistungsfähigkeit des Unternehmens verdanken wir einem professionellen Team von Menschen mit langjähriger Erfahrung."
+      },
+      {
+        "feature": ["reines ", "Produkt"],
+        "details": "Auch die Natur liegt uns am Herzen, denn unsere Produkte werden nach den höchsten Umweltstandards hergestellt."
+      }
+    ]
+  },
+  "gallery": {
+    "title": "Dies sind einige unserer Arbeiten",
+    "button": "Siehe die Galerie"
   }
 }

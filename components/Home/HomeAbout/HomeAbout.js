@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
+import useTranslation from "next-translate/useTranslation";
 import PlusButton from "../../../shared/components/Buttons/PlusButton/PlusButton";
 import {
   StyledHomeAbout,
@@ -8,21 +9,25 @@ import {
   AboutImage,
   AboutContentBox,
   Features,
+  FeaturesDetails,
 } from "./HomeAboutStyles";
 
 const HomeAbout = () => {
   const [play, setPlay] = useState("paused");
+  const [activeSlide, setActiveSlide] = useState(null);
   const { ref, inView } = useInView({
     threshold: 0.15,
     triggerOnce: true,
   });
+  const { t } = useTranslation();
+
   useEffect(() => {
     inView && setPlay("running");
   }, [inView]);
 
   return (
     <StyledHomeAbout ref={ref}>
-      <Features>
+      <div style={{ position: "relative", overflow: "hidden" }}>
         <ImagesWrapper>
           {[1, 2, 3, 4, 5].map((item, index) => {
             return (
@@ -36,43 +41,44 @@ const HomeAbout = () => {
             );
           })}
         </ImagesWrapper>
-        <ul>
-          {[
-            ["isplativa", "rešenja"],
-            ["dugogodišnje", "iskustvo"],
-            ["čist", "proizvod"],
-          ].map((item, index) => (
-            <li key={index}>
-              <div>
-                {item[0]} <span>{item[1]}</span>
-              </div>
-              <PlusButton
+        <Features>
+          <ul>
+            {[1, 2, 3].map((item) => (
+              <li
+                key={item}
                 onClick={() => {
-                  console.log("click");
+                  setActiveSlide((prevState) => {
+                    if (prevState === item) {
+                      return null;
+                    } else {
+                      return item;
+                    }
+                  });
                 }}
-              />
-            </li>
-          ))}
-        </ul>
-      </Features>
+              >
+                <div>
+                  {t(`home:about.features.${item - 1}.feature.0`)}
+                  <span>{t(`home:about.features.${item - 1}.feature.1`)}</span>
+                </div>
+                <PlusButton active={item === activeSlide} />
+              </li>
+            ))}
+          </ul>
+
+          <FeaturesDetails active={activeSlide}>
+            <p key={t(`home:about.features.${activeSlide - 1}.details`)}>
+              {t(`home:about.features.${activeSlide - 1}.details`)}
+            </p>
+          </FeaturesDetails>
+        </Features>
+      </div>
 
       <AboutContentBox>
         <p>
-          <span>Bor Stil</span> je poznata stolarska firma koja se od 2000.
-          godine bavi proizvodnjom građevinske stolarije i delove nameštaja.
-          Proizvodnja se odvija na lokaciji Durmitorska bb u Leskovcu. Naši
-          prozori i vrata pretvaraju kuću u dom ili ugodan poslovni prostor. Od
-          samog početka se trudimo da vam ponudimo NAJVEĆI STEPEN KVALITETA UZ
-          NAJNIŽE CENE.
+          <span>{t(`home:about.content1.span`)}</span>
+          {t(`home:about.content1.text`)}
         </p>
-        <p>
-          Proizvodni pogoni Bor Stil stolarije prostiru se na 1500 m<sup>2</sup>{" "}
-          , u čijem sklopu je odvojeno više segmenata procesa proizvodnje. Naš
-          proces proizvodnje počinje kod Vas na Vašem objektu, stanu, poslovnom
-          prostoru, vikendici... Stručni tim je za Vas uvek tu da pomogne
-          savetom i iskustvom, te da pronađe najbolje i najoptimalnije rešenje
-          za svaki zadatak koji nam postavite.
-        </p>
+        <p>{t(`home:about.content2`)}</p>
       </AboutContentBox>
     </StyledHomeAbout>
   );

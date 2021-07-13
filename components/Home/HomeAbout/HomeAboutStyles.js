@@ -8,19 +8,22 @@ export const StyledHomeAbout = styled.section`
 `;
 
 export const Features = styled.div`
-  position: relative;
+  position: absolute;
+  top: 10rem;
+  left: 10rem;
+  display: flex;
+  align-items: center;
+  @media only screen and (max-width: 800px) {
+    flex-direction: column-reverse;
+    left: calc((100vw - 46rem) / 2);
+    bottom: 5rem;
+  }
   ul {
-    position: absolute;
-    top: 10rem;
-    left: 10rem;
-    width: 43rem;
+    width: 46rem;
     display: flex;
     flex-direction: column;
-
     @media only screen and (max-width: 800px) {
-      left: calc((100vw - 43rem) / 2);
-      bottom: 5rem;
-      justify-content: flex-end;
+      align-self: flex-end;
     }
 
     li {
@@ -35,15 +38,17 @@ export const Features = styled.div`
       display: flex;
       align-items: center;
       justify-content: space-between;
+      cursor: pointer;
       & > div:first-child {
         margin-right: 2rem;
         span {
-          color: ${color.primary};
+          color: ${mixin.darken(color.primary, 0.1)};
         }
       }
     }
   }
 `;
+
 export const ImagesWrapper = styled.div`
   position: relative;
   width: 100%;
@@ -83,11 +88,11 @@ export const AboutImage = styled.img`
   width: 100vw;
   height: 100%;
   transform: translateX(-80%);
-  animation: ${(props) => `moveLeft-${props.item}`} 3s ease-out forwards;
+  animation: ${(props) => `moveLeft-${props.item}`} 2.5s ease-out forwards;
   animation-play-state: ${(props) => props.play};
 
   @media only screen and (max-width: 900px) {
-    animation-duration: 2s;
+    animation-duration: 1.5s;
   }
 
   @keyframes moveLeft-1 {
@@ -144,5 +149,40 @@ export const AboutContentBox = styled.div`
       text-transform: uppercase;
       text-decoration: underline;
     }
+  }
+`;
+
+export const FeaturesDetails = styled.div`
+  width: 40rem;
+  height: 25rem;
+  margin-left: 2rem;
+  padding: 2rem;
+  font-size: 2.4rem;
+  background-color: ${(props) => mixin.rgba(props.theme.text.regularRev, 0.82)};
+  /* color: ${(props) => props.theme.text.regular}; */
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  text-align: center;
+  transform: translateX(${(props) => (props.active ? "0" : "100%")});
+  opacity: ${(props) => (props.active ? "1" : "0")};
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+  p {
+    animation: pa1 0.5s ease-out forwards;
+    opacity: 0;
+    color: ${(props) => props.theme.text.regular};
+
+    @keyframes pa1 {
+      to {
+        opacity: 1;
+      }
+    }
+  }
+  @media only screen and (max-width: 800px) {
+    margin-left: 0;
+    width: 46rem;
+    margin-bottom: 1rem;
+    font-size: 2.6rem;
+    font-weight: 500;
   }
 `;

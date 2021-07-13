@@ -1,19 +1,21 @@
-import { HomePhotos, StyledHomeGallery, HomeTitle } from "./HomeGaleryStyles";
+import useTranslation from "next-translate/useTranslation";
 import { homeGalleryData } from "../../Gallery/GalleryData";
 import Photo from "../../../shared/components/Photo/Photo";
 import ArrowButton from "../../../shared/components/Buttons/ArrowButton/ArrowButton";
+import { HomePhotos, StyledHomeGallery, HomeTitle } from "./HomeGaleryStyles";
 
 const HomeGallery = () => {
+  const { t } = useTranslation();
   return (
     <StyledHomeGallery>
-      <HomeTitle>Ovo su neki od naših radova</HomeTitle>
+      <HomeTitle>{t(`home:gallery.title`)}</HomeTitle>
       <HomePhotos>
         {homeGalleryData.map((item, index) => {
           return <Photo key={index} item={item} loading="eager" />;
         })}
       </HomePhotos>
       <ArrowButton path="/gallery" dark className="home-gallery-arrow">
-        Pogledaj galeriju
+        {t(`home:gallery.button`)}
       </ArrowButton>
     </StyledHomeGallery>
   );

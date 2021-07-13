@@ -9,15 +9,20 @@ export const Plus = styled.div`
   background-color: transparent;
   ${mixin.center};
   cursor: pointer;
-
-  span {
+  .horizontal,
+  .vertical {
     position: absolute;
+    background-color: ${mixin.darken(color.primary, 0.1)};
+    transition: all 0.5s ease-in-out;
+    transform: rotate(${(props) => (props.active ? "90" : "-90")}deg);
+  }
+  .horizontal {
     width: 70%;
-    height: 0.25rem;
-    border-radius: 2px;
-    background-color: ${color.primary};
-    &:first-child {
-      transform: rotate(90deg);
-    }
+    height: 0.5rem;
+    opacity: ${(props) => (props.active ? "0" : "1")};
+  }
+  .vertical {
+    width: 0.5rem;
+    height: 70%;
   }
 `;
