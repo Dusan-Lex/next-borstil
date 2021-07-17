@@ -14,7 +14,8 @@ export const Header = styled.header`
 `;
 
 export const HeaderUp = styled.div`
-  height: 4.5vh;
+  height: 4vh;
+  min-height: 3rem;
   transition: height 0.4s linear;
   background-color: ${color.primaryLightest};
   ${mixin.center}
@@ -30,8 +31,9 @@ export const HeaderUp = styled.div`
 `;
 
 export const HeaderDown = styled.div`
-  height: 7vh;
-  min-height: 6rem;
+  height: 6vh;
+  min-height: 5.5rem;
+
   display: flex;
   width: 100%;
   background-color: ${(props) => props.theme.background};

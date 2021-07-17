@@ -2,9 +2,10 @@ import styled from "styled-components";
 import { mixin, color } from "../../shared/utils/styles";
 
 export const StyledPhotoSearch = styled.div`
-  height: 9vh;
+  height: 7vh;
+  min-height: 6rem;
   max-width: 1000px;
-  margin: 11.5vh auto 0;
+  margin: 0 auto;
   background-color: ${(props) => props.theme.backgroundRev};
   ${mixin.center};
 

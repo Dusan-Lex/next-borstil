@@ -3,7 +3,7 @@ import { color, mixin } from "../../../shared/utils/styles";
 
 export const StyledHomeAbout = styled.section`
   position: relative;
-  width: 100vw;
+  width: 100%;
   margin: 5rem 0;
 `;
 

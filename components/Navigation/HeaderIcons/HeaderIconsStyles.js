@@ -7,7 +7,7 @@ import { color } from "../../../shared/utils/styles";
 export const StyledHeaderIcons = styled.div`
   width: 18%;
   min-width: 22rem;
-  height: 100%;
+  /* height: 100%; */
   display: ${(props) => (props.small ? "none" : "flex")};
   align-items: center;
 

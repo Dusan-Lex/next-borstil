@@ -66,9 +66,11 @@ const HomeAbout = () => {
           </ul>
 
           <FeaturesDetails active={activeSlide}>
-            <p key={t(`home:about.features.${activeSlide - 1}.details`)}>
-              {t(`home:about.features.${activeSlide - 1}.details`)}
-            </p>
+            {activeSlide && (
+              <p key={t(`home:about.features.${activeSlide - 1}.details`)}>
+                {t(`home:about.features.${activeSlide - 1}.details`)}
+              </p>
+            )}
           </FeaturesDetails>
         </Features>
       </div>

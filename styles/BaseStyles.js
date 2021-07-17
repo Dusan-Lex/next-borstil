@@ -8,7 +8,7 @@ export default createGlobalStyle`
     height: 100%;
     min-height: 100%;
     font-size: 62.5%; // 1rem=10px
-
+    
     // >1800px
     @media only screen and (min-width: 112.5em) {
       font-size: 75%;

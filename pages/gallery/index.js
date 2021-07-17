@@ -34,6 +34,7 @@ const Gallery = () => {
 
   return (
     <main>
+      <div style={{ height: "10vh", minHeight: "8.5rem" }}></div>
       <PhotoSearch onSearch={searchHandler} />
       <PhotoGallery photos={photos} />
     </main>
