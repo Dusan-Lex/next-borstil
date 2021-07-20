@@ -11,6 +11,17 @@ export const Header = styled.header`
     props.hideHeaderUp ? "translateY(-4.5vh)" : "translateY(0)"};
   transition: transform 0.4s linear;
   z-index: 100;
+  transform: translateY(-100%);
+  animation: header-a1 1s 0.2s forwards;
+  @media only screen and (max-width: 1200px) {
+    animation-delay: 0.7s;
+  }
+
+  @keyframes header-a1 {
+    100% {
+      transform: translateY(0);
+    }
+  }
 `;
 
 export const HeaderUp = styled.div`
@@ -36,6 +47,7 @@ export const HeaderDown = styled.div`
 
   display: flex;
   width: 100%;
+
   background-color: ${(props) => props.theme.background};
 
   @media only screen and (max-width: 1200px) {

@@ -8,6 +8,16 @@ export const StyledHomeSlider = styled.section`
   max-width: 1450px;
   margin: auto;
   background-color: ${color.primaryLightest};
+  animation: slider-a1 1.2s ease forwards;
+
+  @keyframes slider-a1 {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -30,7 +40,7 @@ export const Slide = styled.div`
   padding-left: 15rem;
   align-items: center;
   opacity: 0.5;
-  animation: sliderA4 0.5s ${(props) => (props.first ? "3.1s" : "")} forwards;
+  animation: sliderA4 0.5s forwards;
 
   img {
     ${mixin.coverParent}
@@ -102,8 +112,7 @@ export const SlideContent = styled.div`
     border-left: 3px solid ${color.primaryDark};
     z-index: -1;
     transform: scaleY(0);
-    animation: sliderA2 0.8s ${(props) => (props.first ? "3.6s" : "0.5s")}
-      ease-out forwards;
+    animation: sliderA2 0.8s 0.5s ease-out forwards;
   }
   @keyframes sliderA2 {
     100% {
@@ -116,8 +125,7 @@ export const SlideContent = styled.div`
     color: ${(props) => props.theme.text.slider};
     transform: translateX(10rem);
     opacity: 0;
-    animation: sliderA3 0.8s ${(props) => (props.first ? "3.3s" : "0.2s")}
-      ease-out forwards;
+    animation: sliderA3 0.8s 0.2s ease-out forwards;
     @keyframes sliderA3 {
       100% {
         transform: translateX(0);
@@ -144,8 +152,7 @@ export const SlideContent = styled.div`
     color: ${(props) => props.theme.text.sliderRev};
     transform: translateY(3rem);
     opacity: 0.5;
-    animation: sliderA5 0.8s ${(props) => (props.first ? "3.3s" : "0.2s")}
-      ease-out forwards;
+    animation: sliderA5 0.8s 0.2s ease-out forwards;
     @keyframes sliderA5 {
       100% {
         transform: translateY(0);
@@ -177,7 +184,15 @@ export const SliderArrow = styled.div`
   top: 50%;
   z-index: 10;
   ${(props) => (props.left ? "left: -3.5rem;" : "right: -3.5rem;")}
-
+  opacity: 0;
+  transform: translateY(12rem);
+  animation: arrow-a1 1s 0.1s ease forwards;
+  @keyframes arrow-a1 {
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
   @media screen and (max-width: 1550px) {
     ${(props) => (props.left ? "left: 3.5rem;" : "right: 3.5rem;")}
   }

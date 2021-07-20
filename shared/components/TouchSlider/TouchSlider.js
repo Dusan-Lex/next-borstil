@@ -173,13 +173,12 @@ const SliderTouch = ({ data }) => {
           >
             <TouchSlideContent>
               <TouchSlideTitle>{slide.title}</TouchSlideTitle>
-              <TouchSlideDescription>{slide.description}</TouchSlideDescription>
+              {/* <TouchSlideDescription>{slide.description}</TouchSlideDescription> */}
             </TouchSlideContent>
             <TouchImageWrapper>
               <Image
                 width="800"
                 height="600"
-                // layout="responsive"
                 loading="eager"
                 onDragStart={(e) => {
                   e.preventDefault();
@@ -191,10 +190,16 @@ const SliderTouch = ({ data }) => {
         ))}
       </TouchSlider>
       <TouchSliderArrow onClick={leftClickHandler} left>
-        <ArrowLeft width="75" height="75" />
+        <ArrowLeft
+          width={`${windowSize.width < 500 ? "65" : "75"}`}
+          height={`${windowSize.width < 500 ? "65" : "75"}`}
+        />
       </TouchSliderArrow>
       <TouchSliderArrow onClick={rightClickHandler}>
-        <ArrowRight width="75" height="75" />
+        <ArrowRight
+          width={`${windowSize.width < 500 ? "65" : "75"}`}
+          height={`${windowSize.width < 500 ? "65" : "75"}`}
+        />
       </TouchSliderArrow>
     </TouchSliderContainer>
   );

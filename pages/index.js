@@ -8,7 +8,7 @@ import HomeReference from "../components/Home/HomeReference/HomeReference";
 const HomePage = (props) => {
   return (
     <main>
-      <HomeSlider first={props.first} />
+      <HomeSlider />
       <HomeOffer />
       <HomeDw />
       <HomeAbout />

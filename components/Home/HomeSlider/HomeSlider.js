@@ -12,7 +12,7 @@ import {
   SliderArrow,
 } from "./HomeSliderStyles";
 
-const HomeSlider = ({ first }) => {
+const HomeSlider = () => {
   const [slide, setSlide] = useState(0);
   const timeout = useRef(null);
   const { t } = useTranslation();
@@ -24,11 +24,8 @@ const HomeSlider = ({ first }) => {
       setSlide((slide) => (slide === length - 1 ? 0 : slide + 1));
     };
 
-    if (first) {
-      timeout.current = setTimeout(next, 7600);
-    } else {
-      timeout.current = setTimeout(next, 4600);
-    }
+    timeout.current = setTimeout(next, 4600);
+
     return () => {
       timeout.current && clearTimeout(timeout.current);
     };
@@ -63,7 +60,7 @@ const HomeSlider = ({ first }) => {
           return (
             <Slider key={el}>
               {el === slide && (
-                <Slide first={first}>
+                <Slide>
                   <img
                     src={`/images/Home/Slider-Image-${el + 1}.webp`}
                     alt={t(`home:slider.${el}.alt`)}
@@ -73,7 +70,7 @@ const HomeSlider = ({ first }) => {
                       })`,
                     }}
                   />
-                  <SlideContent first={first}>
+                  <SlideContent>
                     <div style={{ overflow: "hidden" }}>
                       <h3>{t(`home:slider.${el}.subtitle`)}</h3>
                     </div>

@@ -1,8 +1,6 @@
-import { useState, useEffect } from "react";
 import Head from "next/head";
 import NormalizeStyles from "../styles/NormalizeStyles";
 import BaseStyles from "../styles/BaseStyles";
-import LoadingFirst from "../components/LoadingFirst/LoadingFirst";
 import Navigation from "../components/Navigation/Navigation";
 import NewsletterRegistration from "../components/Newsletter/NewsletterRegistration";
 import Footer from "../components/Footer/Footer";
@@ -14,21 +12,6 @@ import { ModalContextProvider } from "../store/modalContext";
 import Modal from "../shared/components/Modal/Modal";
 
 function MyApp({ Component, pageProps }) {
-  const [loadingClass, setLoadingClass] = useState("");
-  const [first, setFirst] = useState(true);
-  useEffect(() => {
-    document.body.style.overflow = "hidden";
-    setTimeout(() => {
-      setLoadingClass("out");
-      setTimeout(() => {
-        document.body.style.overflow = "";
-      }, 600);
-    }, 2300);
-    setTimeout(() => {
-      setFirst(false);
-    }, 5000);
-  }, []);
-
   return (
     <ThemeContextProvider>
       <Theme>
@@ -72,10 +55,10 @@ function MyApp({ Component, pageProps }) {
               </Head>
               <NormalizeStyles />
               <BaseStyles />
-              <LoadingFirst loadingClass={loadingClass} />
+
               <Modal />
               <Navigation />
-              <Component {...pageProps} first={first} />
+              <Component {...pageProps} />
               <NewsletterRegistration />
               <Footer />
             </ModalContextProvider>

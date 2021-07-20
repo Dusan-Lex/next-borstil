@@ -6,6 +6,15 @@ export const Offer = styled.section`
   position: relative;
   padding-top: 4.5rem;
   padding-bottom: 6rem;
+  animation: offer-a1 1.2s ease forwards;
+  @keyframes offer-a1 {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 
   @media only screen and (max-width: 1200px) {
     margin-top: -2px;
