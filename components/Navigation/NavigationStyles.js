@@ -12,13 +12,15 @@ export const Header = styled.header`
   transition: transform 0.4s linear;
   z-index: 100;
   transform: translateY(-100%);
+  opacity: 0;
   animation: header-a1 1s 0.2s forwards;
-  @media only screen and (max-width: 1200px) {
-    animation-delay: 0.7s;
+  @media only screen and (max-width: 600px) {
+    /* animation-delay: 0.7s; */
   }
 
   @keyframes header-a1 {
     100% {
+      opacity: 1;
       transform: translateY(0);
     }
   }
@@ -51,6 +53,7 @@ export const HeaderDown = styled.div`
   background-color: ${(props) => props.theme.background};
 
   @media only screen and (max-width: 1200px) {
+    background-color: ${color.primary};
     & > .header-icons {
       display: none;
     }

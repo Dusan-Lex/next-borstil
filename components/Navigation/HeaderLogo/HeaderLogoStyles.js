@@ -57,6 +57,9 @@ export const StyledHeaderLogo = styled.div`
 
   .pine {
     fill: ${(props) => props.theme.text.regular};
+    @media only screen and (max-width: 1200px) {
+      fill: ${color.secondary};
+    }
   }
   @media (hover: hover) and (pointer: fine) {
     &:hover {
