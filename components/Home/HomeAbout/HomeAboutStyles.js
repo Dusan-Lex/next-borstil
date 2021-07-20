@@ -5,6 +5,7 @@ export const StyledHomeAbout = styled.section`
   position: relative;
   width: 100%;
   margin: 5rem 0;
+  z-index: 10;
 `;
 
 export const Features = styled.div`
