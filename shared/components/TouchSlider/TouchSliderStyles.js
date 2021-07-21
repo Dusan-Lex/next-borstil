@@ -20,10 +20,10 @@ export const TouchSlider = styled.div`
 
 export const TouchSliderArrow = styled.div`
   position: absolute;
-  cursor: pointer;
+  cursor: ${(props) => (props.allowed ? "pointer" : "not-allowed")};
   top: 33%;
   z-index: 10;
-  ${(props) => (props.left ? "left: 0;" : "right: 0;")}
+  ${(props) => (props.left ? "left: 0;" : "right: 0;")};
   @media only screen and (min-width: 1200px) {
     ${(props) => (props.left ? "left: 1rem;" : "right: 1rem;")}
   }
@@ -39,6 +39,12 @@ export const TouchSliderArrow = styled.div`
   svg {
     stroke: ${color.primaryLightest};
     margin-right: ${(props) => (props.left ? "0.3rem" : "-0.3rem")};
+  }
+  &.not-allowed {
+    cursor: not-allowed;
+    svg {
+      stroke: gray;
+    }
   }
 `;
 
@@ -63,12 +69,7 @@ export const TouchSlideContent = styled.div`
   top: 80%;
   width: 70%;
   height: 30%;
-  background: linear-gradient(
-    125deg,
-    ${(props) => mixin.rgba(props.theme.backgroundRev, 0.99)} 0%,
-    ${(props) => mixin.rgba(props.theme.backgroundRev, 0.99)} 50%,
-    ${(props) => mixin.rgba(props.theme.background, 0.99)} 50.1%
-  );
+  background: ${mixin.rgba(color.secondary, 0.95)};
   border-radius: 3px;
   display: flex;
   flex-direction: column;
@@ -78,11 +79,9 @@ export const TouchSlideContent = styled.div`
   &::before {
     content: "";
     ${mixin.coverParent};
-    /* width: calc(100% - 3rem); */
-    /* height: calc(100% - 3rem); */
-
+    width: calc(100% - 3rem);
+    height: calc(100% - 3rem);
     background-color: transparent;
-
     transform: translate(1.5rem, 1.5rem);
     z-index: 10;
     border: 2px solid ${color.primary};

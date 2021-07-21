@@ -14,8 +14,8 @@ export const Header = styled.header`
   transform: translateY(-100%);
   opacity: 0;
   animation: header-a1 1s 0.2s forwards;
-  @media only screen and (max-width: 600px) {
-    /* animation-delay: 0.7s; */
+  @media only screen and (max-width: 1200px) {
+    transform: translateY(0);
   }
 
   @keyframes header-a1 {

@@ -25,8 +25,12 @@ const SliderTouch = ({ data }) => {
   const currentIndex = useRef(0);
   const middleIndex = useRef(1);
   const firstClientX = useRef(0);
+  const rightArrowRef = useRef();
+  const leftArrowRef = useRef();
   const numberOfSlides =
     windowSize.width > 1200 ? 3 : windowSize.width > 800 ? 2 : 1;
+
+  leftArrowRef.current?.classList.add("not-allowed");
 
   useEffect(() => {
     const currentSliderRef = sliderRef.current;
@@ -78,11 +82,23 @@ const SliderTouch = ({ data }) => {
         prevTranslate.current - window.innerWidth / numberOfSlides;
       prevTranslate.current = currentTranslate.current;
       middleIndex.current++;
+      if (middleIndex.current === data.length - numberOfSlides + 1) {
+        rightArrowRef.current.classList.add("not-allowed");
+      } else {
+        leftArrowRef.current.classList.remove("not-allowed");
+        rightArrowRef.current.classList.remove("not-allowed");
+      }
     } else {
       currentTranslate.current =
         prevTranslate.current + window.innerWidth / numberOfSlides;
       prevTranslate.current = currentTranslate.current;
       middleIndex.current--;
+      if (middleIndex.current === 1) {
+        leftArrowRef.current.classList.add("not-allowed");
+      } else {
+        rightArrowRef.current.classList.remove("not-allowed");
+        leftArrowRef.current.classList.remove("not-allowed");
+      }
     }
   };
 
@@ -189,13 +205,22 @@ const SliderTouch = ({ data }) => {
           </TouchSlide>
         ))}
       </TouchSlider>
-      <TouchSliderArrow onClick={leftClickHandler} left>
+      <TouchSliderArrow
+        ref={leftArrowRef}
+        onClick={leftClickHandler}
+        left
+        allowed={middleIndex.current !== data.length - numberOfSlides + 1}
+      >
         <ArrowLeft
           width={`${windowSize.width < 500 ? "65" : "75"}`}
           height={`${windowSize.width < 500 ? "65" : "75"}`}
         />
       </TouchSliderArrow>
-      <TouchSliderArrow onClick={rightClickHandler}>
+      <TouchSliderArrow
+        ref={rightArrowRef}
+        onClick={rightClickHandler}
+        allowed={middleIndex.current !== data.length - numberOfSlides + 1}
+      >
         <ArrowRight
           width={`${windowSize.width < 500 ? "65" : "75"}`}
           height={`${windowSize.width < 500 ? "65" : "75"}`}
