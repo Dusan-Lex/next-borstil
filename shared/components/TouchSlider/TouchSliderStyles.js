@@ -69,7 +69,7 @@ export const TouchSlideContent = styled.div`
   top: 80%;
   width: 70%;
   height: 30%;
-  background: ${mixin.rgba(color.secondary, 0.95)};
+  background: ${mixin.rgba(color.secondary, 0.98)};
   border-radius: 3px;
   display: flex;
   flex-direction: column;

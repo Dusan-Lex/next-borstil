@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { mixin } from "../../../shared/utils/styles";
+import { mixin, color } from "../../../shared/utils/styles";
 
 export const BurgerBtn = styled.div`
   width: 10rem;
@@ -27,11 +27,11 @@ export const BurgerStripe = styled.span`
   width: 55%;
   display: block;
   height: 3px;
-  background-color: ${(props) =>
-    props.animate ? "wheat" : props.theme.backgroundRev};
+  background-color: ${(props) => (props.animate ? "wheat" : color.secondary)};
   transition-property: transform, width, background-color;
   transition-duration: 0.7s;
   transition-timing-function: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+
   &:not(:last-child) {
     margin-bottom: 8px;
   }
