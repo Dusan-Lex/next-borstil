@@ -17,12 +17,17 @@ const FirmSection = () => {
   const [index, setIndex] = useState(0);
   const firmRef = useRef();
   const { t } = useTranslation();
+  useEffect(() => {}, [index]);
   useEffect(() => {
-    firmRef.current.style.opacity = "0";
-    setTimeout(() => {
+    firmRef.current.classList.add("start");
+    const timerId = setTimeout(() => {
       firmRef.current.classList.add("overlay-animation");
-      firmRef.current.style.opacity = "1";
-    }, 400);
+      console.log("running");
+      firmRef.current.classList.remove("start");
+    }, 350);
+    return () => {
+      clearTimeout(timerId);
+    };
   }, []);
 
   const clickHandler = (i) => {

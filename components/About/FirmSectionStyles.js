@@ -9,14 +9,8 @@ export const AboutFirm = styled.section`
   ${mixin.center}
   padding-top: 10rem;
   @media only screen and (max-width: 1200px) {
+    padding-top: calc(8.5vh + 2rem);
     min-height: 82rem;
-  }
-  @media only screen and (max-width: 600px) {
-    padding-top: 8.5vh;
-    min-height: 95rem;
-  }
-  @media only screen and (max-width: 340px) {
-    min-height: 100rem;
   }
 `;
 
@@ -31,6 +25,10 @@ export const Firm = styled.div`
   justify-content: center;
   align-items: center;
   opacity: 1;
+
+  &.start {
+    opacity: 0;
+  }
 
   &.opacity-animation {
     opacity: 0;
