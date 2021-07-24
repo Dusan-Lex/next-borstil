@@ -40,6 +40,7 @@ export const Features = styled.div`
       align-items: center;
       justify-content: space-between;
       cursor: pointer;
+
       & > div:first-child {
         margin-right: 2rem;
         span {
@@ -142,6 +143,9 @@ export const AboutContentBox = styled.div`
     line-height: 1.8;
     font-weight: 400;
     padding: 1rem;
+    &:last-of-type {
+      margin-bottom: 2rem;
+    }
 
     span {
       font-size: 2.1rem;

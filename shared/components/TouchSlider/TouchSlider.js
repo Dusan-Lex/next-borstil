@@ -27,6 +27,7 @@ const SliderTouch = ({ data }) => {
   const firstClientX = useRef(0);
   const rightArrowRef = useRef();
   const leftArrowRef = useRef();
+
   const numberOfSlides =
     windowSize.width > 1200 ? 3 : windowSize.width > 800 ? 2 : 1;
 

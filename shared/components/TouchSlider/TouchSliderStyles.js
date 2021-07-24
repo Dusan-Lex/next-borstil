@@ -84,7 +84,7 @@ export const TouchSlideContent = styled.div`
     background-color: transparent;
     transform: translate(1.5rem, 1.5rem);
     z-index: 10;
-    border: 2px solid ${color.primary};
+    border: 0.15rem solid ${color.primary};
   }
 `;
 export const TouchImageWrapper = styled.div`

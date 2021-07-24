@@ -112,7 +112,7 @@ export const SlideContent = styled.div`
     border-left: 3px solid ${color.primaryDark};
     z-index: -1;
     transform: scaleY(0);
-    animation: sliderA2 0.8s 0.5s ease-out forwards;
+    animation: sliderA2 0.6s 0.5s ease-out forwards;
   }
   @keyframes sliderA2 {
     100% {

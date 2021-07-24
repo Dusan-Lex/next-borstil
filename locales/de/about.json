@@ -1,1 +1,16 @@
-{}
+[
+  {
+    "header1": "Über uns",
+    "header2": "Firmen Geschichte",
+    "paragraph1": "BorStil ist ein renommierter Schreinereibetrieb, der seit 2000 Bautischlerei- und Möbelteile herstellt. Die Produktion erfolgt am Standort Durmitorska bb in Leskovac.",
+    "paragraph2": "An der Spitze des Unternehmens steht der Inhaber Đordevic Ljubomir dipl. Ing.-Nr. Mit seiner langjährigen Erfahrung mit traditionell guten Tischlern in diesem Bereich führt er sehr erfolgreich Arbeiten für namhafte Firmen des Landes aus.",
+    "paragraph3": "Unsere Mission ist es, Endprodukte aus hochwertigem Holz unter Verwendung erstklassiger Rohstoffe sowie Hilfsstoffe und Beschläge namhafter in- und weltweiter Hersteller herzustellen."
+  },
+  {
+    "header1": "Über uns",
+    "header2": "Produktionsanlage",
+    "paragraph1": "Die Produktionsanlagen umfassen 1500 m2, in denen mehrere Abschnitte des Produktionsprozesses getrennt sind.",
+    "paragraph2": "Unsere Türen bestehen nicht aus fertigen Elementen, sondern das Rohmaterial wird zum Endprodukt bearbeitet. Die Bearbeitung erfolgt komplett im Produktionswerk auf spezialisierten Computermaschinen und CNC-Bearbeitungszentren mit ständigem Schwerpunkt auf ausgebildeten Bedienern und jungen Maschinen.",
+    "paragraph3": "Die Produktion und das Lager von Fertigprodukten mit ihren Kapazitäten ermöglichen kürzeste Lieferzeiten, unabhängig von der gelieferten Menge."
+  }
+]

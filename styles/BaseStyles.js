@@ -92,4 +92,6 @@ export default createGlobalStyle`
   }
 
   ${mixin.placeholderColor(color.secondaryDark)}
+
+  
 `;

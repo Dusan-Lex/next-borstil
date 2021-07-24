@@ -67,6 +67,46 @@ export const mixin = {
     height: 100%;
   `,
 
+  overlayAnimation: (colorValue, bgColorValue) => css`
+    &::after {
+      content: "";
+      ${mixin.coverParent}
+      background-color: ${colorValue};
+      animation: fade-firm 0.8s forwards;
+      transform-origin: left;
+
+      @keyframes fade-firm {
+        0% {
+          transform: scaleX(0);
+        }
+        99% {
+          transform: scaleX(1);
+          width: 100%;
+        }
+        100% {
+          width: 0;
+        }
+      }
+    }
+    &::before {
+      content: "";
+      ${mixin.coverParent}
+      background-color: ${bgColorValue};
+      animation: fade-firm2 0.7s 0.8s ease-out forwards;
+      transform-origin: right;
+      @keyframes fade-firm2 {
+        0% {
+          background-color: ${colorValue};
+          transform: scaleX(1);
+        }
+        100% {
+          background-color: ${colorValue};
+          transform: scaleX(0);
+        }
+      }
+    }
+  `,
+
   placeholderColor: (colorValue) => css`
     ::-webkit-input-placeholder {
       color: ${colorValue} !important;

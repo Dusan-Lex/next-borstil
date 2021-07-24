@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import useTranslation from "next-translate/useTranslation";
+import ArrowButton from "../../../shared/components/Buttons/ArrowButton/ArrowButton";
 import PlusButton from "../../../shared/components/Buttons/PlusButton/PlusButton";
 import {
   StyledHomeAbout,
@@ -81,6 +82,7 @@ const HomeAbout = () => {
           {t(`home:about.content1.text`)}
         </p>
         <p>{t(`home:about.content2`)}</p>
+        <ArrowButton path="/about">{t(`home:about.button`)}</ArrowButton>
       </AboutContentBox>
     </StyledHomeAbout>
   );

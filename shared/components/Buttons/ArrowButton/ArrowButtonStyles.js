@@ -46,14 +46,14 @@ export const StyledAnchor = styled.a`
     background-color: ${(props) =>
       props.dark ? color.primary : color.secondary};
   }
+
   @media (hover: hover) and (pointer: fine) {
     .first {
       color: ${(props) => (props.dark ? color.secondary : color.primary)};
     }
     &:hover {
       color: ${(props) => (props.dark ? color.secondary : color.primary)};
-      border: 2px solid
-        ${(props) => (props.dark ? color.secondary : color.primary)};
+      border: 2px solid transparent;
       box-shadow: none;
 
       .first {
