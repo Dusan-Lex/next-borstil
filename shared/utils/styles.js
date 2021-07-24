@@ -92,7 +92,7 @@ export const mixin = {
       content: "";
       ${mixin.coverParent}
       background-color: ${bgColorValue};
-      animation: fade-firm2 0.7s 0.8s ease-out forwards;
+      animation: fade-firm2 0.7s 0.75s ease-out forwards;
       transform-origin: right;
       @keyframes fade-firm2 {
         0% {

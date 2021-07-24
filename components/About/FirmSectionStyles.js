@@ -12,6 +12,15 @@ export const AboutFirm = styled.section`
     padding-top: calc(8.5vh + 2rem);
     min-height: 82rem;
   }
+  @media only screen and (max-width: 800px) {
+    min-height: 86rem;
+  }
+  @media only screen and (max-width: 450px) {
+    min-height: 92rem;
+  }
+  @media only screen and (max-width: 300px) {
+    min-height: 100rem;
+  }
 `;
 
 export const Firm = styled.div`
@@ -79,7 +88,7 @@ export const FirmDesc1 = styled.div`
 
   h3 {
     position: relative;
-    width: 13rem;
+    width: 15rem;
     font-size: 1.8rem;
     letter-spacing: 5px;
     color: ${color.primary};
@@ -106,7 +115,7 @@ export const FirmDesc2 = styled.div`
   ${mixin.center}
   height: 40%;
   text-align: center;
-  padding: 4rem;
+  padding: 3.5rem;
   color: ${color.secondaryDark};
   overflow: hidden;
   @media only screen and (max-width: 1200px) {
@@ -151,6 +160,8 @@ export const FirmImageBox = styled.div`
   position: relative;
   width: 48%;
   height: 80%;
+  ${mixin.center}
+  padding: 1px;
   @media only screen and (max-width: 1200px) {
     height: 30rem;
     width: 45rem;
@@ -175,8 +186,8 @@ export const FirmImage = styled.div`
     url(${(props) => props.src});
   background-position: ${(props) => props.bgPos};
   background-size: cover;
-  width: 99.8%;
-  height: 99.8%;
+  width: 100%;
+  height: 100%;
 `;
 
 export const FirmSideImages = styled.div`
@@ -187,8 +198,10 @@ export const FirmSideImages = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+
   @media only screen and (max-width: 1200px) {
     width: 16%;
+    align-self: center;
   }
   @media only screen and (max-width: 600px) {
     display: none;
