@@ -13,7 +13,10 @@ export const AboutFirm = styled.section`
   }
   @media only screen and (max-width: 600px) {
     padding-top: 8.5vh;
-    min-height: 98rem;
+    min-height: 95rem;
+  }
+  @media only screen and (max-width: 340px) {
+    min-height: 100rem;
   }
 `;
 
@@ -28,9 +31,10 @@ export const Firm = styled.div`
   justify-content: center;
   align-items: center;
   opacity: 1;
-  transition: opacity 0.5s ease-out;
+
   &.opacity-animation {
     opacity: 0;
+    transition: opacity 0.5s ease-out;
   }
   &.overlay-animation {
     .first-description h3,
@@ -57,6 +61,7 @@ export const Firm = styled.div`
   }
   @media only screen and (max-width: 600px) {
     padding-left: 0;
+    width: 80%;
   }
 `;
 export const FirmDesc = styled.div`
@@ -92,6 +97,9 @@ export const FirmDesc1 = styled.div`
     position: relative;
     margin: 2rem 0;
     font-size: 1.5rem;
+  }
+  @media only screen and (max-width: 600px) {
+    padding-right: 0;
   }
 `;
 export const FirmDesc2 = styled.div`
@@ -146,8 +154,16 @@ export const FirmImageBox = styled.div`
   width: 48%;
   height: 80%;
   @media only screen and (max-width: 1200px) {
+    height: 30rem;
+    width: 45rem;
+  }
+  @media only screen and (max-width: 600px) {
     height: 28rem;
     width: 42rem;
+  }
+  @media only screen and (max-width: 340px) {
+    height: 24rem;
+    width: 36rem;
   }
 `;
 export const FirmImage = styled.div`

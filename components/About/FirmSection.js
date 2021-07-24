@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import useTranslation from "next-translate/useTranslation";
 import ArrowRightRegular from "../../shared/components/svgs/ArrowRightRegular";
 import {
@@ -17,6 +17,13 @@ const FirmSection = () => {
   const [index, setIndex] = useState(0);
   const firmRef = useRef();
   const { t } = useTranslation();
+  useEffect(() => {
+    firmRef.current.style.opacity = "0";
+    setTimeout(() => {
+      firmRef.current.classList.add("overlay-animation");
+      firmRef.current.style.opacity = "1";
+    }, 400);
+  }, []);
 
   const clickHandler = (i) => {
     if (i !== index) {
@@ -37,7 +44,7 @@ const FirmSection = () => {
 
   return (
     <AboutFirm>
-      <Firm ref={firmRef} className="overlay-animation">
+      <Firm ref={firmRef}>
         <FirmDesc>
           <FirmDesc1 className="first-description">
             <h3>{t(`about:${index}.header1`)}</h3>
