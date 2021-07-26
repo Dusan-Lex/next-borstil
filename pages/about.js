@@ -1,7 +1,7 @@
-import FirmSection from "../components/About/FirmSection";
+import AboutSection from "../components/About/AboutSection";
 
 const About = () => {
-  return <FirmSection />;
+  return <AboutSection />;
 };
 
 export default About;

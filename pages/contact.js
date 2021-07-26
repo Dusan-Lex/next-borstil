@@ -1,5 +1,7 @@
+import ContactSection from "../components/Contact/ContactSection";
+
 const Contact = () => {
-  return <div style={{ paddingTop: "20vh", height: "70rem" }}>Kontakt</div>;
+  return <ContactSection />;
 };
 
 export default Contact;

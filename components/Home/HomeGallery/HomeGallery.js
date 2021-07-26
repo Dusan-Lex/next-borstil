@@ -2,7 +2,7 @@ import useTranslation from "next-translate/useTranslation";
 import { homeGalleryData } from "../../Gallery/GalleryData";
 import Photo from "../../../shared/components/Photo/Photo";
 import ArrowButton from "../../../shared/components/Buttons/ArrowButton/ArrowButton";
-import { HomePhotos, StyledHomeGallery, HomeTitle } from "./HomeGaleryStyles";
+import { HomePhotos, StyledHomeGallery, HomeTitle } from "./HomeGalleryStyles";
 
 const HomeGallery = () => {
   const { t } = useTranslation();

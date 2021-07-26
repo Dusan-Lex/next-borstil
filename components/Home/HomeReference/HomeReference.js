@@ -1,7 +1,7 @@
 import React from "react";
 import SliderTouch from "../../../shared/components/TouchSlider/TouchSlider";
 import { StyledHomeReference } from "./HomeReferenceStyles";
-import { HomeTitle } from "../HomeGallery/HomeGaleryStyles";
+import { HomeTitle } from "../HomeGallery/HomeGalleryStyles";
 const data = [
   {
     title: "Porodična kuća",

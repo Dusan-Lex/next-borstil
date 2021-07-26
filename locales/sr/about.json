@@ -1,23 +1,23 @@
 [
   {
-    "header1": "O Nama",
-    "header2": "Istorijat naše firme",
+    "heading1": "O Nama",
+    "heading2": "Istorijat naše firme",
     "paragraph1": "BorStil je poznata stolarska firma koja se od 2000.godine bavi proizvodnjom građevinske stolarije i delova nameštaja. Proizvodnja se odvija na lokaciji Durmitorska bb u Leskovcu.",
     "paragraph2": "Na čelu firme nalazi se vlasnik Đordevic Ljubomir dipl. Ing. Svojim dugogodišnjim iskustvom sa tradicionalno dobrim stolarima ovog kraja vrlo uspešno izvodi radove za poznate firme u zemlji.",
     "paragraph3": "Naša misija je da proizvodemo finalne proizode od drveta vrhunskog kvaliteta,  koristeći prvoklasne repromaterijale, kao i pomoćne materijale i okove poznatih domaćih i svetskih proizvođača."
   },
   {
-    "header1": "O Nama",
-    "header2": "Proizvodni pogon",
+    "heading1": "O Nama",
+    "heading2": "Proizvodni pogon",
     "paragraph1": "Proizvodni pogoni se prostiru na 1500 m2, u čijem sklopu je odvojeno više segmenata procesa proizvodnje.",
     "paragraph2": "Naša vrata se ne proizvode od gotovih elemenata, već se sirov materijal mašinski obrađuje do krajnjeg proizvoda. Prerada se kompletno vrši u proizvodnom pogonu na specijalizovanim kompjuterskim mašinama i CNC obradnim centrima uz stalni akcenat na obučene operatere i mlad mašinski park.",
     "paragraph3": "Proizvodnja i magacin gotovih proizvoda sa svojim kapacitetima omogućavaju najkraće rokove isporuke, nezavisno od količina koje se isporučuju."
   },
   {
-    "header1": "O Nama",
-    "header2": "Izložbeni salon",
-    "paragraph1": "Proizvodni pogoni se prostiru na 1500 m2, u čijem sklopu je odvojeno više segmenata procesa proizvodnje.",
-    "paragraph2": "Naša vrata se ne proizvode od gotovih elemenata, već se sirov materijal mašinski obrađuje do krajnjeg proizvoda. Prerada se kompletno vrši u proizvodnom pogonu na specijalizovanim kompjuterskim mašinama i CNC obradnim centrima uz stalni akcenat na obučene operatere i mlad mašinski park.",
-    "paragraph3": "Proizvodnja i magacin gotovih proizvoda sa svojim kapacitetima omogućavaju najkraće rokove isporuke, nezavisno od količina koje se isporučuju."
+    "heading1": "O Nama",
+    "heading2": "Izložbeni salon",
+    "paragraph1": "U našem moderno uređenom prodajnom salonu u Pirotu možete videti sve tipove energetski efikasnih vrata iz naše ponude.",
+    "paragraph2": "Naš kompletan program će Vam stanovanje učiniti lepšim i prijatnijim, i uz profesionalno i stručno savetovanje možete odabrati svoju unikatnu kombinaciju profila, stakala i okova koja će u celosti biti prilagođena Vašem ukusu i potrebama.",
+    "paragraph3": "Vaše je samo da odaberete, a sve ostalo, od merenja do ugradnje je naša briga. Biće nam zadovoljstvo da Vam pomognemo da uredite svoj dom ili poslovni prostor."
   }
 ]

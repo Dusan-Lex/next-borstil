@@ -11,20 +11,27 @@ import {
   FirmImage,
   FirmSideImages,
   FirmSideImage,
-} from "./FirmSectionStyles";
+} from "./AboutSectionStyles";
 
-const FirmSection = () => {
+const AboutSection = () => {
   const [index, setIndex] = useState(0);
   const firmRef = useRef();
   const { t } = useTranslation();
-  useEffect(() => {}, [index]);
+
   useEffect(() => {
-    firmRef.current.classList.add("start");
+    const timer = setTimeout(() => {
+      clickHandler(null);
+    }, 20000);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [index]);
+
+  useEffect(() => {
     const timerId = setTimeout(() => {
       firmRef.current.classList.add("overlay-animation");
-      console.log("running");
-      firmRef.current.classList.remove("start");
-    }, 350);
+      firmRef.current.classList.add("start");
+    }, 300);
     return () => {
       clearTimeout(timerId);
     };
@@ -52,8 +59,8 @@ const FirmSection = () => {
       <Firm ref={firmRef}>
         <FirmDesc>
           <FirmDesc1 className="first-description">
-            <h3>{t(`about:${index}.header1`)}</h3>
-            <h5>{t(`about:${index}.header2`)}</h5>
+            <h3>{t(`about:${index}.heading1`)}</h3>
+            <h5>{t(`about:${index}.heading2`)}</h5>
             <p>{t(`about:${index}.paragraph1`)}</p>
             <p>{t(`about:${index}.paragraph2`)}</p>
           </FirmDesc1>
@@ -86,4 +93,4 @@ const FirmSection = () => {
   );
 };
 
-export default FirmSection;
+export default AboutSection;

@@ -33,10 +33,10 @@ export const Firm = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 1;
+  opacity: 0;
 
   &.start {
-    opacity: 0;
+    opacity: 1;
   }
 
   &.opacity-animation {
@@ -142,6 +142,14 @@ export const FirmDesc2 = styled.div`
     background-color: ${(props) => props.theme.text.hover};
     cursor: pointer;
     transform: translateY(100%);
+    transition: background-color 0.1s ease;
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        svg {
+          stroke: ${(props) => props.theme.background};
+        }
+      }
+    }
 
     @media only screen and (max-width: 1200px) {
       background-color: ${color.primary};
@@ -149,6 +157,7 @@ export const FirmDesc2 = styled.div`
 
     svg {
       stroke: ${(props) => props.theme.text.regular};
+      transition: stroke 0.1s ease;
       @media only screen and (max-width: 1200px) {
         stroke: ${color.primaryLightest};
       }
