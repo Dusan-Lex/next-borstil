@@ -14,16 +14,8 @@ const themes = {
       slider: "#b16e17",
       sliderRev: "#563727",
     },
-    //   primaryDark: "#b16e17",
-    //   primaryLight: "#f5deb3",
-    //   primaryLightest: "#faf1e4",
-    //   secondaryDarkest: "#272223",
-    //   secondaryDark: "#372c2e",
-
-    //   secondaryLight: "#7a431d",
   },
   dark: {
-    //   primaryDark: "#b16e17",
     background: "#563727",
     backgroundRev: "#de9e48",
     backgroundAbout: "#faf1e4",
@@ -34,12 +26,6 @@ const themes = {
       slider: "#563727",
       sliderRev: "#b16e17",
     },
-    //   primaryLight: "#f5deb3",
-    //   primaryLightest: "#faf1e4",
-    //   secondaryDarkest: "#272223",
-    //   secondaryDark: "#372c2e",
-
-    //   secondaryLight: "#7a431d",
   },
 };
 

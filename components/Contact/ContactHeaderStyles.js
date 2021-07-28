@@ -4,7 +4,7 @@ import { mixin, color } from "../../shared/utils/styles";
 export const StyledContactHeader = styled.div`
   position: relative;
   height: auto;
-  min-height: 50rem;
+  min-height: 55rem;
   color: white;
   background-image: url("images/Contact/Borstil-contact.jpg");
   background-size: cover;

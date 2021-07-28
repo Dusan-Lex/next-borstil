@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { mixin, color } from "../../shared/utils/styles";
 
 export const StyledContactInfo = styled.div`
-  height: 45rem;
+  height: 50rem;
   padding: 0 2rem 2rem;
   display: flex;
   overflow: hidden;
@@ -13,35 +13,60 @@ export const StyledContactInfo = styled.div`
 `;
 
 export const Contact = styled.div`
-  background-color: ${(props) => props.theme.background};
   flex: 1;
-  animation: fadeInLeft 0.9s ease-out 0.9s both;
+  display: flex;
+  flex-direction: column;
+  animation: fadeInLeft 0.9s ease-out 2s both;
   @keyframes fadeInLeft {
     0% {
-      transform: translateX(-100%);
+      transform: translate(-100%);
       opacity: 0;
     }
 
     100% {
-      transform: translateX(0);
+      transform: translate(0);
       opacity: 1;
     }
+  }
+  @media only screen and (max-width: 900px) {
+    margin-bottom: 2rem;
+    border: 0.15rem solid ${color.secondary};
+  }
+`;
+
+export const ContactBox = styled.div`
+  height: 33.33%;
+  color: ${color.secondary};
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  div {
+    font-size: 2rem;
+    width: 35rem;
+  }
+  svg {
+    width: 5.5rem;
+    height: 5.5rem;
+    margin: 2rem;
+    stroke: ${color.primaryDark};
   }
 `;
 
 export const MapIFrame = styled.iframe`
   flex: 1;
   border: none;
-  animation: fadeInRight 0.9s ease-out 0.9s both;
+  animation: fadeInRight 0.9s ease-out 2s both;
   @keyframes fadeInRight {
     0% {
-      transform: translateX(100%);
+      transform: translate(100%);
       opacity: 0;
     }
 
     100% {
-      transform: translateX(0);
       opacity: 1;
+      transform: translate(0);
     }
   }
 `;

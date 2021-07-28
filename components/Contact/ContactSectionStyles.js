@@ -11,26 +11,29 @@ export const StyledContactSection = styled.section`
     }
   }
 `;
-export const ContactTitle = styled.h4`
-  display: inline-block;
-  font-size: 4rem;
 
-  margin: 2rem 0;
-  background-image: linear-gradient(
-    to right,
-    ${color.secondary},
-    ${color.primaryDark}
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  transform: scale(0);
-  animation: scaleTitle 0.9s 0.8s both;
-  border-bottom: 0.18rem solid ${color.secondaryLight};
-  border-top: 0.18rem solid ${color.secondaryLight};
-  @keyframes scaleTitle {
-    100% {
-      transform: scale(1);
+export const ScrollInto = styled.div`
+  overflow: hidden;
+  margin-bottom: 4rem;
+  div {
+    width: 5rem;
+    height: 5rem;
+    background-color: ${(props) => mixin.rgba(props.theme.background, 0.7)};
+    border-radius: 50%;
+    margin: auto;
+    ${mixin.center}
+    cursor: pointer;
+    transform: translateY(100%);
+    opacity: 0;
+    animation: fadeUp 0.5s 2s ease-out forwards;
+    @keyframes fadeUp {
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    svg {
+      stroke: ${(props) => mixin.rgba(props.theme.backgroundRev, 0.8)};
     }
   }
 `;

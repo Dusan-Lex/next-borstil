@@ -82,7 +82,9 @@ const HomeAbout = () => {
           {t(`home:about.content1.text`)}
         </p>
         <p>{t(`home:about.content2`)}</p>
-        <ArrowButton path="/about">{t(`home:about.button`)}</ArrowButton>
+        <ArrowButton path="/about" className="home-about-arrow">
+          {t(`home:about.button`)}
+        </ArrowButton>
       </AboutContentBox>
     </StyledHomeAbout>
   );

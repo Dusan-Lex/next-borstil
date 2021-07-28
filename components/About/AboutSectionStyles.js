@@ -103,10 +103,12 @@ export const FirmDesc1 = styled.div`
   p {
     position: relative;
     margin: 2rem 0;
-    font-size: 1.5rem;
   }
   @media only screen and (max-width: 600px) {
     padding-right: 0;
+    p:first-of-type {
+      margin-top: 1rem;
+    }
   }
 `;
 export const FirmDesc2 = styled.div`

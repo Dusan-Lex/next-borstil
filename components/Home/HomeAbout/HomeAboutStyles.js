@@ -6,6 +6,11 @@ export const StyledHomeAbout = styled.section`
   width: 100%;
   margin: 5rem 0;
   z-index: 10;
+  .home-about-arrow {
+    @media only screen and (max-width: 1200px) {
+      padding: 0.75rem 5rem;
+    }
+  }
 `;
 
 export const Features = styled.div`
