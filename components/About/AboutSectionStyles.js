@@ -9,7 +9,7 @@ export const AboutFirm = styled.section`
   ${mixin.center}
   padding-top: 10rem;
   @media only screen and (max-width: 1200px) {
-    background-color: white;
+    background-color: ${color.primaryLightest};
     padding-top: calc(8.5vh + 2rem);
     min-height: 82rem;
   }
@@ -54,7 +54,10 @@ export const Firm = styled.div`
         mixin.lighten(color.secondary, 0.2)
       )}
       @media only screen and (max-width: 1200px) {
-        ${mixin.overlayAnimation(mixin.lighten(color.primary, 0.15), "#FFFFFF")}
+        ${mixin.overlayAnimation(
+          mixin.lighten(color.primary, 0.15),
+          color.primaryLightest
+        )}
       }
     }
     .second-description {
