@@ -11,6 +11,7 @@ import {
   FirmImage,
   FirmSideImages,
   FirmSideImage,
+  NextSlide,
 } from "./AboutSectionStyles";
 
 const AboutSection = () => {
@@ -66,9 +67,9 @@ const AboutSection = () => {
           </FirmDesc1>
           <FirmDesc2 className="second-description">
             <p>{t(`about:${index}.paragraph3`)}</p>
-            <div onClick={() => clickHandler(null)}>
+            <NextSlide onClick={() => clickHandler(null)}>
               <ArrowRightRegular width="25" height="25" />
-            </div>
+            </NextSlide>
           </FirmDesc2>
         </FirmDesc>
         <FirmImageBox className="about-img-box">

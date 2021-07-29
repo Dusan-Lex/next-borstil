@@ -10,12 +10,10 @@ export const StyledPhotoSearch = styled.div`
   ${mixin.center};
 
   @media only screen and (max-width: 1200px) {
-    margin-top: 7vh;
     height: 7vh;
   }
 
   @media only screen and (max-width: 600px) {
-    margin-top: 8.5vh;
     height: 8.5vh;
   }
 `;

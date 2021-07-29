@@ -3,12 +3,13 @@ import { color, mixin } from "../../shared/utils/styles";
 
 export const AboutFirm = styled.section`
   height: 100vh;
-  min-height: 70rem;
+  min-height: 72rem;
   max-height: 100rem;
   background-color: ${mixin.lighten(color.secondary, 0.2)};
   ${mixin.center}
   padding-top: 10rem;
   @media only screen and (max-width: 1200px) {
+    background-color: white;
     padding-top: calc(8.5vh + 2rem);
     min-height: 82rem;
   }
@@ -52,6 +53,9 @@ export const Firm = styled.div`
         color.secondary,
         mixin.lighten(color.secondary, 0.2)
       )}
+      @media only screen and (max-width: 1200px) {
+        ${mixin.overlayAnimation(mixin.lighten(color.primary, 0.15), "#FFFFFF")}
+      }
     }
     .second-description {
       animation: fade-up 1s 0.7s backwards;
@@ -84,7 +88,7 @@ export const FirmDesc = styled.div`
 export const FirmDesc1 = styled.div`
   padding-right: 4rem;
   color: ${color.primaryLightest};
-  height: 60%;
+  height: 63%;
 
   h3 {
     position: relative;
@@ -104,6 +108,11 @@ export const FirmDesc1 = styled.div`
     position: relative;
     margin: 2rem 0;
   }
+
+  @media only screen and (max-width: 1200px) {
+    color: ${color.secondaryDark};
+  }
+
   @media only screen and (max-width: 600px) {
     padding-right: 0;
     p:first-of-type {
@@ -115,13 +124,13 @@ export const FirmDesc2 = styled.div`
   position: relative;
   background-color: ${(props) => props.theme.backgroundAbout};
   ${mixin.center}
-  height: 40%;
+  height: 37%;
   text-align: center;
   padding: 3.5rem;
-  color: ${color.secondaryDark};
+  color: ${color.secondaryDarkest};
   overflow: hidden;
   @media only screen and (max-width: 1200px) {
-    background-color: ${color.primaryLightest};
+    background-color: ${mixin.lighten(color.primary, 0.15)};
   }
   @keyframes fade-up {
     0% {
@@ -133,36 +142,36 @@ export const FirmDesc2 = styled.div`
       opacity: 1;
     }
   }
+`;
 
-  div {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 5rem;
-    height: 5rem;
-    ${mixin.center}
-    background-color: ${(props) => props.theme.text.hover};
-    cursor: pointer;
-    transform: translateY(100%);
-    transition: background-color 0.1s ease;
-    @media (hover: hover) and (pointer: fine) {
-      &:hover {
-        svg {
-          stroke: ${(props) => props.theme.background};
-        }
+export const NextSlide = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 5rem;
+  height: 5rem;
+  ${mixin.center}
+  background-color: ${(props) => props.theme.text.hover};
+  cursor: pointer;
+  transform: translateY(100%);
+  transition: background-color 0.1s ease;
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      svg {
+        stroke: ${(props) => props.theme.background};
       }
     }
+  }
 
+  @media only screen and (max-width: 1200px) {
+    background-color: ${mixin.lighten(color.secondary, 0.5)};
+  }
+
+  svg {
+    stroke: ${(props) => props.theme.text.regular};
+    transition: stroke 0.1s ease;
     @media only screen and (max-width: 1200px) {
-      background-color: ${color.primary};
-    }
-
-    svg {
-      stroke: ${(props) => props.theme.text.regular};
-      transition: stroke 0.1s ease;
-      @media only screen and (max-width: 1200px) {
-        stroke: ${color.primaryLightest};
-      }
+      stroke: ${color.primaryLightest};
     }
   }
 `;
