@@ -5,11 +5,10 @@ export const AboutFirm = styled.section`
   height: 100vh;
   min-height: 72rem;
   max-height: 100rem;
-  background-color: ${mixin.lighten(color.secondary, 0.2)};
+  background-color: ${mixin.lighten(color.secondary, 0.3)};
   ${mixin.center}
   padding-top: 10rem;
   @media only screen and (max-width: 1200px) {
-    background-color: ${color.primaryLightest};
     padding-top: calc(8.5vh + 2rem);
     min-height: 82rem;
   }
@@ -50,15 +49,9 @@ export const Firm = styled.div`
     .first-description p,
     .about-img-box {
       ${mixin.overlayAnimation(
-        color.secondary,
-        mixin.lighten(color.secondary, 0.2)
+        mixin.lighten(color.secondary, 0.1),
+        mixin.lighten(color.secondary, 0.3)
       )}
-      @media only screen and (max-width: 1200px) {
-        ${mixin.overlayAnimation(
-          mixin.lighten(color.primary, 0.15),
-          color.primaryLightest
-        )}
-      }
     }
     .second-description {
       animation: fade-up 1s 0.7s backwards;
@@ -112,10 +105,6 @@ export const FirmDesc1 = styled.div`
     margin: 2rem 0;
   }
 
-  @media only screen and (max-width: 1200px) {
-    color: ${color.secondaryDark};
-  }
-
   @media only screen and (max-width: 600px) {
     padding-right: 0;
     p:first-of-type {
@@ -132,9 +121,7 @@ export const FirmDesc2 = styled.div`
   padding: 3.5rem;
   color: ${color.secondaryDarkest};
   overflow: hidden;
-  @media only screen and (max-width: 1200px) {
-    background-color: ${mixin.lighten(color.primary, 0.15)};
-  }
+
   @keyframes fade-up {
     0% {
       transform: translateY(100%);
@@ -166,16 +153,9 @@ export const NextSlide = styled.div`
     }
   }
 
-  @media only screen and (max-width: 1200px) {
-    background-color: ${mixin.lighten(color.secondary, 0.5)};
-  }
-
   svg {
     stroke: ${(props) => props.theme.text.regular};
     transition: stroke 0.1s ease;
-    @media only screen and (max-width: 1200px) {
-      stroke: ${color.primaryLightest};
-    }
   }
 `;
 

@@ -1,6 +1,7 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, Fragment } from "react";
 import useTranslation from "next-translate/useTranslation";
 import ArrowRightRegular from "../../shared/components/svgs/ArrowRightRegular";
+
 import {
   AboutFirm,
   Firm,
@@ -13,6 +14,7 @@ import {
   FirmSideImage,
   NextSlide,
 } from "./AboutSectionStyles";
+import { color, mixin } from "../../shared/utils/styles";
 
 const AboutSection = () => {
   const [index, setIndex] = useState(0);
@@ -56,41 +58,43 @@ const AboutSection = () => {
   };
 
   return (
-    <AboutFirm>
-      <Firm ref={firmRef}>
-        <FirmDesc>
-          <FirmDesc1 className="first-description">
-            <h3>{t(`about:${index}.heading1`)}</h3>
-            <h5>{t(`about:${index}.heading2`)}</h5>
-            <p>{t(`about:${index}.paragraph1`)}</p>
-            <p>{t(`about:${index}.paragraph2`)}</p>
-          </FirmDesc1>
-          <FirmDesc2 className="second-description">
-            <p>{t(`about:${index}.paragraph3`)}</p>
-            <NextSlide onClick={() => clickHandler(null)}>
-              <ArrowRightRegular width="25" height="25" />
-            </NextSlide>
-          </FirmDesc2>
-        </FirmDesc>
-        <FirmImageBox className="about-img-box">
-          <FirmImage
-            src={`/images/About/Borstil-about-${index}.jpg`}
-            bgPos={!index ? "right" : ""}
-          />
-        </FirmImageBox>
-      </Firm>
-      <FirmSideImages>
-        {[0, 1, 2].map((item) => (
-          <FirmSideImage
-            key={item}
-            className={index === item ? "select" : ""}
-            src={`/images/About/Borstil-about-${item}.jpg`}
-            bgPos="right"
-            onClick={() => clickHandler(item)}
-          ></FirmSideImage>
-        ))}
-      </FirmSideImages>
-    </AboutFirm>
+    <Fragment>
+      <AboutFirm>
+        <Firm ref={firmRef}>
+          <FirmDesc>
+            <FirmDesc1 className="first-description">
+              <h3>{t(`about:${index}.heading1`)}</h3>
+              <h5>{t(`about:${index}.heading2`)}</h5>
+              <p>{t(`about:${index}.paragraph1`)}</p>
+              <p>{t(`about:${index}.paragraph2`)}</p>
+            </FirmDesc1>
+            <FirmDesc2 className="second-description">
+              <p>{t(`about:${index}.paragraph3`)}</p>
+              <NextSlide onClick={() => clickHandler(null)}>
+                <ArrowRightRegular width="25" height="25" />
+              </NextSlide>
+            </FirmDesc2>
+          </FirmDesc>
+          <FirmImageBox className="about-img-box">
+            <FirmImage
+              src={`/images/About/Borstil-about-${index}.jpg`}
+              bgPos={!index ? "right" : ""}
+            />
+          </FirmImageBox>
+        </Firm>
+        <FirmSideImages>
+          {[0, 1, 2].map((item) => (
+            <FirmSideImage
+              key={item}
+              className={index === item ? "select" : ""}
+              src={`/images/About/Borstil-about-${item}.jpg`}
+              bgPos="right"
+              onClick={() => clickHandler(item)}
+            ></FirmSideImage>
+          ))}
+        </FirmSideImages>
+      </AboutFirm>
+    </Fragment>
   );
 };
 

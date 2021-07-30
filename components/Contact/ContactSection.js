@@ -1,10 +1,13 @@
 import { useRef } from "react";
-import { StyledContactSection, ScrollInto } from "./ContactSectionStyles";
+import {
+  StyledContactSection,
+  ScrollInto,
+  StyledTitleEffect,
+} from "./ContactSectionStyles";
 import ContactHeader from "./ContactHeader";
 import ArrowDownScroll from "../../shared/components/svgs/ArrowDownScroll";
 import ContactInfo from "./ContactInfo";
 import ContactForm from "./ContactForm";
-import TitleEffect from "../../shared/components/Titles/TitleEffect/TitleEffect";
 
 const ContactSection = () => {
   const contactInfoRef = useRef();
@@ -12,9 +15,9 @@ const ContactSection = () => {
   return (
     <StyledContactSection>
       <ContactHeader />
-      <TitleEffect effect={1} startDelay={1}>
+      <StyledTitleEffect effect={1} startDelay={1}>
         Kontakt&nbsp;informacije
-      </TitleEffect>
+      </StyledTitleEffect>
       <ScrollInto>
         <div
           style={{ overflow: "hidden" }}

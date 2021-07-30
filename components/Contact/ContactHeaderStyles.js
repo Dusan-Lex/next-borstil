@@ -3,8 +3,7 @@ import { mixin, color } from "../../shared/utils/styles";
 
 export const StyledContactHeader = styled.div`
   position: relative;
-  height: auto;
-  min-height: 55rem;
+  height: 77vh;
   color: white;
   background-image: url("images/Contact/Borstil-contact.jpg");
   background-size: cover;
@@ -18,6 +17,10 @@ export const StyledContactHeader = styled.div`
   @media only screen and (max-width: 1200px) {
     padding-top: 5.5rem;
   }
+
+  /* @media only screen and (max-width: 600px) {
+    max-height: 55rem;
+  } */
   &:after {
     content: "";
     ${mixin.coverParent};
@@ -26,7 +29,7 @@ export const StyledContactHeader = styled.div`
 `;
 
 export const ContactHeaderTitle = styled.h3`
-  font-size: 3.7rem;
+  font-size: 3.8rem;
   line-height: 4rem;
   margin-bottom: 1rem;
   z-index: 1;
@@ -46,7 +49,7 @@ export const ContactHeaderTitle = styled.h3`
   }
 `;
 export const ContactHeaderSubtitle = styled.h6`
-  font-size: 2rem;
+  font-size: 2.1rem;
   font-weight: 500;
   z-index: 1;
 

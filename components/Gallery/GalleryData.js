@@ -171,7 +171,7 @@ export const galleryData = [
       "vrata",
       "medijapan",
       "sobna",
-      "klizna",
+
       "schiebetüren",
       "tür",
       "türen",

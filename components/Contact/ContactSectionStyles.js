@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { mixin, color } from "../../shared/utils/styles";
+import TitleEffect from "../../shared/components/Titles/TitleEffect/TitleEffect";
 
 export const StyledContactSection = styled.section`
   opacity: 0;
@@ -12,12 +13,17 @@ export const StyledContactSection = styled.section`
   }
 `;
 
+export const StyledTitleEffect = styled(TitleEffect)`
+  height: 12vh;
+`;
+
 export const ScrollInto = styled.div`
   overflow: hidden;
-  margin-bottom: 4rem;
+  height: 9vh;
+  margin-bottom: 2rem;
   div {
-    width: 5rem;
-    height: 5rem;
+    width: 5.5rem;
+    height: 5.5rem;
     background-color: ${(props) => mixin.rgba(props.theme.background, 0.7)};
     border-radius: 50%;
     margin: auto;

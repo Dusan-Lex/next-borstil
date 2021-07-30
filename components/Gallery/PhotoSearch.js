@@ -5,7 +5,8 @@ import {
   PhotoSearchInput,
 } from "./PhotoSearchStyles";
 import Search from "../../shared/components/svgs/Search";
-import { ImaginedHeader } from "../../shared/components/ImaginedHeader/ImaginedHeader";
+import ImaginedHeader from "../../shared/components/ImaginedHeader/ImaginedHeader";
+import { color } from "../../shared/utils/styles";
 
 const PhotoSearch = ({ onSearch }) => {
   // const [input, setInput] = useState("");
@@ -17,7 +18,7 @@ const PhotoSearch = ({ onSearch }) => {
 
   return (
     <Fragment>
-      <ImaginedHeader />
+      <ImaginedHeader bgColor={color.primaryLightest} />
       <StyledPhotoSearch>
         <PhotoSearchForm
           onSubmit={(e) => {

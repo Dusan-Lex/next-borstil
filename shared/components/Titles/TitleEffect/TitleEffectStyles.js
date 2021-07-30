@@ -1,12 +1,10 @@
 import styled from "styled-components";
-import { color } from "../../../utils/styles";
+import { mixin, color } from "../../../utils/styles";
 
 export const TEBox = styled.div`
-  display: inline-block;
+  ${mixin.center}
   font-size: 3.8rem;
   font-weight: 500;
-
-  margin: 2rem 0;
 `;
 
 export const TESpan = styled.span`

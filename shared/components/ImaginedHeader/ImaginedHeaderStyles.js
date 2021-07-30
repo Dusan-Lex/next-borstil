@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { color } from "../../utils/styles";
 
 export const StyledImaginedHeader = styled.div`
-  background-color: ${color.primaryLightest};
+  background-color: ${(props) => props.bgColor};
+  transform: scaleY(1.01);
   .up {
     height: 4vh;
     min-height: 3rem;

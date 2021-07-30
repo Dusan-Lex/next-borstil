@@ -14,14 +14,7 @@ import {
   Lang,
 } from "./SidebarStyles";
 
-const sidebarData = [
-  "home",
-  "about",
-  "products",
-  "gallery",
-  "contact",
-  "request",
-];
+const sidebarData = ["home", "about", "products", "gallery", "contact", "blog"];
 
 const Sidebar = () => {
   const sidebarCtx = useContext(SidebarContext);
