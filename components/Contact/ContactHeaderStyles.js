@@ -3,7 +3,7 @@ import { mixin, color } from "../../shared/utils/styles";
 
 export const StyledContactHeader = styled.div`
   position: relative;
-  height: 77vh;
+  height: 76vh;
   color: white;
   background-image: url("images/Contact/Borstil-contact.jpg");
   background-size: cover;
@@ -18,9 +18,9 @@ export const StyledContactHeader = styled.div`
     padding-top: 5.5rem;
   }
 
-  /* @media only screen and (max-width: 600px) {
-    max-height: 55rem;
-  } */
+  @media only screen and (max-width: 600px) {
+    height: 60vh;
+  }
   &:after {
     content: "";
     ${mixin.coverParent};

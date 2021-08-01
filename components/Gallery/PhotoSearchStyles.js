@@ -7,6 +7,7 @@ export const StyledPhotoSearch = styled.div`
   max-width: 1000px;
   margin: 0 auto;
   background-color: ${(props) => props.theme.backgroundRev};
+  transform: scaleY(1.01);
   ${mixin.center};
 
   @media only screen and (max-width: 1200px) {

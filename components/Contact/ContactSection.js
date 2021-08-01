@@ -15,7 +15,7 @@ const ContactSection = () => {
   return (
     <StyledContactSection>
       <ContactHeader />
-      <StyledTitleEffect effect={1} startDelay={1}>
+      <StyledTitleEffect effectClass="one" startDelay={1}>
         Kontakt&nbsp;informacije
       </StyledTitleEffect>
       <ScrollInto>

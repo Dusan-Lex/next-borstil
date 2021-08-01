@@ -1,7 +1,7 @@
 import NavbarItem from "./NavbarItem/NavbarItem";
 import { StyledNavbar } from "./NavbarStyles";
 
-const navbarData = ["home", "about", "products", "gallery", "contact", "blog"];
+const navbarData = ["home", "about", "products", "gallery", "blog", "contact"];
 
 function Navbar() {
   return (

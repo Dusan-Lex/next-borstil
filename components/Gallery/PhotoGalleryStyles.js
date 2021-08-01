@@ -12,6 +12,7 @@ export const StyledGallery = styled.div`
   -webkit-column-width: 33%;
   -moz-column-width: 33%;
   column-width: 33%;
+  column-fill: balance;
 
   @media screen and (max-width: 1100px) {
     -webkit-column-count: 2;

@@ -17,6 +17,17 @@ export const Contact = styled.div`
   display: flex;
   margin-right: 1rem;
   flex-direction: column;
+  animation: fadeInLeft 0.9s ease-out 2.1s both;
+  @keyframes fadeInLeft {
+    0% {
+      transform: translate(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translate(0);
+      opacity: 1;
+    }
+  }
 
   @media only screen and (max-width: 900px) {
     margin-bottom: 2rem;

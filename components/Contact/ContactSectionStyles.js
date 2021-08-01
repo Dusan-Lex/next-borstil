@@ -19,7 +19,7 @@ export const StyledTitleEffect = styled(TitleEffect)`
 
 export const ScrollInto = styled.div`
   overflow: hidden;
-  height: 9vh;
+  height: 12vh;
   margin-bottom: 2rem;
   div {
     width: 5.5rem;
@@ -31,7 +31,7 @@ export const ScrollInto = styled.div`
     cursor: pointer;
     transform: translateY(100%);
     opacity: 0;
-    animation: fadeUp 0.5s 2s ease-out forwards;
+    animation: fadeUp 0.5s 2.1s ease-out forwards;
     @keyframes fadeUp {
       100% {
         opacity: 1;
@@ -41,5 +41,9 @@ export const ScrollInto = styled.div`
     svg {
       stroke: ${(props) => mixin.rgba(props.theme.backgroundRev, 0.8)};
     }
+  }
+
+  @media only screen and (max-width: 600px) {
+    height: 8vh;
   }
 `;
