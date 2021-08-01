@@ -14,25 +14,35 @@ import {
 } from "./ContactFormStyles";
 
 const ContactForm = () => {
+  const [inputs, setInputs] = useState({
+    name: "",
+    email: "",
+    number: "",
+    select: "subject",
+  });
   const [form, setForm] = useState({
     errors: { name: "", email: "", number: "", select: "" },
     message: "",
     status: "",
   });
-  const nameRef = useRef();
-  const emailRef = useRef();
-  const numberRef = useRef();
-  const selectRef = useRef();
+
   const textRef = useRef();
+
+  const changeInputHandler = (event) => {
+    setInputs((prevInputs) => {
+      return { ...prevInputs, [event.target.id]: event.target.value };
+    });
+  };
+
   const submitHandler = async (event) => {
     event.preventDefault();
     const response = await fetch("/api/contact", {
       method: "POST",
       body: JSON.stringify({
-        name: nameRef.current.value,
-        email: emailRef.current.value,
-        number: numberRef.current.value,
-        select: selectRef.current.value,
+        name: inputs.name,
+        email: inputs.email,
+        number: inputs.number,
+        select: inputs.select,
       }),
       headers: {
         "Content-Type": "application/json",
@@ -41,6 +51,16 @@ const ContactForm = () => {
     const data = await response.json();
 
     setForm(data);
+    data.errors.number && document.getElementById("number").focus();
+    data.errors.email && document.getElementById("email").focus();
+    data.errors.name && document.getElementById("name").focus();
+    data.status === "success" &&
+      setInputs({
+        name: "",
+        email: "",
+        number: "",
+        select: "subject",
+      });
   };
   return (
     <StyledContactForm>
@@ -49,27 +69,41 @@ const ContactForm = () => {
       <Form>
         <FormGroup>
           <FormInput
-            ref={nameRef}
             type="text"
             placeholder="Vaše ime i prezime"
+            value={inputs.name}
+            onChange={changeInputHandler}
+            id="name"
           />
           <FormSpan>{form.errors.name}</FormSpan>
         </FormGroup>
         <FormGroup>
           <FormInput
-            ref={emailRef}
             type="email"
             placeholder="Vaša email adresa"
+            value={inputs.email}
+            onChange={changeInputHandler}
+            id="email"
           />
           <FormSpan>{form.errors.email}</FormSpan>
         </FormGroup>
         <FormGroup>
-          <FormInput ref={numberRef} type="text" placeholder="Broj telefona" />
+          <FormInput
+            type="text"
+            placeholder="Broj telefona"
+            value={inputs.number}
+            onChange={changeInputHandler}
+            id="number"
+          />
           <FormSpan>{form.errors.number}</FormSpan>
         </FormGroup>
         <FormGroup>
-          <FormSelect ref={selectRef}>
-            <option value="Tema poruke">Tema poruke</option>
+          <FormSelect
+            value={inputs.select}
+            onChange={changeInputHandler}
+            id="select"
+          >
+            <option value="subject">Tema poruke</option>
             <option value="question">Pitanje</option>
             <option value="request">Zahtev za ponudu</option>
             <option value="service">Servis</option>

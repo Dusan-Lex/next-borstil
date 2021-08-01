@@ -48,7 +48,7 @@ const handler = async (req, res) => {
     //  }
 
     const userSelect = req.body.select;
-    if (userSelect === "Tema poruke") {
+    if (userSelect === "subject") {
       form = {
         ...form,
         errors: { ...form.errors, select: "Molim Vas da izaberete temu." },

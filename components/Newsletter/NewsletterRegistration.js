@@ -72,8 +72,6 @@ const NewsletterRegistration = () => {
       <NewsletterSubtitle>{t("common:newsletter.subtitle")}</NewsletterSubtitle>
       <NewsletterForm onSubmit={registrationHandler}>
         <NewsletterInput
-          id="email"
-          //   type="email"
           placeholder={t("common:newsletter.placeholder")}
           ref={emailInputRef}
         />

@@ -61,7 +61,10 @@ export const FormSelect = styled.select`
   height: 5rem;
   padding: 1rem 2rem;
   font-size: 1.8rem;
-  color: ${mixin.rgba(color.secondaryLight, 0.8)};
+  color: ${(props) =>
+    props.value === "subject"
+      ? mixin.rgba(color.secondaryLight, 0.8)
+      : color.secondary};
   margin-bottom: 3rem;
 `;
 
@@ -108,7 +111,10 @@ export const FormError = styled.div`
   padding: 0.3rem;
   color: ${color.secondary};
   border: 2px solid
-    ${(props) => (props.status === "error" ? color.primary : "green")};
+    ${(props) =>
+      props.status === "error"
+        ? mixin.lighten(color.secondaryLight, 1)
+        : "green"};
   border-radius: 5px;
   @media only screen and (max-width: 430px) {
     width: 100%;
