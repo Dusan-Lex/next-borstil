@@ -4,7 +4,17 @@ export const galleryData = [
     width: "960",
     height: "1200",
     imgSrc: "/images/Gallery/Borstil-vrata-6.jpg",
-    tags: ["vrata", "medijapan", "sobna", "tür", "türen", "mediapan"],
+    tags: [
+      "vrata",
+      "medijapan",
+      "sobna",
+      "tür",
+      "türen",
+      "mediapan",
+      "dvokrilna",
+      "doppel",
+      "doppeltüren",
+    ],
   },
 
   {
@@ -101,7 +111,17 @@ export const galleryData = [
     width: "750",
     height: "557",
     imgSrc: "/images/Gallery/Borstil-vrata-12.jpg",
-    tags: ["vrata", "medijapan", "sobna", "tür", "türen", "mediapan"],
+    tags: [
+      "vrata",
+      "medijapan",
+      "sobna",
+      "tür",
+      "türen",
+      "mediapan",
+      "dvokrilna",
+      "doppel",
+      "doppeltüren",
+    ],
   },
   {
     title: "door",
@@ -239,7 +259,17 @@ export const homeGalleryData = [
     width: "960",
     height: "1200",
     imgSrc: "/images/Gallery/Borstil-vrata-6.jpg",
-    tags: ["vrata", "medijapan", "sobna", "tür", "türen", "mediapan"],
+    tags: [
+      "vrata",
+      "medijapan",
+      "sobna",
+      "tür",
+      "türen",
+      "mediapan",
+      "dvokrilna",
+      "doppel",
+      "doppeltüren",
+    ],
   },
 
   {
@@ -326,13 +356,6 @@ export const homeGalleryData = [
     tags: ["kuhinja", "kuhinje", "küche"],
   },
 
-  // {
-  //   title: "door",
-  //   width: "750",
-  //   height: "557",
-  //   imgSrc: "/images/Gallery/Borstil-vrata-12.jpg",
-  //   tags: ["vrata", "medijapan", "sobna", "tür", "türen", "mediapan"],
-  // },
   {
     title: "door",
     width: "750",
@@ -341,22 +364,6 @@ export const homeGalleryData = [
     tags: ["vrata", "medijapan", "sobna", "tür", "türen", "mediapan"],
   },
 
-  // {
-  //   title: "door",
-  //   width: "640",
-  //   height: "800",
-  //   imgSrc: "/images/Gallery/Borstil-vrata-13.jpg",
-  //   tags: [
-  //     "vrata",
-  //     "medijapan",
-  //     "sobna",
-  //     "klizna",
-  //     "schiebetüren",
-  //     "tür",
-  //     "türen",
-  //     "mediapan",
-  //   ],
-  // },
   {
     title: "table&chairs",
     width: "750",

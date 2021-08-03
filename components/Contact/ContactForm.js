@@ -106,7 +106,6 @@ const ContactForm = () => {
             <option value="subject">Tema poruke</option>
             <option value="question">Pitanje</option>
             <option value="request">Zahtev za ponudu</option>
-            <option value="service">Servis</option>
           </FormSelect>
           <FormSpan>{form.errors.select}</FormSpan>
         </FormGroup>

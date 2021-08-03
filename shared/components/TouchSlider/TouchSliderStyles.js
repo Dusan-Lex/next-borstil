@@ -5,7 +5,7 @@ export const TouchSliderContainer = styled.div`
   position: relative;
   overflow: hidden;
   margin-top: 2rem;
-  padding-bottom: 10rem;
+  padding-bottom: 8.5rem;
 `;
 
 export const TouchSlider = styled.div`
@@ -30,7 +30,7 @@ export const TouchSliderArrow = styled.div`
   @media only screen and (min-width: 600px) {
     ${(props) => (props.left ? "left: 0.5rem;" : "right: 0.5rem;")}
   }
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 700px) {
     top: 38%;
   }
   @media only screen and (max-width: 500px) {
@@ -59,22 +59,30 @@ export const TouchSlide = styled.div`
   @media only screen and (max-width: 1200px) {
     width: 50vw;
   }
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 700px) {
     width: 100vw;
   }
 `;
+
+export const TouchImageWrapper = styled.div`
+  width: 95%;
+  ${mixin.center}
+`;
+
 export const TouchSlideContent = styled.div`
   position: absolute;
   z-index: 1;
   top: 80%;
-  width: 70%;
-  height: 30%;
+  width: 80%;
+  height: 15rem;
   background: ${mixin.rgba(color.secondary, 0.98)};
   border-radius: 3px;
-  display: flex;
+  padding: 1.5rem;
+  ${mixin.center}
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @media only screen and (max-width: 500px) {
+    padding: 1rem;
+  }
 
   &::before {
     content: "";
@@ -85,17 +93,22 @@ export const TouchSlideContent = styled.div`
     transform: translate(1.5rem, 1.5rem);
     z-index: 10;
     border: 0.15rem solid ${color.primary};
+    @media only screen and (max-width: 600px) {
+      display: none;
+    }
   }
-`;
-export const TouchImageWrapper = styled.div`
-  width: 95%;
 `;
 export const TouchSlideTitle = styled.h3`
   font-size: 2.2rem;
+  line-height: 1;
+  margin-bottom: 1rem;
   font-weight: 600;
-
-  color: ${color.primaryLightest};
+  text-align: center;
+  color: ${color.primary};
+  z-index: 11;
 `;
-export const TouchSlideDescription = styled.p`
+export const TouchSlideDescription = styled.div`
+  text-align: left;
+  z-index: 11;
   color: ${color.primaryLightest};
 `;

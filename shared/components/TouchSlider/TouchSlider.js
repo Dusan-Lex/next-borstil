@@ -29,7 +29,7 @@ const SliderTouch = ({ data }) => {
   const leftArrowRef = useRef();
 
   const numberOfSlides =
-    windowSize.width > 1200 ? 3 : windowSize.width > 800 ? 2 : 1;
+    windowSize.width > 1200 ? 3 : windowSize.width > 700 ? 2 : 1;
 
   leftArrowRef.current?.classList.add("not-allowed");
 
@@ -190,7 +190,10 @@ const SliderTouch = ({ data }) => {
           >
             <TouchSlideContent>
               <TouchSlideTitle>{slide.title}</TouchSlideTitle>
-              {/* <TouchSlideDescription>{slide.description}</TouchSlideDescription> */}
+              <TouchSlideDescription>
+                <p>{slide.investor}</p>
+                <p>{slide.subject}</p>
+              </TouchSlideDescription>
             </TouchSlideContent>
             <TouchImageWrapper>
               <Image

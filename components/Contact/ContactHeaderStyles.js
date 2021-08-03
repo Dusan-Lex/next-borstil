@@ -5,9 +5,9 @@ export const StyledContactHeader = styled.div`
   position: relative;
   height: 76vh;
   color: white;
-  background-image: url("images/Contact/Borstil-contact.jpg");
+  background-image: url("images/Contact/Borstil-contact-2.jpg");
   background-size: cover;
-  background-position: 50% 0%;
+  /* background-position: 50% 0%; */
   ${mixin.center}
   flex-direction: column;
   padding-top: 8.5rem;

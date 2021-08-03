@@ -2,36 +2,60 @@ import React from "react";
 import SliderTouch from "../../../shared/components/TouchSlider/TouchSlider";
 import { StyledHomeReference } from "./HomeReferenceStyles";
 import { HomeTitle } from "../HomeGallery/HomeGalleryStyles";
+import ArrowButton from "../../../shared/components/Buttons/ArrowButton/ArrowButton";
 const data = [
   {
-    title: "Porodična kuća",
-    description: "sdfsdf cxvxcv 1",
-    srcImg: "/images/Home/Swiper-image-1.jpg",
+    title: "Gimnazija 'Stevan Sremac'",
+    investor: "Investitor: Gramont Niš",
+    subject: "Predmet: Fasadna stolarija",
+    date: "Jun 2010",
+    srcImg: "/images/Home/Swiper-image-8.jpg",
   },
   {
-    title: "Niški Univerzitet",
-    description: "dfh fgsd gfdfg 2",
+    title: "OŠ 'Sveti Sava' u Pirotu",
+    investor: "Investitor: Expertuniversal-Beograd",
+    subject: "Predmet: Unutrašnja vrata",
+    srcImg: "/images/Home/Swiper-image-9.jpg",
+  },
+  {
+    title: "Banovina u Nišu",
+    investor: "Investitor: Gramont Niš",
+    subject: "Predmet: Fasadna stolarija",
+    date: "Septembar 2010",
     srcImg: "/images/Home/Swiper-image-2.jpg",
   },
+
   {
-    title: "Škola",
-    description: "fsdf sdfsdf sdf 3",
-    srcImg: "/images/Home/Swiper-image-3.jpg",
+    title: "Porodična kuća",
+    subject: "Predmet: Fasadna stolarija",
+    srcImg: "/images/Home/Swiper-image-1.jpg",
+  },
+
+  {
+    title: "Dom JNA u Vranju",
+    investor: "Investitor: Tončev gradnja",
+    subject: "Predmet: Fasadna stolarija",
+    srcImg: "/images/Home/Swiper-image-6.jpg",
   },
   {
+    title: "OŠ 'Ivan Goran Kovačić' u Beogradu",
+    investor: "Investitor: Zlatibor-gradnja Beograd",
+    subject: "Predmet: Unutrašnja vrata",
+    date: "April 2015",
+    srcImg: "/images/Home/Swiper-image-7.jpg",
+  },
+
+  {
     title: "Stambena zgrada",
-    description: "fsdf sdfsdf sdf 3",
+    investor: "Investitor: Gramont Niš",
+    subject: "Predmet: Fasadna stolarija",
     srcImg: "/images/Home/Swiper-image-4.jpg",
   },
   {
     title: "Stambena zgrada",
-    description: "fsdf sdfsdf sdf 3",
-    srcImg: "/images/Home/Swiper-image-6.jpg",
-  },
-  {
-    title: "Stambena zgrada",
-    description: "fsdf sdfsdf sdf 3",
-    srcImg: "/images/Home/Swiper-image-5.jpg",
+    investor: "Investitor: Gramont Niš",
+    subject: "Predmet: Fasadna stolarija",
+    srcImg: "/images/Home/Swiper-image-3.jpg",
   },
 ];
 const HomeReference = () => {
@@ -39,6 +63,9 @@ const HomeReference = () => {
     <StyledHomeReference>
       <HomeTitle>Izdvojeni projekti</HomeTitle>
       <SliderTouch data={data} />
+      <ArrowButton path="/reference" dark className="home-reference-arrow">
+        Pogledaj sve projekte
+      </ArrowButton>
     </StyledHomeReference>
   );
 };
