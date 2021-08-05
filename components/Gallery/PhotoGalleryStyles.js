@@ -5,7 +5,6 @@ export const StyledGallery = styled.div`
   padding: 1.5rem 10rem;
   max-width: 1600px;
   margin: auto;
-
   -webkit-column-count: 3;
   -moz-column-count: 3;
   column-count: 3;

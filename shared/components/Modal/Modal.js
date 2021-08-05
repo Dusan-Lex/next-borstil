@@ -8,7 +8,6 @@ import {
   ModalOverlay,
   StyledCloseButton,
 } from "./ModalStyles";
-import { color } from "../../utils/styles";
 
 const Modal = () => {
   const modalCtx = useContext(ModalContext);

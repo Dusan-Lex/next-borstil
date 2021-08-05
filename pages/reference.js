@@ -1,5 +1,11 @@
+import ReferenceSection from "../components/Reference/ReferenceSection";
+
 const Reference = () => {
-  return <div style={{ paddingTop: "20vh", height: "70rem" }}>Reference</div>;
+  return (
+    <main>
+      <ReferenceSection />
+    </main>
+  );
 };
 
 export default Reference;
