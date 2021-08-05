@@ -35,8 +35,8 @@ export const ReferenceGridItem = styled.div`
   & > div {
     width: 50%;
 
-    animation: referenceA 0.8s ${(props) => 0.45 + props.index * 0.08}s
-      ease-in-out backwards;
+    animation: referenceA 0.8s ${(props) => 1 + props.index * 0.08}s ease-in-out
+      backwards;
 
     @keyframes referenceA {
       0% {
@@ -50,8 +50,8 @@ export const ReferenceGridItem = styled.div`
     &.description {
       margin-left: 2rem;
       text-align: center;
-      animation: referenceA2 0.8s ${(props) => props.index * 0.13}s ease-out
-        backwards;
+      animation: referenceA2 0.8s ${(props) => 0.5 + props.index * 0.13}s
+        ease-out backwards;
 
       @keyframes referenceA2 {
         0% {

@@ -7,6 +7,13 @@ export const referenceData = [
     srcImg: "/images/Reference/Borstil-reference-1.jpg",
   },
   {
+    title: "Sudnica u Staroj Pazovi",
+    investor: "Investitor: Zlatibor-gradnja",
+    subject: "Predmet: Unutrašnja vrata",
+    date: "Datum: Septembar 2015",
+    srcImg: "/images/Reference/Borstil-reference-10.jpg",
+  },
+  {
     title: "OŠ 'Sveti Sava' u Pirotu",
     investor: "Investitor: Expertuniversal",
     subject: "Predmet: Unutrašnja vrata",
@@ -49,13 +56,7 @@ export const referenceData = [
     date: "Datum: Septembar 2010",
     srcImg: "/images/Reference/Borstil-reference-9.jpg",
   },
-  {
-    title: "Sudnica u Staroj Pazovi",
-    investor: "Investitor: Zlatibor-gradnja",
-    subject: "Predmet: Unutrašnja vrata",
-    date: "Datum: Septembar 2015",
-    srcImg: "/images/Reference/Borstil-reference-10.jpg",
-  },
+
   {
     title: "KBC u Zemunu",
     investor: "Investitor: Graditelj",
