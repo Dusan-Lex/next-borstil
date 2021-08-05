@@ -19,6 +19,7 @@ const ReferenceSection = () => {
               src={item.srcImg}
               width="800"
               height="600"
+              quality="50"
               layout="responsive"
               loading="eager"
             />

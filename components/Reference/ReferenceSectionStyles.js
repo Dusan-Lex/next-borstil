@@ -35,12 +35,18 @@ export const ReferenceGridItem = styled.div`
 
   & > div {
     width: 50%;
-    padding-left: 2rem;
 
     &.description {
       margin-left: 2rem;
-      padding: 1rem;
       text-align: center;
+      @media only screen and (max-width: 1200px) {
+        margin-left: 0;
+        padding-top: 1rem;
+        width: 100%;
+      }
+      @media only screen and (max-width: 600px) {
+        width: 100%;
+      }
 
       h4 {
         font-size: 1.8rem;
@@ -66,7 +72,7 @@ export const ReferenceGridItem = styled.div`
       width: 70%;
     }
     @media only screen and (max-width: 400px) {
-      width: 80%;
+      width: 92%;
     }
   }
 `;
