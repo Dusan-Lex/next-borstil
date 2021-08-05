@@ -4,14 +4,14 @@ export const referenceData = [
     investor: "Investitor: Gramont",
     subject: "Predmet: Fasadna stolarija",
     date: "Datum: Jun 2010",
-    srcImg: "/images/Reference/Borstil-reference-8.jpg",
+    srcImg: "/images/Reference/Borstil-reference-1.jpg",
   },
   {
     title: "OŠ 'Sveti Sava' u Pirotu",
     investor: "Investitor: Expertuniversal",
     subject: "Predmet: Unutrašnja vrata",
     date: "Datum: Jun 2010",
-    srcImg: "/images/Reference/Borstil-reference-9.jpg",
+    srcImg: "/images/Reference/Borstil-reference-3.jpg",
   },
   {
     title: "Banovina u Nišu",
@@ -47,7 +47,7 @@ export const referenceData = [
     investor: "Investitor: Gramont ",
     subject: "Predmet: Fasadna stolarija",
     date: "Datum: Septembar 2010",
-    srcImg: "/images/Reference/Borstil-reference-3.jpg",
+    srcImg: "/images/Reference/Borstil-reference-9.jpg",
   },
   {
     title: "Sudnica u Staroj Pazovi",

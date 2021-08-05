@@ -13,7 +13,7 @@ const ReferenceSection = () => {
       <ImaginedHeader />
       <ReferenceGrid>
         {referenceData.map((item, index) => (
-          <ReferenceGridItem>
+          <ReferenceGridItem key={index} index={index}>
             <Image
               key={index}
               src={item.srcImg}
