@@ -5,7 +5,7 @@ export const StyledContactHeader = styled.div`
   position: relative;
   height: 76vh;
   color: white;
-  background-image: url("images/Contact/Borstil-contact-1.jpg");
+  background-image: url("images/Contact/Borstil-contact-2.jpg");
   background-size: cover;
   /* background-position: 50% 0%; */
   ${mixin.center}
@@ -24,7 +24,7 @@ export const StyledContactHeader = styled.div`
   &:after {
     content: "";
     ${mixin.coverParent};
-    background-color: ${mixin.rgba(color.secondary, 0.75)};
+    background-color: ${mixin.rgba(color.secondary, 0.65)};
   }
 `;
 

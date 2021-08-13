@@ -14,12 +14,13 @@ export const referenceData = [
     srcImg: "/images/Reference/Borstil-reference-10.jpg",
   },
   {
-    title: "OŠ 'Sveti Sava' u Pirotu",
+    title: "Specijalna bolnica u Bukovičkoj Banji",
     investor: "Investitor: Expertuniversal",
     subject: "Predmet: Unutrašnja vrata",
-    date: "Datum: Jun 2010",
-    srcImg: "/images/Reference/Borstil-reference-3.jpg",
+    date: "Datum: Mart 2018",
+    srcImg: "/images/Reference/Borstil-reference-13.jpg",
   },
+
   {
     title: "Banovina u Nišu",
     investor: "Investitor: Gramont",
@@ -41,17 +42,23 @@ export const referenceData = [
     date: "Datum: April 2015",
     srcImg: "/images/Reference/Borstil-reference-7.jpg",
   },
-
+  {
+    title: "OŠ 'Sveti Sava' u Pirotu",
+    investor: "Investitor: Expertuniversal",
+    subject: "Predmet: Unutrašnja vrata",
+    date: "Datum: Jun 2010",
+    srcImg: "/images/Reference/Borstil-reference-3.jpg",
+  },
   {
     title: "Stambena zgrada",
-    investor: "Investitor: Gramont ",
+    investor: "Investitor: Zlatibor-gradnja ",
     subject: "Predmet: Fasadna stolarija",
     date: "Datum: Septembar 2010",
     srcImg: "/images/Reference/Borstil-reference-4.jpg",
   },
   {
     title: "Stambena zgrada",
-    investor: "Investitor: Gramont ",
+    investor: "Investitor: Zlatibor-gradnja ",
     subject: "Predmet: Fasadna stolarija",
     date: "Datum: Septembar 2010",
     srcImg: "/images/Reference/Borstil-reference-9.jpg",
@@ -71,13 +78,7 @@ export const referenceData = [
     date: "Datum: Avgust 2016",
     srcImg: "/images/Reference/Borstil-reference-12.jpg",
   },
-  {
-    title: "Specijalna bolnica u Bukovičkoj Banji",
-    investor: "Investitor: Expertuniversal",
-    subject: "Predmet: Unutrašnja vrata",
-    date: "Datum: Mart 2018",
-    srcImg: "/images/Reference/Borstil-reference-13.jpg",
-  },
+
   {
     title: "Škola u Irigu",
     investor: "Investitor: BDM Gradnja, Vranic",

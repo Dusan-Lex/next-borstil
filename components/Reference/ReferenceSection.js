@@ -5,7 +5,10 @@ import {
   StyledReferenceSection,
   ReferenceGrid,
   ReferenceGridItem,
+  ReferenceDescription,
+  ReferenceCompleteDetails,
 } from "./ReferenceSectionStyles";
+import File from "../../shared/components/svgs/File";
 
 const ReferenceSection = () => {
   return (
@@ -23,15 +26,22 @@ const ReferenceSection = () => {
               layout="responsive"
               loading="eager"
             />
-            <div className="description">
+
+            <ReferenceDescription index={index}>
               <h4>{item.title}</h4>
               <p>{item.investor}</p>
               <p>{item.subject}</p>
               <p>{item.date}</p>
-            </div>
+            </ReferenceDescription>
           </ReferenceGridItem>
         ))}
       </ReferenceGrid>
+      <ReferenceCompleteDetails>
+        <p>Ovde možete pogledati kompletnu referentnu listu</p>
+        <a href="/pdfs/ReferentnaLista.pdf" target="_blank">
+          <File />
+        </a>
+      </ReferenceCompleteDetails>
     </StyledReferenceSection>
   );
 };
