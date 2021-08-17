@@ -13,6 +13,7 @@ const themes = {
       hover: "#faf1e4",
       slider: "#b16e17",
       sliderRev: "#563727",
+      about: "white",
     },
   },
   dark: {
@@ -25,6 +26,7 @@ const themes = {
       hover: "#de9e48",
       slider: "#563727",
       sliderRev: "#b16e17",
+      about: "#563727",
     },
   },
 };

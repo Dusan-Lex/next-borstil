@@ -129,7 +129,7 @@ export const AboutContentBox = styled.div`
   margin: auto;
   z-index: 100;
   margin-top: -15rem;
-  background-color: ${(props) => props.theme.text.regularRev};
+  background-color: ${color.secondary};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -143,7 +143,7 @@ export const AboutContentBox = styled.div`
   }
 
   p {
-    color: ${(props) => props.theme.text.regular};
+    color: ${color.primaryLightest};
     font-size: 1.9rem;
     line-height: 1.8;
     font-weight: 400;

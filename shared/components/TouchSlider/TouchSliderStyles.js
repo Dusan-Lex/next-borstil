@@ -98,7 +98,7 @@ export const TouchSlideContent = styled.div`
     }
   }
 `;
-export const TouchSlideTitle = styled.h3`
+export const TouchSlideTitle = styled.p`
   font-size: 2.2rem;
   line-height: 1;
   margin-bottom: 1rem;

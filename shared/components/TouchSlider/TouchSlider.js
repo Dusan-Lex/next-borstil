@@ -204,6 +204,7 @@ const SliderTouch = ({ data }) => {
                   e.preventDefault();
                 }}
                 src={slide.srcImg}
+                alt={slide.title}
               ></Image>
             </TouchImageWrapper>
           </TouchSlide>

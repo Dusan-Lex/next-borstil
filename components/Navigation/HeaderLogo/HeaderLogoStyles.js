@@ -20,7 +20,7 @@ export const StyledHeaderLogo = styled.div`
       display: none;
     }
 
-    h3 {
+    p {
       height: 100%;
       font-family: "Playfair Display", serif;
       font-size: 2.3rem;
@@ -66,7 +66,7 @@ export const StyledHeaderLogo = styled.div`
       .pine {
         fill: ${(props) => props.theme.text.hover};
       }
-      div h3 {
+      div p {
         transform: translateX(0);
       }
     }

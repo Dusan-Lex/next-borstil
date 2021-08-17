@@ -53,7 +53,7 @@ const Navigation = () => {
           onChangeInput={localeChangeHandler}
           checkedInput={router.locale === "de"}
         />
-        <h2>D.O.O. Bor Stil</h2>
+        <h2>D.O.O. Bor Stil - Vrata i prozori</h2>
         <ThemeToggleButton
           id="theme"
           left={<Sun size="18" color={color.secondary} />}

@@ -34,6 +34,7 @@ const Photo = ({ item, loading, quality }) => {
       >
         <Image
           src={item.imgSrc}
+          alt={item.tags[0]}
           width={item.width}
           height={item.height}
           layout="responsive"

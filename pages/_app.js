@@ -19,6 +19,7 @@ function MyApp({ Component, pageProps }) {
           <SidebarContextProvider>
             <ModalContextProvider>
               <Head>
+                <title>BorStil | Vrata i prozori</title>
                 <meta
                   name="viewport"
                   content="width=device-width, initial-scale=1"
@@ -28,7 +29,14 @@ function MyApp({ Component, pageProps }) {
                   name="description"
                   content="Borstil se bavi proizvodnjom stolarije i galanterije od drveta. U ponudi imamo veliki izbor različitih vrsta vrata i prozora."
                 />
-                <title>BorStil | Vrata i prozori</title>
+                <meta property="og:title" content="BorStil | Vrata i prozori" />
+                <meta
+                  property="og:description"
+                  content="Borstil se bavi proizvodnjom stolarije i galanterije od drveta. U ponudi imamo veliki izbor različitih vrsta vrata i prozora."
+                />
+                <meta property="og:url" content="https://borstil.vercel.app/" />
+                <meta property="og:type" content="website" />
+
                 <link
                   rel="apple-touch-icon"
                   sizes="180x180"

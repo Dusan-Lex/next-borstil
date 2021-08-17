@@ -35,6 +35,7 @@ const HomeAbout = () => {
               <ImageBox key={index}>
                 <AboutImage
                   src="/images/Home/Borstil-about.jpg"
+                  alt="firma za proizvodnju vrata"
                   item={item}
                   play={play}
                 />
