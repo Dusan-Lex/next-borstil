@@ -7,7 +7,7 @@ export const StyledHomeSlider = styled.section`
   position: relative;
   max-width: 1450px;
   margin: auto;
-  background-color: ${color.primaryLightest};
+  background-color: ${color.primary};
   animation: slider-a1 1.2s ease forwards;
 
   @keyframes slider-a1 {

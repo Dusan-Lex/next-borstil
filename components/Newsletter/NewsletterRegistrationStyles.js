@@ -33,6 +33,9 @@ export const Newsletter = styled.section`
 export const NewsletterTitle = styled.h4`
   font-size: 4rem;
   color: ${(props) => props.theme.backgroundRev};
+  @media only screen and (max-width: 400px) {
+    font-size: 3rem;
+  }
 `;
 export const NewsletterSubtitle = styled.h5`
   font-size: 2.5rem;

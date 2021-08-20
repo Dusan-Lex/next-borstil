@@ -66,7 +66,7 @@ export const TouchSlide = styled.div`
 
 export const TouchImageWrapper = styled.div`
   width: 95%;
-  ${mixin.center}
+  /* ${mixin.center} */
 `;
 
 export const TouchSlideContent = styled.div`

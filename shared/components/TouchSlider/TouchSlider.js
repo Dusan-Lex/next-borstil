@@ -199,6 +199,7 @@ const SliderTouch = ({ data }) => {
               <Image
                 width="800"
                 height="600"
+                layout="responsive"
                 loading="eager"
                 onDragStart={(e) => {
                   e.preventDefault();

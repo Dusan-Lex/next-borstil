@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-
+import Image from "next/image";
 import useTranslation from "next-translate/useTranslation";
 import useOffsetY from "../../../shared/hooks/useOffsetY";
 
@@ -24,7 +24,7 @@ const HomeSlider = () => {
       setSlide((slide) => (slide === length - 1 ? 0 : slide + 1));
     };
 
-    timeout.current = setTimeout(next, 4600);
+    timeout.current = setTimeout(next, 14600);
 
     return () => {
       timeout.current && clearTimeout(timeout.current);
@@ -44,15 +44,15 @@ const HomeSlider = () => {
   return (
     <StyledHomeSlider>
       <img
-        src={`/images/Home/Slider-Image-1.webp`}
+        src={`/images/Home/Slider-Image-1.jpg`}
         style={{ display: "none" }}
       />
       <img
-        src={`/images/Home/Slider-Image-2.webp`}
+        src={`/images/Home/Slider-Image-2.jpg`}
         style={{ display: "none" }}
       />
       <img
-        src={`/images/Home/Slider-Image-3.webp`}
+        src={`/images/Home/Slider-Image-3.jpg`}
         style={{ display: "none" }}
       />
       <Wrapper>
@@ -61,8 +61,13 @@ const HomeSlider = () => {
             <Slider key={el}>
               {el === slide && (
                 <Slide>
-                  <img
-                    src={`/images/Home/Slider-Image-${el + 1}.webp`}
+                  <Image
+                    layout="fill"
+                    // loading="eager"
+                    //  layout="responsive"
+                    //  width=''
+                    //  height=''
+                    src={`/images/Home/Slider-Image-${el + 1}.jpg`}
                     alt={t(`home:slider.${el}.alt`)}
                     style={{
                       transform: `translateY(${0.2222 * offSetY}px) scale(${
