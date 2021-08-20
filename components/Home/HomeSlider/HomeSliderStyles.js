@@ -7,7 +7,7 @@ export const StyledHomeSlider = styled.section`
   position: relative;
   max-width: 1450px;
   margin: auto;
-  background-color: ${color.primary};
+  background-color: ${color.primaryLightest};
   animation: slider-a1 1.2s ease forwards;
 
   @keyframes slider-a1 {
@@ -122,6 +122,7 @@ export const SlideContent = styled.div`
   h1 {
     font-size: 4.5rem;
     font-weight: 600;
+    line-height: 1.5;
     color: ${(props) => props.theme.text.slider};
     transform: translateX(10rem);
     opacity: 0;
@@ -148,7 +149,7 @@ export const SlideContent = styled.div`
 
   h3 {
     font-size: 2.4rem;
-
+    font-weight: 700;
     color: ${(props) => props.theme.text.sliderRev};
     transform: translateY(3rem);
     opacity: 0.5;

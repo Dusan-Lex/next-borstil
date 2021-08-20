@@ -63,7 +63,7 @@ const HomeSlider = () => {
                 <Slide>
                   <Image
                     layout="fill"
-                    // loading="eager"
+                    loading="eager"
                     //  layout="responsive"
                     //  width=''
                     //  height=''
