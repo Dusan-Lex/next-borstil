@@ -51,22 +51,25 @@ export const TouchSliderArrow = styled.div`
 export const TouchSlide = styled.div`
   position: relative;
   width: 33.33333vw;
+  height: 25vw;
   display: flex;
   align-items: flex-end;
   justify-content: center;
   user-select: none;
+  border: 1.5rem solid white;
 
   @media only screen and (max-width: 1200px) {
     width: 50vw;
+    height: 37.5vw;
   }
   @media only screen and (max-width: 700px) {
     width: 100vw;
+    height: 75vw;
   }
-`;
 
-export const TouchImageWrapper = styled.div`
-  width: 95%;
-  /* ${mixin.center} */
+  img {
+    width: 95%auto;
+  }
 `;
 
 export const TouchSlideContent = styled.div`

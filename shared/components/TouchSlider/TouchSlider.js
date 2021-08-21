@@ -195,19 +195,16 @@ const SliderTouch = ({ data }) => {
                 <p>{slide.subject}</p>
               </TouchSlideDescription>
             </TouchSlideContent>
-            <TouchImageWrapper>
-              <Image
-                width="800"
-                height="600"
-                layout="responsive"
-                loading="eager"
-                onDragStart={(e) => {
-                  e.preventDefault();
-                }}
-                src={slide.srcImg}
-                alt={slide.title}
-              ></Image>
-            </TouchImageWrapper>
+            <Image
+              layout="fill"
+              loading="eager"
+              onDragStart={(e) => {
+                e.preventDefault();
+              }}
+              quality="60"
+              src={slide.srcImg}
+              alt={slide.title}
+            ></Image>
           </TouchSlide>
         ))}
       </TouchSlider>
