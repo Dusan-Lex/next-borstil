@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import useWindowSize from "../../hooks/useWindowSize";
 import {
@@ -8,7 +8,6 @@ import {
   TouchSlideTitle,
   TouchSlideDescription,
   TouchSlideContent,
-  TouchImageWrapper,
   TouchSliderArrow,
 } from "./TouchSliderStyles";
 import ArrowLeft from "../svgs/ArrowLeft";
@@ -197,6 +196,7 @@ const SliderTouch = ({ data }) => {
             </TouchSlideContent>
             <Image
               layout="fill"
+              objectFit="cover"
               loading="eager"
               onDragStart={(e) => {
                 e.preventDefault();
