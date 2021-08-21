@@ -58,6 +58,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener nofollow noreferrer"
           >
+            Facebook
             <Facebook />
           </a>
           <a

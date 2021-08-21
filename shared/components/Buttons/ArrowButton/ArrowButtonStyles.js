@@ -3,7 +3,7 @@ import { color } from "../../../utils/styles";
 
 export const StyledAnchor = styled.a`
   border: 2px solid ${color.primaryLightest};
-  color: ${color.primaryLightest};
+  color: white;
   background-color: ${(props) =>
     props.dark ? color.secondary : color.primary};
   padding: 0.3rem 4rem;

@@ -60,7 +60,7 @@ export const DwButton = styled.button`
 
   &.active {
     background-color: ${(props) => props.theme.background};
-    color: ${color.primaryLightest};
+    color: white;
     box-shadow: 0 1px 9px -2px ${(props) => mixin.rgba(props.theme.background, 0.5)};
     @media only screen and (max-width: 600px) {
       border: 1.6px solid ${color.secondary};

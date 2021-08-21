@@ -10,7 +10,7 @@ export const StyledHomeGallery = styled.section`
   }
 `;
 
-export const HomeTitle = styled.h4`
+export const HomeTitle = styled.h3`
   font-size: 4.5rem;
   font-weight: 600;
   letter-spacing: 0.3rem;

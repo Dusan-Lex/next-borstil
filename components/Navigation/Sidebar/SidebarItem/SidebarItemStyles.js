@@ -2,7 +2,11 @@ import styled from "styled-components";
 
 import { color } from "../../../../shared/utils/styles";
 
-export const Item = styled.li`
+export const ItemBox = styled.li`
+  overflow: hidden;
+`;
+
+export const Item = styled.div`
   text-transform: uppercase;
   font-size: 3rem;
   ${(props) =>

@@ -39,7 +39,7 @@ export const NewsletterTitle = styled.h4`
 `;
 export const NewsletterSubtitle = styled.h5`
   font-size: 2.5rem;
-  color: ${color.primaryLightest};
+  color: white;
   font-weight: 400;
 `;
 export const NewsletterForm = styled.form`
