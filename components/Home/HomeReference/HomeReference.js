@@ -6,20 +6,20 @@ import ArrowButton from "../../../shared/components/Buttons/ArrowButton/ArrowBut
 const data = [
   {
     title: "Gimnazija 'Stevan Sremac'",
-    investor: "Investitor: Gramont Niš",
+    investor: "Investitor: Gramont",
     subject: "Predmet: Fasadna stolarija",
     date: "Jun 2010",
     srcImg: "/images/Home/Swiper-image-8.jpg",
   },
   {
     title: "OŠ 'Sveti Sava' u Pirotu",
-    investor: "Investitor: Expertuniversal-Beograd",
+    investor: "Investitor: Expertuniversal",
     subject: "Predmet: Unutrašnja vrata",
     srcImg: "/images/Home/Swiper-image-9.jpg",
   },
   {
     title: "Banovina u Nišu",
-    investor: "Investitor: Gramont Niš",
+    investor: "Investitor: Gramont ",
     subject: "Predmet: Fasadna stolarija",
     date: "Septembar 2010",
     srcImg: "/images/Home/Swiper-image-2.jpg",
@@ -39,7 +39,7 @@ const data = [
   },
   {
     title: "OŠ 'Ivan Goran Kovačić' u Beogradu",
-    investor: "Investitor: Zlatibor-gradnja Beograd",
+    investor: "Investitor: Zlatibor-gradnja",
     subject: "Predmet: Unutrašnja vrata",
     date: "April 2015",
     srcImg: "/images/Home/Swiper-image-7.jpg",
@@ -47,13 +47,13 @@ const data = [
 
   {
     title: "Stambena zgrada",
-    investor: "Investitor: Gramont Niš",
+    investor: "Investitor: Gramont ",
     subject: "Predmet: Fasadna stolarija",
     srcImg: "/images/Home/Swiper-image-4.jpg",
   },
   {
     title: "Stambena zgrada",
-    investor: "Investitor: Gramont Niš",
+    investor: "Investitor: Gramont",
     subject: "Predmet: Fasadna stolarija",
     srcImg: "/images/Home/Swiper-image-3.jpg",
   },

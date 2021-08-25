@@ -64,7 +64,7 @@ export const NewsletterButton = styled.button`
   padding: 0.25rem 2rem;
   background-color: ${(props) => props.theme.backgroundRev};
   border-radius: 6px;
-  color: white;
+  color: ${(props) => props.theme.background};
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   font-size: 1.8rem;

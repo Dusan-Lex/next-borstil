@@ -57,16 +57,19 @@ const Footer = () => {
             href="https://www.facebook.com/BorStil.Stolarija/"
             target="_blank"
             rel="noopener nofollow noreferrer"
+            title="facebook"
           >
-            Facebook
             <Facebook />
+            Facebook
           </a>
           <a
             href="https://www.instagram.com/borstilstolarija/"
             target="_blank"
             rel="noopener nofollow noreferrer"
+            title="instagram"
           >
             <Instagram />
+            Instagram
           </a>
         </FooterSocial>
         <FooterCopyright>

@@ -22,13 +22,15 @@ const ReferenceSection = () => {
               src={item.srcImg}
               width="800"
               height="600"
+              objectFit="cover"
               quality="50"
               layout="responsive"
               loading="eager"
+              alt={item.title}
             />
 
             <ReferenceDescription index={index}>
-              <h4>{item.title}</h4>
+              <h3>{item.title}</h3>
               <p>{item.investor}</p>
               <p>{item.subject}</p>
               <p>{item.date}</p>
@@ -39,7 +41,7 @@ const ReferenceSection = () => {
       <ReferenceCompleteDetails>
         <p>Ovde možete pogledati kompletnu referentnu listu</p>
         <a href="/pdfs/ReferentnaLista.pdf" target="_blank">
-          <File />
+          <File /> Referentna Lista
         </a>
       </ReferenceCompleteDetails>
     </StyledReferenceSection>

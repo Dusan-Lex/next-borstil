@@ -1,7 +1,12 @@
 import React from "react";
+import Doors from "../../components/Products/Doors";
 
 const Proizvodi = () => {
-  return <div style={{ paddingTop: "20vh", height: "70rem" }}>Proizvodi</div>;
+  return (
+    <main>
+      <Doors />
+    </main>
+  );
 };
 
 export default Proizvodi;

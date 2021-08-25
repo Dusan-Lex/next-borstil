@@ -232,7 +232,7 @@ export const galleryData = [
   {
     title: "door",
     width: "640",
-    height: "740",
+    height: "800",
     imgSrc: "/images/Gallery/Borstil-vrata-20.jpg",
     tags: ["vrata", "medijapan", "sobna", "tür", "türen", "mediapan"],
   },

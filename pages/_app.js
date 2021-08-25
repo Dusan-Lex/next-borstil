@@ -73,7 +73,6 @@ function MyApp({ Component, pageProps }) {
               </Head>
               <NormalizeStyles />
               <BaseStyles />
-
               <Modal />
               <Navigation />
               <Component {...pageProps} />

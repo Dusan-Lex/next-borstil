@@ -77,9 +77,9 @@ export const ReferenceDescription = styled.div`
   margin-left: 2rem;
   text-align: center;
 
-  h4 {
+  h3 {
     font-size: 1.8rem;
-    color: ${color.primary};
+    color: ${mixin.lighten(color.primary, 0.15)};
     margin: 1rem 0 0.5rem;
     line-height: 1.6;
     text-decoration: underline;
@@ -108,7 +108,9 @@ export const ReferenceCompleteDetails = styled.div`
     text-align: center;
   }
   a {
-    cursor: pinter;
+    cursor: pointer;
+    color: white;
+    font-size: 0;
     svg {
       stroke: ${color.primaryLight};
       width: 6rem;

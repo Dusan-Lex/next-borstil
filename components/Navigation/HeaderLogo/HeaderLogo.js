@@ -8,6 +8,7 @@ const HeaderLogo = () => {
       <Link href="/">
         <a>
           <Logo />
+          Logo
         </a>
       </Link>
       <div>

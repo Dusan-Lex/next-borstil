@@ -37,7 +37,10 @@ const ContactInfo = forwardRef((props, ref) => {
           </div>
         </ContactBox>
       </Contact>
-      <MapIFrame src="https://maps.google.com/maps?q=43.00754,21.95196&z=15&output=embed"></MapIFrame>
+      <MapIFrame
+        title="google map"
+        src="https://maps.google.com/maps?q=43.00754,21.95196&z=15&output=embed"
+      ></MapIFrame>
     </StyledContactInfo>
   );
 });

@@ -117,6 +117,10 @@ export const FooterSocial = styled.div`
   display: flex;
   justify-content: center;
   margin-bottom: 3rem;
+  a {
+    color: white;
+    font-size: 0;
+  }
   a:first-child {
     margin-right: 5rem;
   }

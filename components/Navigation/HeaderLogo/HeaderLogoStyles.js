@@ -39,6 +39,8 @@ export const StyledHeaderLogo = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    color: white;
+    font-size: 0;
 
     svg {
       width: 90%;
