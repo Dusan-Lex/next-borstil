@@ -14,34 +14,42 @@ const doors = [
   {
     id: "1",
     price: "145",
+    alt: "vrata",
   },
   {
     id: "2",
     price: "140",
+    alt: "vrata",
   },
   {
     id: "3",
     price: "150",
+    alt: "vrata",
   },
   {
     id: "4",
     price: "180",
+    alt: "vrata",
   },
   {
     id: "5",
     price: "175",
+    alt: "vrata",
   },
   {
     id: "6",
     price: "225",
+    alt: "vrata",
   },
   {
     id: "7",
     price: "160",
+    alt: "vrata",
   },
   {
     id: "8",
     price: "170",
+    alt: "vrata",
   },
 ];
 
@@ -52,6 +60,14 @@ const Doors = () => {
     <Fragment>
       <ImaginedHeader />
       <DoorsContainer>
+        {doors.map((item) => (
+          <img
+            src={`/images/Products/door-${item.id}.jpg`}
+            alt={doors[item.id - 1].alt}
+            style={{ display: "none" }}
+            key={item.id}
+          />
+        ))}
         <DoorsBackground>
           <img
             sizes="(max-width: 1999px) 100vw, 1999px"
@@ -66,7 +82,7 @@ const Doors = () => {
             /images/Products/background-3_t9dbpn_c_scale,w_1833.jpg 1833w,
             /images/Products/background-3_t9dbpn_c_scale,w_1999.jpg 1999w"
             src="/images/Products/background-3_t9dbpn_c_scale,w_1999.jpg"
-            alt=""
+            alt="vrata u pozadini sobe"
           />
 
           <Door>
@@ -75,6 +91,7 @@ const Doors = () => {
               // loading="eager"
               // priority="true"
               src={`/images/Products/door-${index}.jpg`}
+              alt={doors[index - 1].alt}
             />
           </Door>
           <DoorDescription>
@@ -94,11 +111,9 @@ const Doors = () => {
                 }, 500);
               }}
             >
-              <Image
-                layout="fill"
-                objectFit="cover"
-                priority="true"
+              <img
                 src={`/images/Products/door-${item.id}-small.jpg`}
+                alt={item.alt}
               />
             </DoorSelectionItem>
           ))}
