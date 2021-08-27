@@ -5,6 +5,9 @@ export const TEBox = styled.div`
   ${mixin.center}
   font-size: 3.8rem;
   font-weight: 500;
+  @media only screen and (max-width: 430px) {
+    font-size: 3rem;
+  }
 `;
 
 export const TESpan = styled.span`

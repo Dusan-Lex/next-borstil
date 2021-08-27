@@ -1,11 +1,19 @@
 import styled from "styled-components";
-import { color, mixin } from "../../shared/utils/styles";
+import { color } from "../../shared/utils/styles";
+
+export const DoorsSection = styled.div`
+  .products-title {
+    margin-top: 3rem;
+    text-transform: uppercase;
+  }
+`;
 
 export const DoorsContainer = styled.div`
   max-width: 1600px;
   margin: auto;
-  padding: 4rem;
+  padding: 3rem 4rem;
   display: flex;
+
   @media only screen and (max-width: 1200px) {
     flex-direction: column;
   }
@@ -17,8 +25,20 @@ export const DoorsContainer = styled.div`
 export const DoorsBackground = styled.picture`
   position: relative;
   width: 70%;
+  /* border: 0.5rem solid ${(props) => props.theme.background}; */
+  transform: translateX(-30%);
+  opacity: 0;
+  animation: doors-in 0.7s 0.1s ease forwards;
+  @keyframes doors-in {
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
   img {
     width: 100%;
+    height: 100%;
   }
   @media only screen and (max-width: 1200px) {
     width: 100%;
@@ -26,10 +46,13 @@ export const DoorsBackground = styled.picture`
 `;
 export const Door = styled.div`
   position: absolute;
-  bottom: 17.2%;
+  bottom: 15.8%;
   right: 50%;
   width: 17%;
   height: 68%;
+  @media only screen and (max-width: 1200px) {
+    bottom: 17%;
+  }
 `;
 
 export const DoorDescription = styled.div`
@@ -57,28 +80,5 @@ export const DoorDescription = styled.div`
     margin-top: 1rem;
     font-size: 1.6rem;
     font-weight: 400;
-  }
-`;
-
-export const DoorSelection = styled.div`
-  width: 30%;
-  height: 100%;
-  background-color: ${color.primaryLightest};
-  display: flex;
-  @media only screen and (max-width: 1200px) {
-    height: 40rem;
-    width: 100%;
-  }
-`;
-export const DoorSelectionItem = styled.div`
-  width: 5rem;
-  height: 8rem;
-
-  margin: 0.5rem;
-  cursor: pointer;
-  position: relative;
-  img {
-    width: 100%;
-    height: 100%;
   }
 `;

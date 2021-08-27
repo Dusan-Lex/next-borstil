@@ -1,73 +1,36 @@
-import React, { Fragment, useState } from "react";
-import Image from "next/image";
+import React, { useContext } from "react";
 import ImaginedHeader from "../../shared/components/ImaginedHeader/ImaginedHeader";
+import TitleEffect from "../../shared/components/Titles/TitleEffect/TitleEffect";
+import DoorsSelection from "./DoorsSelection/DoorsSelection";
 import {
+  DoorsSection,
   DoorsBackground,
   DoorsContainer,
   Door,
-  DoorSelection,
-  DoorSelectionItem,
   DoorDescription,
 } from "./DoorsStyles";
 
-const doors = [
-  {
-    id: "1",
-    price: "145",
-    alt: "vrata",
-  },
-  {
-    id: "2",
-    price: "140",
-    alt: "vrata",
-  },
-  {
-    id: "3",
-    price: "150",
-    alt: "vrata",
-  },
-  {
-    id: "4",
-    price: "180",
-    alt: "vrata",
-  },
-  {
-    id: "5",
-    price: "175",
-    alt: "vrata",
-  },
-  {
-    id: "6",
-    price: "225",
-    alt: "vrata",
-  },
-  {
-    id: "7",
-    price: "160",
-    alt: "vrata",
-  },
-  {
-    id: "8",
-    price: "170",
-    alt: "vrata",
-  },
-];
+import DoorContext from "../../store/doorContext";
+import { findDoor } from "./DoorsUtil";
 
 const Doors = () => {
-  const [index, setIndex] = useState(1);
+  const doorCtx = useContext(DoorContext);
+
+  const door = findDoor(doorCtx.door.doortype, doorCtx.door.doorcolor);
 
   return (
-    <Fragment>
+    <DoorsSection>
       <ImaginedHeader />
+
+      <TitleEffect
+        className="products-title"
+        effectClass="two"
+        startDelay={0.1}
+      >
+        Izaberite&nbsp;Vaša&nbsp;vrata
+      </TitleEffect>
+
       <DoorsContainer>
-        {doors.map((item) => (
-          <img
-            src={`/images/Products/door-${item.id}.jpg`}
-            alt={doors[item.id - 1].alt}
-            style={{ display: "none" }}
-            key={item.id}
-          />
-        ))}
         <DoorsBackground>
           <img
             sizes="(max-width: 1999px) 100vw, 1999px"
@@ -86,40 +49,18 @@ const Doors = () => {
           />
 
           <Door>
-            <img
-              // layout="fill"
-              // loading="eager"
-              // priority="true"
-              src={`/images/Products/door-${index}.jpg`}
-              alt={doors[index - 1].alt}
-            />
+            <img src={`/images/Products/door-${door.id}.jpg`} alt="vrata" />
           </Door>
           <DoorDescription>
             <div>Cena</div>
-            <div>{doors[index - 1].price}&#8364;</div>
+            <div>{door.price}&#8364;</div>
             <div>sa PDV-om</div>
             <div>* cena uključuje standardnu kvaku i montažu</div>
           </DoorDescription>
         </DoorsBackground>
-        <DoorSelection>
-          {doors.map((item) => (
-            <DoorSelectionItem
-              key={item.id}
-              onClick={() => {
-                setTimeout(() => {
-                  setIndex(item.id);
-                }, 500);
-              }}
-            >
-              <img
-                src={`/images/Products/door-${item.id}-small.jpg`}
-                alt={item.alt}
-              />
-            </DoorSelectionItem>
-          ))}
-        </DoorSelection>
+        <DoorsSelection />
       </DoorsContainer>
-    </Fragment>
+    </DoorsSection>
   );
 };
 
