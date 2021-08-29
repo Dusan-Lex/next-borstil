@@ -16,8 +16,11 @@ const DoorsSelection = () => {
         <div className="title">Tip:</div>
         <div className="items">
           {doorFeatures.map((item, index) => {
+            const active =
+              item.doortype === doorCtx.door.doortype ? "-active" : "";
             return (
               <SelectionItem
+                className={active}
                 key={index}
                 onClick={() => {
                   doorCtx.dispatch({
@@ -27,7 +30,7 @@ const DoorsSelection = () => {
                 }}
               >
                 <img
-                  src={`/images/Products/selectdoor-${item.doortype}.jpg`}
+                  src={`/images/Products/door-${item.doortype}${active}.jpg`}
                   alt="vrata"
                 />
               </SelectionItem>
@@ -36,64 +39,83 @@ const DoorsSelection = () => {
         </div>
       </SelectionItems>
       <SelectionItems>
-        Boja:
-        {doorFeatures
-          .find((item) => item.doortype === doorCtx.door.doortype)
-          .doorcolors.map((item, index) => {
-            return (
-              <div
-                key={index}
-                onClick={() => {
-                  doorCtx.dispatch({
-                    type: "CHANGE_DOORCOLOR",
-                    value: item,
-                  });
-                }}
-              >
-                {item}
-              </div>
-            );
-          })}
+        <div className="title">Boja:</div>
+        <div className="items">
+          {doorFeatures
+            .find((item) => item.doortype === doorCtx.door.doortype)
+            .doorcolors.map((item, index) => {
+              return (
+                <SelectionItem
+                  className={
+                    item === doorCtx.door.doorcolor ? "color -active" : "color"
+                  }
+                  key={index}
+                  onClick={() => {
+                    doorCtx.dispatch({
+                      type: "CHANGE_DOORCOLOR",
+                      value: item,
+                    });
+                  }}
+                >
+                  <img src={`/images/Products/color-${item}.jpg`} alt={item} />
+                </SelectionItem>
+              );
+            })}
+        </div>
       </SelectionItems>
       <SelectionItems>
-        Brava:
-        {doorFeatures
-          .find((item) => item.doortype === doorCtx.door.doortype)
-          .doorhandles.map((item, index) => {
-            return (
-              <div
-                key={index}
-                onClick={() => {
-                  doorCtx.dispatch({
-                    type: "CHANGE_DOORHANDLE",
-                    value: item,
-                  });
-                }}
-              >
-                {item}
-              </div>
-            );
-          })}
+        <div className="title">Kvaka:</div>
+        <div className="items">
+          {doorFeatures
+            .find((item) => item.doortype === doorCtx.door.doortype)
+            .doorhandles.map((item, index) => {
+              return (
+                <SelectionItem
+                  className={
+                    item === doorCtx.door.doorhandle
+                      ? "handle-lock -active"
+                      : "handle-lock"
+                  }
+                  key={index}
+                  onClick={() => {
+                    doorCtx.dispatch({
+                      type: "CHANGE_DOORHANDLE",
+                      value: item,
+                    });
+                  }}
+                >
+                  {item}
+                </SelectionItem>
+              );
+            })}
+        </div>
       </SelectionItems>
       <SelectionItems>
-        Kvaka:
-        {doorFeatures
-          .find((item) => item.doortype === doorCtx.door.doortype)
-          .doorlocks.map((item, index) => {
-            return (
-              <div
-                key={index}
-                onClick={() => {
-                  doorCtx.dispatch({
-                    type: "CHANGE_DOORLOCK",
-                    value: item,
-                  });
-                }}
-              >
-                {item}
-              </div>
-            );
-          })}
+        <div className="title">Brava:</div>
+        <div className="items">
+          {doorFeatures
+            .find((item) => item.doortype === doorCtx.door.doortype)
+            .doorlocks.map((item, index) => {
+              return (
+                <SelectionItem
+                  className={
+                    item === doorCtx.door.doorlock
+                      ? "handle-lock -active"
+                      : "handle-lock"
+                  }
+                  key={index}
+                  onClick={() => {
+                    doorCtx.dispatch({
+                      type: "CHANGE_DOORLOCK",
+                      value: item,
+                    });
+                  }}
+                >
+                  {item}
+                </SelectionItem>
+              );
+            })}
+        </div>
       </SelectionItems>
     </StyledDoorsSelection>
   );

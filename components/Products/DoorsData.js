@@ -13,7 +13,7 @@ export const doors = [
   {
     id: "3",
     doortype: "regular",
-    doorcolor: "black",
+    doorcolor: "black-wood",
     price: "150",
   },
   {
@@ -30,15 +30,16 @@ export const doors = [
   },
   {
     id: "6",
-    doortype: "8glass",
-    doorcolor: "black",
+    doortype: "horizontal-lines-glass",
+    doorcolor: "black-wood",
     price: "225",
   },
-  // {
-  //   id: "7",
-  //   price: "160",
-  //
-  // },
+  {
+    id: "7",
+    doortype: "horizontal-lines",
+    doorcolor: "white",
+    price: "165",
+  },
   // {
   //   id: "8",
   //   price: "170",
@@ -46,41 +47,59 @@ export const doors = [
   // },
   {
     id: "9",
-    price: "145",
     doortype: "regular",
     doorcolor: "white",
+    price: "140",
   },
   {
     id: "10",
-    price: "150",
+    doortype: "horizontal-lines",
+    doorcolor: "brown-wood",
+    price: "170",
+  },
+  {
+    id: "11",
     doortype: "horizontal-lines",
     doorcolor: "black",
+    price: "185",
+  },
+  {
+    id: "12",
+    doortype: "regular",
+    doorcolor: "beige",
+    price: "145",
+  },
+  {
+    id: "13",
+    doortype: "horizontal-lines-glass",
+    doorcolor: "brown-wood",
+    price: "220",
   },
 ];
 
 export const doorFeatures = [
   {
     doortype: "regular",
-    doorcolors: ["brown", "white", "black"],
-    doorhandles: ["standard", "non-standard"],
-    doorlocks: ["standard", "non-standard"],
+    doorcolors: ["brown", "white", "black-wood", "beige"],
+    doorhandles: ["classic", "premium"],
+    doorlocks: ["classic", "premium"],
   },
   {
     doortype: "horizontal-lines",
-    doorcolors: ["white-grey", "black"],
-    doorhandles: ["standard", "non-standard"],
-    doorlocks: ["standard"],
+    doorcolors: ["brown-wood", "white-grey", "black", "white"],
+    doorhandles: ["classic", "premium"],
+    doorlocks: ["classic"],
   },
   {
     doortype: "lines",
     doorcolors: ["white"],
-    doorhandles: ["standard", "non-standard"],
-    doorlocks: ["standard"],
+    doorhandles: ["classic", "premium"],
+    doorlocks: ["classic"],
   },
   {
-    doortype: "8glass",
-    doorcolors: ["black"],
-    doorhandles: ["standard", "non-standard"],
-    doorlocks: ["standard", "non-standard"],
+    doortype: "horizontal-lines-glass",
+    doorcolors: ["brown-wood", "black-wood"],
+    doorhandles: ["classic", "premium"],
+    doorlocks: ["classic", "premium"],
   },
 ];

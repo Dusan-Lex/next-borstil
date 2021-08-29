@@ -55,7 +55,10 @@ const Doors = () => {
             <div>Cena</div>
             <div>{door.price}&#8364;</div>
             <div>sa PDV-om</div>
-            <div>* cena uključuje standardnu kvaku i montažu</div>
+            <div>
+              * cena uključuje {doorCtx.door.doorhandle} kvaku i{" "}
+              {doorCtx.door.doorlock} bravu.
+            </div>
           </DoorDescription>
         </DoorsBackground>
         <DoorsSelection />

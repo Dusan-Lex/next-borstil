@@ -15,17 +15,12 @@ export const DoorsContainer = styled.div`
   display: flex;
 
   @media only screen and (max-width: 1200px) {
-    flex-direction: column;
-  }
-  @media only screen and (max-width: 600px) {
-    width: 100%;
-    padding: 1rem;
+    padding: 3rem 1rem;
   }
 `;
 export const DoorsBackground = styled.picture`
   position: relative;
   width: 70%;
-  /* border: 0.5rem solid ${(props) => props.theme.background}; */
   transform: translateX(-30%);
   opacity: 0;
   animation: doors-in 0.7s 0.1s ease forwards;
@@ -41,7 +36,7 @@ export const DoorsBackground = styled.picture`
     height: 100%;
   }
   @media only screen and (max-width: 1200px) {
-    width: 100%;
+    width: 65%;
   }
 `;
 export const Door = styled.div`
@@ -50,9 +45,6 @@ export const Door = styled.div`
   right: 50%;
   width: 17%;
   height: 68%;
-  @media only screen and (max-width: 1200px) {
-    bottom: 17%;
-  }
 `;
 
 export const DoorDescription = styled.div`
