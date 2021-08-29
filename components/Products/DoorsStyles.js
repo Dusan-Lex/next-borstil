@@ -5,6 +5,9 @@ export const DoorsSection = styled.div`
   .products-title {
     margin-top: 3rem;
     text-transform: uppercase;
+    @media only screen and (max-width: 900px) {
+      margin-top: 1rem;
+    }
   }
 `;
 
@@ -16,6 +19,10 @@ export const DoorsContainer = styled.div`
 
   @media only screen and (max-width: 1200px) {
     padding: 3rem 1rem;
+  }
+  @media only screen and (max-width: 900px) {
+    flex-direction: column;
+    padding: 1rem;
   }
 `;
 export const DoorsBackground = styled.picture`
@@ -38,6 +45,9 @@ export const DoorsBackground = styled.picture`
   @media only screen and (max-width: 1200px) {
     width: 65%;
   }
+  @media only screen and (max-width: 900px) {
+    width: 100%;
+  }
 `;
 export const Door = styled.div`
   position: absolute;
@@ -49,12 +59,11 @@ export const Door = styled.div`
 
 export const DoorDescription = styled.div`
   position: absolute;
-  bottom: 50%;
+  bottom: 56%;
   transform: translateY(50%);
   left: 2%;
-  width: 29%;
+  width: 28%;
   text-align: center;
-  padding: 0.5rem;
   border-radius: 1rem;
   font-size: 2rem;
   font-weight: 500;
@@ -72,5 +81,10 @@ export const DoorDescription = styled.div`
     margin-top: 1rem;
     font-size: 1.6rem;
     font-weight: 400;
+    @media only screen and (max-width: 600px) {
+      font-size: 1.5rem;
+      width: 120%;
+      transform: translateX(-1rem);
+    }
   }
 `;

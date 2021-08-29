@@ -5,6 +5,7 @@ export const StyledDoorsSelection = styled.div`
   width: 30%;
   background-color: white;
   padding-left: 1rem;
+  align-self: center;
   display: flex;
   flex-direction: column;
   transform: translateX(30%);
@@ -19,6 +20,14 @@ export const StyledDoorsSelection = styled.div`
 
   @media only screen and (max-width: 1200px) {
     width: 35%;
+  }
+
+  @media only screen and (max-width: 900px) {
+    width: 80%;
+  }
+
+  @media only screen and (max-width: 600px) {
+    width: 100%;
   }
 `;
 
@@ -45,6 +54,9 @@ export const SelectionItems = styled.div`
     @media only screen and (max-width: 1200px) {
       margin-bottom: 1.5rem;
     }
+    @media only screen and (max-width: 600px) {
+      margin-bottom: 0.5rem;
+    }
   }
 
   .items {
@@ -64,32 +76,39 @@ export const SelectionItem = styled.div`
     transform: scale(1.1);
     transition: transform 0.25s cubic-bezier(0.32, 2.56, 0.64, 2.56);
     &.color {
-      transform: scale(1.3);
+      transform: scale(1.05);
+      transition-duration: 0.2s;
+      border: 1px solid ${color.secondaryLight};
+      border-radius: 3px;
     }
     &.handle-lock {
       transform: none;
+      transition: all 0.1s;
       background-color: ${color.primaryLight};
-      color: ${color.secondaryDark};
+      color: ${color.secondaryLight};
+      border: 1px solid ${color.secondaryLight};
     }
   }
 
   &.color {
+    padding: 0.5rem;
+    border: 1px solid transparent;
     img {
-      width: 5rem;
-      height: 5rem;
+      width: 4rem;
+      height: 4rem;
       border-radius: 3px;
     }
   }
   &.handle-lock {
+    font-weight: 500;
     text-transform: uppercase;
     padding: 1rem;
-    color: ${color.secondaryDark};
-    /* background-color: ${color.primaryLightest}; */
-    border: 1px solid ${color.secondaryLight};
+    color: ${color.primaryDark};
+    border: 1px solid ${color.primaryDark};
     border-radius: 3px;
   }
 
   img {
-    width: 38%;
+    width: 3.8rem;
   }
 `;

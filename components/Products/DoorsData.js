@@ -75,20 +75,26 @@ export const doors = [
     doorcolor: "brown-wood",
     price: "220",
   },
+  {
+    id: "14",
+    doortype: "regular",
+    doorcolor: "grey-wood",
+    price: "140",
+  },
 ];
 
 export const doorFeatures = [
   {
     doortype: "regular",
-    doorcolors: ["brown", "white", "black-wood", "beige"],
+    doorcolors: ["brown", "white", "black-wood", "beige", "grey-wood"],
     doorhandles: ["classic", "premium"],
     doorlocks: ["classic", "premium"],
   },
   {
     doortype: "horizontal-lines",
     doorcolors: ["brown-wood", "white-grey", "black", "white"],
-    doorhandles: ["classic", "premium"],
-    doorlocks: ["classic"],
+    doorhandles: ["premium"],
+    doorlocks: ["classic", "premium"],
   },
   {
     doortype: "lines",

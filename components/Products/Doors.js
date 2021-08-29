@@ -17,6 +17,10 @@ const Doors = () => {
   const doorCtx = useContext(DoorContext);
 
   const door = findDoor(doorCtx.door.doortype, doorCtx.door.doorcolor);
+  const doorHandlePrice = doorCtx.door.doorhandle === "premium" ? 17 : 0;
+  const doorLockPrice = doorCtx.door.doorlock === "premium" ? 7 : 0;
+
+  const doorPrice = +door.price + doorHandlePrice + doorLockPrice;
 
   return (
     <DoorsSection>
@@ -53,11 +57,14 @@ const Doors = () => {
           </Door>
           <DoorDescription>
             <div>Cena</div>
-            <div>{door.price}&#8364;</div>
+            <div>{doorPrice}&#8364;</div>
             <div>sa PDV-om</div>
             <div>
               * cena uključuje {doorCtx.door.doorhandle} kvaku i{" "}
-              {doorCtx.door.doorlock} bravu.
+              {doorCtx.door.doorlock !== doorCtx.door.doorhandle
+                ? doorCtx.door.doorlock
+                : ""}{" "}
+              bravu.
             </div>
           </DoorDescription>
         </DoorsBackground>
