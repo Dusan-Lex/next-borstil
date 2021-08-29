@@ -12,6 +12,7 @@ import {
 
 import DoorContext from "../../store/doorContext";
 import { findDoor } from "./DoorsUtil";
+import { doors } from "./DoorsData";
 
 const Doors = () => {
   const doorCtx = useContext(DoorContext);
@@ -25,11 +26,18 @@ const Doors = () => {
   return (
     <DoorsSection>
       <ImaginedHeader />
-
+      {doors.map((item) => (
+        <img
+          src={`/images/Products/door-${item.id}.jpg`}
+          alt="vrata"
+          style={{ display: "none" }}
+          key={item.id}
+        />
+      ))}
       <TitleEffect
         className="products-title"
         effectClass="two"
-        startDelay={0.1}
+        startDelay={0.3}
       >
         Izaberite&nbsp;Vaša&nbsp;vrata
       </TitleEffect>

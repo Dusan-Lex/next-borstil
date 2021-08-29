@@ -10,7 +10,7 @@ export const StyledDoorsSelection = styled.div`
   flex-direction: column;
   transform: translateX(30%);
   opacity: 0;
-  animation: doors-selections-in 0.7s 0.1s ease forwards;
+  animation: doors-selections-in 0.7s 0.3s ease forwards;
   @keyframes doors-selections-in {
     100% {
       transform: translateX(0);

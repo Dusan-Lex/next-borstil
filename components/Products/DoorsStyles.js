@@ -25,12 +25,13 @@ export const DoorsContainer = styled.div`
     padding: 1rem;
   }
 `;
-export const DoorsBackground = styled.picture`
+export const DoorsBackground = styled.div`
   position: relative;
   width: 70%;
   transform: translateX(-30%);
+
   opacity: 0;
-  animation: doors-in 0.7s 0.1s ease forwards;
+  animation: doors-in 0.7s 0.3s ease forwards;
   @keyframes doors-in {
     100% {
       transform: translateX(0);
@@ -41,6 +42,7 @@ export const DoorsBackground = styled.picture`
   img {
     width: 100%;
     height: 100%;
+    margin-bottom: -0.8rem;
   }
   @media only screen and (max-width: 1200px) {
     width: 65%;
