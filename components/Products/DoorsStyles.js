@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { color } from "../../shared/utils/styles";
 
 export const DoorsSection = styled.div`
+  overflow: hidden;
   .products-title {
     margin-top: 3rem;
     text-transform: uppercase;
@@ -31,7 +32,7 @@ export const DoorsBackground = styled.div`
   transform: translateX(-30%);
 
   opacity: 0;
-  animation: doors-in 0.7s 0.3s ease forwards;
+  animation: doors-in 0.7s 1s ease forwards;
   @keyframes doors-in {
     100% {
       transform: translateX(0);
@@ -54,7 +55,7 @@ export const DoorsBackground = styled.div`
 export const Door = styled.div`
   position: absolute;
   bottom: 15.8%;
-  right: 50%;
+  right: 49%;
   width: 17%;
   height: 68%;
 `;

@@ -10,7 +10,7 @@ export const StyledDoorsSelection = styled.div`
   flex-direction: column;
   transform: translateX(30%);
   opacity: 0;
-  animation: doors-selections-in 0.7s 0.3s ease forwards;
+  animation: doors-selections-in 0.7s 1s ease forwards;
   @keyframes doors-selections-in {
     100% {
       transform: translateX(0);
@@ -24,6 +24,8 @@ export const StyledDoorsSelection = styled.div`
 
   @media only screen and (max-width: 900px) {
     width: 80%;
+    padding-left: 0;
+    padding-top: 1rem;
   }
 
   @media only screen and (max-width: 600px) {
@@ -37,7 +39,10 @@ export const SelectionItems = styled.div`
   height: 20%;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  @media only screen and (max-width: 900px) {
+    /* padding: 1rem; */
+  }
 
   &:first-child {
     height: 35%;
@@ -50,13 +55,7 @@ export const SelectionItems = styled.div`
     font-size: 2rem;
     font-weight: 500;
     color: ${color.primaryDark};
-    margin-bottom: 1.5rem;
-    @media only screen and (max-width: 1200px) {
-      margin-bottom: 1.5rem;
-    }
-    @media only screen and (max-width: 600px) {
-      margin-bottom: 0.5rem;
-    }
+    margin-bottom: 0.5rem;
   }
 
   .items {

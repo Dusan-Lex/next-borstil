@@ -5,7 +5,7 @@ import ToggleButton from "../../shared/components/Buttons/ToggleButton/ToggleBut
 export const Header = styled.header`
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 100vw;
   ${mixin.boxShadowHeader};
   transform: ${(props) =>
     props.hideHeaderUp ? "translateY(-4.5vh)" : "translateY(0)"};
