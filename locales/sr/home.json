@@ -67,5 +67,9 @@
   "gallery": {
     "title": "Ovo su neki od naših radova",
     "button": "Pogledaj galeriju"
+  },
+  "reference": {
+    "title": "Izdvojeni projekti",
+    "button": "Pogledaj projekte"
   }
 }

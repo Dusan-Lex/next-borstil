@@ -33,6 +33,11 @@ const DoorsSelection = () => {
                   src={`/images/Products/door-${item.doortype}${active}.jpg`}
                   alt="vrata"
                 />
+                <img
+                  src={`/images/Products/door-${item.doortype}-active.jpg`}
+                  alt="vrata"
+                  style={{ display: "none" }}
+                />
               </SelectionItem>
             );
           })}

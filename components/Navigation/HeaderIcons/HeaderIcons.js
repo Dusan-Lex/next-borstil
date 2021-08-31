@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import useTranslation from "next-translate/useTranslation";
 import {
   StyledHeaderIcons,
@@ -16,6 +16,7 @@ import Instagram from "../../../shared/components/svgs/Instagram";
 import Popup from "../Popup/Popup";
 import PopupContext from "../../../store/popupContext";
 import SidebarContext from "../../../store/sidebarContext";
+import useHover from "../../../shared/hooks/useHover";
 
 const HeaderIcons = (props) => {
   const [icons, setIcons] = useState([0, 0, 0]);
@@ -23,8 +24,23 @@ const HeaderIcons = (props) => {
   const sidebarCtx = useContext(SidebarContext);
   const { t } = useTranslation();
 
+  const [hoverRef, isHovered] = useHover();
+  console.log(isHovered);
+  // useEffect(() => {
+  //   console.log("effect");
+  //   const timer = setTimeout(() => {
+  //     if (isHovered) {
+  //       setIcons([0, 0, 0]);
+  //     }
+  //   }, 2000);
+  //   return () => {
+  //     clearTimeout(timer);
+  //   };
+  // }, [icons]);
+
   return (
     <StyledHeaderIcons
+      ref={hoverRef}
       small={props.small}
       sidebar={sidebarCtx.sidebar}
       onMouseLeave={() => {
