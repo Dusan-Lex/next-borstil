@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Box404 } from "./404SectionStyles";
+import { Box404 } from "./Section404Styles";
 
 const section404 = () => {
   return (

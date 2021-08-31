@@ -1,4 +1,4 @@
-import Section404 from "../components/404/404section";
+import Section404 from "../components/404/Section404";
 
 const FourOhFour = () => {
   return <Section404 />;
