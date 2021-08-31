@@ -68,8 +68,8 @@ export const DoorDescription = styled.div`
   width: 28%;
   text-align: center;
   border-radius: 1rem;
-  font-size: 2rem;
-  font-weight: 500;
+  font-size: 2.5rem;
+  font-weight: 600;
   color: ${color.secondary};
   div:first-child {
     color: ${color.primaryDark};
@@ -83,7 +83,7 @@ export const DoorDescription = styled.div`
   div:nth-child(4) {
     margin-top: 1rem;
     font-size: 1.6rem;
-    font-weight: 400;
+    font-weight: 500;
     @media only screen and (max-width: 600px) {
       font-size: 1.5rem;
       width: 120%;

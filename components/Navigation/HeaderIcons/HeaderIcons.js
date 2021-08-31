@@ -25,7 +25,6 @@ const HeaderIcons = (props) => {
 
   return (
     <StyledHeaderIcons
-      ref={hoverRef}
       small={props.small}
       sidebar={sidebarCtx.sidebar}
       onMouseLeave={() => {
