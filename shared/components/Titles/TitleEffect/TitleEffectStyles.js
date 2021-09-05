@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { mixin, color } from "../../../utils/styles";
+import { mixin } from "../../../utils/styles";
 
 export const TEBox = styled.div`
   ${mixin.center}
@@ -12,20 +12,20 @@ export const TEBox = styled.div`
 
 export const TESpan = styled.span`
   display: inline-block;
-  color: ${color.secondary};
+  color: ${(props) => props.color2};
   opacity: 0;
   &.one {
     transform: translate(-150px, 0) scale(0.3);
-    animation: firstA 0.55s ${(props) => props.delay}s forwards;
-    @keyframes firstA {
+    animation: firstA-${(props) => props.id} 0.55s ${(props) => props.delay}s forwards;
+    @keyframes firstA-${(props) => props.id} {
       40% {
         transform: translate(50px, 0) scale(0.7);
         opacity: 1;
-        color: ${color.secondary};
+        color: ${(props) => props.color2};
       }
 
       60% {
-        color: ${color.primary};
+        color: ${(props) => props.color1};
       }
 
       80% {
@@ -42,16 +42,16 @@ export const TESpan = styled.span`
 
   &.two {
     transform: translate(0, -100px) rotate(360deg) scale(0);
-    animation: secondA 0.3s ${(props) => props.delay}s forwards;
+    animation: secondA-${(props) => props.id} 0.3s ${(props) => props.delay}s forwards;
 
-    @keyframes secondA {
+    @keyframes secondA-${(props) => props.id} {
       30% {
         transform: translate(0, -50px) rotate(180deg) scale(1);
       }
 
       60% {
         transform: translate(0, 20px) scale(0.8) rotate(0deg);
-        color: ${color.primary};
+        color: ${(props) => props.color1};
       }
 
       100% {
@@ -63,12 +63,12 @@ export const TESpan = styled.span`
 
   &.three {
     transform: translate(-150px, -50px) rotate(-180deg) scale(3);
-    animation: thirdA 0.4s ${(props) => props.delay}s forwards;
+    animation: thirdA-${(props) => props.id} 0.4s ${(props) => props.delay}s forwards;
 
-    @keyframes thirdA {
+    @keyframes thirdA-${(props) => props.id} {
       60% {
         transform: translate(20px, 20px) rotate(30deg) scale(0.3);
-        color: ${color.primary};
+        color: ${(props) => props.color1};
       }
 
       100% {

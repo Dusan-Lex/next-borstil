@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
+import { color } from "../../shared/utils/styles";
 import ImaginedHeader from "../../shared/components/ImaginedHeader/ImaginedHeader";
-import TitleEffect from "../../shared/components/Titles/TitleEffect/TitleEffect";
+
 import DoorsSelection from "./DoorsSelection/DoorsSelection";
 import {
   DoorsSection,
@@ -8,6 +9,7 @@ import {
   DoorsContainer,
   Door,
   DoorDescription,
+  DoorsTitle,
 } from "./DoorsStyles";
 
 import DoorContext from "../../store/doorContext";
@@ -34,13 +36,15 @@ const Doors = () => {
           key={item.id}
         />
       ))}
-      <TitleEffect
-        className="products-title"
+      <DoorsTitle
         effectClass="two"
         startDelay={0.3}
+        id="sdjfyek56hfh"
+        color1={color.primary}
+        color2={color.secondary}
       >
         Izaberite&nbsp;Vaša&nbsp;vrata
-      </TitleEffect>
+      </DoorsTitle>
 
       <DoorsContainer>
         <DoorsBackground>

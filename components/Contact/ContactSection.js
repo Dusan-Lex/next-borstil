@@ -8,6 +8,7 @@ import ContactHeader from "./ContactHeader";
 import ArrowDownScroll from "../../shared/components/svgs/ArrowDownScroll";
 import ContactInfo from "./ContactInfo";
 import ContactForm from "./ContactForm";
+import { color } from "../../shared/utils/styles";
 
 const ContactSection = () => {
   const contactInfoRef = useRef();
@@ -15,7 +16,13 @@ const ContactSection = () => {
   return (
     <StyledContactSection>
       <ContactHeader />
-      <StyledTitleEffect effectClass="one" startDelay={1}>
+      <StyledTitleEffect
+        effectClass="one"
+        startDelay={1}
+        id="dsfgdfsg"
+        color1={color.primary}
+        color2={color.secondary}
+      >
         Kontakt&nbsp;informacije
       </StyledTitleEffect>
       <ScrollInto>

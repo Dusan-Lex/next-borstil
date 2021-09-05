@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { color } from "../../shared/utils/styles";
+import TitleEffect from "../../shared/components/Titles/TitleEffect/TitleEffect";
 
 export const DoorsSection = styled.div`
   overflow: hidden;
@@ -9,6 +10,14 @@ export const DoorsSection = styled.div`
     @media only screen and (max-width: 900px) {
       margin-top: 1rem;
     }
+  }
+`;
+
+export const DoorsTitle = styled(TitleEffect)`
+  margin-top: 3rem;
+  text-transform: uppercase;
+  @media only screen and (max-width: 900px) {
+    margin-top: 1rem;
   }
 `;
 

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { mixin, color } from "../../shared/utils/styles";
+import { mixin } from "../../shared/utils/styles";
 import TitleEffect from "../../shared/components/Titles/TitleEffect/TitleEffect";
 
 export const StyledContactSection = styled.section`

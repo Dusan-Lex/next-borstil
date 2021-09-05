@@ -1,3 +1,5 @@
+import Image from "next/image";
+import { color } from "../../shared/utils/styles";
 import {
   StyledContactHeader,
   ContactHeaderTitle,
@@ -7,7 +9,12 @@ import {
 const ContactHeader = () => {
   return (
     <StyledContactHeader>
-      <ContactHeaderTitle>Kuća dobre stolarije</ContactHeaderTitle>
+      <Image
+        src="/images/Contact/Borstil-contact-2.jpg"
+        layout="fill"
+        objectFit="cover"
+      />
+      <ContactHeaderTitle>Kuća Dobre Stolarije</ContactHeaderTitle>
       <ContactHeaderSubtitle>
         Mi znamo da dobar kvalitet znači dobar biznis
       </ContactHeaderSubtitle>
