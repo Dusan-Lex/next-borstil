@@ -10,6 +10,8 @@ import {
   Door,
   DoorDescription,
   DoorsTitle,
+  DoorsHeader,
+  ShoppingCartBtnNotNav,
 } from "./DoorsStyles";
 
 import DoorContext from "../../store/doorContext";
@@ -23,7 +25,7 @@ const Doors = () => {
   const doorHandlePrice = doorCtx.door.doorhandle === "premium" ? 17 : 0;
   const doorLockPrice = doorCtx.door.doorlock === "premium" ? 7 : 0;
 
-  const doorPrice = +door.price + doorHandlePrice + doorLockPrice;
+  const doorPrice = door.price + doorHandlePrice + doorLockPrice;
 
   return (
     <DoorsSection>
@@ -36,15 +38,18 @@ const Doors = () => {
           key={item.id}
         />
       ))}
-      <DoorsTitle
-        effectClass="two"
-        startDelay={0.3}
-        id="sdjfyek56hfh"
-        color1={color.primary}
-        color2={color.secondary}
-      >
-        Izaberite&nbsp;Vaša&nbsp;vrata
-      </DoorsTitle>
+      <DoorsHeader>
+        <DoorsTitle
+          effectClass="two"
+          startDelay={0.3}
+          id="sdjfyek56hfh"
+          color1={color.primary}
+          color2={color.secondary}
+        >
+          Izaberite&nbsp;Vaša&nbsp;vrata
+        </DoorsTitle>
+        <ShoppingCartBtnNotNav />
+      </DoorsHeader>
 
       <DoorsContainer>
         <DoorsBackground>

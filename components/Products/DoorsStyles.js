@@ -1,6 +1,9 @@
 import styled from "styled-components";
-import { color } from "../../shared/utils/styles";
+import { color, mixin } from "../../shared/utils/styles";
 import TitleEffect from "../../shared/components/Titles/TitleEffect/TitleEffect";
+
+import { ShoppingCartBtn } from "./ShoppingCart/ShoppingCartButtonStyles";
+import ShoppingCartButton from "./ShoppingCart/ShoppingCartButton";
 
 export const DoorsSection = styled.div`
   overflow: hidden;
@@ -13,18 +16,22 @@ export const DoorsSection = styled.div`
   }
 `;
 
-export const DoorsTitle = styled(TitleEffect)`
-  margin-top: 3rem;
-  text-transform: uppercase;
+export const DoorsHeader = styled.div`
+  ${mixin.center}
+  margin-top: 1rem;
   @media only screen and (max-width: 900px) {
     margin-top: 1rem;
   }
 `;
 
+export const DoorsTitle = styled(TitleEffect)`
+  text-transform: uppercase;
+`;
+
 export const DoorsContainer = styled.div`
   max-width: 1600px;
   margin: auto;
-  padding: 3rem 4rem;
+  padding: 1rem 4rem 3rem;
   display: flex;
 
   @media only screen and (max-width: 1200px) {
@@ -66,12 +73,12 @@ export const Door = styled.div`
   bottom: 15.8%;
   right: 49%;
   width: 17%;
-  height: 68%;
+  height: 67%;
 `;
 
 export const DoorDescription = styled.div`
   position: absolute;
-  bottom: 56%;
+  bottom: 52%;
   transform: translateY(50%);
   left: 2%;
   width: 28%;
@@ -98,5 +105,23 @@ export const DoorDescription = styled.div`
       width: 120%;
       transform: translateX(-1rem);
     }
+  }
+`;
+
+export const ShoppingCartBtnNotNav = styled(ShoppingCartButton)`
+  margin-left: 5rem;
+  animation: sh-in 0.7s 1s ease both;
+  @keyframes sh-in {
+    0% {
+      transform: translateX(15rem);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    display: none !important;
   }
 `;

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { color, mixin, font } from "../../shared/utils/styles";
 import ToggleButton from "../../shared/components/Buttons/ToggleButton/ToggleButton";
+import ShoppingCartButton from "../Products/ShoppingCart/ShoppingCartButton";
 
 export const Header = styled.header`
   position: fixed;
@@ -104,6 +105,7 @@ export const LangSpan = styled.span`
     }
   }
 `;
+
 export const ThemeSpan = styled.span`
   position: absolute;
   right: 15rem;
@@ -111,4 +113,23 @@ export const ThemeSpan = styled.span`
   font-size: 1.8rem;
   width: 14rem;
   text-align: left;
+`;
+
+export const ShoppingCartBtnNav = styled(ShoppingCartButton)`
+  align-self: center;
+  margin-left: auto;
+  border: 2px solid ${color.secondary};
+  stroke: ${(props) => props.theme.background};
+  span:not(.abcd) {
+    width: 6rem;
+    font-size: 3rem;
+  }
+  svg:not(.abcd) {
+    width: 6rem;
+    height: 4rem;
+    stroke: ${color.primary};
+  }
+  @media only screen and (min-width: 601px) {
+    display: none !important;
+  }
 `;

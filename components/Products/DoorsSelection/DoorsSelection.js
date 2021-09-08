@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import DoorsContext from "../../../store/doorContext";
 import { doorFeatures } from "../DoorsData";
+import AddButton from "./AddButton";
 import {
   StyledDoorsSelection,
   SelectionItems,
@@ -9,7 +10,7 @@ import {
 
 const DoorsSelection = () => {
   const doorCtx = useContext(DoorsContext);
-  console.log(doorCtx);
+
   return (
     <StyledDoorsSelection>
       <SelectionItems>
@@ -122,6 +123,7 @@ const DoorsSelection = () => {
             })}
         </div>
       </SelectionItems>
+      <AddButton />
     </StyledDoorsSelection>
   );
 };

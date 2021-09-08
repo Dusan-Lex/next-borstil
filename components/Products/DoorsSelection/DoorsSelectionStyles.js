@@ -36,20 +36,9 @@ export const StyledDoorsSelection = styled.div`
 export const SelectionItems = styled.div`
   display: flex;
   flex-direction: column;
-  height: 20%;
   align-items: center;
   justify-content: center;
-  margin-bottom: 2rem;
-  @media only screen and (max-width: 900px) {
-    /* padding: 1rem; */
-  }
-
-  &:first-child {
-    height: 35%;
-  }
-  &:nth-child(2) {
-    height: 25%;
-  }
+  margin-bottom: 1rem;
 
   .title {
     font-size: 2rem;
@@ -100,8 +89,9 @@ export const SelectionItem = styled.div`
   }
   &.handle-lock {
     font-weight: 500;
+    font-size: 1.5rem;
     text-transform: uppercase;
-    padding: 1rem;
+    padding: 0.3rem 1rem;
     color: ${color.primaryDark};
     border: 1px solid ${color.primaryDark};
     border-radius: 3px;
