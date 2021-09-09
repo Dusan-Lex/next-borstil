@@ -5,7 +5,7 @@ export const BurgerBtn = styled.div`
   width: 10rem;
   height: 100%;
   margin-left: auto;
-  margin-right: 2rem;
+  margin-right: 1rem;
   cursor: pointer;
   ${mixin.center}
   -webkit-tap-highlight-color: transparent;

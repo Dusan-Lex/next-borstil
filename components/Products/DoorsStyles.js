@@ -1,8 +1,6 @@
 import styled from "styled-components";
 import { color, mixin } from "../../shared/utils/styles";
 import TitleEffect from "../../shared/components/Titles/TitleEffect/TitleEffect";
-
-import { ShoppingCartBtn } from "./ShoppingCart/ShoppingCartButtonStyles";
 import ShoppingCartButton from "./ShoppingCart/ShoppingCartButton";
 
 export const DoorsSection = styled.div`
@@ -17,15 +15,22 @@ export const DoorsSection = styled.div`
 `;
 
 export const DoorsHeader = styled.div`
-  ${mixin.center}
+  max-width: 1600px;
+  margin: auto;
+  display: flex;
   margin-top: 1rem;
+  padding: 0 4rem;
   @media only screen and (max-width: 900px) {
     margin-top: 1rem;
   }
 `;
 
 export const DoorsTitle = styled(TitleEffect)`
+  width: 70%;
   text-transform: uppercase;
+  @media only screen and (max-width: 900px) {
+    width: 100%;
+  }
 `;
 
 export const DoorsContainer = styled.div`
@@ -35,11 +40,10 @@ export const DoorsContainer = styled.div`
   display: flex;
 
   @media only screen and (max-width: 1200px) {
-    padding: 3rem 1rem;
+    padding: 1rem 1rem 3rem;
   }
   @media only screen and (max-width: 900px) {
     flex-direction: column;
-    padding: 1rem;
   }
 `;
 export const DoorsBackground = styled.div`
@@ -109,15 +113,15 @@ export const DoorDescription = styled.div`
 `;
 
 export const ShoppingCartBtnNotNav = styled(ShoppingCartButton)`
-  margin-left: 5rem;
+  margin: auto;
   animation: sh-in 0.7s 1s ease both;
   @keyframes sh-in {
     0% {
-      transform: translateX(15rem);
+      transform: translateY(-5rem);
       opacity: 0;
     }
     100% {
-      transform: translateX(0);
+      transform: translateY(0);
       opacity: 1;
     }
   }

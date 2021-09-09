@@ -6,6 +6,7 @@ import {
   StyledDoorsSelection,
   SelectionItems,
   SelectionItem,
+  HandleLockGroup,
 } from "./DoorsSelectionStyles";
 
 const DoorsSelection = () => {
@@ -69,60 +70,62 @@ const DoorsSelection = () => {
             })}
         </div>
       </SelectionItems>
-      <SelectionItems>
-        <div className="title">Kvaka:</div>
-        <div className="items">
-          {doorFeatures
-            .find((item) => item.doortype === doorCtx.door.doortype)
-            .doorhandles.map((item, index) => {
-              return (
-                <SelectionItem
-                  className={
-                    item === doorCtx.door.doorhandle
-                      ? "handle-lock -active"
-                      : "handle-lock"
-                  }
-                  key={index}
-                  onClick={() => {
-                    doorCtx.dispatch({
-                      type: "CHANGE_DOORHANDLE",
-                      value: item,
-                    });
-                  }}
-                >
-                  {item}
-                </SelectionItem>
-              );
-            })}
-        </div>
-      </SelectionItems>
-      <SelectionItems>
-        <div className="title">Brava:</div>
-        <div className="items">
-          {doorFeatures
-            .find((item) => item.doortype === doorCtx.door.doortype)
-            .doorlocks.map((item, index) => {
-              return (
-                <SelectionItem
-                  className={
-                    item === doorCtx.door.doorlock
-                      ? "handle-lock -active"
-                      : "handle-lock"
-                  }
-                  key={index}
-                  onClick={() => {
-                    doorCtx.dispatch({
-                      type: "CHANGE_DOORLOCK",
-                      value: item,
-                    });
-                  }}
-                >
-                  {item}
-                </SelectionItem>
-              );
-            })}
-        </div>
-      </SelectionItems>
+      <HandleLockGroup>
+        <SelectionItems>
+          <div className="title">Kvaka:</div>
+          <div className="items">
+            {doorFeatures
+              .find((item) => item.doortype === doorCtx.door.doortype)
+              .doorhandles.map((item, index) => {
+                return (
+                  <SelectionItem
+                    className={
+                      item === doorCtx.door.doorhandle
+                        ? "handle-lock -active"
+                        : "handle-lock"
+                    }
+                    key={index}
+                    onClick={() => {
+                      doorCtx.dispatch({
+                        type: "CHANGE_DOORHANDLE",
+                        value: item,
+                      });
+                    }}
+                  >
+                    {item}
+                  </SelectionItem>
+                );
+              })}
+          </div>
+        </SelectionItems>
+        <SelectionItems>
+          <div className="title">Brava:</div>
+          <div className="items">
+            {doorFeatures
+              .find((item) => item.doortype === doorCtx.door.doortype)
+              .doorlocks.map((item, index) => {
+                return (
+                  <SelectionItem
+                    className={
+                      item === doorCtx.door.doorlock
+                        ? "handle-lock -active"
+                        : "handle-lock"
+                    }
+                    key={index}
+                    onClick={() => {
+                      doorCtx.dispatch({
+                        type: "CHANGE_DOORLOCK",
+                        value: item,
+                      });
+                    }}
+                  >
+                    {item}
+                  </SelectionItem>
+                );
+              })}
+          </div>
+        </SelectionItems>
+      </HandleLockGroup>
       <AddButton />
     </StyledDoorsSelection>
   );

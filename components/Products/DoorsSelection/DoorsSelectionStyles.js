@@ -101,3 +101,19 @@ export const SelectionItem = styled.div`
     width: 3.8rem;
   }
 `;
+
+export const HandleLockGroup = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  @media only screen and (max-width: 900px) {
+    flex-direction: row;
+    justify-content: space-between;
+    & > div {
+      width: 50%;
+      &:first-child {
+        border-right: 1px solid ${color.primaryDark};
+      }
+    }
+  }
+`;

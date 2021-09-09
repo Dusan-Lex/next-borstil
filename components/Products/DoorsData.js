@@ -93,14 +93,14 @@ export const doorFeatures = [
   {
     doortype: "horizontal-lines",
     doorcolors: ["brown-wood", "white-grey", "black", "white"],
-    doorhandles: ["premium"],
+    doorhandles: ["classic", "premium"],
     doorlocks: ["classic", "premium"],
   },
   {
     doortype: "lines",
     doorcolors: ["white"],
     doorhandles: ["classic", "premium"],
-    doorlocks: ["classic"],
+    doorlocks: ["classic", "premium"],
   },
   {
     doortype: "horizontal-lines-glass",

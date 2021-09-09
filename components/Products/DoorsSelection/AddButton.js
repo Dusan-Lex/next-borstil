@@ -23,34 +23,36 @@ const AddButton = () => {
 
   return (
     <AddDoorsForm onSubmit={submitHandler}>
-      <div className="title">Količina:</div>
-      <AddDoorsQuantity>
-        <div className="group">
-          <MinusButton
-            className="button minus"
-            type="button"
-            onClick={() => {
-              doorCtx.dispatch({ type: "DECREMENT_QUANTITY" });
-            }}
-          >
-            -
-          </MinusButton>
-          <AddDoorsInput
-            type="text"
-            value={doorCtx.door.doorquantity}
-            onChange={changeHandler}
-          ></AddDoorsInput>
-          <PlusButton
-            className="button plus"
-            type="button"
-            onClick={() => {
-              doorCtx.dispatch({ type: "INCREMENT_QUANTITY" });
-            }}
-          >
-            +
-          </PlusButton>
-        </div>
-      </AddDoorsQuantity>
+      <div>
+        <div className="title">Količina:</div>
+        <AddDoorsQuantity>
+          <div className="group">
+            <MinusButton
+              className="button minus"
+              type="button"
+              onClick={() => {
+                doorCtx.dispatch({ type: "DECREMENT_QUANTITY" });
+              }}
+            >
+              -
+            </MinusButton>
+            <AddDoorsInput
+              type="text"
+              value={doorCtx.door.doorquantity}
+              onChange={changeHandler}
+            ></AddDoorsInput>
+            <PlusButton
+              className="button plus"
+              type="button"
+              onClick={() => {
+                doorCtx.dispatch({ type: "INCREMENT_QUANTITY" });
+              }}
+            >
+              +
+            </PlusButton>
+          </div>
+        </AddDoorsQuantity>
+      </div>
       <AddDoorsButton type="submit">Dodaj u korpu</AddDoorsButton>
     </AddDoorsForm>
   );

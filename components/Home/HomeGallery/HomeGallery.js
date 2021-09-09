@@ -11,13 +11,7 @@ const HomeGallery = () => {
       <HomeTitle>{t(`home:gallery.title`)}</HomeTitle>
       <HomePhotos>
         {homeGalleryData.map((item, index) => {
-          return (
-            <Photo
-              key={index}
-              item={item}
-              // loading="eager"
-            />
-          );
+          return <Photo key={index} item={item} loading="eager" />;
         })}
       </HomePhotos>
       <ArrowButton path="/gallery" dark className="home-gallery-arrow">

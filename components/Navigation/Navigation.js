@@ -27,6 +27,7 @@ import Sidebar from "./Sidebar/Sidebar";
 const Navigation = () => {
   const { theme, switchTheme } = useContext(ThemeContext);
   const router = useRouter();
+  console.log(router);
   const { t } = useTranslation();
 
   const localeChangeHandler = () => {
@@ -65,7 +66,7 @@ const Navigation = () => {
         <HeaderLogo />
         <Navbar />
         <HeaderIcons />
-        <ShoppingCartBtnNav />
+        {router.route === "/products" ? <ShoppingCartBtnNav /> : null}
         <BurgerButton />
         <Sidebar />
       </HeaderDown>
