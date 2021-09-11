@@ -190,8 +190,11 @@ const SliderTouch = ({ data }) => {
             <TouchSlideContent>
               <TouchSlideTitle>{slide.title}</TouchSlideTitle>
               <TouchSlideDescription>
-                <p>{slide.investor}</p>
-                <p>{slide.subject}</p>
+                <p>
+                  {" "}
+                  {slide.investor ? `Investitor: ${slide.investor}` : null}
+                </p>
+                <p>Predmet: {slide.subject}</p>
               </TouchSlideDescription>
             </TouchSlideContent>
             <Image
@@ -202,7 +205,7 @@ const SliderTouch = ({ data }) => {
                 e.preventDefault();
               }}
               quality="60"
-              src={slide.srcImg}
+              src={`/images/Reference/Borstil-reference-${slide.srcImgId}.jpg`}
               alt={slide.title}
             ></Image>
           </TouchSlide>

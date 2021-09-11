@@ -1,5 +1,8 @@
-import { MongoClient } from "mongodb";
-import { findByEmail, insertDocument } from "../../shared/utils/mongoDb";
+import {
+  connectDatabase,
+  findByEmail,
+  insertDocument,
+} from "../../shared/utils/mongoDb";
 import { emailValidation } from "../../shared/utils/validation";
 
 const handler = async (req, res) => {
@@ -9,12 +12,10 @@ const handler = async (req, res) => {
       res.status(422).json({ message: "Invalid email address" });
       return;
     }
-    const connectionString = `mongodb+srv://${process.env.mongodb_username}:${process.env.mongodb_password}@${process.env.mongodb_clustername}.szwyi.mongodb.net/${process.env.mongodb_database}?retryWrites=true&w=majority`;
+
     let client;
     try {
-      client = await MongoClient.connect(connectionString, {
-        useUnifiedTopology: true,
-      });
+      client = await connectDatabase();
     } catch (error) {
       res.status(500).json({ message: "Connecting to the database failed" });
       return;

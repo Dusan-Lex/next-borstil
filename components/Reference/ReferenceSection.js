@@ -1,6 +1,6 @@
 import Image from "next/image";
 import ImaginedHeader from "../../shared/components/ImaginedHeader/ImaginedHeader";
-import { referenceData } from "./ReferenceData";
+// import { referenceData } from "./ReferenceData";
 import {
   StyledReferenceSection,
   ReferenceGrid,
@@ -10,7 +10,7 @@ import {
 } from "./ReferenceSectionStyles";
 import File from "../../shared/components/svgs/File";
 
-const ReferenceSection = () => {
+const ReferenceSection = ({ referenceData }) => {
   return (
     <StyledReferenceSection>
       <ImaginedHeader />
@@ -19,7 +19,7 @@ const ReferenceSection = () => {
           <ReferenceGridItem key={index} index={index}>
             <Image
               key={index}
-              src={item.srcImg}
+              src={`/images/Reference/Borstil-reference-${item.srcImgId}.jpg`}
               width="800"
               height="600"
               objectFit="cover"
@@ -31,9 +31,9 @@ const ReferenceSection = () => {
 
             <ReferenceDescription index={index}>
               <h3>{item.title}</h3>
-              <p>{item.investor}</p>
-              <p>{item.subject}</p>
-              <p>{item.date}</p>
+              <p>Investitor: {item.investor}</p>
+              <p>Predmet: {item.subject}</p>
+              <p>Datum: {item.date}</p>
             </ReferenceDescription>
           </ReferenceGridItem>
         ))}

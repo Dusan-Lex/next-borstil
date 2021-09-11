@@ -35,7 +35,7 @@ const Button = styled.button`
   padding: 0.5rem 1rem;
   color: ${color.secondaryLight};
   background-color: ${color.primaryLight};
-  border: 2px solid ${color.primary};
+  border: 0.13rem solid ${color.primaryDark};
   cursor: pointer;
 `;
 
@@ -61,8 +61,8 @@ export const AddDoorsInput = styled.input`
   text-align: center;
   color: ${color.secondary};
   border: none;
-  border-top: 2px solid ${color.primary};
-  border-bottom: 2px solid ${color.primary};
+  border-top: 0.13rem solid ${color.primaryDark};
+  border-bottom: 0.13rem solid ${color.primaryDark};
 `;
 
 export const AddDoorsButton = styled.button`
