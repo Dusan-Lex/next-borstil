@@ -2,7 +2,6 @@ import { createContext, useReducer } from "react";
 import { doorFeatures } from "../components/Products/DoorsData";
 const DoorContext = createContext({
   doortype: null,
-  changeDoorType: () => {},
 });
 
 const initialDoorState = {

@@ -23,9 +23,12 @@ import { color } from "../../shared/utils/styles";
 import HeaderLogo from "./HeaderLogo/HeaderLogo";
 import BurgerButton from "./BurgerButton/BurgerButton";
 import Sidebar from "./Sidebar/Sidebar";
+import CheckoutContext from "../../store/checkoutContext";
 
 const Navigation = () => {
   const { theme, switchTheme } = useContext(ThemeContext);
+  const checkoutCtx = useContext(CheckoutContext);
+  console.log(checkoutCtx);
   const router = useRouter();
 
   const { t } = useTranslation();
@@ -66,7 +69,9 @@ const Navigation = () => {
         <HeaderLogo />
         <Navbar />
         <HeaderIcons />
-        {router.route === "/products" ? <ShoppingCartBtnNav /> : null}
+        {router.route === "/products" ? (
+          <ShoppingCartBtnNav onClick={checkoutCtx.toggleCheckout} />
+        ) : null}
         <BurgerButton />
         <Sidebar />
       </HeaderDown>

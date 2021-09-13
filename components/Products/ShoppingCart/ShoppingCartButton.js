@@ -9,7 +9,6 @@ import {
 const ShoppingCartButton = (props) => {
   const [hover, setHover] = useState(false);
   const doorCtx = useContext(DoorContext);
-  console.log(doorCtx);
 
   useEffect(() => {
     setHover(true);
@@ -18,7 +17,7 @@ const ShoppingCartButton = (props) => {
     }, 700);
   }, [doorCtx.door.doorquantity]);
   return (
-    <ShoppingCartBtn className={props.className}>
+    <ShoppingCartBtn className={props.className} onClick={props.onClick}>
       <span>{doorCtx.door.doorquantity}</span>
 
       {hover ? <ShoppingCartSvgAnimate /> : <ShoppingCartSvg />}
