@@ -16,7 +16,10 @@ const orderReducer = (orderState, action) => {
       );
       if (exists) {
         return orderState.map((item) =>
-          item.doortype === action.payload.doortype
+          item.doortype === action.payload.doortype &&
+          item.doorcolor === action.payload.doorcolor &&
+          item.doorhandle === action.payload.doorhandle &&
+          item.doorlock === action.payload.doorlock
             ? {
                 ...item,
                 doorquantity: item.doorquantity + action.payload.doorquantity,

@@ -1,13 +1,14 @@
 import {
   CheckoutBack,
-  CheckoutContainer,
   CheckoutFront,
+  ProgressContent,
   StyledCheckout,
 } from "./CheckoutStyles";
 
 import { useContext } from "react";
 import CheckoutContext from "../../../store/checkoutContext";
 import OrderContext from "../../../store/orderContext";
+import StepProgressBar from "./StepProgressBar";
 
 const Checkout = () => {
   const checkoutCtx = useContext(CheckoutContext);
@@ -20,14 +21,18 @@ const Checkout = () => {
         onClick={checkoutCtx.toggleCheckout}
       />
       <CheckoutFront show={checkoutCtx.checkout}>
-        <CheckoutContainer>
+        <StepProgressBar
+          steps={["korpa", "podaci kupca", "pregled korpe"]}
+          show={checkoutCtx.checkout}
+        />
+        <ProgressContent>
           {orderCtx.order.map((item, index) => (
             <div key={index}>
               tip:{item.doortype} boja:{item.doorcolor} Kvaka:{item.doorhandle}{" "}
               brava:{item.doorlock} kolicina :{item.doorquantity}
             </div>
           ))}
-        </CheckoutContainer>
+        </ProgressContent>
       </CheckoutFront>
     </StyledCheckout>
   );

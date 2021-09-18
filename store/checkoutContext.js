@@ -10,7 +10,6 @@ export const CheckoutContextProvider = (props) => {
 
   const toggleCheckoutHandler = () => {
     setCheckoutState((prevCheckoutState) => {
-      // document.body.style.overflow = !prevCheckoutState ? "hidden" : "";
       return !prevCheckoutState;
     });
   };
