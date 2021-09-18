@@ -18,7 +18,9 @@ const Products = () => {
   const checkoutCtx = useContext(CheckoutContext);
 
   useEffect(() => {
-    checkoutCtx.setCheckout(false);
+    return () => {
+      checkoutCtx.setCheckout(false);
+    };
   }, []);
 
   return (

@@ -20,7 +20,9 @@ export const CheckoutFront = styled.div`
   width: 100vw;
   max-width: 600px;
   min-width: 50%;
-  /* ${mixin.center} */
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
   z-index: 10;
   transform: ${(props) => (props.show ? "translateX(0)" : "translateX(-100%)")};
   transition: transform 1s ease-in-out;
@@ -48,6 +50,7 @@ export const CheckoutFront = styled.div`
 `;
 
 export const ProgressContent = styled.div`
+  height: 100%;
   padding: 3rem;
   color: ${color.primary};
 `;

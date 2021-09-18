@@ -7,16 +7,22 @@ export const StyledStepProgressBar = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   opacity: ${(props) => (props.show ? "1" : "0")};
-  transition: opacity 0.9s ease-in-out 0.4s;
+  transition: opacity 0.9s ease-in-out;
+  transition-delay: ${(props) => (props.show ? "0.6s" : "0s")};
+  @media screen and (max-width: 500px) {
+    padding: 3rem 0.5rem;
+  }
 `;
 export const StepWrapper = styled.div`
   position: relative;
   ${mixin.center}
   flex-direction: column;
-  width: 31%;
+  width: 25%;
+  z-index: ${(props) => props.index};
 `;
 
 export const StepNumber = styled.div`
+  position: relative;
   width: 4rem;
   height: 4rem;
   padding: 0.3rem;
@@ -28,10 +34,11 @@ export const StepNumber = styled.div`
   font-weight: 600;
   transition: transform 0.2s ease;
   margin-bottom: 1rem;
+  z-index: 1;
 
   &.completed {
     background-color: ${color.primary};
-    border-color: ${color.secondary};
+    border-color: ${color.primary};
     color: ${color.secondary};
   }
   &.active {
@@ -43,10 +50,13 @@ export const StepNumber = styled.div`
 `;
 export const StepDescription = styled.div`
   color: ${color.primaryLightest};
+  width: 100%;
   padding: 0 1rem;
   font-weight: 500;
+  line-height: 1.25;
   text-transform: uppercase;
   text-align: center;
+  margin-top: 1rem;
   transition: transform 0.2s ease;
   &.completed {
     color: ${color.primary};
@@ -59,12 +69,12 @@ export const StepDescription = styled.div`
 `;
 
 export const HorizontalLine = styled.div`
+  position: absolute;
   height: 0.2rem;
   background-color: ${color.primaryLightest};
-  position: absolute;
-  width: 70%;
+  width: calc(100% - 4rem);
   top: 2rem;
-  left: 70%;
+  left: calc(50% + 2rem);
 
   &.active {
     background-color: ${color.primary};
