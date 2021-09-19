@@ -10,6 +10,7 @@ import CheckoutContext from "../../../store/checkoutContext";
 import OrderContext from "../../../store/orderContext";
 import StepProgressBar from "./StepProgressBar";
 import CheckoutButtons from "./CheckoutButtons";
+import Step1 from "./CheckoutContent/Step1";
 
 const steps = [
   "stavke iz korpe",
@@ -35,13 +36,11 @@ const Checkout = () => {
           activeStep={activeStep}
           show={checkoutCtx.checkout}
         />
-        <ProgressContent>
-          {orderCtx.order.map((item, index) => (
-            <div key={index}>
-              tip:{item.doortype} boja:{item.doorcolor} Kvaka:{item.doorhandle}{" "}
-              brava:{item.doorlock} kolicina :{item.doorquantity}
-            </div>
-          ))}
+        <ProgressContent show={checkoutCtx.checkout}>
+          {activeStep === 1 ? <Step1 /> : null}
+          {/* {activeStep === 2 ? <Step2 /> : null}
+          {activeStep === 3 ? <Step3 /> : null}
+          {activeStep === 4 ? <Step4 /> : null} */}
         </ProgressContent>
         <CheckoutButtons
           stepsLength={steps.length}

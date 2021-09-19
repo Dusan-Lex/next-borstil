@@ -28,7 +28,7 @@ import CheckoutContext from "../../store/checkoutContext";
 const Navigation = () => {
   const { theme, switchTheme } = useContext(ThemeContext);
   const checkoutCtx = useContext(CheckoutContext);
-  console.log(checkoutCtx);
+
   const router = useRouter();
 
   const { t } = useTranslation();

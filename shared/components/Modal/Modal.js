@@ -13,9 +13,17 @@ const Modal = () => {
   const modalCtx = useContext(ModalContext);
   return modalCtx.modal ? (
     <StyledModal>
-      <Backdrop />
-      <ModalOverlay>{modalCtx.modal}</ModalOverlay>
-      <StyledCloseButton onClose={modalCtx.hideModal} />
+      <Backdrop
+        onClick={() => {
+          if (!modalCtx.photo) {
+            modalCtx.hideModal();
+          }
+        }}
+      />
+      <ModalOverlay photo={modalCtx.photo}>{modalCtx.modal}</ModalOverlay>
+      {modalCtx.photo ? (
+        <StyledCloseButton onClose={modalCtx.hideModal} />
+      ) : null}
     </StyledModal>
   ) : null;
 };

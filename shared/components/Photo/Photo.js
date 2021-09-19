@@ -18,6 +18,7 @@ const Photo = ({ item, loading, quality }) => {
   return (
     <StyledPhoto
       onClick={() => {
+        modalCtx.changeToPhoto(true);
         modalCtx.showModal(
           <Image src={item.imgSrc} layout="fill" objectFit="contain" />
         );

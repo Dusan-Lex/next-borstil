@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import DoorContext from "../../../store/doorContext";
 import OrderContext from "../../../store/orderContext";
+import ModalContext from "../../../store/modalContext";
 import {
   AddDoorsButton,
   AddDoorsForm,
@@ -9,10 +10,13 @@ import {
   MinusButton,
   PlusButton,
 } from "./AddButtonStyles";
+import Doors from "../Doors";
+import AddedItem from "./AddedItem";
 
 const AddButton = () => {
   const doorCtx = useContext(DoorContext);
   const orderCtx = useContext(OrderContext);
+  const modalCtx = useContext(ModalContext);
 
   const changeHandler = (event) => {
     doorCtx.dispatch({ type: "SET_QUANTITY", value: +event.target.value });
@@ -21,6 +25,8 @@ const AddButton = () => {
   const submitHandler = (event) => {
     event.preventDefault();
     orderCtx.dispatch({ type: "ADD_TO_CART", payload: doorCtx.door });
+    modalCtx.changeToPhoto(false);
+    modalCtx.showModal(<AddedItem item={doorCtx.door} />);
   };
 
   return (

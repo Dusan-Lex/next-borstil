@@ -7,8 +7,8 @@ export const StyledStepProgressBar = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   opacity: ${(props) => (props.show ? "1" : "0")};
-  transition: opacity 0.9s ease-in-out;
-  transition-delay: ${(props) => (props.show ? "0.6s" : "0s")};
+  transition: opacity ${(props) => (props.show ? "0.7s" : "0.55s")} ease-in-out;
+  transition-delay: ${(props) => (props.show ? "0.5s" : "0s")};
   @media screen and (max-width: 500px) {
     padding: 3rem 0.5rem;
   }

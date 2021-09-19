@@ -3,16 +3,15 @@ import { color, mixin } from "../../../shared/utils/styles";
 
 export const StyledCheckoutButtons = styled.div`
   height: 20rem;
-  width: 62%;
+  width: 70%;
   margin: 0 auto;
-  /* padding: 3rem; */
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   opacity: ${(props) => (props.show ? "1" : "0")};
-  transition: opacity 0.9s ease-in-out;
-  transition-delay: ${(props) => (props.show ? "0.6s" : "0s")};
+  transition: opacity ${(props) => (props.show ? "0.8s" : "0.55s")} ease-in-out;
+  transition-delay: ${(props) => (props.show ? "0.5s" : "0s")};
 
   @media screen and (max-width: 500px) {
     width: 90%;
@@ -30,7 +29,7 @@ export const CheckoutButton = styled.button`
   color: ${color.secondary};
   border: 2px solid transparent;
   font-size: 1.8rem;
-  /* font-weight: 500; */
+  font-weight: 500;
   padding: 0.5rem ${(props) => (props.left ? "5rem" : "0")} 0.5rem
     ${(props) => (props.left ? "0" : "5rem")};
   cursor: pointer;

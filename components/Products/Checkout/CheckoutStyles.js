@@ -51,6 +51,12 @@ export const CheckoutFront = styled.div`
 
 export const ProgressContent = styled.div`
   height: 100%;
+  margin: 1rem 2rem;
+  border-radius: 5px;
   padding: 3rem;
-  color: ${color.primary};
+  background-color: ${color.primary};
+  color: ${color.secondary};
+  opacity: ${(props) => (props.show ? "1" : "0")};
+  transition: opacity ${(props) => (props.show ? "0.8s" : "0.55s")} ease-in-out;
+  transition-delay: ${(props) => (props.show ? "0.5s" : "0s")};
 `;
