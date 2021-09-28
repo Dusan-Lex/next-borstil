@@ -47,7 +47,7 @@ const AddedItem = ({ item }) => {
               <span>Količina</span>: {item.doorquantity}
             </div>
             <div>
-              <span>Ukupna cena</span>: {doorPrice * item.doorquantity}&#8364;
+              <span>Ukupno</span>: {doorPrice * item.doorquantity}&#8364;
             </div>
           </ItemDesc>
           <ItemButtons>
@@ -64,7 +64,7 @@ const AddedItem = ({ item }) => {
                 modalCtx.hideModal();
               }}
             >
-              Nazad na pretragu
+              Nazad
             </button>
           </ItemButtons>
         </ItemDiv>

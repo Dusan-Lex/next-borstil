@@ -15,8 +15,8 @@ export const Backdrop = styled.div`
 export const ModalOverlay = styled.div`
   position: absolute;
   top: ${(props) => (props.photo ? "10%" : "20%")};
-  left: ${(props) => (props.photo ? "20%" : "30%")};
-  width: ${(props) => (props.photo ? "60%" : "40%")};
+  left: ${(props) => (props.photo ? "20%" : "26%")};
+  width: ${(props) => (props.photo ? "60%" : "48%")};
   height: ${(props) => (props.photo ? "80%" : "60%")};
   background-color: transparent;
   animation: slide-down 300ms ease-out forwards;
@@ -33,7 +33,7 @@ export const ModalOverlay = styled.div`
     }
   }
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 800px) {
     left: 7%;
     width: 86%;
   }

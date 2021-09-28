@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { color, mixin } from "../../../shared/utils/styles";
 
 export const StyledCheckoutButtons = styled.div`
-  height: 20rem;
+  height: 15%;
   width: 70%;
   margin: 0 auto;
   display: flex;

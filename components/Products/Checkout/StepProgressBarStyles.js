@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { color, mixin } from "../../../shared/utils/styles";
 
 export const StyledStepProgressBar = styled.div`
+  height: 21%;
   padding: 3rem;
   display: flex;
   justify-content: space-between;
