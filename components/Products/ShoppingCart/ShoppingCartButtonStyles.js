@@ -15,6 +15,7 @@ export const ShoppingCartBtn = styled.button`
   }
 
   span {
+    ${mixin.center};
     font-size: 2.3rem;
     font-weight: 600;
     border-radius: 2px;

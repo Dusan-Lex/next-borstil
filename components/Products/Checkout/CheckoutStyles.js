@@ -53,8 +53,8 @@ export const ProgressContent = styled.div`
   height: 64%;
   margin: 1rem 3rem;
   border-radius: 5px;
-  padding: 3rem;
-  background-color: ${color.primary};
+  padding: 2rem;
+  background-color: white;
   color: ${color.secondary};
   opacity: ${(props) => (props.show ? "1" : "0")};
   transition: opacity ${(props) => (props.show ? "0.8s" : "0.55s")} ease-in-out;

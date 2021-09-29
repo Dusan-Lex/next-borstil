@@ -77,7 +77,7 @@ export const ItemButtons = styled.div`
     padding: 1rem;
     background-color: ${color.primary};
     color: ${color.secondaryDark};
-    border: 1.5px solid ${color.secondaryDark};
+    border: 0.1rem solid ${color.secondaryDark};
     font-weight: 500;
     cursor: pointer;
     transition: all 0.15s;
@@ -92,8 +92,11 @@ export const ItemButtons = styled.div`
     margin-right: 0;
     button {
       width: 100%;
-      margin-bottom: 0.5rem;
+
       padding: 0.5rem;
+      &:first-child {
+        margin-bottom: 1.2rem;
+      }
     }
   }
 `;

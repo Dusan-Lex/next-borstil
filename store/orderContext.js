@@ -31,11 +31,36 @@ const orderReducer = (orderState, action) => {
       }
     }
     case "REMOVE_FROM_CART":
-      return orderState;
-    case "ADD_ITEM":
-      return orderState;
+      return orderState.filter((x, index) => index !== action.payload);
+    case "ADD_ITEM": {
+      return orderState.map((item, index) =>
+        index === action.payload
+          ? {
+              ...item,
+              doorquantity: item.doorquantity + 1,
+            }
+          : item
+      );
+    }
+
     case "REMOVE_ITEM":
-      return orderState;
+      return orderState.map((item, index) =>
+        index === action.payload && item.doorquantity > 1
+          ? {
+              ...item,
+              doorquantity: item.doorquantity - 1,
+            }
+          : item
+      );
+    case "SET_ITEM":
+      return orderState.map((item, index) =>
+        index === action.payload.index
+          ? {
+              ...item,
+              doorquantity: action.payload.value,
+            }
+          : item
+      );
 
     default:
       throw new Error();

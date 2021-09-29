@@ -30,40 +30,6 @@ export const AddDoorsForm = styled.form`
     color: ${color.primaryDark};
   }
 `;
-const Button = styled.button`
-  width: 5rem;
-  padding: 0.5rem 1rem;
-  color: ${color.secondaryLight};
-  background-color: ${color.primaryLight};
-  border: 0.13rem solid ${color.primaryDark};
-  cursor: pointer;
-`;
-
-export const MinusButton = styled(Button)`
-  border-top-left-radius: 50%;
-  border-bottom-left-radius: 50%;
-`;
-
-export const PlusButton = styled(Button)`
-  border-top-right-radius: 50%;
-  border-bottom-right-radius: 50%;
-`;
-
-export const AddDoorsQuantity = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-`;
-
-export const AddDoorsInput = styled.input`
-  padding: 0.5rem 1rem;
-  width: 5rem;
-  text-align: center;
-  color: ${color.secondary};
-  border: none;
-  border-top: 0.13rem solid ${color.primaryDark};
-  border-bottom: 0.13rem solid ${color.primaryDark};
-`;
 
 export const AddDoorsButton = styled.button`
   width: 20rem;

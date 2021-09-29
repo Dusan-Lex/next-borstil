@@ -10,7 +10,7 @@ import CheckoutContext from "../../../store/checkoutContext";
 import OrderContext from "../../../store/orderContext";
 import StepProgressBar from "./StepProgressBar";
 import CheckoutButtons from "./CheckoutButtons";
-import Step1 from "./CheckoutContent/Step1";
+import Step1 from "./CheckoutContent/Step1/Step1";
 
 const steps = [
   "stavke iz korpe",
