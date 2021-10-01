@@ -30,6 +30,7 @@ export const ItemTitle = styled.h4`
 `;
 
 export const ItemInfo = styled.div`
+  position: relative;
   height: 85%;
   padding: 2rem;
   display: flex;
@@ -51,6 +52,9 @@ export const ItemDiv = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @media only screen and (max-width: 400px) {
+    display: block;
+  }
 `;
 export const ItemDesc = styled.div`
   /* height: 60%; */
@@ -79,6 +83,7 @@ export const ItemButtons = styled.div`
     color: ${color.secondaryDark};
     border: 0.1rem solid ${color.secondaryDark};
     font-weight: 500;
+    font-size: 1.7rem;
     cursor: pointer;
     transition: all 0.15s;
     &:hover {
@@ -88,15 +93,16 @@ export const ItemButtons = styled.div`
   }
 
   @media only screen and (max-width: 400px) {
-    flex-direction: column;
-    margin-right: 0;
+    margin: -3rem 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    justify-content: space-around;
     button {
-      width: 100%;
-
-      padding: 0.5rem;
-      &:first-child {
-        margin-bottom: 1.2rem;
-      }
+      width: 45%;
+      padding: 1rem;
     }
   }
 `;

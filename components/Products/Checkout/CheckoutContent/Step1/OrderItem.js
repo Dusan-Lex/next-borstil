@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import Trash from "../../../../../shared/components/svgs/Trash";
 import X from "../../../../../shared/components/svgs/X";
 import OrderContext from "../../../../../store/orderContext";
@@ -17,13 +17,21 @@ import {
   OrderRemoveBtn,
 } from "./OrderItemStyles";
 
-const OrderItem = ({ item, index }) => {
+const OrderItem = ({ item, index, setTotalAmount }) => {
   const orderCtx = useContext(OrderContext);
 
   const door = findDoor(item.doortype, item.doorcolor);
   const doorHandlePrice = item.doorhandle === "premium" ? 17 : 0;
   const doorLockPrice = item.doorlock === "premium" ? 7 : 0;
   const doorPrice = door.price + doorHandlePrice + doorLockPrice;
+
+  useEffect(() => {
+    setTotalAmount((prevState) => {
+      const newArr = [...prevState];
+      newArr[index] = item.doorquantity * doorPrice;
+      return newArr;
+    });
+  }, [item.doorquantity]);
 
   const minusClickHandler = () => {
     orderCtx.dispatch({ type: "REMOVE_ITEM", payload: index });
@@ -41,10 +49,14 @@ const OrderItem = ({ item, index }) => {
   };
 
   const removeHandler = () => {
-    console.log("jkk");
     orderCtx.dispatch({
       type: "REMOVE_FROM_CART",
       payload: index,
+    });
+    setTotalAmount((prevState) => {
+      const newArr = [...prevState];
+      newArr.splice(index, 1);
+      return newArr;
     });
   };
 

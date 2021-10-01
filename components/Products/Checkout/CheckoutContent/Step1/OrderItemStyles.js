@@ -88,6 +88,7 @@ export const OrderDiv = styled.div`
   }
 
   &.price {
+    text-align: right;
     span {
       width: 8rem;
     }
