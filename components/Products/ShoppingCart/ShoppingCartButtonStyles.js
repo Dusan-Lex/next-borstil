@@ -2,7 +2,7 @@ import styled from "styled-components";
 import ShoppingCartSvg from "../../../shared/components/svgs/Shopping-Cart";
 import { mixin, color } from "../../../shared/utils/styles";
 
-export const ShoppingCartBtn = styled.button`
+export const ShoppingCartBtn = styled.div`
   border-radius: 2px;
   padding: 0.75rem 1rem;
   background-color: ${(props) => props.theme.background};
@@ -15,6 +15,7 @@ export const ShoppingCartBtn = styled.button`
   }
 
   span {
+    line-height: 1.2;
     ${mixin.center};
     font-size: 2.3rem;
     font-weight: 600;

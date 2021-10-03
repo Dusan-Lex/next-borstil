@@ -3,7 +3,8 @@ import { color, mixin } from "../../../../../shared/utils/styles";
 
 export const StyledStep1 = styled.div`
   height: 100%;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
+  ${mixin.scrollableY}
 `;
 
 export const TotalAmount = styled.div`
