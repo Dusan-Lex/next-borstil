@@ -35,12 +35,15 @@ const doorReducer = (doorState, action) => {
     case "CHANGE_DOORLOCK":
       return { ...doorState, doorlock: action.value, doorquantity: 1 };
     case "INCREMENT_QUANTITY":
-      return { ...doorState, doorquantity: doorState.doorquantity + 1 };
+      return { ...doorState, doorquantity: +doorState.doorquantity + 1 };
+
     case "DECREMENT_QUANTITY":
       return {
         ...doorState,
         doorquantity:
-          doorState.doorquantity === 1 ? 1 : doorState.doorquantity - 1,
+          doorState.doorquantity <= 1
+            ? +doorState.doorquantity
+            : +doorState.doorquantity - 1,
       };
     case "SET_QUANTITY":
       return { ...doorState, doorquantity: action.value };

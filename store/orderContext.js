@@ -32,12 +32,13 @@ const orderReducer = (orderState, action) => {
     }
     case "REMOVE_FROM_CART":
       return orderState.filter((x, index) => index !== action.payload);
+
     case "ADD_ITEM": {
       return orderState.map((item, index) =>
         index === action.payload
           ? {
               ...item,
-              doorquantity: item.doorquantity + 1,
+              doorquantity: +item.doorquantity + 1,
             }
           : item
       );
@@ -48,7 +49,7 @@ const orderReducer = (orderState, action) => {
         index === action.payload && item.doorquantity > 1
           ? {
               ...item,
-              doorquantity: item.doorquantity - 1,
+              doorquantity: +item.doorquantity - 1,
             }
           : item
       );
@@ -57,7 +58,7 @@ const orderReducer = (orderState, action) => {
         index === action.payload.index
           ? {
               ...item,
-              doorquantity: action.payload.value,
+              doorquantity: +action.payload.value,
             }
           : item
       );

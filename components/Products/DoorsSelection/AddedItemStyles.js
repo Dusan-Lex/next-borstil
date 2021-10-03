@@ -34,6 +34,9 @@ export const ItemInfo = styled.div`
   height: 85%;
   padding: 2rem;
   display: flex;
+  @media only screen and (max-width: 400px) {
+    padding-top: 0;
+  }
 `;
 export const ItemPhoto = styled.figure`
   height: 100%;

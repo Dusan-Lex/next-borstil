@@ -1,12 +1,13 @@
 const Trash = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="16"
-    height="16"
+    width={props.width}
+    height={props.height}
+    className={props.className}
     viewBox="0 0 24 24"
     fill="none"
     stroke="#000000"
-    strokeWidth="4"
+    strokeWidth="2"
     strokeLinecap="round"
     strokeLinejoin="round"
   >

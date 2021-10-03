@@ -92,6 +92,9 @@ export const OrderDiv = styled.div`
     span {
       width: 8rem;
     }
+    @media only screen and (max-width: 400px) {
+      text-align: center;
+    }
   }
   @media only screen and (max-width: 400px) {
     padding: 1rem;
@@ -111,18 +114,21 @@ export const OrderRemoveTotalPriceBox = styled.div`
       stroke: ${color.secondary};
       cursor: pointer;
     }
+    @media only screen and (max-width: 400px) {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+    }
   }
+
   @media only screen and (max-width: 400px) {
     align-items: center;
     width: 100%;
+    margin-right: 0;
   }
 `;
 
-export const OrderRemoveBtn = styled.div`
-  @media only screen and (max-width: 400px) {
-    display: none;
-  }
-`;
+export const OrderRemoveBtn = styled.div``;
 
 export const OrderQuantityButton = styled(QuantityButton)`
   button {

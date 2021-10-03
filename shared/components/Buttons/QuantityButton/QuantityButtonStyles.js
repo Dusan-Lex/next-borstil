@@ -34,4 +34,14 @@ export const QuantityInput = styled.input`
   border: none;
   border-top: 0.13rem solid ${color.primaryDark};
   border-bottom: 0.13rem solid ${color.primaryDark};
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  &[type="number"] {
+    -moz-appearance: textfield;
+  }
 `;

@@ -12,6 +12,7 @@ const QuantityButton = ({
   onPlusClick,
   onChange,
   quantity,
+  disabled,
 }) => {
   return (
     <StyledQuantityButton className={className}>
@@ -24,9 +25,11 @@ const QuantityButton = ({
           -
         </MinusQuantityButton>
         <QuantityInput
-          type="text"
+          type="number"
+          min={1}
           value={quantity}
           onChange={onChange}
+          disabled={disabled}
         ></QuantityInput>
         <PlusQuantityButton
           className="button plus"

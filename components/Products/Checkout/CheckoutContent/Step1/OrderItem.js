@@ -1,5 +1,4 @@
 import React, { useContext, useEffect } from "react";
-import Trash from "../../../../../shared/components/svgs/Trash";
 import X from "../../../../../shared/components/svgs/X";
 import OrderContext from "../../../../../store/orderContext";
 
@@ -12,7 +11,6 @@ import {
   OrderFirstBox,
   OrderPriceQuantityBox,
   OrderQuantityButton,
-  OrderRemove,
   OrderRemoveTotalPriceBox,
   OrderRemoveBtn,
 } from "./OrderItemStyles";
@@ -39,13 +37,6 @@ const OrderItem = ({ item, index, setTotalAmount }) => {
 
   const plusClickHandler = () => {
     orderCtx.dispatch({ type: "ADD_ITEM", payload: index });
-  };
-
-  const changeHandler = (event) => {
-    orderCtx.dispatch({
-      type: "SET_ITEM",
-      payload: { index: index, value: +event.target.value },
-    });
   };
 
   const removeHandler = () => {
@@ -82,17 +73,15 @@ const OrderItem = ({ item, index, setTotalAmount }) => {
           <OrderQuantityButton
             onMinusClick={minusClickHandler}
             onPlusClick={plusClickHandler}
-            onChange={changeHandler}
             quantity={item.doorquantity}
+            disabled
           />
         </OrderPriceQuantityBox>
       </OrderFirstBox>
       <OrderRemoveTotalPriceBox>
-        {/* <Trash /> */}
         <OrderRemoveBtn onClick={removeHandler}>
-          <X width="18" />
+          <X width="20" />
         </OrderRemoveBtn>
-
         <OrderDiv className="price">
           Ukupno: <span>{item.doorquantity * doorPrice}&#8364;</span>
         </OrderDiv>

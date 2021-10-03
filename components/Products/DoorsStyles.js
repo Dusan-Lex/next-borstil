@@ -13,7 +13,11 @@ export const DoorsContainer = styled.div`
   @media only screen and (max-width: 900px) {
     flex-direction: column;
   }
+  @media only screen and (max-width: 400px) {
+    margin-bottom: 2rem;
+  }
 `;
+
 export const DoorsBackground = styled.div`
   position: relative;
   width: 70%;

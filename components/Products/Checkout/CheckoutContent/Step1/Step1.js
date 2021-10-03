@@ -1,12 +1,13 @@
 import React, { useContext, useState } from "react";
 import OrderContext from "../../../../../store/orderContext";
 import OrderItem from "./OrderItem";
-import { StyledStep1, TotalAmount } from "./Step1Styles";
+import { StyledStep1, TotalAmount, EmptyCart } from "./Step1Styles";
+import ShoppingCartSvg from "../../../../../shared/components/svgs/Shopping-Cart";
 
 const Step1 = () => {
   const orderCtx = useContext(OrderContext);
-  const [totalAmount, setTotalAmount] = useState([]);
-  console.log(totalAmount);
+  const [totalAmountArr, setTotalAmountArr] = useState([]);
+  const totalAmount = totalAmountArr.reduce((s, x) => s + x, 0);
   return (
     <StyledStep1>
       {orderCtx.order.map((item, index) => (
@@ -14,13 +15,21 @@ const Step1 = () => {
           key={index}
           item={item}
           index={index}
-          setTotalAmount={setTotalAmount}
+          setTotalAmount={setTotalAmountArr}
         />
       ))}
-      <TotalAmount>
-        Iznos kupovine:
-        <span>{totalAmount.reduce((s, x) => s + x, 0)}&#8364;</span>
-      </TotalAmount>
+
+      {totalAmount ? (
+        <TotalAmount>
+          Iznos kupovine:
+          <span>{totalAmount}&#8364;</span>
+        </TotalAmount>
+      ) : (
+        <EmptyCart>
+          <ShoppingCartSvg />
+          <p>Vaša korpa je prazna !</p>
+        </EmptyCart>
+      )}
     </StyledStep1>
   );
 };

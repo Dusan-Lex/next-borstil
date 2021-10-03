@@ -29,6 +29,17 @@ export const AddDoorsForm = styled.form`
     font-weight: 500;
     color: ${color.primaryDark};
   }
+  p {
+    position: absolute;
+    color: red;
+    width: 100%;
+    top: 90%;
+    text-align: center;
+    padding: 0.5rem;
+  }
+`;
+export const AddDoorsQuantity = styled.div`
+  width: 100%;
 `;
 
 export const AddDoorsButton = styled.button`
@@ -37,7 +48,7 @@ export const AddDoorsButton = styled.button`
   font-weight: 600;
   font-size: 1.8rem;
   padding: 1rem 2rem;
-  margin-top: 2rem;
+  margin-top: 2.5rem;
   text-transform: uppercase;
   color: ${(props) => props.theme.backgroundRev};
   background-color: ${(props) => props.theme.background};
