@@ -8,12 +8,12 @@ export const StyledDoorsSelection = styled.div`
   align-self: center;
   display: flex;
   flex-direction: column;
-  transform: translateX(30%);
+  /* transform: translateX(30%); */
   opacity: 0;
   animation: doors-selections-in 0.7s 1s ease forwards;
   @keyframes doors-selections-in {
     100% {
-      transform: translateX(0);
+      /* transform: translateX(0); */
       opacity: 1;
     }
   }

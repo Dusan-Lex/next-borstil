@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { color, mixin } from "../../../../../shared/utils/styles";
 
 export const StyledStep1 = styled.div`
-  position: relative;
   height: 100%;
   overflow-y: scroll;
 `;

@@ -21,13 +21,12 @@ export const DoorsContainer = styled.div`
 export const DoorsBackground = styled.div`
   position: relative;
   width: 70%;
-  transform: translateX(-30%);
-
+  /* transform: translateX(-30%); */
   opacity: 0;
   animation: doors-in 0.7s 1s ease forwards;
   @keyframes doors-in {
     100% {
-      transform: translateX(0);
+      /* transform: translateX(0); */
       opacity: 1;
     }
   }

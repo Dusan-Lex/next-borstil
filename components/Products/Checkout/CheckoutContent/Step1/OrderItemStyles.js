@@ -3,6 +3,7 @@ import { color, mixin } from "../../../../../shared/utils/styles";
 import QuantityButton from "../../../../../shared/components/Buttons/QuantityButton/QuantityButton";
 
 export const StyledOrderItem = styled.div`
+  position: relative;
   display: flex;
   margin: 0.5rem;
   border-bottom: 0.1rem solid ${color.secondary};
