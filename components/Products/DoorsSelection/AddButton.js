@@ -58,7 +58,7 @@ const AddButton = () => {
 
           <p>
             {doorCtx.door.doorquantity === ""
-              ? "Količina mora biti najmanje 1 !"
+              ? "Količina mora biti najmanje 1"
               : ""}
           </p>
         </div>

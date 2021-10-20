@@ -1,13 +1,16 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import OrderContext from "../../../../../store/orderContext";
 import OrderItem from "./OrderItem";
 import { StyledStep1, TotalAmount, EmptyCart } from "./Step1Styles";
 import ShoppingCartSvg from "../../../../../shared/components/svgs/Shopping-Cart";
 
-const Step1 = () => {
+const Step1 = ({ setAllowed }) => {
   const orderCtx = useContext(OrderContext);
   const [totalAmountArr, setTotalAmountArr] = useState([]);
   const totalAmount = totalAmountArr.reduce((s, x) => s + x, 0);
+  useEffect(() => {
+    totalAmount === 0 ? setAllowed(false) : setAllowed(true);
+  }, [totalAmount]);
   return (
     <StyledStep1>
       {orderCtx.order.map((item, index) => (

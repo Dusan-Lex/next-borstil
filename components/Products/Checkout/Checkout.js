@@ -7,10 +7,10 @@ import {
 
 import { useContext, useState } from "react";
 import CheckoutContext from "../../../store/checkoutContext";
-import OrderContext from "../../../store/orderContext";
 import StepProgressBar from "./StepProgressBar";
 import CheckoutButtons from "./CheckoutButtons";
 import Step1 from "./CheckoutContent/Step1/Step1";
+import Step2 from "./CheckoutContent/Step2/Step2";
 
 const steps = [
   "stavke iz korpe",
@@ -21,8 +21,8 @@ const steps = [
 
 const Checkout = () => {
   const [activeStep, setActiveStep] = useState(1);
+  const [allowed, setAllowed] = useState(false);
   const checkoutCtx = useContext(CheckoutContext);
-  const orderCtx = useContext(OrderContext);
 
   return (
     <StyledCheckout>
@@ -37,16 +37,18 @@ const Checkout = () => {
           show={checkoutCtx.checkout}
         />
         <ProgressContent show={checkoutCtx.checkout}>
-          {activeStep === 1 ? <Step1 /> : null}
-          {/* {activeStep === 2 ? <Step2 /> : null}
-          {activeStep === 3 ? <Step3 /> : null}
-          {activeStep === 4 ? <Step4 /> : null} */}
+          {activeStep === 1 ? <Step1 setAllowed={setAllowed} /> : null}
+          {activeStep === 2 ? <Step2 setAllowed={setAllowed} /> : null}
+          {/* {activeStep === 3 ? <Step3 /> : null}
+          {activeStep === 4 ? <Step4 /> : null}  */}
         </ProgressContent>
         <CheckoutButtons
           stepsLength={steps.length}
           activeStep={activeStep}
           setActiveStep={setActiveStep}
           show={checkoutCtx.checkout}
+          allowed={allowed}
+          setAllowed={setAllowed}
         />
       </CheckoutFront>
     </StyledCheckout>

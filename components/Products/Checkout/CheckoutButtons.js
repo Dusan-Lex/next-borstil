@@ -7,7 +7,14 @@ import {
 import ArrowRight from "../../../shared/components/svgs/ArrowRight";
 import ArrowLeft from "../../../shared/components/svgs/ArrowLeft";
 
-const CheckoutButtons = ({ stepsLength, activeStep, setActiveStep, show }) => {
+const CheckoutButtons = ({
+  stepsLength,
+  activeStep,
+  setActiveStep,
+  show,
+  allowed,
+  setAllowed,
+}) => {
   return (
     <StyledCheckoutButtons show={show}>
       <CheckoutButtonBox>
@@ -28,11 +35,12 @@ const CheckoutButtons = ({ stepsLength, activeStep, setActiveStep, show }) => {
       <CheckoutButtonBox>
         {activeStep !== stepsLength ? (
           <CheckoutButton
-            // className="not-allowed"
+            className={allowed ? "" : "not-allowed"}
             onClick={() => {
               setActiveStep((prevStep) => {
                 return prevStep < stepsLength ? prevStep + 1 : prevStep;
               });
+              setAllowed(false);
             }}
           >
             <span>Dalje</span> <ArrowRight />

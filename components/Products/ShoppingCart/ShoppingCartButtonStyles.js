@@ -16,7 +16,7 @@ export const ShoppingCartBtn = styled.div`
 
   span {
     line-height: 1.2;
-    ${mixin.center};
+    text-align: center;
     font-size: 2.3rem;
     font-weight: 600;
     border-radius: 2px;

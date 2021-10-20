@@ -111,10 +111,13 @@ export const OrderRemoveTotalPriceBox = styled.div`
   margin-right: 1rem;
   svg {
     stroke: red;
-    &:hover {
-      stroke: ${color.secondary};
-      cursor: pointer;
+    @media only screen and (min-width: 401px) {
+      &:hover {
+        stroke: ${mixin.darken("red", 0.3)};
+        cursor: pointer;
+      }
     }
+
     @media only screen and (max-width: 400px) {
       position: absolute;
       top: 2rem;

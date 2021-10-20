@@ -1,7 +1,7 @@
 import { useState, createContext } from "react";
 
 const CheckoutContext = createContext({
-  Checkout: null,
+  checkout: null,
   toggleCheckout: () => {},
 });
 
