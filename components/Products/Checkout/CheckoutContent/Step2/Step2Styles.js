@@ -19,6 +19,15 @@ export const Step2Form = styled.form`
   }
 `;
 export const Step2FormGroup = styled.div`
+  &.postal-code {
+    width: 15rem;
+    display: inline-block;
+  }
+  &.city {
+    width: 50%;
+    margin-left: 1rem;
+    display: inline-block;
+  }
   @media only screen and (max-width: 500px) {
     margin-bottom: 5px;
   }
@@ -37,5 +46,8 @@ export const Step2FormInput = styled.input`
   padding: 10px;
   background: ${mixin.lighten(color.primary, 0.64)};
   color: ${color.secondaryDark};
-  border: 1px solid red;
+  border: 1px solid transparent;
+  &.error {
+    border: 1px solid red;
+  }
 `;

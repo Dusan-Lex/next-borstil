@@ -8,9 +8,11 @@ const Step1 = ({ setAllowed }) => {
   const orderCtx = useContext(OrderContext);
   const [totalAmountArr, setTotalAmountArr] = useState([]);
   const totalAmount = totalAmountArr.reduce((s, x) => s + x, 0);
+
   useEffect(() => {
     totalAmount === 0 ? setAllowed(false) : setAllowed(true);
   }, [totalAmount]);
+
   return (
     <StyledStep1>
       {orderCtx.order.map((item, index) => (
