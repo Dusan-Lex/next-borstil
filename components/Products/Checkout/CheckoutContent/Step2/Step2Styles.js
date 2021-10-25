@@ -22,11 +22,23 @@ export const Step2FormGroup = styled.div`
   &.postal-code {
     width: 15rem;
     display: inline-block;
+    @media only screen and (max-width: 400px) {
+      display: block;
+      width: 100%;
+    }
   }
   &.city {
     width: 50%;
     margin-left: 1rem;
     display: inline-block;
+    @media only screen and (max-width: 500px) {
+      width: calc(100% - 16rem);
+    }
+    @media only screen and (max-width: 400px) {
+      display: block;
+      margin-left: 0;
+      width: 100%;
+    }
   }
   @media only screen and (max-width: 500px) {
     margin-bottom: 5px;
@@ -50,4 +62,8 @@ export const Step2FormInput = styled.input`
   &.error {
     border: 1px solid red;
   }
+`;
+
+export const PostalcodeCityBox = styled.div`
+  grid-column: 1/-1;
 `;

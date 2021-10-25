@@ -4,17 +4,17 @@ import {
   cityValidation,
   emailValidation,
   nameValidation,
+  phoneNumberValidation,
+  postalCodeValidation,
 } from "../../../../../shared/utils/validation";
 import {
+  PostalcodeCityBox,
   Step2Form,
   Step2FormGroup,
   Step2FormInput,
   Step2FormLabel,
   StyledStep2,
 } from "./Step2Styles";
-
-//"^\\d{5}$"
-//"/^(\d{5,6})$/"
 
 const Step2 = () => {
   const [form, setForm] = useState({
@@ -34,55 +34,44 @@ const Step2 = () => {
     city: true,
   });
 
-  const changeNameHandler = (event) => {
+  const changeHandler = (event, field) => {
     setForm((prevState) => {
-      return { ...prevState, name: event.target.value };
+      return { ...prevState, [field]: event.target.value };
     });
-    nameValidation(event.target.value.trim())
+    let validate;
+    switch (field) {
+      case "name": {
+        validate = nameValidation(event.target.value.trim());
+        break;
+      }
+      case "email": {
+        validate = emailValidation(event.target.value.trim());
+        break;
+      }
+      case "phone": {
+        validate = phoneNumberValidation(event.target.value.trim());
+        break;
+      }
+      case "address": {
+        validate = event.target.value.trim();
+        break;
+      }
+      case "postalcode": {
+        validate = postalCodeValidation(event.target.value.trim());
+        break;
+      }
+      case "city": {
+        validate = cityValidation(event.target.value.trim());
+        break;
+      }
+    }
+
+    validate
       ? setFormError((prevState) => {
-          return { ...prevState, name: false };
+          return { ...prevState, [field]: false };
         })
       : setFormError((prevState) => {
-          return { ...prevState, name: true };
-        });
-  };
-  const changeEmailHandler = (event) => {
-    setForm((prevState) => {
-      return { ...prevState, email: event.target.value };
-    });
-    emailValidation(event.target.value.trim())
-      ? setFormError((prevState) => {
-          return { ...prevState, email: false };
-        })
-      : setFormError((prevState) => {
-          return { ...prevState, email: true };
-        });
-  };
-  const changePhoneHandler = (event) => {
-    setForm((prevState) => {
-      return { ...prevState, phone: event.target.value };
-    });
-  };
-  const changeAddressHandler = (event) => {
-    setForm((prevState) => {
-      return { ...prevState, address: event.target.value };
-    });
-  };
-  const changePostalcodeHandler = (event) => {
-    setForm((prevState) => {
-      return { ...prevState, postalcode: event.target.value };
-    });
-  };
-  const changeCityHandler = (event) => {
-    setForm((prevState) => {
-      return { ...prevState, city: event.target.value };
-    });
-    cityValidation(event.target.value.trim())
-      ? setFormError((prevState) => {
-          return { ...prevState, city: false };
-        })
-      : setFormError((prevState) => {
-          return { ...prevState, city: true };
+          return { ...prevState, [field]: true };
         });
   };
 
@@ -98,7 +87,7 @@ const Step2 = () => {
             type="text"
             id="name"
             value={form.name}
-            onChange={changeNameHandler}
+            onChange={(event) => changeHandler(event, "name")}
             className={formError.name ? "error" : null}
           />
         </Step2FormGroup>
@@ -111,7 +100,7 @@ const Step2 = () => {
             type="email"
             id="email"
             value={form.email}
-            onChange={changeEmailHandler}
+            onChange={(event) => changeHandler(event, "email")}
             className={formError.email ? "error" : null}
           />
         </Step2FormGroup>
@@ -124,7 +113,7 @@ const Step2 = () => {
             type="phone"
             id="phone"
             value={form.phone}
-            onChange={changePhoneHandler}
+            onChange={(event) => changeHandler(event, "phone")}
             className={formError.phone ? "error" : null}
           />
         </Step2FormGroup>
@@ -137,11 +126,11 @@ const Step2 = () => {
             type="text"
             id="address"
             value={form.address}
-            onChange={changeAddressHandler}
+            onChange={(event) => changeHandler(event, "address")}
             className={formError.address ? "error" : null}
           />
         </Step2FormGroup>
-        <div style={{ gridColumn: "1/-1" }}>
+        <PostalcodeCityBox>
           <Step2FormGroup className="postal-code">
             <Step2FormLabel htmlFor="postal-code">
               Poštanski broj
@@ -151,7 +140,7 @@ const Step2 = () => {
               type="text"
               id="postal-code"
               value={form.postalcode}
-              onChange={changePostalcodeHandler}
+              onChange={(event) => changeHandler(event, "postalcode")}
               className={formError.postalcode ? "error" : null}
             />
           </Step2FormGroup>
@@ -164,11 +153,11 @@ const Step2 = () => {
               type="text"
               id="city"
               value={form.city}
-              onChange={changeCityHandler}
+              onChange={(event) => changeHandler(event, "city")}
               className={formError.city ? "error" : null}
             />
           </Step2FormGroup>
-        </div>
+        </PostalcodeCityBox>
       </Step2Form>
     </StyledStep2>
   );
