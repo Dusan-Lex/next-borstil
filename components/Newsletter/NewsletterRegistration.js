@@ -9,7 +9,7 @@ import {
   NewsletterButton,
   NewsletterNotification,
 } from "./NewsletterRegistrationStyles";
-import PopupContext from "../../store/popupContext";
+import PopupContext from "../../context-store/popupContext";
 
 const NewsletterRegistration = () => {
   const emailInputRef = useRef();

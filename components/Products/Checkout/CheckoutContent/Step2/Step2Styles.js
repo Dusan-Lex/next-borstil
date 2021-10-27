@@ -7,63 +7,30 @@ export const StyledStep2 = styled.div`
   ${mixin.scrollableY}
 `;
 
-export const Step2Form = styled.form`
-  width: 95%;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-column-gap: 20px;
-  grid-row-gap: 10px;
-  @media only screen and (max-width: 500px) {
-    display: block;
+export const OrderTypeBox = styled.div`
+  padding: 2.5rem 1rem;
+  display: flex;
+  justify-content: space-around;
+  @media only screen and (max-width: 450px) {
+    flex-direction: column;
   }
 `;
-export const Step2FormGroup = styled.div`
-  &.postal-code {
-    width: 15rem;
+export const OrderType = styled.div`
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  div {
     display: inline-block;
-    @media only screen and (max-width: 400px) {
-      display: block;
-      width: 100%;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 2px;
+    margin-right: 0.7rem;
+    border: 1px solid ${color.secondary};
+    &.active {
+      background-color: ${mixin.lighten(color.primary, 0.5)};
     }
   }
-  &.city {
-    width: 50%;
-    margin-left: 1rem;
-    display: inline-block;
-    @media only screen and (max-width: 500px) {
-      width: calc(100% - 16rem);
-    }
-    @media only screen and (max-width: 400px) {
-      display: block;
-      margin-left: 0;
-      width: 100%;
-    }
+  @media only screen and (max-width: 450px) {
+    margin: 1rem 0;
   }
-  @media only screen and (max-width: 500px) {
-    margin-bottom: 5px;
-  }
-`;
-export const Step2FormLabel = styled.label`
-  font-size: 1.7rem;
-  color: ${color.secondary};
-  svg {
-    width: 0.6rem;
-    margin: 0.8rem 0.5rem;
-  }
-`;
-
-export const Step2FormInput = styled.input`
-  width: 100%;
-  padding: 10px;
-  background: ${mixin.lighten(color.primary, 0.64)};
-  color: ${color.secondaryDark};
-  border: 1px solid transparent;
-  &.error {
-    border: 1px solid red;
-  }
-`;
-
-export const PostalcodeCityBox = styled.div`
-  grid-column: 1/-1;
 `;

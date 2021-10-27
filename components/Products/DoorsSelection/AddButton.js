@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import DoorContext from "../../../store/doorContext";
-import OrderContext from "../../../store/orderContext";
-import ModalContext from "../../../store/modalContext";
+import DoorContext from "../../../context-store/doorContext";
+import OrderContext from "../../../context-store/orderContext";
+import ModalContext from "../../../context-store/modalContext";
 import {
   AddDoorsButton,
   AddDoorsForm,

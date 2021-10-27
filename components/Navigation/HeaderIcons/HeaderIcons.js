@@ -14,8 +14,8 @@ import Facebook from "../../../shared/components/svgs/Facebook";
 import Instagram from "../../../shared/components/svgs/Instagram";
 
 import Popup from "../Popup/Popup";
-import PopupContext from "../../../store/popupContext";
-import SidebarContext from "../../../store/sidebarContext";
+import PopupContext from "../../../context-store/popupContext";
+import SidebarContext from "../../../context-store/sidebarContext";
 
 const HeaderIcons = (props) => {
   const [icons, setIcons] = useState([0, 0, 0]);

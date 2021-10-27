@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import DoorsContext from "../../../store/doorContext";
+import DoorsContext from "../../../context-store/doorContext";
 import { doorFeatures } from "../DoorsData";
 import AddButton from "./AddButton";
 import {

@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import Image from "next/image";
-import ModalContext from "../../../store/modalContext";
+import ModalContext from "../../../context-store/modalContext";
 
 import {
   StyledModal,

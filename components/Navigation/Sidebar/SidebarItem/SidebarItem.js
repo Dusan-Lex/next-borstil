@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import SidebarContext from "../../../../store/sidebarContext";
+import SidebarContext from "../../../../context-store/sidebarContext";
 import { ItemBox, Item } from "./SidebarItemStyles";
 import Link from "next/link";
 import useTranslation from "next-translate/useTranslation";

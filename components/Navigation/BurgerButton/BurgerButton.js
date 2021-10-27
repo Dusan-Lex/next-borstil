@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import SidebarContext from "../../../store/sidebarContext";
+import SidebarContext from "../../../context-store/sidebarContext";
 import { BurgerBtn, BurgerBox, BurgerStripe } from "./BurgerButtonStyles";
 const BurgerButton = () => {
   const sidebarCtx = useContext(SidebarContext);

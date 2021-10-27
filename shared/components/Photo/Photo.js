@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useContext, useState } from "react";
-import ModalContext from "../../../store/modalContext";
+import ModalContext from "../../../context-store/modalContext";
 import Zoom from "../svgs/Zoom";
 // import Spinner from "../Spinner/Spinner";
 import {

@@ -1,5 +1,5 @@
 import { useContext, Fragment } from "react";
-import PopupContext from "../../../store/popupContext";
+import PopupContext from "../../../context-store/popupContext";
 import { StyledPopup, Title, Text } from "./PopupStyles";
 
 const Popup = () => {

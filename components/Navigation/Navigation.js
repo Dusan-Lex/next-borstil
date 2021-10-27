@@ -14,7 +14,7 @@ import {
   ShoppingCartBtnNav,
 } from "./NavigationStyles";
 
-import ThemeContext from "../../store/themeContext";
+import ThemeContext from "../../context-store/themeContext";
 import useTranslation from "next-translate/useTranslation";
 import Moon from "../../shared/components/svgs/Moon";
 import Sun from "../../shared/components/svgs/Sun";
@@ -23,7 +23,7 @@ import { color } from "../../shared/utils/styles";
 import HeaderLogo from "./HeaderLogo/HeaderLogo";
 import BurgerButton from "./BurgerButton/BurgerButton";
 import Sidebar from "./Sidebar/Sidebar";
-import CheckoutContext from "../../store/checkoutContext";
+import CheckoutContext from "../../context-store/checkoutContext";
 
 const Navigation = () => {
   const { theme, switchTheme } = useContext(ThemeContext);

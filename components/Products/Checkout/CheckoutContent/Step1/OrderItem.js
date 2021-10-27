@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import X from "../../../../../shared/components/svgs/X";
-import OrderContext from "../../../../../store/orderContext";
+import OrderContext from "../../../../../context-store/orderContext";
 
 import { findDoor } from "../../../DoorsUtil";
 import {

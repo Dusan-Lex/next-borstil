@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import Check from "../../../shared/components/svgs/Check";
-import CheckoutContext from "../../../store/checkoutContext";
-import ModalContext from "../../../store/modalContext";
+import CheckoutContext from "../../../context-store/checkoutContext";
+import ModalContext from "../../../context-store/modalContext";
 import { findDoor } from "../DoorsUtil";
 import {
   ItemInfo,

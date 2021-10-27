@@ -26,3 +26,8 @@ export const postalCodeValidation = (postalCode) => {
   const postalcodeformat = /^(\d{5})$/;
   return postalcodeformat.test(postalCode);
 };
+
+export const pibValidation = (pib) => {
+  const pibformat = /^(\d{9})$/;
+  return pibformat.test(pib);
+};

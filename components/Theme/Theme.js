@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { ThemeProvider } from "styled-components";
-import ThemeContext from "../../store/themeContext";
+import ThemeContext from "../../context-store/themeContext";
 
 const themes = {
   light: {

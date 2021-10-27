@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import ShoppingCartSvg from "../../../shared/components/svgs/Shopping-Cart";
-import OrderContext from "../../../store/orderContext";
+import OrderContext from "../../../context-store/orderContext";
 import {
   ShoppingCartBtn,
   ShoppingCartSvgAnimate,

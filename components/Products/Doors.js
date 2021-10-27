@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import DoorContext from "../../store/doorContext";
+import DoorContext from "../../context-store/doorContext";
 import DoorsSelection from "./DoorsSelection/DoorsSelection";
 import {
   Door,

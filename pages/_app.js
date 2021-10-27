@@ -4,15 +4,15 @@ import BaseStyles from "../styles/BaseStyles";
 import Navigation from "../components/Navigation/Navigation";
 import NewsletterRegistration from "../components/Newsletter/NewsletterRegistration";
 import Footer from "../components/Footer/Footer";
-import { ThemeContextProvider } from "../store/themeContext";
-import { PopupContextProvider } from "../store/popupContext";
-import { SidebarContextProvider } from "../store/sidebarContext";
+import { ThemeContextProvider } from "../context-store/themeContext";
+import { PopupContextProvider } from "../context-store/popupContext";
+import { SidebarContextProvider } from "../context-store/sidebarContext";
 import Theme from "../components/Theme/Theme";
-import { ModalContextProvider } from "../store/modalContext";
+import { ModalContextProvider } from "../context-store/modalContext";
 import Modal from "../shared/components/Modal/Modal";
-import { DoorContextProvider } from "../store/doorContext";
-import { CheckoutContextProvider } from "../store/checkoutContext";
-import { OrderContextProvider } from "../store/orderContext";
+import { DoorContextProvider } from "../context-store/doorContext";
+import { CheckoutContextProvider } from "../context-store/checkoutContext";
+import { OrderContextProvider } from "../context-store/orderContext";
 
 function MyApp({ Component, pageProps }) {
   return (

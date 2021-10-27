@@ -11,7 +11,7 @@ import {
 
 import { doors } from "./DoorsData";
 import Checkout from "./Checkout/Checkout";
-import CheckoutContext from "../../store/checkoutContext";
+import CheckoutContext from "../../context-store/checkoutContext";
 import Doors from "./Doors";
 
 const Products = () => {

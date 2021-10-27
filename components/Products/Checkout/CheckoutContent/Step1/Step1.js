@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import OrderContext from "../../../../../store/orderContext";
+import OrderContext from "../../../../../context-store/orderContext";
 import OrderItem from "./OrderItem";
 import { StyledStep1, TotalAmount, EmptyCart } from "./Step1Styles";
 import ShoppingCartSvg from "../../../../../shared/components/svgs/Shopping-Cart";
