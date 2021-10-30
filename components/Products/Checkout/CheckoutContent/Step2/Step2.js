@@ -49,6 +49,7 @@ const Step2 = ({ setAllowed }) => {
         />
         <Checkbox
           label1="Poručujem kao pravno lice"
+          padding="0.4rem"
           onClick={() => {
             orderInfoCtx.setLegalEntity(true);
             setTimeout(() => {

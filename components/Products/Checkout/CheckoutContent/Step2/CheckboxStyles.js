@@ -15,6 +15,8 @@ export const StyledCheckbox = styled.div`
 
 export const Label1 = styled.div`
   font-weight: 600;
+  color: ${color.secondary};
+
   display: flex;
   align-items: center;
   span {
@@ -25,7 +27,7 @@ export const Label1 = styled.div`
     margin-right: 0.7rem;
     border: 1px solid ${color.secondary};
     &.active {
-      background-color: ${mixin.lighten(color.primary, 0.2)};
+      background-color: ${mixin.lighten(color.primary, 0.1)};
     }
   }
 `;
