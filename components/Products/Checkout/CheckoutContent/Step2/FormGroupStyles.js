@@ -31,6 +31,7 @@ export const StyledFormGroup = styled.div`
 
 export const FormLabel = styled.label`
   font-size: 1.7rem;
+  font-weight: 500;
   color: ${color.secondary};
   svg {
     width: 0.6rem;

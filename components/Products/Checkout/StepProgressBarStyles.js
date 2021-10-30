@@ -18,7 +18,7 @@ export const StepWrapper = styled.div`
   position: relative;
   ${mixin.center}
   flex-direction: column;
-  width: 25%;
+  width: ${(props) => props.width}%;
   z-index: ${(props) => props.index};
 `;
 

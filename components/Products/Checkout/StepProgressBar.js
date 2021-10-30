@@ -18,7 +18,7 @@ const StepProgressBar = ({ steps, activeStep, show }) => {
             ? "active"
             : "";
         return (
-          <StepWrapper key={index} index={index}>
+          <StepWrapper key={index} index={index} width={100 / steps.length}>
             <StepNumber className={stepClass}>{index + 1}</StepNumber>
             <StepDescription className={stepClass}>{step}</StepDescription>
             {index !== steps.length - 1 ? (

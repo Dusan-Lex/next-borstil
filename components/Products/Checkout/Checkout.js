@@ -12,6 +12,7 @@ import CheckoutButtons from "./CheckoutButtons";
 import Step1 from "./CheckoutContent/Step1/Step1";
 import Step2 from "./CheckoutContent/Step2/Step2";
 import { OrderInfoContextProvider } from "../../../context-store/orderInfoContext";
+import Step3 from "./CheckoutContent/Step3/Step3";
 
 const steps = [
   "stavke iz korpe",
@@ -42,8 +43,8 @@ const Checkout = () => {
           <ProgressContent show={checkoutCtx.checkout}>
             {activeStep === 1 ? <Step1 setAllowed={setAllowed} /> : null}
             {activeStep === 2 ? <Step2 setAllowed={setAllowed} /> : null}
-            {/* {activeStep === 3 ? <Step3 /> : null}
-          {activeStep === 4 ? <Step4 /> : null}  */}
+            {activeStep === 3 ? <Step3 setAllowed={setAllowed} /> : null}
+            {/* {activeStep === 4 ? <Step4 /> : null}  */}
           </ProgressContent>
           <CheckoutButtons
             stepsLength={steps.length}

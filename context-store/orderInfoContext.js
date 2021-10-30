@@ -11,14 +11,16 @@ import {
 const OrderInfoContext = createContext({
   individualInfo: { form: null, formError: null },
   legalEntity: null,
-  setLegalEntity: null,
+  setLegalEntity: () => {},
   legalEntityInfo: { form: null, formError: null },
   payment: null,
+  setPayment: () => {},
   changeHandler: (event, field, type) => {},
 });
 
 export const OrderInfoContextProvider = (props) => {
   const [legalEntity, setLegalEntity] = useState(false);
+  const [payment, setPayment] = useState(0);
   const [individualForm, setIndividualForm] = useState({
     name: "",
     email: "",
@@ -112,7 +114,8 @@ export const OrderInfoContextProvider = (props) => {
     legalEntity,
     setLegalEntity,
     legalEntityInfo: { form: legalEntityForm, formError: legalEntityFormError },
-    payment: null,
+    payment,
+    setPayment,
     changeHandler,
   };
   return (

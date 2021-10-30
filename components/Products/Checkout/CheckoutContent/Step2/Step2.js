@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import OrderInfoContext from "../../../../../context-store/orderInfoContext";
+import Checkbox from "./Checkbox";
 import IndividualForm from "./IndividualForm";
 import LegalEntityForm from "./LegalEntityForm";
 
@@ -10,7 +11,6 @@ const Step2 = ({ setAllowed }) => {
   const orderInfoCtx = useContext(OrderInfoContext);
 
   useEffect(() => {
-    console.log("effect");
     let validate = true;
     for (const i in orderInfoCtx.individualInfo.formError) {
       if (orderInfoCtx.individualInfo.formError[i]) {
@@ -39,17 +39,16 @@ const Step2 = ({ setAllowed }) => {
     <StyledStep2>
       <IndividualForm />
       <OrderTypeBox>
-        <OrderType
+        <Checkbox
+          label1="Poručujem kao fizičko lice"
+          padding="0.4rem"
           onClick={() => {
             orderInfoCtx.setLegalEntity(false);
           }}
-        >
-          <div
-            className={!orderInfoCtx.legalEntity ? "active" : undefined}
-          ></div>
-          Poručujem kao fizičko lice
-        </OrderType>
-        <OrderType
+          className={!orderInfoCtx.legalEntity ? "active" : undefined}
+        />
+        <Checkbox
+          label1="Poručujem kao pravno lice"
           onClick={() => {
             orderInfoCtx.setLegalEntity(true);
             setTimeout(() => {
@@ -59,12 +58,8 @@ const Step2 = ({ setAllowed }) => {
               });
             }, 70);
           }}
-        >
-          <div
-            className={orderInfoCtx.legalEntity ? "active" : undefined}
-          ></div>
-          Poručujem kao pravno lice
-        </OrderType>
+          className={orderInfoCtx.legalEntity ? "active" : undefined}
+        />
       </OrderTypeBox>
       {orderInfoCtx.legalEntity && <LegalEntityForm ref={legalEntityRef} />}
     </StyledStep2>
