@@ -24,7 +24,7 @@ export const Label1 = styled.div`
     width: 2rem;
     height: 2rem;
     border-radius: 2px;
-    margin-right: 0.7rem;
+    margin-right: 1rem;
     border: 1px solid ${color.secondary};
     &.active {
       background-color: ${mixin.lighten(color.primary, 0.1)};
@@ -33,7 +33,7 @@ export const Label1 = styled.div`
 `;
 export const Label2 = styled.div`
   margin-top: 0.5rem;
-  margin-left: 2.7rem;
+  margin-left: 2.9rem;
   font-size: 1.5rem;
   color: ${color.secondaryDarkest};
   line-height: 1.4;

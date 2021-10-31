@@ -1,5 +1,10 @@
-import { createContext, useReducer } from "react";
+import { createContext, useEffect, useReducer } from "react";
 import { doorFeatures } from "../components/Products/DoorsData";
+import {
+  calculateDoorPriceWithHandleLock,
+  findDoor,
+} from "../components/Products/DoorsUtil";
+
 const DoorContext = createContext({
   doortype: null,
 });
@@ -13,6 +18,10 @@ const initialDoorState = {
   doorlock: doorFeatures.find((item) => item.doortype === "regular")
     .doorlocks[0],
   doorquantity: 1,
+  doorprice: findDoor(
+    "regular",
+    doorFeatures.find((item) => item.doortype === "regular").doorcolors[0]
+  ).price,
 };
 
 const doorReducer = (doorState, action) => {
@@ -27,9 +36,20 @@ const doorReducer = (doorState, action) => {
           .doorlocks[0],
         doortype: action.value,
         doorquantity: 1,
+        doorprice: doorState.doorprice,
       };
     case "CHANGE_DOORCOLOR":
-      return { ...doorState, doorcolor: action.value, doorquantity: 1 };
+      return {
+        ...doorState,
+        doorhandle: doorFeatures.find(
+          (item) => item.doortype === doorState.doortype
+        ).doorhandles[0],
+        doorlock: doorFeatures.find(
+          (item) => item.doortype === doorState.doortype
+        ).doorlocks[0],
+        doorcolor: action.value,
+        doorquantity: 1,
+      };
     case "CHANGE_DOORHANDLE":
       return { ...doorState, doorhandle: action.value, doorquantity: 1 };
     case "CHANGE_DOORLOCK":
@@ -47,6 +67,12 @@ const doorReducer = (doorState, action) => {
       };
     case "SET_QUANTITY":
       return { ...doorState, doorquantity: action.value };
+    case "CHANGE_PRICE":
+      return {
+        ...doorState,
+        doorprice: calculateDoorPriceWithHandleLock(doorState),
+      };
+
     default:
       throw new Error();
   }
@@ -54,6 +80,10 @@ const doorReducer = (doorState, action) => {
 
 export const DoorContextProvider = (props) => {
   const [door, dispatch] = useReducer(doorReducer, initialDoorState);
+
+  useEffect(() => {
+    dispatch({ type: "CHANGE_PRICE" });
+  }, [door.doortype, door.doorcolor, door.doorhandle, door.doorlock]);
 
   const context = {
     door,

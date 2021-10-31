@@ -4,7 +4,7 @@ export const emailValidation = (email) => {
 };
 
 export const phoneNumberValidation = (phoneNumber) => {
-  const phonenumberformat = /\(?(0[0-9]{2})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/;
+  const phonenumberformat = /\b(\+?381|0)[6123]\d(0?)(\d{6,7})\b/;
   return phonenumberformat.test(phoneNumber);
 };
 

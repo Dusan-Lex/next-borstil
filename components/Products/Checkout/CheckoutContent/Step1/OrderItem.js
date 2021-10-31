@@ -15,21 +15,9 @@ import {
   OrderRemoveBtn,
 } from "./OrderItemStyles";
 
-const OrderItem = ({ item, index, setTotalAmount }) => {
+const OrderItem = ({ item, index }) => {
   const orderCtx = useContext(OrderContext);
-
   const door = findDoor(item.doortype, item.doorcolor);
-  const doorHandlePrice = item.doorhandle === "premium" ? 17 : 0;
-  const doorLockPrice = item.doorlock === "premium" ? 7 : 0;
-  const doorPrice = door.price + doorHandlePrice + doorLockPrice;
-
-  useEffect(() => {
-    setTotalAmount((prevState) => {
-      const newArr = [...prevState];
-      newArr[index] = item.doorquantity * doorPrice;
-      return newArr;
-    });
-  }, [item.doorquantity]);
 
   const minusClickHandler = () => {
     orderCtx.dispatch({ type: "REMOVE_ITEM", payload: index });
@@ -43,11 +31,6 @@ const OrderItem = ({ item, index, setTotalAmount }) => {
     orderCtx.dispatch({
       type: "REMOVE_FROM_CART",
       payload: index,
-    });
-    setTotalAmount((prevState) => {
-      const newArr = [...prevState];
-      newArr.splice(index, 1);
-      return newArr;
     });
   };
 
@@ -68,7 +51,7 @@ const OrderItem = ({ item, index, setTotalAmount }) => {
 
         <OrderPriceQuantityBox>
           <OrderDiv className="price">
-            Cena: <span>{doorPrice}&#8364;</span>
+            Cena: <span>{item.doorprice}&#8364;</span>
           </OrderDiv>
           <OrderQuantityButton
             onMinusClick={minusClickHandler}
@@ -83,7 +66,7 @@ const OrderItem = ({ item, index, setTotalAmount }) => {
           <X width="20" />
         </OrderRemoveBtn>
         <OrderDiv className="price">
-          Ukupno: <span>{item.doorquantity * doorPrice}&#8364;</span>
+          Ukupno: <span>{item.doorquantity * item.doorprice}&#8364;</span>
         </OrderDiv>
       </OrderRemoveTotalPriceBox>
     </StyledOrderItem>

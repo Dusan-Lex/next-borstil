@@ -6,8 +6,11 @@ import ShoppingCartSvg from "../../../../../shared/components/svgs/Shopping-Cart
 
 const Step1 = ({ setAllowed }) => {
   const orderCtx = useContext(OrderContext);
-  const [totalAmountArr, setTotalAmountArr] = useState([]);
-  const totalAmount = totalAmountArr.reduce((s, x) => s + x, 0);
+
+  const totalAmount = orderCtx.order.reduce(
+    (s, x) => s + x.doorquantity * x.doorprice,
+    0
+  );
 
   useEffect(() => {
     totalAmount === 0 ? setAllowed(false) : setAllowed(true);
@@ -16,12 +19,7 @@ const Step1 = ({ setAllowed }) => {
   return (
     <StyledStep1>
       {orderCtx.order.map((item, index) => (
-        <OrderItem
-          key={index}
-          item={item}
-          index={index}
-          setTotalAmount={setTotalAmountArr}
-        />
+        <OrderItem key={index} item={item} index={index} />
       ))}
 
       {totalAmount ? (

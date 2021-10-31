@@ -12,9 +12,6 @@ import { findDoor } from "./DoorsUtil";
 const Doors = () => {
   const doorCtx = useContext(DoorContext);
   const door = findDoor(doorCtx.door.doortype, doorCtx.door.doorcolor);
-  const doorHandlePrice = doorCtx.door.doorhandle === "premium" ? 17 : 0;
-  const doorLockPrice = doorCtx.door.doorlock === "premium" ? 7 : 0;
-  const doorPrice = door.price + doorHandlePrice + doorLockPrice;
 
   return (
     <DoorsContainer>
@@ -40,7 +37,7 @@ const Doors = () => {
         </Door>
         <DoorDescription>
           <div>Cena</div>
-          <div>{doorPrice}&#8364;</div>
+          <div>{doorCtx.door.doorprice}&#8364;</div>
           <div>sa PDV-om</div>
           <div>
             * cena uključuje {doorCtx.door.doorhandle} kvaku i{" "}
