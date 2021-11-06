@@ -52,7 +52,7 @@ const IndividualForm = () => {
       />
       <FormGroup
         id="address"
-        label="Adresa"
+        label="Adresa montaže"
         type="text"
         value={orderInfoCtx.individualInfo.form.address}
         onChange={(event) =>

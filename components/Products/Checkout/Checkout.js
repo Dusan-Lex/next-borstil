@@ -5,7 +5,7 @@ import {
   StyledCheckout,
 } from "./CheckoutStyles";
 
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import CheckoutContext from "../../../context-store/checkoutContext";
 import StepProgressBar from "./StepProgressBar";
 import CheckoutButtons from "./CheckoutButtons";
@@ -13,6 +13,7 @@ import Step1 from "./CheckoutContent/Step1/Step1";
 import Step2 from "./CheckoutContent/Step2/Step2";
 import { OrderInfoContextProvider } from "../../../context-store/orderInfoContext";
 import Step3 from "./CheckoutContent/Step3/Step3";
+import Step4 from "./CheckoutContent/Step4/Step4";
 
 const steps = [
   "stavke iz korpe",
@@ -26,6 +27,13 @@ const Checkout = () => {
   const [allowed, setAllowed] = useState(false);
 
   const checkoutCtx = useContext(CheckoutContext);
+
+  useEffect(() => {
+    console.log("effect");
+    return () => {
+      console.log("clean up");
+    };
+  }, []);
 
   return (
     <OrderInfoContextProvider>
@@ -44,7 +52,7 @@ const Checkout = () => {
             {activeStep === 1 ? <Step1 setAllowed={setAllowed} /> : null}
             {activeStep === 2 ? <Step2 setAllowed={setAllowed} /> : null}
             {activeStep === 3 ? <Step3 setAllowed={setAllowed} /> : null}
-            {/* {activeStep === 4 ? <Step4 /> : null}  */}
+            {activeStep === 4 ? <Step4 setAllowed={setAllowed} /> : null}
           </ProgressContent>
           <CheckoutButtons
             stepsLength={steps.length}

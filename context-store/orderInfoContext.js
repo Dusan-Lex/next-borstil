@@ -20,7 +20,7 @@ const OrderInfoContext = createContext({
 
 export const OrderInfoContextProvider = (props) => {
   const [legalEntity, setLegalEntity] = useState(false);
-  const [payment, setPayment] = useState(0);
+  const [payment, setPayment] = useState(null);
   const [individualForm, setIndividualForm] = useState({
     name: "",
     email: "",
