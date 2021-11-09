@@ -28,13 +28,6 @@ const Checkout = () => {
 
   const checkoutCtx = useContext(CheckoutContext);
 
-  useEffect(() => {
-    console.log("effect");
-    return () => {
-      console.log("clean up");
-    };
-  }, []);
-
   return (
     <OrderInfoContextProvider>
       <StyledCheckout>

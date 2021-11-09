@@ -39,13 +39,12 @@ const handler = async (req, res) => {
         ...form,
         errors: { ...form.errors, number: "Molim Vas da popunite polje." },
       };
+    } else if (!phoneNumberValidation(userNumber)) {
+      form = {
+        ...form,
+        errors: { ...form.errors, number: "Broj telefona je neispravan." },
+      };
     }
-    //  else if (!phoneNumberValidation(userNumber)) {
-    // form = {
-    //   ...form,
-    //   errors: { ...form.errors, number: "Broj telefona je neispravan." },
-    // };
-    //  }
 
     const userSelect = req.body.select;
     if (userSelect === "subject") {

@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import OrderInfoContext from "../../../../../context-store/orderInfoContext";
+import InfoItems from "./InfoItems";
 import ItemPreview from "./ItemPreview";
 import { StyledStep4 } from "./Step4Styles";
 
@@ -7,14 +8,15 @@ const orderInfo = ["stavke", "adresa montaže", "način plaćanja"];
 
 const Step4 = () => {
   const orderInfoCtx = useContext(OrderInfoContext);
-  console.log(orderInfoCtx);
+
   return (
     <StyledStep4>
       {orderInfo.map((item, index) => {
         return (
           <ItemPreview title={item} key={index}>
-            {index === 1 && orderInfoCtx.individualInfo.form.name}
-            {index === 2 && <p>{orderInfoCtx.payment}</p>}
+            {item === "stavke" && <p>Stavke</p>}
+            {item === "adresa montaže" && <InfoItems />}
+            {item === "način plaćanja" && <p>{orderInfoCtx.payment}</p>}
           </ItemPreview>
         );
       })}

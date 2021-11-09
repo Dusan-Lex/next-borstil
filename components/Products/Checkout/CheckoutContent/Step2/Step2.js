@@ -4,7 +4,7 @@ import Checkbox from "./Checkbox";
 import IndividualForm from "./IndividualForm";
 import LegalEntityForm from "./LegalEntityForm";
 
-import { OrderType, OrderTypeBox, StyledStep2 } from "./Step2Styles";
+import { OrderTypeBox, StyledStep2 } from "./Step2Styles";
 
 const Step2 = ({ setAllowed }) => {
   const legalEntityRef = useRef();

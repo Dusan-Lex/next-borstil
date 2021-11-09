@@ -22,6 +22,10 @@ const initialDoorState = {
     "regular",
     doorFeatures.find((item) => item.doortype === "regular").doorcolors[0]
   ).price,
+  doorid: findDoor(
+    "regular",
+    doorFeatures.find((item) => item.doortype === "regular").doorcolors[0]
+  ).id,
 };
 
 const doorReducer = (doorState, action) => {
@@ -37,6 +41,7 @@ const doorReducer = (doorState, action) => {
         doortype: action.value,
         doorquantity: 1,
         doorprice: doorState.doorprice,
+        doorid: doorState.doorid,
       };
     case "CHANGE_DOORCOLOR":
       return {
@@ -71,6 +76,7 @@ const doorReducer = (doorState, action) => {
       return {
         ...doorState,
         doorprice: calculateDoorPriceWithHandleLock(doorState),
+        doorid: findDoor(doorState.doortype, doorState.doorcolor).id,
       };
 
     default:
@@ -80,7 +86,7 @@ const doorReducer = (doorState, action) => {
 
 export const DoorContextProvider = (props) => {
   const [door, dispatch] = useReducer(doorReducer, initialDoorState);
-
+  console.log(door);
   useEffect(() => {
     dispatch({ type: "CHANGE_PRICE" });
   }, [door.doortype, door.doorcolor, door.doorhandle, door.doorlock]);

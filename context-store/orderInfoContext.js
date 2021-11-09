@@ -57,6 +57,7 @@ export const OrderInfoContextProvider = (props) => {
           return { ...prevState, [field]: event.target.value };
         });
     let validate;
+
     switch (field) {
       case "name": {
         validate = nameValidation(event.target.value.trim());
@@ -105,7 +106,8 @@ export const OrderInfoContextProvider = (props) => {
       ? setIndividualFormError((prevState) => {
           return { ...prevState, [field]: true };
         })
-      : setLegalEntityFormError((prevState) => {
+      : (field === "companyName" || field === "pib") &&
+        setLegalEntityFormError((prevState) => {
           return { ...prevState, [field]: true };
         });
   };
@@ -118,6 +120,7 @@ export const OrderInfoContextProvider = (props) => {
     setPayment,
     changeHandler,
   };
+
   return (
     <OrderInfoContext.Provider value={context}>
       {props.children}
