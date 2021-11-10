@@ -6,13 +6,8 @@ import { StyledSlider, Slide, SlideContent, SliderArrow } from "./SliderStyles";
 const Slider = ({ sliderArr }) => {
   const [slide, setSlide] = useState(0);
   const timeout = useRef(null);
-  const x = useRef(true);
   const offSetY = useOffsetY();
   const length = sliderArr.length;
-
-  useEffect(() => {
-    x.current = false;
-  }, []);
 
   useEffect(() => {
     const next = () => {
@@ -38,10 +33,9 @@ const Slider = ({ sliderArr }) => {
 
   return (
     <StyledSlider>
-      {x.current &&
-        sliderArr.map((item, index) => (
-          <img src={item.imgSrc} key={index} style={{ display: "none" }} />
-        ))}
+      {sliderArr.map((item, index) => (
+        <img src={item.imgSrc} key={index} style={{ display: "none" }} />
+      ))}
 
       {sliderArr.map((el, index) => {
         return (
