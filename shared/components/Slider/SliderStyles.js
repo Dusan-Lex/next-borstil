@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { color, mixin } from "../../../shared/utils/styles";
+import { color, mixin } from "../../utils/styles";
 
-export const StyledHomeSlider = styled.section`
+export const StyledSlider = styled.section`
   height: 97vh;
   max-height: 1100px;
   position: relative;
@@ -18,20 +18,6 @@ export const StyledHomeSlider = styled.section`
       opacity: 1;
     }
   }
-`;
-
-export const Wrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  ${mixin.center}
-  overflow: hidden;
-  position: relative;
-`;
-
-export const Slider = styled.div`
-  z-index: 1;
-  width: 100%;
-  height: 100%;
 `;
 
 export const Slide = styled.div`
