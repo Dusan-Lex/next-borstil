@@ -9,14 +9,14 @@ export const phoneNumberValidation = (phoneNumber) => {
 };
 
 export const nameValidation = (name) => {
-  const nameformat = /^[a-zA-Z]+(\s+[a-zA-Z]+){1,2}$/;
+  const nameformat = /^[a-zA-ZšŠđĐčČćĆžŽ]+(\s+[a-zA-ZšŠđĐčČćĆžŽ]+){1,2}$/;
   const nameformat2 =
     /^[аАбБвВгГдДђЂеЕжЖзЗиИјЈкКлЛљЉмМнНњЊоОпПрРсСтТћЋуУфФхХцЦчЧџЏшШ]+( [аАбБвВгГдДђЂеЕжЖзЗиИјЈкКлЛљЉмМнНњЊоОпПрРсСтТћЋуУфФхХцЦчЧџЏшШ]+)+$/;
   return nameformat.test(name) || nameformat2.test(name);
 };
 
 export const cityValidation = (city) => {
-  const cityformat = /^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$/;
+  const cityformat = /^[a-zA-ZšŠđĐčČćĆžŽ]+(?:[\s-][a-zA-ZšŠđĐčČćĆžŽ]+)*$/;
   const cityformat2 =
     /^[аАбБвВгГдДђЂеЕжЖзЗиИјЈкКлЛљЉмМнНњЊоОпПрРсСтТћЋуУфФхХцЦчЧџЏшШ]+(?:[\s-][аАбБвВгГдДђЂеЕжЖзЗиИјЈкКлЛљЉмМнНњЊоОпПрРсСтТћЋуУфФхХцЦчЧџЏшШ]+)*$/;
   return cityformat.test(city) || cityformat2.test(city);
