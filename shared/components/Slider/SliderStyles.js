@@ -8,7 +8,7 @@ export const StyledSlider = styled.section`
   max-width: 1450px;
   margin: auto;
   background-color: ${color.primaryLightest};
-  overflow: hidden;
+
   animation: slider-a1 1.2s ease forwards;
 
   @keyframes slider-a1 {
@@ -23,6 +23,7 @@ export const StyledSlider = styled.section`
 
 export const Slide = styled.div`
   ${mixin.coverParent}
+  overflow: hidden;
   display: flex;
   padding-left: 15rem;
   align-items: center;

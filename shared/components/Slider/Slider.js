@@ -1,7 +1,13 @@
 import { useState, useEffect, useRef } from "react";
 import useOffsetY from "../../hooks/useOffsetY";
 
-import { StyledSlider, Slide, SlideContent, SliderArrow } from "./SliderStyles";
+import {
+  StyledSlider,
+  Slide,
+  SlideContent,
+  SliderArrow,
+  Wrapper,
+} from "./SliderStyles";
 
 const Slider = ({ sliderArr }) => {
   const [slide, setSlide] = useState(0);
@@ -9,17 +15,17 @@ const Slider = ({ sliderArr }) => {
   const offSetY = useOffsetY();
   const length = sliderArr.length;
 
-  // useEffect(() => {
-  //   const next = () => {
-  //     setSlide((slide) => (slide === length - 1 ? 0 : slide + 1));
-  //   };
+  useEffect(() => {
+    const next = () => {
+      setSlide((slide) => (slide === length - 1 ? 0 : slide + 1));
+    };
 
-  //   timeout.current = setTimeout(next, 4600);
+    timeout.current = setTimeout(next, 4600);
 
-  //   return () => {
-  //     timeout.current && clearTimeout(timeout.current);
-  //   };
-  // }, [slide]);
+    return () => {
+      timeout.current && clearTimeout(timeout.current);
+    };
+  }, [slide]);
 
   const nextSlide = () => {
     timeout.current && clearTimeout(timeout.current);
