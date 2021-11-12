@@ -1,13 +1,20 @@
 import styled from "styled-components";
-import { mixin } from "../../../../../shared/utils/styles";
+import { color, mixin } from "../../../../../shared/utils/styles";
 
 export const StyledStep4 = styled.div`
   position: relative;
   height: 100%;
   ${mixin.scrollableY};
-  padding: 3rem;
+  padding: 0 3rem;
 
   @media only screen and (max-width: 450px) {
-    padding: 3rem 1rem;
+    padding: 0 1rem;
   }
+`;
+
+export const Payment = styled.div`
+  background-color: ${color.primaryLightest};
+  padding-left: 1rem;
+  margin-top: 1rem;
+  color: ${color.secondaryDark};
 `;

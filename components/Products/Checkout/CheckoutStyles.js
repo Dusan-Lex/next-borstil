@@ -22,7 +22,7 @@ export const CheckoutFront = styled.div`
   min-width: 50%;
   display: flex;
   flex-direction: column;
-  justify-content: stretch;
+  justify-content: space-around;
   z-index: 10;
   transform: ${(props) => (props.show ? "translateX(0)" : "translateX(-100%)")};
   transition: transform 1s ease-in-out;

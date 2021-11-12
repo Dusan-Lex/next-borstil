@@ -9,9 +9,7 @@ export const CheckoutContextProvider = (props) => {
   const [checkoutState, setCheckoutState] = useState(false);
 
   const toggleCheckoutHandler = () => {
-    setCheckoutState((prevCheckoutState) => {
-      return !prevCheckoutState;
-    });
+    setCheckoutState((prevCheckoutState) => !prevCheckoutState);
   };
   const setCheckoutHandler = (checkout) => {
     setCheckoutState(checkout);

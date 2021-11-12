@@ -4,9 +4,9 @@ import OrderInfoContext from "../../../../../context-store/orderInfoContext";
 import DoorItems from "./DoorItems";
 import InfoItems from "./InfoItems";
 import Preview from "./Preview";
-import { StyledStep4 } from "./Step4Styles";
+import { StyledStep4, Payment } from "./Step4Styles";
 
-const orderInfo = ["stavke", "adresa montaže", "način plaćanja"];
+const orderInfo = ["adresa montaže", "način plaćanja", "stavke"];
 
 const Step4 = () => {
   const orderInfoCtx = useContext(OrderInfoContext);
@@ -17,9 +17,11 @@ const Step4 = () => {
       {orderInfo.map((item, index) => {
         return (
           <Preview title={item} key={index}>
-            {item === "stavke" && <DoorItems doors={orderCtx.order} />}
             {item === "adresa montaže" && <InfoItems />}
-            {item === "način plaćanja" && <p>{orderInfoCtx.payment}</p>}
+            {item === "stavke" && <DoorItems doors={orderCtx.order} />}
+            {item === "način plaćanja" && (
+              <Payment>{orderInfoCtx.payment}</Payment>
+            )}
           </Preview>
         );
       })}
