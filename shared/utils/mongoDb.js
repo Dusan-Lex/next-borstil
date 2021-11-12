@@ -37,3 +37,9 @@ export const getSomeReferences = async (client, collection, indexArray) => {
     .toArray();
   return documents;
 };
+
+export const getAllDoors = async (client) => {
+  const db = client.db();
+  const documents = await db.collection("doors").find().toArray();
+  return documents;
+};

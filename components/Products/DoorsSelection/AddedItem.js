@@ -12,11 +12,13 @@ import {
   ItemDesc,
   ItemDiv,
 } from "./AddedItemStyles";
+import AllDoorsContext from "../../../context-store/allDoors";
 
 const AddedItem = ({ item }) => {
   const modalCtx = useContext(ModalContext);
   const checkoutCtx = useContext(CheckoutContext);
-  const door = findDoor(item.doortype, item.doorcolor);
+  const allDoorsCtx = useContext(AllDoorsContext);
+  const door = findDoor(allDoorsCtx.alldoors, item.doortype, item.doorcolor);
   const doorHandlePrice = item.doorhandle === "premium" ? 17 : 0;
   const doorLockPrice = item.doorlock === "premium" ? 7 : 0;
   const doorPrice = door.price + doorHandlePrice + doorLockPrice;
@@ -30,7 +32,10 @@ const AddedItem = ({ item }) => {
       </ItemTitle>
       <ItemInfo>
         <ItemPhoto>
-          <img src={`/images/Products/door-${door.id}.jpg`} alt="vrata" />
+          <img
+            src={`/images/Products/door-${door?.srcImgId}.jpg`}
+            alt="vrata"
+          />
         </ItemPhoto>
         <ItemDiv>
           <ItemDesc>

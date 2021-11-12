@@ -5,7 +5,7 @@ import {
   StyledCheckout,
 } from "./CheckoutStyles";
 
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import CheckoutContext from "../../../context-store/checkoutContext";
 import StepProgressBar from "./StepProgressBar";
 import CheckoutButtons from "./CheckoutButtons";
@@ -25,7 +25,7 @@ const steps = [
 const Checkout = () => {
   const [activeStep, setActiveStep] = useState(1);
   const [allowed, setAllowed] = useState(false);
-
+  const contentRef = useRef(null);
   const checkoutCtx = useContext(CheckoutContext);
 
   return (
@@ -41,7 +41,7 @@ const Checkout = () => {
             activeStep={activeStep}
             show={checkoutCtx.checkout}
           />
-          <ProgressContent show={checkoutCtx.checkout}>
+          <ProgressContent show={checkoutCtx.checkout} ref={contentRef}>
             {activeStep === 1 ? <Step1 setAllowed={setAllowed} /> : null}
             {activeStep === 2 ? <Step2 setAllowed={setAllowed} /> : null}
             {activeStep === 3 ? <Step3 setAllowed={setAllowed} /> : null}
@@ -54,6 +54,12 @@ const Checkout = () => {
             show={checkoutCtx.checkout}
             allowed={allowed}
             setAllowed={setAllowed}
+            scrollHandler={() => {
+              contentRef.current.scrollIntoView({
+                behavior: "smooth",
+                block: "center",
+              });
+            }}
           />
         </CheckoutFront>
       </StyledCheckout>

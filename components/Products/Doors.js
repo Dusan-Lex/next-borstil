@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import AllDoorsContext from "../../context-store/allDoors";
 import DoorContext from "../../context-store/doorContext";
 import DoorsSelection from "./DoorsSelection/DoorsSelection";
 import {
@@ -11,7 +12,13 @@ import { findDoor } from "./DoorsUtil";
 
 const Doors = () => {
   const doorCtx = useContext(DoorContext);
-  const door = findDoor(doorCtx.door.doortype, doorCtx.door.doorcolor);
+  const allDoorsCtx = useContext(AllDoorsContext);
+
+  const door = findDoor(
+    allDoorsCtx.alldoors,
+    doorCtx.door.doortype,
+    doorCtx.door.doorcolor
+  );
 
   return (
     <DoorsContainer>
@@ -33,7 +40,10 @@ const Doors = () => {
         />
 
         <Door>
-          <img src={`/images/Products/door-${door.id}.jpg`} alt="vrata" />
+          <img
+            src={`/images/Products/door-${door?.srcImgId}.jpg`}
+            alt="vrata"
+          />
         </Door>
         <DoorDescription>
           <div>Cena</div>

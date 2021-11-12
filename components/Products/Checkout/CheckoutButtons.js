@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   CheckoutButton,
   CheckoutButtonBox,
@@ -6,6 +6,8 @@ import {
 } from "./CheckoutButtonsStyles";
 import ArrowRight from "../../../shared/components/svgs/ArrowRight";
 import ArrowLeft from "../../../shared/components/svgs/ArrowLeft";
+import OrderContext from "../../../context-store/orderContext";
+import OrderInfoContext from "../../../context-store/orderInfoContext";
 
 const CheckoutButtons = ({
   stepsLength,
@@ -14,7 +16,25 @@ const CheckoutButtons = ({
   show,
   allowed,
   setAllowed,
+  scrollHandler,
 }) => {
+  const orderCtx = useContext(OrderContext);
+  const orderInfoCtx = useContext(OrderInfoContext);
+
+  const completeOrderHandler = async () => {
+    const response = await fetch("/api/order", {
+      method: "POST",
+      body: JSON.stringify({
+        order: orderCtx.order,
+        orderInfo: orderInfoCtx,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const data = await response.json();
+  };
+
   return (
     <StyledCheckoutButtons show={show}>
       <CheckoutButtonBox>
@@ -25,6 +45,7 @@ const CheckoutButtons = ({
               setActiveStep((prevStep) => {
                 return prevStep > 1 ? prevStep - 1 : prevStep;
               });
+              scrollHandler();
             }}
           >
             <ArrowLeft />
@@ -41,12 +62,13 @@ const CheckoutButtons = ({
                 return prevStep < stepsLength ? prevStep + 1 : prevStep;
               });
               setAllowed(false);
+              scrollHandler();
             }}
           >
             <span>Dalje</span> <ArrowRight />
           </CheckoutButton>
         ) : (
-          <CheckoutButton onClick={() => {}}>
+          <CheckoutButton onClick={completeOrderHandler}>
             <span>Završi</span> <ArrowRight />
           </CheckoutButton>
         )}

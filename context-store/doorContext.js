@@ -1,9 +1,6 @@
 import { createContext, useEffect, useReducer } from "react";
 import { doorFeatures } from "../components/Products/DoorsData";
-import {
-  calculateDoorPriceWithHandleLock,
-  findDoor,
-} from "../components/Products/DoorsUtil";
+import { calculateDoorPriceWithHandleLock } from "../components/Products/DoorsUtil";
 
 const DoorContext = createContext({
   doortype: null,
@@ -18,14 +15,7 @@ const initialDoorState = {
   doorlock: doorFeatures.find((item) => item.doortype === "regular")
     .doorlocks[0],
   doorquantity: 1,
-  doorprice: findDoor(
-    "regular",
-    doorFeatures.find((item) => item.doortype === "regular").doorcolors[0]
-  ).price,
-  doorid: findDoor(
-    "regular",
-    doorFeatures.find((item) => item.doortype === "regular").doorcolors[0]
-  ).id,
+  doorprice: 145,
 };
 
 const doorReducer = (doorState, action) => {
@@ -41,7 +31,6 @@ const doorReducer = (doorState, action) => {
         doortype: action.value,
         doorquantity: 1,
         doorprice: doorState.doorprice,
-        doorid: doorState.doorid,
       };
     case "CHANGE_DOORCOLOR":
       return {
@@ -76,7 +65,6 @@ const doorReducer = (doorState, action) => {
       return {
         ...doorState,
         doorprice: calculateDoorPriceWithHandleLock(doorState),
-        doorid: findDoor(doorState.doortype, doorState.doorcolor).id,
       };
 
     default:
@@ -86,7 +74,6 @@ const doorReducer = (doorState, action) => {
 
 export const DoorContextProvider = (props) => {
   const [door, dispatch] = useReducer(doorReducer, initialDoorState);
-
   useEffect(() => {
     dispatch({ type: "CHANGE_PRICE" });
   }, [door.doortype, door.doorcolor, door.doorhandle, door.doorlock]);

@@ -9,13 +9,14 @@ import {
   ShoppingCartBtnNotNav,
 } from "./ProductsStyles";
 
-import { doors } from "./DoorsData";
 import Checkout from "./Checkout/Checkout";
 import CheckoutContext from "../../context-store/checkoutContext";
 import Doors from "./Doors";
+import AllDoorsContext from "../../context-store/allDoors";
 
 const Products = () => {
   const checkoutCtx = useContext(CheckoutContext);
+  const allDoorsCtx = useContext(AllDoorsContext);
 
   useEffect(() => {
     return () => {
@@ -27,12 +28,12 @@ const Products = () => {
     <React.Fragment>
       <ImaginedHeader />
       <DoorsSection>
-        {doors.map((item) => (
+        {allDoorsCtx.alldoors.map((item) => (
           <img
-            src={`/images/Products/door-${item.id}.jpg`}
+            src={`/images/Products/door-${item.srcImgId}.jpg`}
             alt="vrata"
             style={{ display: "none" }}
-            key={item.id}
+            key={item.srcImgId}
           />
         ))}
         <DoorsHeader>

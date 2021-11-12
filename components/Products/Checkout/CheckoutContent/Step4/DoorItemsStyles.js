@@ -17,15 +17,33 @@ export const DoorItem = styled.div`
   align-items: center;
   justify-content: space-around;
   & > div {
-    width: 34%;
+    width: 40%;
     text-align: center;
     &.first {
-      width: 46%;
+      width: 40%;
     }
     &.last {
       width: 20%;
       font-size: 1.7rem;
       font-weight: 500;
+      text-align: right;
+      padding-right: 2rem;
     }
+  }
+`;
+
+export const Total = styled.div`
+  width: 50%;
+  margin-left: auto;
+  text-align: right;
+  font-size: 1.8rem;
+  padding: 1rem 3rem 1rem 0;
+  background-color: ${color.primaryLightest};
+  span {
+    margin-left: 1rem;
+    font-weight: 500;
+    /* padding: 0.4rem;
+    background-color: ${color.secondary};
+    color: ${color.primary}; */
   }
 `;

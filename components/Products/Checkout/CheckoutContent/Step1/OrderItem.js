@@ -14,10 +14,12 @@ import {
   OrderRemoveTotalPriceBox,
   OrderRemoveBtn,
 } from "./OrderItemStyles";
+import AllDoorsContext from "../../../../../context-store/allDoors";
 
 const OrderItem = ({ item, index }) => {
   const orderCtx = useContext(OrderContext);
-  const door = findDoor(item.doortype, item.doorcolor);
+  const allDoorsCtx = useContext(AllDoorsContext);
+  const door = findDoor(allDoorsCtx.alldoors, item.doortype, item.doorcolor);
 
   const minusClickHandler = () => {
     orderCtx.dispatch({ type: "REMOVE_ITEM", payload: index });
@@ -38,7 +40,10 @@ const OrderItem = ({ item, index }) => {
     <StyledOrderItem>
       <OrderFirstBox>
         <OrderDoor>
-          <img src={`/images/Products/door-${door.id}.jpg`} alt="vrata" />
+          <img
+            src={`/images/Products/door-${door?.srcImgId}.jpg`}
+            alt="vrata"
+          />
         </OrderDoor>
         <OrderHandleLockBox>
           <OrderDiv>
