@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import OrderContext from "../../../../../context-store/orderContext";
 import OrderInfoContext from "../../../../../context-store/orderInfoContext";
-import DoorItems from "./doorItems";
+import DoorItems from "./DoorItems";
 import InfoItems from "./InfoItems";
 import Preview from "./Preview";
 import { StyledStep4 } from "./Step4Styles";
