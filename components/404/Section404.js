@@ -1,15 +1,15 @@
 import Link from "next/link";
-import { Box404 } from "./Section404Styles";
+import { BoxError } from "./Section404Styles";
 
 const section404 = () => {
   return (
-    <Box404>
+    <BoxError>
       <h1>404</h1>
       <p>Tražena stranica nije pronađena</p>
       <Link href="/">
         <a>Povratak na naslovnu</a>
       </Link>
-    </Box404>
+    </BoxError>
   );
 };
 

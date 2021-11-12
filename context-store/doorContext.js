@@ -86,7 +86,7 @@ const doorReducer = (doorState, action) => {
 
 export const DoorContextProvider = (props) => {
   const [door, dispatch] = useReducer(doorReducer, initialDoorState);
-  console.log(door);
+
   useEffect(() => {
     dispatch({ type: "CHANGE_PRICE" });
   }, [door.doortype, door.doorcolor, door.doorhandle, door.doorlock]);

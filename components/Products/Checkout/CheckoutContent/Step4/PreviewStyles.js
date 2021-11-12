@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { color } from "../../../../../shared/utils/styles";
 
-export const StyledItemPreview = styled.div`
+export const StyledPreview = styled.div`
   overflow: hidden;
   margin-bottom: 0.4rem;
   padding: 1rem;

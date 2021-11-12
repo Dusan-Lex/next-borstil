@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { color } from "../../shared/utils/styles";
 
-export const Box404 = styled.section`
+export const BoxError = styled.section`
   height: 90vh;
   display: flex;
   align-items: center;

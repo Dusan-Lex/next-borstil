@@ -5,28 +5,13 @@ import { HomeTitle } from "../HomeGallery/HomeGalleryStyles";
 import ArrowButton from "../../../shared/components/Buttons/ArrowButton/ArrowButton";
 import useTranslation from "next-translate/useTranslation";
 
-const HomeReference = () => {
-  const [data, setData] = useState([]);
+const HomeReference = (props) => {
   const { t } = useTranslation();
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch("/api/homereference", {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      const data = await response.json();
-      setData(data);
-    };
-
-    fetchData();
-  }, []);
 
   return (
     <StyledHomeReference>
       <HomeTitle>{t(`home:reference.title`)}</HomeTitle>
-      <SliderTouch data={data} />
+      <SliderTouch data={props.data} />
       <ArrowButton path="/reference" dark className="home-reference-arrow">
         {t(`home:reference.button`)}
       </ArrowButton>

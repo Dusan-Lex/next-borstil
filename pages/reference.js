@@ -1,8 +1,13 @@
+import DatabaseError from "../components/DatabaseError/DatabaseError";
 import ReferenceSection from "../components/Reference/ReferenceSection";
 import { connectDatabase, getAllReferences } from "../shared/utils/mongoDb";
 
 const Reference = (props) => {
-  return (
+  return props.error ? (
+    <main>
+      <DatabaseError />
+    </main>
+  ) : (
     <main>
       <ReferenceSection referenceData={JSON.parse(props.documents)} />
     </main>
@@ -11,7 +16,7 @@ const Reference = (props) => {
 
 export default Reference;
 
-export async function getStaticProps(context) {
+export async function getStaticProps() {
   let client;
   try {
     client = await connectDatabase();
@@ -19,6 +24,7 @@ export async function getStaticProps(context) {
     return { props: { error: "error500" } };
   }
   const allData = await getAllReferences(client);
+  client.close();
   return {
     props: { documents: JSON.stringify(allData) },
   };
