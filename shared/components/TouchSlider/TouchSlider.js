@@ -205,7 +205,7 @@ const SliderTouch = ({ data }) => {
                 e.preventDefault();
               }}
               quality="60"
-              src={`/images/Reference/Borstil-reference-${slide.srcImgId}.jpg`}
+              src={slide.image_url}
               alt={slide.title}
             ></Image>
           </TouchSlide>

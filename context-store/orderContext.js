@@ -70,7 +70,7 @@ const orderReducer = (orderState, action) => {
 
 export const OrderContextProvider = (props) => {
   const [order, dispatch] = useReducer(orderReducer, []);
-
+  console.log("order context - ", order);
   const context = {
     order,
     dispatch,

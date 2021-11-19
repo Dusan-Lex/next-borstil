@@ -32,11 +32,11 @@ const DoorsSelection = () => {
                 }}
               >
                 <img
-                  src={`/images/Products/door-${item.doortype}${active}.jpg`}
+                  src={`/images/products/door-${item.doortype}${active}.jpg`}
                   alt="vrata"
                 />
                 <img
-                  src={`/images/Products/door-${item.doortype}-active.jpg`}
+                  src={`/images/products/door-${item.doortype}-active.jpg`}
                   alt="vrata"
                   style={{ display: "none" }}
                 />
@@ -64,7 +64,7 @@ const DoorsSelection = () => {
                     });
                   }}
                 >
-                  <img src={`/images/Products/color-${item}.jpg`} alt={item} />
+                  <img src={`/images/products/color-${item}.jpg`} alt={item} />
                 </SelectionItem>
               );
             })}

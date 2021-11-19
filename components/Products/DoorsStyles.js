@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { color } from "../../shared/utils/styles";
+import { color, mixin } from "../../shared/utils/styles";
 
 export const DoorsContainer = styled.div`
   max-width: 1600px;
@@ -67,6 +67,8 @@ export const DoorDescription = styled.div`
   }
   div:nth-child(2) {
     font-weight: 600;
+    height: 4.2rem;
+    ${mixin.center}
   }
   div:nth-child(3) {
     font-size: 1.6rem;

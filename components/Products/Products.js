@@ -12,11 +12,9 @@ import {
 import Checkout from "./Checkout/Checkout";
 import CheckoutContext from "../../context-store/checkoutContext";
 import Doors from "./Doors";
-import AllDoorsContext from "../../context-store/allDoors";
 
 const Products = () => {
   const checkoutCtx = useContext(CheckoutContext);
-  const allDoorsCtx = useContext(AllDoorsContext);
 
   useEffect(() => {
     return () => {
@@ -28,14 +26,6 @@ const Products = () => {
     <React.Fragment>
       <ImaginedHeader />
       <DoorsSection>
-        {allDoorsCtx.alldoors.map((item) => (
-          <img
-            src={`/images/Products/door-${item.srcImgId}.jpg`}
-            alt="vrata"
-            style={{ display: "none" }}
-            key={item.srcImgId}
-          />
-        ))}
         <DoorsHeader>
           <DoorsTitle
             effectClass="two"

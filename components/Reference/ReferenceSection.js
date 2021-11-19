@@ -17,17 +17,19 @@ const ReferenceSection = ({ referenceData }) => {
       <ReferenceGrid>
         {referenceData.map((item, index) => (
           <ReferenceGridItem key={index} index={index}>
-            <Image
-              key={index}
-              src={`/images/Reference/Borstil-reference-${item.srcImgId}.jpg`}
-              width="800"
-              height="600"
-              objectFit="cover"
-              quality="50"
-              layout="responsive"
-              loading="eager"
-              alt={item.title}
-            />
+            <div>
+              <Image
+                key={index}
+                src={item.image_url}
+                width="800"
+                height="600"
+                objectFit="cover"
+                quality="50"
+                layout="responsive"
+                loading="eager"
+                alt={item.title}
+              />
+            </div>
 
             <ReferenceDescription index={index}>
               <h3>{item.title}</h3>

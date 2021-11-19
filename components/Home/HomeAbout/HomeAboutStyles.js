@@ -69,7 +69,7 @@ export const ImagesWrapper = styled.div`
       ${mixin.rgba(color.primary, 0.3)} 80%,
       ${mixin.rgba(color.primary, 0.65)} 100%
     ),
-    url("/images/Home/Borstil-about.jpg");
+    url("/images/home/Borstil-about.jpg");
   background-position: center right;
   background-size: cover;
 `;

@@ -10,7 +10,7 @@ const ContactHeader = () => {
   return (
     <StyledContactHeader>
       {/* <Image
-        src="/images/Contact/Borstil-contact-2.jpg"
+        src="/images/contact/Borstil-contact-2.jpg"
         layout="fill"
         objectFit="cover"
         alt="kuća dobre stolarije"

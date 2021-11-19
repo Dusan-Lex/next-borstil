@@ -1,8 +1,7 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import X from "../../../../../shared/components/svgs/X";
 import OrderContext from "../../../../../context-store/orderContext";
 
-import { findDoor } from "../../../DoorsUtil";
 import {
   StyledOrderItem,
   OrderDoor,
@@ -14,12 +13,9 @@ import {
   OrderRemoveTotalPriceBox,
   OrderRemoveBtn,
 } from "./OrderItemStyles";
-import AllDoorsContext from "../../../../../context-store/allDoors";
 
 const OrderItem = ({ item, index }) => {
   const orderCtx = useContext(OrderContext);
-  const allDoorsCtx = useContext(AllDoorsContext);
-  const door = findDoor(allDoorsCtx.alldoors, item.doortype, item.doorcolor);
 
   const minusClickHandler = () => {
     orderCtx.dispatch({ type: "REMOVE_ITEM", payload: index });
@@ -40,10 +36,7 @@ const OrderItem = ({ item, index }) => {
     <StyledOrderItem>
       <OrderFirstBox>
         <OrderDoor>
-          <img
-            src={`/images/Products/door-${door?.srcImgId}.jpg`}
-            alt="vrata"
-          />
+          <img src={item.doorimageurl} alt="vrata" />
         </OrderDoor>
         <OrderHandleLockBox>
           <OrderDiv>

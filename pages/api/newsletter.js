@@ -1,8 +1,5 @@
-import {
-  connectDatabase,
-  findByEmail,
-  insertDocument,
-} from "../../shared/utils/mongoDb";
+import { findByEmail, insertDocument } from "../../shared/utils/mongoDb";
+import { connectToDatabase } from "../../shared/utils/mongoDb";
 import { emailValidation } from "../../shared/utils/validation";
 
 const handler = async (req, res) => {
@@ -12,17 +9,16 @@ const handler = async (req, res) => {
       res.status(422).json({ message: "Invalid email address" });
       return;
     }
+    const { db, error } = await connectToDatabase();
 
-    let client;
-    try {
-      client = await connectDatabase();
-    } catch (error) {
+    if (error) {
       res.status(500).json({ message: "Connecting to the database failed" });
       return;
     }
 
     try {
-      const email = await findByEmail(client, "newsletter", userEmail);
+      const email = await findByEmail(db, "newsletter", userEmail);
+      console.log(email);
       if (email) {
         res.status(409).json({ message: "Email already exists" });
         return;
@@ -33,8 +29,7 @@ const handler = async (req, res) => {
     }
 
     try {
-      await insertDocument(client, "newsletter", { email: userEmail });
-      client.close();
+      await insertDocument(db, "newsletter", { email: userEmail });
     } catch (error) {
       res.status(500).json({ message: "Inserting email failed" });
       return;

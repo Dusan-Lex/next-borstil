@@ -1,34 +1,30 @@
-import { createContext, useEffect, useReducer } from "react";
+import { createContext, useEffect, useReducer, useState } from "react";
 import { doorFeatures } from "../components/Products/DoorsData";
-import { calculateDoorPriceWithHandleLock } from "../components/Products/DoorsUtil";
 
-const DoorContext = createContext({
-  doortype: null,
-});
+const DoorContext = createContext({});
 
 const initialDoorState = {
   doortype: "regular",
-  doorcolor: doorFeatures.find((item) => item.doortype === "regular")
-    .doorcolors[0],
-  doorhandle: doorFeatures.find((item) => item.doortype === "regular")
-    .doorhandles[0],
-  doorlock: doorFeatures.find((item) => item.doortype === "regular")
-    .doorlocks[0],
+  doorcolor: "brown",
+  doorhandle: "classic",
+  doorlock: "classic",
   doorquantity: 1,
   doorprice: 145,
+  doorimageurl: "/images/products/door-1.jpg",
 };
 
 const doorReducer = (doorState, action) => {
   switch (action.type) {
     case "CHANGE_DOORTYPE":
       return {
+        ...doorState,
+        doortype: action.value,
         doorcolor: doorFeatures.find((item) => item.doortype === action.value)
           .doorcolors[0],
         doorhandle: doorFeatures.find((item) => item.doortype === action.value)
           .doorhandles[0],
         doorlock: doorFeatures.find((item) => item.doortype === action.value)
           .doorlocks[0],
-        doortype: action.value,
         doorquantity: 1,
         doorprice: doorState.doorprice,
       };
@@ -64,7 +60,8 @@ const doorReducer = (doorState, action) => {
     case "CHANGE_PRICE":
       return {
         ...doorState,
-        doorprice: calculateDoorPriceWithHandleLock(doorState),
+        doorprice: action.payload.doorprice,
+        doorimageurl: action.payload.doorimageurl,
       };
 
     default:
@@ -74,12 +71,28 @@ const doorReducer = (doorState, action) => {
 
 export const DoorContextProvider = (props) => {
   const [door, dispatch] = useReducer(doorReducer, initialDoorState);
+  const [loading, setLoading] = useState(false);
+  console.log("door context - ", door);
   useEffect(() => {
-    dispatch({ type: "CHANGE_PRICE" });
+    const fetchDoor = async () => {
+      setLoading(true);
+      const response = await fetch("/api/door", {
+        method: "POST",
+        body: JSON.stringify(door),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const data = await response.json();
+      dispatch({ type: "CHANGE_PRICE", payload: data });
+      setLoading(false);
+    };
+    fetchDoor();
   }, [door.doortype, door.doorcolor, door.doorhandle, door.doorlock]);
 
   const context = {
     door,
+    loading,
     dispatch,
   };
   return (

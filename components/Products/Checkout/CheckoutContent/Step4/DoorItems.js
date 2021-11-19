@@ -8,7 +8,7 @@ const DoorItems = (props) => {
         sum = sum + item.doorquantity * item.doorprice;
         return (
           <DoorItem key={index}>
-            <img src={`/images/Products/door-${item.doorid}.jpg`} alt="vrata" />
+            <img src={item.doorimageurl} alt="vrata" />
             <div className="first">
               <div>Kvaka: {item.doorhandle}</div>
               <div>Brava: {item.doorlock}</div>

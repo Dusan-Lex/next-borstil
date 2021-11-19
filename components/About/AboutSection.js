@@ -77,7 +77,7 @@ const AboutSection = () => {
           </FirmDesc>
           <FirmImageBox className="about-img-box">
             <FirmImage
-              src={`/images/About/Borstil-about-${index}.jpg`}
+              src={`/images/about/Borstil-about-${index}.jpg`}
               bgPos={!index ? "right" : ""}
             />
           </FirmImageBox>
@@ -87,7 +87,7 @@ const AboutSection = () => {
             <FirmSideImage
               key={item}
               className={index === item ? "select" : ""}
-              src={`/images/About/Borstil-about-${item}.jpg`}
+              src={`/images/about/Borstil-about-${item}.jpg`}
               bgPos="right"
               onClick={() => clickHandler(item)}
             ></FirmSideImage>
