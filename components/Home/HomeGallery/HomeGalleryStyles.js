@@ -3,11 +3,6 @@ import { color } from "../../../shared/utils/styles";
 
 export const StyledHomeGallery = styled.section`
   text-align: center;
-  .home-gallery-arrow {
-    border: none;
-    padding: 1rem 5rem;
-    margin: 1rem 0 3rem;
-  }
 `;
 
 export const HomeTitle = styled.h4`

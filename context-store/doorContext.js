@@ -11,6 +11,7 @@ const initialDoorState = {
   doorquantity: 1,
   doorprice: 145,
   doorimageurl: "/images/products/door-1.jpg",
+  doorid: "618da96bca8826f2a8af413e",
 };
 
 const doorReducer = (doorState, action) => {
@@ -62,6 +63,7 @@ const doorReducer = (doorState, action) => {
         ...doorState,
         doorprice: action.payload.doorprice,
         doorimageurl: action.payload.doorimageurl,
+        doorid: action.payload.doorid,
       };
 
     default:

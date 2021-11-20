@@ -12,7 +12,7 @@ const HomeReference = (props) => {
     <StyledHomeReference>
       <HomeTitle>{t(`home:reference.title`)}</HomeTitle>
       <SliderTouch data={props.data} />
-      <ArrowButton path="/reference" dark className="home-reference-arrow">
+      <ArrowButton path="/reference" dark className="home-arrow">
         {t(`home:reference.button`)}
       </ArrowButton>
     </StyledHomeReference>

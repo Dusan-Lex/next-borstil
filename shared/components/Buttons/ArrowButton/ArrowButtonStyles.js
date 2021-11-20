@@ -16,6 +16,18 @@ export const StyledAnchor = styled.a`
   overflow: hidden;
   cursor: pointer;
 
+  &.home-arrow {
+    border: none;
+    border-radius: 0.2rem;
+    box-shadow: 0 0 14px -4px ${color.secondaryLight};
+    padding: 1rem 5rem;
+    margin: 1rem 0 3rem;
+    &:hover {
+      border: none;
+      box-shadow: 0 0 14px -4px ${color.primaryDark};
+    }
+  }
+
   .first {
     display: inline-block;
     margin-left: 2.5rem;

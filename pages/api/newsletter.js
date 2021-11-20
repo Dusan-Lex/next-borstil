@@ -18,7 +18,6 @@ const handler = async (req, res) => {
 
     try {
       const email = await findByEmail(db, "newsletter", userEmail);
-      console.log(email);
       if (email) {
         res.status(409).json({ message: "Email already exists" });
         return;

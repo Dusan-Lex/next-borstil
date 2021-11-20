@@ -120,7 +120,7 @@ export const OrderInfoContextProvider = (props) => {
     setPayment,
     changeHandler,
   };
-
+  console.log("orderInfo context", context);
   return (
     <OrderInfoContext.Provider value={context}>
       {props.children}

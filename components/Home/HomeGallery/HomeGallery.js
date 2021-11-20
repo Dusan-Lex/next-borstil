@@ -14,7 +14,7 @@ const HomeGallery = () => {
           return <Photo key={index} item={item} loading="eager" />;
         })}
       </HomePhotos>
-      <ArrowButton path="/gallery" dark className="home-gallery-arrow">
+      <ArrowButton path="/gallery" dark className="home-arrow">
         {t(`home:gallery.button`)}
       </ArrowButton>
     </StyledHomeGallery>

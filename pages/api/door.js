@@ -21,6 +21,7 @@ const handler = async (req, res) => {
         res.json({
           doorprice: door.price + handlePrice + lockPrice,
           doorimageurl: door.image_url,
+          doorid: door._id,
         });
         return;
       }

@@ -28,6 +28,15 @@ const Checkout = () => {
   const contentRef = useRef(null);
   const checkoutCtx = useContext(CheckoutContext);
 
+  useEffect(() => {
+    if (checkoutCtx.checkout) {
+      contentRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "end",
+      });
+    }
+  }, [checkoutCtx.checkout]);
+
   return (
     <OrderInfoContextProvider>
       <StyledCheckout>
@@ -57,7 +66,7 @@ const Checkout = () => {
             scrollHandler={() => {
               contentRef.current.scrollIntoView({
                 behavior: "smooth",
-                block: "center",
+                block: "end",
               });
             }}
           />

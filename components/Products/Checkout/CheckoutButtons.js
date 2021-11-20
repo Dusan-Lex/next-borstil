@@ -58,11 +58,13 @@ const CheckoutButtons = ({
           <CheckoutButton
             className={allowed ? "" : "not-allowed"}
             onClick={() => {
-              setActiveStep((prevStep) => {
-                return prevStep < stepsLength ? prevStep + 1 : prevStep;
-              });
-              setAllowed(false);
-              scrollHandler();
+              if (allowed) {
+                setActiveStep((prevStep) => {
+                  return prevStep < stepsLength ? prevStep + 1 : prevStep;
+                });
+                setAllowed(false);
+                scrollHandler();
+              }
             }}
           >
             <span>Dalje</span> <ArrowRight />
