@@ -8,8 +8,11 @@ export const StyledSlider = styled.section`
   max-width: 1450px;
   margin: auto;
   background-color: ${color.primaryLightest};
-
   animation: slider-a1 1.2s ease forwards;
+
+  @media screen and (max-width: 900px) {
+    height: 90rem;
+  }
 
   @keyframes slider-a1 {
     0% {

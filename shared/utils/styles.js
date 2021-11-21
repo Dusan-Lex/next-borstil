@@ -57,7 +57,7 @@ export const mixin = {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    bottom: 0;
   `,
   coverParent: css`
     position: absolute;

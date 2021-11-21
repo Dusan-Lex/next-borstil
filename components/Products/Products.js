@@ -26,14 +26,6 @@ const Products = ({ doors }) => {
     <React.Fragment>
       <ImaginedHeader />
       <DoorsSection>
-        {doors.map((item) => (
-          <img
-            src={item.image_url}
-            alt="vrata"
-            style={{ display: "none" }}
-            key={item._id}
-          />
-        ))}
         <DoorsHeader>
           <DoorsTitle
             effectClass="two"
@@ -48,6 +40,14 @@ const Products = ({ doors }) => {
         </DoorsHeader>
         <Doors />
         <Checkout />
+        {doors.map((item) => (
+          <img
+            src={item.image_url}
+            alt="vrata"
+            style={{ display: "none" }}
+            key={item._id}
+          />
+        ))}
       </DoorsSection>
     </React.Fragment>
   );

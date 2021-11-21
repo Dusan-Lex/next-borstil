@@ -5,7 +5,7 @@ export const StyledContactHeader = styled.div`
   position: relative;
   height: 76vh;
   color: white;
-  background-image: url("images/Contact/Borstil-contact-2.jpg");
+  background-image: url("images/contact/Borstil-contact-2.jpg");
   background-size: cover;
   background-position: 50% 0%;
   ${mixin.center}
@@ -15,12 +15,10 @@ export const StyledContactHeader = styled.div`
   overflow: hidden;
 
   @media only screen and (max-width: 1200px) {
-    padding-top: 5.5rem;
+    padding-top: 7.5rem;
+    height: 70rem;
   }
 
-  @media only screen and (max-width: 600px) {
-    height: 60vh;
-  }
   &:after {
     content: "";
     ${mixin.coverParent};

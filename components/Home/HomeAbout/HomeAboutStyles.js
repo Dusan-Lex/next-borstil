@@ -72,6 +72,9 @@ export const ImagesWrapper = styled.div`
     url("/images/home/Borstil-about.jpg");
   background-position: center right;
   background-size: cover;
+  @media only screen and (max-width: 900px) {
+    height: 70rem;
+  }
 `;
 
 export const ImageBox = styled.div`

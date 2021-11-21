@@ -14,12 +14,12 @@ export const StyledContactSection = styled.section`
 `;
 
 export const StyledTitleEffect = styled(TitleEffect)`
-  height: 12vh;
+  height: 12rem;
 `;
 
 export const ScrollInto = styled.div`
   overflow: hidden;
-  height: 12vh;
+  height: 12rem;
   margin-bottom: 2rem;
   div {
     width: 5.5rem;
@@ -41,9 +41,5 @@ export const ScrollInto = styled.div`
     svg {
       stroke: ${(props) => mixin.rgba(props.theme.backgroundRev, 0.8)};
     }
-  }
-
-  @media only screen and (max-width: 600px) {
-    height: 8vh;
   }
 `;

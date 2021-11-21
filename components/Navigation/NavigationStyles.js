@@ -9,7 +9,7 @@ export const Header = styled.header`
   width: 100vw;
   ${mixin.boxShadowHeader};
   transform: ${(props) =>
-    props.hideHeaderUp ? "translateY(-4.5vh)" : "translateY(0)"};
+    props.hideHeaderUp ? "translateY(-3.5rem)" : "translateY(0)"};
   transition: transform 0.4s linear;
   z-index: 100;
   transform: translateY(-100%);
@@ -28,8 +28,7 @@ export const Header = styled.header`
 `;
 
 export const HeaderUp = styled.div`
-  height: 4vh;
-  min-height: 3rem;
+  height: 3.5rem;
   transition: height 0.4s linear;
   background-color: ${color.primaryLightest};
   ${mixin.center}
@@ -45,7 +44,7 @@ export const HeaderUp = styled.div`
 `;
 
 export const HeaderDown = styled.div`
-  height: 5.5rem;
+  height: 5rem;
   display: flex;
   width: 100%;
 

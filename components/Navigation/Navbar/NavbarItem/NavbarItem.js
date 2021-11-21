@@ -11,8 +11,8 @@ function NavbarItem({ item }) {
     <Item>
       <Link href={path}>
         <a className={router.pathname === path ? "active" : ""}>
-          <span className="visible">{t(`common:navigation.${item}`)}</span>
-          <span className="invisible">{t(`common:navigation.${item}`)}</span>
+          <div className="visible">{t(`common:navigation.${item}`)}</div>
+          <div className="invisible">{t(`common:navigation.${item}`)}</div>
         </a>
       </Link>
     </Item>

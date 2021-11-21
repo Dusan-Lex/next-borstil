@@ -15,6 +15,7 @@ import {
   NextSlide,
 } from "./AboutSectionStyles";
 import { color, mixin } from "../../shared/utils/styles";
+import ImaginedHeader from "../../shared/components/ImaginedHeader/ImaginedHeader";
 
 const AboutSection = () => {
   const [index, setIndex] = useState(0);
@@ -59,6 +60,7 @@ const AboutSection = () => {
 
   return (
     <Fragment>
+      {/* <ImaginedHeader /> */}
       <AboutFirm>
         <Firm ref={firmRef}>
           <FirmDesc>

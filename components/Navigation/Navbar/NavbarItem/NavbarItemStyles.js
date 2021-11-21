@@ -4,9 +4,12 @@ export const Item = styled.li`
   text-transform: uppercase;
   position: relative;
   overflow: hidden;
+  height: 100%;
 
   .visible {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    height: 100%;
     padding: 1.4rem 0rem;
     transition: all 0.65s;
     transition-property: transform, text-decoration, top;
@@ -14,7 +17,8 @@ export const Item = styled.li`
   }
 
   .invisible {
-    display: inline-block;
+    display: flex;
+    align-items: center;
     position: absolute;
     height: 100%;
     width: 100%;

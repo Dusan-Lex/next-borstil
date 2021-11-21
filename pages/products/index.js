@@ -2,7 +2,6 @@ import Products from "../../components/Products/Products";
 import { connectToDatabase } from "../../shared/utils/mongoDb";
 
 const Proizvodi = ({ doors }) => {
-  console.log(JSON.parse(doors));
   return (
     <main>
       <Products doors={JSON.parse(doors)} />

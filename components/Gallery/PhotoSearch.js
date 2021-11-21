@@ -18,7 +18,7 @@ const PhotoSearch = ({ onSearch }) => {
 
   return (
     <Fragment>
-      <ImaginedHeader bgColor={color.primaryLightest} />
+      <ImaginedHeader bgColor={color.primary} />
       <StyledPhotoSearch>
         <PhotoSearchForm
           onSubmit={(e) => {

@@ -7,19 +7,21 @@ export const AboutFirm = styled.section`
   max-height: 100rem;
   background-color: ${mixin.lighten(color.secondary, 0.3)};
   ${mixin.center}
-  padding-top: 10rem;
+  padding-top:8.5rem;
+
   @media only screen and (max-width: 1200px) {
-    padding-top: calc(8.5vh + 2rem);
-    min-height: 82rem;
+    padding-top: 7.5rem;
+    height: 87rem;
   }
   @media only screen and (max-width: 800px) {
-    min-height: 86rem;
+    height: 90rem;
   }
-  @media only screen and (max-width: 450px) {
-    min-height: 92rem;
+
+  @media only screen and (max-width: 420px) {
+    height: 93rem;
   }
-  @media only screen and (max-width: 300px) {
-    min-height: 100rem;
+  @media only screen and (max-width: 310px) {
+    height: 96rem;
   }
 `;
 
@@ -78,7 +80,7 @@ export const FirmDesc = styled.div`
   flex-direction: column;
   @media only screen and (max-width: 1200px) {
     width: 100%;
-    margin: 2rem 0 3rem;
+    margin-top: 2rem;
   }
 `;
 export const FirmDesc1 = styled.div`
@@ -176,6 +178,11 @@ export const FirmImageBox = styled.div`
   @media only screen and (max-width: 340px) {
     height: 24rem;
     width: 36rem;
+  }
+
+  @media only screen and (max-width: 300px) {
+    height: 22rem;
+    width: 33rem;
   }
 `;
 export const FirmImage = styled.div`
