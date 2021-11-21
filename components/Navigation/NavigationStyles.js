@@ -45,9 +45,7 @@ export const HeaderUp = styled.div`
 `;
 
 export const HeaderDown = styled.div`
-  height: 6vh;
-  min-height: 5.5rem;
-
+  height: 5.5rem;
   display: flex;
   width: 100%;
 
@@ -60,8 +58,8 @@ export const HeaderDown = styled.div`
     }
   }
 
-  @media only screen and (max-width: 600px) {
-    height: 8.5vh;
+  @media only screen and (max-width: 1200px) {
+    height: 7.5rem;
   }
 `;
 
