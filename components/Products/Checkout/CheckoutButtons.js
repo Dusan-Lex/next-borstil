@@ -45,7 +45,7 @@ const CheckoutButtons = ({
               setActiveStep((prevStep) => {
                 return prevStep > 1 ? prevStep - 1 : prevStep;
               });
-              scrollHandler();
+              setTimeout(scrollHandler, 200);
             }}
           >
             <ArrowLeft />
@@ -63,7 +63,7 @@ const CheckoutButtons = ({
                   return prevStep < stepsLength ? prevStep + 1 : prevStep;
                 });
                 setAllowed(false);
-                scrollHandler();
+                setTimeout(scrollHandler, 200);
               }
             }}
           >

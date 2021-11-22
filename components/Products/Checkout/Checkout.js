@@ -30,6 +30,7 @@ const Checkout = () => {
 
   useEffect(() => {
     if (checkoutCtx.checkout) {
+      setActiveStep(1);
       contentRef.current.scrollIntoView({
         behavior: "smooth",
         block: "end",

@@ -16,7 +16,6 @@ const Step4 = () => {
 
   useEffect(() => {
     const completeOrder = async () => {
-      console.log("in");
       setLoading(true);
       const response = await fetch("/api/order", {
         method: "POST",
