@@ -63,13 +63,24 @@ export const StyledHeaderLogo = styled.div`
       fill: ${color.secondary};
     }
   }
-  @media (hover: hover) and (pointer: fine) {
+  &:active {
+    .pine:not(.center) {
+      fill: ${color.secondaryLight};
+    }
+  }
+
+  @media only screen and (min-width: 1201px) {
     &:hover {
       .pine {
         fill: ${(props) => props.theme.text.hover};
       }
       div p {
         transform: translateX(0);
+      }
+    }
+    &:active {
+      .pine {
+        fill: ${(props) => props.theme.text.regular} !important;
       }
     }
   }

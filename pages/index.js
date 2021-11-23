@@ -53,13 +53,13 @@ export async function getStaticProps() {
   const data = await getSomeReferences(db, "reference", [
     "/images/reference/Borstil-reference-1.jpg",
     "/images/reference/Borstil-reference-2.jpg",
+    "/images/reference/Borstil-reference-9.jpg",
     "/images/reference/Borstil-reference-3.jpg",
     "/images/reference/Borstil-reference-21.jpg",
     "/images/reference/Borstil-reference-4.jpg",
     "/images/reference/Borstil-reference-6.jpg",
     "/images/reference/Borstil-reference-7.jpg",
     "/images/reference/Borstil-reference-8.jpg",
-    "/images/reference/Borstil-reference-9.jpg",
   ]);
   return {
     props: { homeReferenceData: JSON.stringify(data) },

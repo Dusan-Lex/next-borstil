@@ -5,7 +5,7 @@ export const StyledAnchor = styled.a`
   border: 2px solid ${color.primaryLightest};
   color: white;
   background-color: ${(props) =>
-    props.dark ? color.secondary : color.primary};
+    props.dark ? color.primary : color.secondary};
   padding: 0.3rem 4rem;
   font-size: 2rem;
   display: inline-block;
@@ -54,12 +54,26 @@ export const StyledAnchor = styled.a`
     transition: all 0.5s;
   }
 
-  @media (hover: none) {
-    background-color: ${(props) =>
-      props.dark ? color.primary : color.secondary};
+  &:active {
+    color: ${(props) => (props.dark ? color.secondary : color.primary)};
+    border: 2px solid transparent;
+    box-shadow: none;
+
+    .first {
+      color: ${(props) => (props.dark ? color.secondary : color.primary)};
+      transform: translateX(0);
+    }
+    .second {
+      color: ${(props) => (props.dark ? color.secondary : color.primary)};
+    }
+    &::before {
+      transform: translateX(0);
+    }
   }
 
-  @media (hover: hover) and (pointer: fine) {
+  @media only screen and (min-width: 1201px) {
+    background-color: ${(props) =>
+      props.dark ? color.secondary : color.primary};
     .first {
       color: ${(props) => (props.dark ? color.secondary : color.primary)};
     }

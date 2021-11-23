@@ -49,7 +49,7 @@ export const findByEmail = async (db, collection, email) => {
 export const getAllReferences = async (db) => {
   const documents = await db
     .collection("reference")
-    .find({ srcImgId: { $ne: "21" } })
+    .find({ image_url: { $ne: "/images/reference/Borstil-reference-21.jpg" } })
     .toArray();
   return documents;
 };
@@ -59,5 +59,8 @@ export const getSomeReferences = async (db, collection, imageUrlArray) => {
     .collection(collection)
     .find({ image_url: { $in: imageUrlArray } })
     .toArray();
+  const t = documents[2];
+  documents[2] = documents[7];
+  documents[7] = t;
   return documents;
 };
