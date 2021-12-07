@@ -7,16 +7,15 @@ import { color } from "../../../shared/utils/styles";
 export const StyledHeaderIcons = styled.div`
   width: 18%;
   min-width: 22rem;
-  /* height: 100%; */
   display: ${(props) => (props.small ? "none" : "flex")};
   align-items: center;
 
   @media screen and (max-width: 1200px) {
     display: ${(props) => (props.small ? "flex" : "none")};
     position: relative;
-    width: 40rem;
+    width: 100%;
+    max-width: 40rem;
     height: 10rem;
-    margin: auto;
     margin-top: 2rem;
 
     ${(props) =>

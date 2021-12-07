@@ -84,6 +84,7 @@ export const LangSpan = styled.span`
   text-align: right;
   @media only screen and (max-width: 1200px) {
     position: relative;
+    text-align: center;
     color: ${color.primaryLightest};
     font-size: 3rem;
     text-transform: uppercase;

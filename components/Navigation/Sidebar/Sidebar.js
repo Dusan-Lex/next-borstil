@@ -43,7 +43,7 @@ const Sidebar = () => {
       />
       <SidebarFront show={sidebarCtx.sidebar}>
         <SidebarBox>
-          <div style={{ overflow: "hidden" }}>
+          <div>
             <Lang sidebar={sidebarCtx.sidebar}>
               <LangSpan sidebar={sidebarCtx.sidebar}>
                 {t("common:language")}:
@@ -65,6 +65,7 @@ const Sidebar = () => {
           </SidebarItems>
 
           <HeaderIcons small />
+          {/* <div style={{ height: "20rem", width: "100%" }}></div> */}
         </SidebarBox>
       </SidebarFront>
     </StyledSidebar>

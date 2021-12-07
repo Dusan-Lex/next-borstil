@@ -1,8 +1,13 @@
-import { createContext, useReducer } from "react";
+import { createContext, useEffect, useReducer } from "react";
 
 const OrderContext = createContext({
   order: [],
 });
+
+const initialState = [];
+
+const initializer = (initialValue = initialState) => {};
+// JSON.parse(localStorage.getItem("order")) || initialValue;
 
 const orderReducer = (orderState, action) => {
   switch (action.type) {
@@ -71,6 +76,10 @@ const orderReducer = (orderState, action) => {
 export const OrderContextProvider = (props) => {
   const [order, dispatch] = useReducer(orderReducer, []);
   console.log("order context - ", order);
+
+  // useEffect(() => {
+  //   localStorage.setItem("order", JSON.stringify(order));
+  // }, [order]);
   const context = {
     order,
     dispatch,
