@@ -11,7 +11,7 @@ const Proizvodi = ({ doors }) => {
 
 export default Proizvodi;
 
-export async function getStaticProps() {
+export async function getStaticProps(ctx) {
   const { db, error } = await connectToDatabase();
 
   if (error) {
@@ -21,6 +21,8 @@ export async function getStaticProps() {
   const allDoors = await db.collection("doors").find().toArray();
 
   return {
-    props: { doors: JSON.stringify(allDoors) },
+    props: {
+      doors: JSON.stringify(allDoors),
+    },
   };
 }

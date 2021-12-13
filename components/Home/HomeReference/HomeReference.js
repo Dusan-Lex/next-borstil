@@ -7,7 +7,6 @@ import useTranslation from "next-translate/useTranslation";
 
 const HomeReference = (props) => {
   const { t } = useTranslation();
-  console.log(props.data);
   return (
     <StyledHomeReference>
       <HomeTitle>{t(`home:reference.title`)}</HomeTitle>

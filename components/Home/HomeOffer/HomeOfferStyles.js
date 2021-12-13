@@ -41,7 +41,6 @@ export const OfferList = styled.ul`
 `;
 
 export const OfferListItem = styled.li`
-  width: 270px;
   padding: 4rem 2rem;
   font-size: 15px;
   text-transform: uppercase;
@@ -53,6 +52,9 @@ export const OfferListItem = styled.li`
   @media only screen and (max-width: 1200px) {
     padding: 2rem 2rem;
     font-size: 14px;
+  }
+  @media only screen and (max-width: 750px) {
+    width: 270px;
   }
   @media only screen and (max-width: 600px) {
     font-size: 13px;

@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 import DoorContext from "../../context-store/doorContext";
 import DoorsSelection from "./DoorsSelection/DoorsSelection";
 import {
@@ -36,7 +36,13 @@ const Doors = () => {
         </Door>
         <DoorDescription>
           <div>Cena</div>
-          <div>{doorCtx.loading ? <Spinner /> : doorCtx.door.doorprice}</div>
+          <div>
+            {doorCtx.loading ? (
+              <Spinner width="2.6rem" height="2.6rem" />
+            ) : (
+              doorCtx.door.doorprice
+            )}
+          </div>
           <div>sa PDV-om</div>
           <div>
             * cena uključuje {doorCtx.door.doorhandle} kvaku i{" "}
@@ -52,4 +58,4 @@ const Doors = () => {
   );
 };
 
-export default Doors;
+export default React.memo(Doors);

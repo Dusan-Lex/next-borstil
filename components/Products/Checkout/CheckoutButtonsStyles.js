@@ -79,4 +79,6 @@ export const CheckoutButton = styled.button`
   }
 `;
 
-export const CheckoutButtonBox = styled.div``;
+export const CheckoutButtonBox = styled.div`
+  display: ${(props) => (props.finished ? "none" : "block")};
+`;

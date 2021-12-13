@@ -8,6 +8,7 @@ import ArrowRight from "../../../shared/components/svgs/ArrowRight";
 import ArrowLeft from "../../../shared/components/svgs/ArrowLeft";
 import OrderContext from "../../../context-store/orderContext";
 import OrderInfoContext from "../../../context-store/orderInfoContext";
+import CheckoutContext from "../../../context-store/checkoutContext";
 
 const CheckoutButtons = ({
   stepsLength,
@@ -16,13 +17,16 @@ const CheckoutButtons = ({
   show,
   allowed,
   setAllowed,
+  finished,
+  setFinished,
   scrollHandler,
 }) => {
   const orderCtx = useContext(OrderContext);
   const orderInfoCtx = useContext(OrderInfoContext);
+  const checkoutCtx = useContext(CheckoutContext);
 
   const completeOrderHandler = async () => {
-    const response = await fetch("/api/order", {
+    const response = await fetch("/api/completeorder", {
       method: "POST",
       body: JSON.stringify({
         order: orderCtx.order,
@@ -33,11 +37,22 @@ const CheckoutButtons = ({
       },
     });
     const data = await response.json();
+    if (data.message === "finished") {
+      setFinished(true);
+      localStorage.setItem("order", JSON.stringify([]));
+      orderCtx.dispatch({ type: "RESET_CART" });
+      setTimeout(() => {
+        checkoutCtx.setCheckout(false);
+      }, 4000);
+      setTimeout(() => {
+        setFinished(false);
+      }, 4500);
+    }
   };
 
   return (
     <StyledCheckoutButtons show={show}>
-      <CheckoutButtonBox>
+      <CheckoutButtonBox finished={finished}>
         {activeStep !== 1 ? (
           <CheckoutButton
             left
@@ -53,7 +68,7 @@ const CheckoutButtons = ({
           </CheckoutButton>
         ) : null}
       </CheckoutButtonBox>
-      <CheckoutButtonBox>
+      <CheckoutButtonBox finished={finished}>
         {activeStep !== stepsLength ? (
           <CheckoutButton
             className={allowed ? "" : "not-allowed"}

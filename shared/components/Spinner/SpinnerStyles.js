@@ -5,8 +5,8 @@ export const Roller = styled.div`
   border: 0.4rem solid ${color.primaryLightest};
   border-radius: 50%;
   border-top-color: ${color.primaryDark};
-  width: 2.6rem;
-  height: 2.6rem;
+  width: ${(props) => props.width};
+  height: ${(props) => props.height};
   animation: rotate-spinner 1s linear;
   animation-iteration-count: infinite;
 

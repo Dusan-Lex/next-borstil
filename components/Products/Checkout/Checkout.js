@@ -25,6 +25,8 @@ const steps = [
 const Checkout = () => {
   const [activeStep, setActiveStep] = useState(1);
   const [allowed, setAllowed] = useState(false);
+  const [finished, setFinished] = useState(false);
+
   const contentRef = useRef(null);
   const checkoutCtx = useContext(CheckoutContext);
 
@@ -55,7 +57,7 @@ const Checkout = () => {
             {activeStep === 1 ? <Step1 setAllowed={setAllowed} /> : null}
             {activeStep === 2 ? <Step2 setAllowed={setAllowed} /> : null}
             {activeStep === 3 ? <Step3 setAllowed={setAllowed} /> : null}
-            {activeStep === 4 ? <Step4 setAllowed={setAllowed} /> : null}
+            {activeStep === 4 ? <Step4 finished={finished} /> : null}
           </ProgressContent>
           <CheckoutButtons
             stepsLength={steps.length}
@@ -64,6 +66,8 @@ const Checkout = () => {
             show={checkoutCtx.checkout}
             allowed={allowed}
             setAllowed={setAllowed}
+            setFinished={setFinished}
+            finished={finished}
             scrollHandler={() => {
               contentRef.current.scrollIntoView({
                 behavior: "smooth",

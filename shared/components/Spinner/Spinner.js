@@ -1,7 +1,7 @@
 import { Roller } from "./SpinnerStyles";
 
-const Spinner = () => {
-  return <Roller></Roller>;
+const Spinner = ({ width, height }) => {
+  return <Roller width={width} height={height}></Roller>;
 };
 
 export default Spinner;

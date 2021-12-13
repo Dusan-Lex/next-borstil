@@ -131,4 +131,4 @@ const DoorsSelection = () => {
   );
 };
 
-export default DoorsSelection;
+export default React.memo(DoorsSelection);

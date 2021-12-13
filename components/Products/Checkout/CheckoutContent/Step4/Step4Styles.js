@@ -18,3 +18,16 @@ export const Payment = styled.div`
   margin-top: 1rem;
   color: ${color.secondaryDark};
 `;
+
+export const SpinnerBox = styled.div`
+  height: 100%;
+  ${mixin.center}
+  font-size: 3rem;
+`;
+
+export const FinishedBox = styled.div`
+  height: 100%;
+  ${mixin.center}
+  flex-direction: column;
+  font-size: 3rem;
+`;

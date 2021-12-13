@@ -1,9 +1,9 @@
 import { ObjectId } from "bson";
-import { connectToDatabase } from "../../shared/utils/mongoDb";
+import { connectToDatabase, insertDocument } from "../../shared/utils/mongoDb";
 
 const handler = async (req, res) => {
   if (req.method === "POST") {
-    const { order } = req.body;
+    const { order, orderInfo } = req.body;
     const { db, error } = await connectToDatabase();
     if (error) {
       res.status(500).json({ message: "error" });
@@ -38,8 +38,25 @@ const handler = async (req, res) => {
         return;
       }
     }
+    const total = order.reduce((s, x) => s + x.doorquantity * x.doorprice, 0);
 
-    res.json(order);
+    try {
+      await insertDocument(db, "orders", {
+        order,
+        orderInfo: {
+          individualInfo: orderInfo.individualInfo.form,
+          legalEntityInfo: orderInfo.legalEntity
+            ? orderInfo.legalEntityInfo.form
+            : "",
+        },
+        total,
+      });
+    } catch (error) {
+      res.status(500).json({ message: "error" });
+      return;
+    }
+
+    res.json({ message: "finished" });
   }
 };
 

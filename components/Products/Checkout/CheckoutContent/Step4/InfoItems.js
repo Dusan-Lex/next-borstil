@@ -1,4 +1,3 @@
-import React, { useContext } from "react";
 import OrderInfoContext from "../../../../../context-store/orderInfoContext";
 import { StyledInfoItem, AboutCompany } from "./InfoItemsStyles";
 
@@ -10,8 +9,7 @@ const legalEntityItems = [
   "Broj računa",
 ];
 
-const InfoItems = () => {
-  const orderInfoCtx = useContext(OrderInfoContext);
+const InfoItems = ({ orderInfoCtx }) => {
   const itemsArr = [
     orderInfoCtx.individualInfo.form.name,
     orderInfoCtx.individualInfo.form.address,

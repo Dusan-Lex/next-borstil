@@ -68,6 +68,12 @@ const orderReducer = (orderState, action) => {
           : item
       );
 
+    case "SET_FROM_LOCALSTORAGE":
+      return action.payload;
+
+    case "RESET_CART":
+      return [];
+
     default:
       throw new Error();
   }
@@ -77,9 +83,15 @@ export const OrderContextProvider = (props) => {
   const [order, dispatch] = useReducer(orderReducer, []);
   console.log("order context - ", order);
 
-  // useEffect(() => {
-  //   localStorage.setItem("order", JSON.stringify(order));
-  // }, [order]);
+  useEffect(() => {
+    const localData = localStorage.getItem("order");
+    dispatch({ type: "SET_FROM_LOCALSTORAGE", payload: JSON.parse(localData) });
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("order", JSON.stringify(order));
+  }, [order]);
+
   const context = {
     order,
     dispatch,
