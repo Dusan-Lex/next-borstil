@@ -30,4 +30,24 @@ export const FinishedBox = styled.div`
   ${mixin.center}
   flex-direction: column;
   font-size: 3rem;
+  text-align: center;
+  h4 {
+    margin-bottom: 1rem;
+  }
+  p {
+    margin-bottom: 2rem;
+    color: ${color.primaryDark};
+  }
+  h6 {
+    display: flex;
+    align-items: center;
+    span {
+      text-decoration: underline;
+    }
+    svg {
+      height: 4.5rem;
+      margin-left: 0.5rem;
+      fill: ${color.secondaryLight};
+    }
+  }
 `;

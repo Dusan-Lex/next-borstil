@@ -6,6 +6,7 @@ import InfoItems from "./InfoItems";
 import Preview from "./Preview";
 import { StyledStep4, Payment, SpinnerBox, FinishedBox } from "./Step4Styles";
 import Spinner from "../../../../../shared/components/Spinner/Spinner";
+import Logo from "../../../../../shared/components/svgs/Logo";
 import CheckoutContext from "../../../../../context-store/checkoutContext";
 
 const orderInfo = ["adresa montaže", "način plaćanja", "stavke"];
@@ -76,9 +77,14 @@ const Step4 = ({ finished }) => {
         )
       ) : (
         <FinishedBox>
-          <h4>Vasa porudzbina je uspesno kreirana.</h4>
-          <p>Hvala Vam na ukazanom poverenju</p>
-          <h6>Vas BorStil</h6>
+          <h4>Vaša porudžbina je uspešno kreirana.</h4>
+          <p>Hvala Vam na ukazanom poverenju.</p>
+          <h6>
+            <div>
+              Vaš <span>BorStil</span>
+            </div>
+            <Logo />
+          </h6>
         </FinishedBox>
       )}
     </StyledStep4>
