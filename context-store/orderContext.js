@@ -85,7 +85,11 @@ export const OrderContextProvider = (props) => {
 
   useEffect(() => {
     const localData = localStorage.getItem("order");
-    dispatch({ type: "SET_FROM_LOCALSTORAGE", payload: JSON.parse(localData) });
+    localData &&
+      dispatch({
+        type: "SET_FROM_LOCALSTORAGE",
+        payload: JSON.parse(localData),
+      });
   }, []);
 
   useEffect(() => {
