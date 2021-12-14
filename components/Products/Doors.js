@@ -16,6 +16,7 @@ const Doors = () => {
     <DoorsContainer>
       <DoorsBackground>
         <img
+          className="back"
           sizes="(max-width: 1999px) 100vw, 1999px"
           srcSet="
     /images/products/background-3_t9dbpn_c_scale,w_190.jpg 190w,

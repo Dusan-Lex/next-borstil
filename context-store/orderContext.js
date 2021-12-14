@@ -81,7 +81,7 @@ const orderReducer = (orderState, action) => {
 
 export const OrderContextProvider = (props) => {
   const [order, dispatch] = useReducer(orderReducer, []);
-  console.log("order context - ", order);
+  // console.log("order context - ", order);
 
   useEffect(() => {
     const localData = JSON.parse(localStorage.getItem("order"));

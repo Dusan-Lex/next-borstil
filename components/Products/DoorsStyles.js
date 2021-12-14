@@ -21,12 +21,12 @@ export const DoorsContainer = styled.div`
 export const DoorsBackground = styled.div`
   position: relative;
   width: 70%;
-  /* transform: translateX(-30%); */
+  transform: translateX(-30%);
   opacity: 0;
   animation: doors-in 0.7s 1s ease forwards;
   @keyframes doors-in {
     100% {
-      /* transform: translateX(0); */
+      transform: translateX(0);
       opacity: 1;
     }
   }
@@ -34,7 +34,11 @@ export const DoorsBackground = styled.div`
   img {
     width: 100%;
     height: 100%;
+
     margin-bottom: -0.8rem;
+    &.back {
+      object-fit: cover;
+    }
   }
   @media only screen and (max-width: 1200px) {
     width: 65%;
@@ -46,9 +50,23 @@ export const DoorsBackground = styled.div`
 export const Door = styled.div`
   position: absolute;
   bottom: 15.8%;
-  right: 49%;
+  right: 50%;
   width: 17%;
   height: 67%;
+  @media only screen and (max-width: 1800px) {
+    width: 16%;
+  }
+  @media only screen and (max-width: 1420px) {
+    width: 15rem;
+  }
+  @media only screen and (max-width: 1200px) {
+    right: 47%;
+  }
+  @media only screen and (max-width: 900px) {
+    width: 17%;
+    height: 67%;
+    right: 49%;
+  }
 `;
 
 export const DoorDescription = styled.div`

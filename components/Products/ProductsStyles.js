@@ -16,7 +16,7 @@ export const DoorsSection = styled.div`
 
 export const DoorsHeader = styled.div`
   max-width: 1600px;
-  margin: auto;
+  margin: 1rem auto 0;
   display: flex;
   margin-top: 1rem;
   padding: 0 4rem;

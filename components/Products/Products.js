@@ -40,14 +40,18 @@ const Products = ({ doors }) => {
         </DoorsHeader>
         <Doors />
         <Checkout />
-        {doors.map((item) => (
-          <img
-            src={item.image_url}
-            alt="vrata"
-            style={{ display: "none" }}
-            key={item._id}
-          />
-        ))}
+        <div>
+          <div>
+            {doors.map((item) => (
+              <img
+                src={item.image_url}
+                alt="vrata"
+                style={{ display: "none" }}
+                key={item._id}
+              />
+            ))}
+          </div>
+        </div>
       </DoorsSection>
     </React.Fragment>
   );

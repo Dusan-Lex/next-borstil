@@ -74,7 +74,7 @@ const doorReducer = (doorState, action) => {
 export const DoorContextProvider = (props) => {
   const [door, dispatch] = useReducer(doorReducer, initialDoorState);
   const [loading, setLoading] = useState(false);
-  console.log("door context - ", door);
+  // console.log("door context - ", door);
   useEffect(() => {
     const fetchDoor = async () => {
       setLoading(true);
