@@ -84,11 +84,11 @@ export const OrderContextProvider = (props) => {
   console.log("order context - ", order);
 
   useEffect(() => {
-    const localData = localStorage.getItem("order");
+    const localData = JSON.parse(localStorage.getItem("order"));
     localData &&
       dispatch({
         type: "SET_FROM_LOCALSTORAGE",
-        payload: JSON.parse(localData),
+        payload: localData,
       });
   }, []);
 

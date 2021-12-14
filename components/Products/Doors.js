@@ -40,7 +40,7 @@ const Doors = () => {
             {doorCtx.loading ? (
               <Spinner width="2.6rem" height="2.6rem" />
             ) : (
-              doorCtx.door.doorprice
+              <p>{doorCtx.door.doorprice}&#8364;</p>
             )}
           </div>
           <div>sa PDV-om</div>

@@ -45,7 +45,8 @@ export const FinishedBox = styled.div`
       text-decoration: underline;
     }
     svg {
-      height: 4.5rem;
+      height: 4rem;
+      width: 4rem;
       margin-left: 0.5rem;
       fill: ${color.secondaryLight};
     }

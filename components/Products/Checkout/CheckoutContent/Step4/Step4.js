@@ -32,7 +32,7 @@ const Step4 = ({ finished }) => {
         },
       });
       const data = await response.json();
-      console.log(data.message);
+
       if (data.message !== "error") {
         setCheckedOrder(data);
         localStorage.setItem("order", JSON.stringify(data));

@@ -39,6 +39,7 @@ const CheckoutButtons = ({
     const data = await response.json();
     if (data.message === "finished") {
       setFinished(true);
+      scrollHandler();
       localStorage.setItem("order", JSON.stringify([]));
       orderCtx.dispatch({ type: "RESET_CART" });
       setTimeout(() => {
@@ -60,7 +61,7 @@ const CheckoutButtons = ({
               setActiveStep((prevStep) => {
                 return prevStep > 1 ? prevStep - 1 : prevStep;
               });
-              setTimeout(scrollHandler, 200);
+              setTimeout(scrollHandler, 300);
             }}
           >
             <ArrowLeft />
