@@ -1,3 +1,4 @@
+import { connectToDatabase, insertDocument } from "../../shared/utils/mongoDb";
 import {
   emailValidation,
   phoneNumberValidation,
@@ -54,6 +55,8 @@ const handler = async (req, res) => {
       };
     }
 
+    const userText = req.body.text;
+
     form.errors.name ||
     form.errors.email ||
     form.errors.number ||
@@ -69,6 +72,32 @@ const handler = async (req, res) => {
           status: "success",
           message: "Vaša poruka je uspešno poslata. Hvala.",
         });
+
+    if (form.status === "success") {
+      const { db, error } = await connectToDatabase();
+      if (error) {
+        res.status(500).json({
+          status: "error",
+          message: "Neuspela konekcija sa bazom podataka",
+        });
+        return;
+      }
+      try {
+        await insertDocument(db, "contact", {
+          userName,
+          userEmail,
+          userNumber,
+          userSelect,
+          userText,
+        });
+      } catch (error) {
+        res.status(500).json({
+          status: "error",
+          message: "Neuspela konekcija sa bazom podataka",
+        });
+        return;
+      }
+    }
     res.json(form);
   }
 };

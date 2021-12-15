@@ -43,6 +43,7 @@ const ContactForm = () => {
         email: inputs.email,
         number: inputs.number,
         select: inputs.select,
+        text: textRef.current.value,
       }),
       headers: {
         "Content-Type": "application/json",
