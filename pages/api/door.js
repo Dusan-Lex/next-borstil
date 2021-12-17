@@ -16,7 +16,7 @@ const handler = async (req, res) => {
         .collection("doors")
         .findOne({ type: doortype, color: doorcolor });
       if (door) {
-        const handlePrice = doorhandle === "premium" ? 17 : 0;
+        const handlePrice = doorhandle === "premium" ? 16 : 0;
         const lockPrice = doorlock === "premium" ? 7 : 0;
         res.json({
           doorprice: door.price + handlePrice + lockPrice,

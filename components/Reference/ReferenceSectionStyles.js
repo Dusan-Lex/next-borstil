@@ -3,6 +3,7 @@ import { color, mixin } from "../../shared/utils/styles";
 
 export const StyledReferenceSection = styled.section`
   background-color: ${mixin.lighten(color.secondary, 0.3)};
+  overflow: hidden;
 `;
 export const ReferenceGrid = styled.div`
   display: grid;
@@ -28,7 +29,48 @@ export const ReferenceGridItem = styled.div`
   ${mixin.center}
   border:1px solid  ${color.primaryDark};
   box-shadow: 0 0 1rem 2px ${color.primaryDark};
-
+  /* animation: fade-${(props) => props.index % 4} 0.7s ${(props) =>
+    0.3 + props.index * 0.04}s ease-out backwards;
+  @keyframes fade-0 {
+    0% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes fade-1 {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes fade-2 {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes fade-3 {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  } */
   @media only screen and (max-width: 1200px) {
     flex-direction: column;
     justify-content: flex-start;

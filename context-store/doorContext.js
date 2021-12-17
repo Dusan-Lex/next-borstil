@@ -80,7 +80,12 @@ export const DoorContextProvider = (props) => {
       setLoading(true);
       const response = await fetch("/api/door", {
         method: "POST",
-        body: JSON.stringify(door),
+        body: JSON.stringify({
+          doortype: door.doortype,
+          doorcolor: door.doorcolor,
+          doorhandle: door.doorhandle,
+          doorlock: door.doorlock,
+        }),
         headers: {
           "Content-Type": "application/json",
         },
