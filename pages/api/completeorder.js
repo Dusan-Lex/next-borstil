@@ -48,6 +48,7 @@ const handler = async (req, res) => {
           legalEntityInfo: orderInfo.legalEntity
             ? orderInfo.legalEntityInfo.form
             : "",
+          payment: orderInfo.payment,
         },
         total,
       });
