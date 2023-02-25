@@ -25,7 +25,7 @@ function MyApp({ Component, pageProps }) {
                 <DoorContextProvider>
                   <OrderContextProvider>
                     <Head>
-                      <title>BorStil | Vrata i prozori</title>
+                      <title>BorStil | Vrata i prozori | Leskovac</title>
                       <meta
                         name="viewport"
                         content="width=device-width, initial-scale=1"
@@ -33,15 +33,15 @@ function MyApp({ Component, pageProps }) {
                       <meta charSet="utf-8" />
                       <meta
                         name="description"
-                        content="Borstil se bavi proizvodnjom stolarije i galanterije od drveta. U ponudi imamo veliki izbor različitih vrsta vrata i prozora."
+                        content="Vrata i prozori | Leskovac | BorStil se bavi proizvodnjom stolarije i galanterije od drveta. U ponudi imamo veliki izbor različitih vrsta vrata i prozora."
                       />
                       <meta
                         property="og:title"
-                        content="BorStil | Vrata i prozori"
+                        content="BorStil | Vrata i prozori | Leskovac"
                       />
                       <meta
                         property="og:description"
-                        content="Borstil se bavi proizvodnjom stolarije i galanterije od drveta. U ponudi imamo veliki izbor različitih vrsta vrata i prozora."
+                        content="Vrata i prozori | Leskovac | BorStil se bavi proizvodnjom stolarije i galanterije od drveta. U ponudi imamo veliki izbor različitih vrsta vrata i prozora."
                       />
                       <meta
                         property="og:url"
