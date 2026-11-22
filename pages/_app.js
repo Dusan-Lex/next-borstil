@@ -13,6 +13,7 @@ import Modal from "../shared/components/Modal/Modal";
 import { DoorContextProvider } from "../context-store/doorContext";
 import { CheckoutContextProvider } from "../context-store/checkoutContext";
 import { OrderContextProvider } from "../context-store/orderContext";
+import { Analytics } from "@vercel/analytics/react";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -93,6 +94,7 @@ function MyApp({ Component, pageProps }) {
                     <Component {...pageProps} />
                     <NewsletterRegistration />
                     <Footer />
+                    <Analytics />
                   </OrderContextProvider>
                 </DoorContextProvider>
               </ModalContextProvider>
